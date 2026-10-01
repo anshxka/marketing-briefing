@@ -67,11 +67,38 @@ def fetch_articles():
                 continue
             seen.add(key)
             count += 1
+            publisher = (entry.get("source") or {}).get("title") or source
+            if publisher != source and title.endswith(" - " + publisher):
+                title = title[: -len(" - " + publisher)]
             articles.append({"id": len(articles), "title": title, "link": entry.get("link"),
-                             "source": source, "snippet": clean(entry.get("summary", ""))[:300],
+                             "source": publisher, "snippet": clean(entry.get("summary", ""))[:300],
                              "image": entry_image(entry)})
         print(f"{source}: {count} stories")
     return articles[:MAX_ARTICLES]
+
+
+BAD_IMAGE_HINTS = ("news.google", "gstatic.com", "googleusercontent.com", "google.com/", "logo", "favicon",
+                   "placeholder", "default-image", "default_image", "sprite", "icon", "avatar", "1x1", "blank.")
+
+
+def good_image(url):
+    """Skip logos, Google News artwork and tiny icons - keep real article photos only."""
+    u = (url or "").lower()
+    return u.startswith("http") and not any(h in u for h in BAD_IMAGE_HINTS)
+
+
+def real_link(url):
+    """Google News links hide the real article - unwrap them so we can read the story and its photo."""
+    if "news.google.com" not in url:
+        return url
+    try:
+        from googlenewsdecoder import gnewsdecoder
+        result = gnewsdecoder(url, interval=1)
+        if result.get("status") and result.get("decoded_url"):
+            return result["decoded_url"]
+    except Exception as e:
+        print(f"could not unwrap Google News link: {e}")
+    return url
 
 
 def read_page(url):
@@ -84,7 +111,7 @@ def read_page(url):
         img = re.search(r'<meta[^>]+(?:property|name)=["\'](?:og:image|twitter:image)["\'][^>]+content=["\']([^"\']+)', page) \
             or re.search(r'<meta[^>]+content=["\']([^"\']+)["\'][^>]+(?:property|name)=["\'](?:og:image|twitter:image)', page)
         image = html.unescape(img.group(1)) if img else ""
-        return text, image if image.startswith("http") else ""
+        return text, image if good_image(image) else ""
     except Exception:
         return "", ""
 
@@ -196,8 +223,12 @@ Reply with ONLY valid JSON: {{"stories": [{{"id": 0, "category": "campaigns_bran
             chosen.append({**a, "category": cat})
 
     for a in chosen:
-        a["full_text"], page_image = read_page(a["link"])
-        a["image"] = page_image or a["image"]
+        a["link"] = real_link(a["link"])
+        if "news.google.com" in a["link"]:
+            a["full_text"], page_image = "", ""
+        else:
+            a["full_text"], page_image = read_page(a["link"])
+        a["image"] = page_image or (a["image"] if good_image(a["image"]) else "")
         print(f"read {len(a['full_text'])} chars, image={'yes' if a['image'] else 'no'}: {a['title'][:55]}")
 
     written = {}
