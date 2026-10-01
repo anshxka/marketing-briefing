@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#FFE4EE">
+<title>The Marketing Edit · Thursday, 01 October 2026</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFF5F8; --card:#FFFFFF; --ink:#3A1430; --muted:#8A5A78; --line:#F7D3E1;
+  --rose:#E8457C; --blush:#FFE4EE; --soft:#FFF0F5; --shadow:0 10px 30px -18px rgba(194,24,91,.35);
+  --serif:"Playfair Display",Georgia,"Times New Roman",serif;
+  --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#1C0E18; --card:#28141F; --ink:#FBE8F1; --muted:#C99AB4; --line:#44243A;
+  --blush:#3A1B2F; --soft:#2F1727; --shadow:0 10px 30px -18px rgba(0,0,0,.6);
+}}
+*{box-sizing:border-box}
+html{scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--sans);
+  background-image:radial-gradient(circle at 15% 0%,var(--blush) 0,transparent 40%),radial-gradient(circle at 90% 10%,var(--blush) 0,transparent 35%);
+  background-repeat:no-repeat}
+.wrap{max-width:1040px;margin:auto;padding:36px 20px 70px}
+a{color:inherit}
+
+/* masthead */
+header{text-align:center;margin-bottom:30px}
+.kicker{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--rose);font-weight:700;margin:0}
+h1{font:italic 600 clamp(40px,8vw,72px)/1.05 var(--serif);margin:10px 0 8px;letter-spacing:-.01em}
+.date{color:var(--muted);margin:0}
+.date b{color:var(--rose);font-weight:500}
+.flourish{color:var(--rose);letter-spacing:.6em;margin-top:12px;font-size:14px}
+
+/* top cards */
+.top{display:grid;grid-template-columns:1.6fr 1fr;gap:18px;margin-bottom:30px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px 26px;box-shadow:var(--shadow)}
+.card h2{font:600 22px var(--serif);margin:0 0 12px}
+.big{list-style:none;margin:0;padding:0;counter-reset:n}
+.big li{counter-increment:n;position:relative;padding:0 0 14px 44px;font:500 17px/1.5 var(--serif)}
+.big li::before{content:counter(n);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;
+  background:var(--blush);color:var(--rose);font:700 14px/30px var(--sans);text-align:center}
+.tip{background:linear-gradient(140deg,#FFD6E5,#FFC1D8 55%,#F9A8C9);color:#4A1033;border:0}
+.tip h2{color:#4A1033}
+.tip p{margin:0;font-size:16px}
+@media (prefers-color-scheme:dark){.tip{background:linear-gradient(140deg,#5A2045,#7A2858);color:#FFE4EE}.tip h2{color:#FFE4EE}}
+
+/* chips */
+nav{position:sticky;top:0;z-index:5;display:flex;gap:8px;overflow-x:auto;padding:12px 0;margin-bottom:6px;
+  background:var(--bg);scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+.chip{--c:var(--rose);flex:none;font:500 14px var(--sans);color:var(--ink);background:var(--card);
+  border:1px solid var(--line);border-radius:999px;padding:8px 15px;cursor:pointer;transition:.15s}
+.chip span{color:var(--muted);margin-left:3px}
+.chip:hover{border-color:var(--c)}
+.chip.on{background:var(--c);border-color:var(--c);color:#fff}.chip.on span{color:#ffffffd0}
+.chip:focus-visible,a:focus-visible{outline:2px solid var(--rose);outline-offset:2px}
+
+/* sections */
+.cat{margin-top:38px}
+.cat>h2{display:flex;align-items:center;gap:12px;font:600 28px var(--serif);margin:0 0 16px}
+.cat>h2 i{font-style:normal;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;
+  background:var(--blush);font-size:22px}
+.story{background:var(--card);border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:var(--shadow);
+  display:flex;flex-direction:column}
+.story.featured{display:grid;grid-template-columns:1fr 1.15fr;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.media{position:relative;aspect-ratio:16/10;background:linear-gradient(135deg,var(--blush),var(--c) 180%);
+  display:grid;place-items:center;overflow:hidden}
+.featured .media{aspect-ratio:auto;min-height:100%}
+.media span{font-size:46px;opacity:.85}
+.media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.body{padding:22px 24px 24px}
+.story h3{font:600 22px/1.3 var(--serif);margin:0 0 12px}
+.featured h3{font-size:27px}
+.story p{margin:0 0 12px;color:var(--ink)}
+.why{background:var(--soft);border-left:3px solid var(--c);border-radius:12px;padding:12px 14px;margin:14px 0 12px;font-size:15px}
+.why b{display:block;color:var(--c);font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:3px}
+.src{font-size:14px;color:var(--muted);text-decoration:none}
+.src:hover{color:var(--rose)}
+
+/* archive */
+.archive{margin-top:50px;text-align:center}
+.archive h2{font:italic 600 24px var(--serif);margin:0 0 14px}
+.days{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.days a{text-decoration:none;font-size:14px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 14px}
+.days a:hover{border-color:var(--rose);color:var(--rose)}
+footer{text-align:center;color:var(--muted);font-size:13px;margin-top:34px}
+
+@media (max-width:760px){
+  .top{grid-template-columns:1fr}
+  .story.featured{grid-template-columns:1fr}
+  .featured .media{aspect-ratio:16/10}
+  .featured h3{font-size:23px}
+  .wrap{padding-top:26px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="kicker">Your daily marketing briefing</p>
+    <h1>The Marketing Edit</h1>
+    <p class="date">Thursday, 01 October 2026 · <b>18 stories</b></p>
+    <div class="flourish">✿ ✿ ✿</div>
+  </header>
+
+  <div class="top">
+    <div class="card">
+      <h2>Today's big picture</h2>
+      <ol class="big"><li>Indian brands are aggressively doubling down on celebrity-led campaigns featuring stars like Keerthy Suresh, Madhuri Dixit, and Anushka Sharma to capture heightened consumer festive budgets, which are projected to grow by 86% this season.</li><li>The rapid expansion of quick commerce faces rising regulatory scrutiny and financial friction, as evidenced by FSSAI&#x27;s dark store suspensions and Amazon&#x27;s significant FY26 losses despite rapid top-line growth.</li><li>AI innovation and regulatory evolution dominate the enterprise landscape, marked by Google&#x27;s Gemini 4 Argon launch, new AI marketing ventures like enso, and urgent industry adaptation to DPDP and net neutrality guidelines.</li></ol>
+    </div>
+    <div class="card tip">
+      <h2>💡 Tip of the day</h2>
+      <p>Audit your brand&#x27;s upcoming festive campaign assets to ensure they feature high-appeal regional celebrity endorsements and localized messaging, while simultaneously reviewing your customer data collection practices against upcoming DPDP compliance requirements.</p>
+    </div>
+  </div>
+
+  <nav><button class="chip on" data-cat="all">All <span>18</span></button><button class="chip" data-cat="campaigns_brands" style="--c:#E8457C">💄 Campaigns &amp; brand news <span>3</span></button><button class="chip" data-cat="ad_media" style="--c:#D63384">📺 Advertising &amp; media spend <span>2</span></button><button class="chip" data-cat="ai_martech" style="--c:#B84DB8">✨ AI in marketing &amp; martech <span>2</span></button><button class="chip" data-cat="social_creator" style="--c:#F06292">📱 Social, creators &amp; culture <span>1</span></button><button class="chip" data-cat="ecom_qcom" style="--c:#E57373">🛍️ E-commerce, D2C &amp; quick commerce <span>3</span></button><button class="chip" data-cat="startups_fintech" style="--c:#C2185B">🚀 Startups, founders &amp; fintech <span>2</span></button><button class="chip" data-cat="consumer" style="--c:#EC6FA0">💗 Consumer behaviour &amp; trends <span>2</span></button><button class="chip" data-cat="regulation" style="--c:#8E5A8A">⚖️ Regulation &amp; policy <span>2</span></button><button class="chip" data-cat="learning" style="--c:#DB5A8C">📚 Case studies, jobs &amp; competitor intel <span>1</span></button></nav>
+  <main><section class="cat" data-cat="campaigns_brands" style="--c:#E8457C">
+  <h2><i>💄</i>Campaigns &amp; brand news</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#E8457C"><span>💄</span><img src="https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div>
+  <div class="body">
+    <h3>Chandrika Highlights Ayurvedic Heritage in New Campaign with Keerthy Suresh</h3>
+    <p>Ayurvedic personal care brand Chandrika has launched a new advertising campaign featuring actor Keerthy Suresh. The campaign focuses on showcasing the brand&#x27;s longstanding ayurvedic heritage to consumers.</p><p>By collaborating with Suresh, the brand aims to strengthen its traditional positioning and communicate its natural formulation credentials to contemporary audiences across key markets.</p>
+    <div class="why"><b>Why it matters</b>Partnering with prominent regional and national ambassadors allows legacy brands to reinforce traditional product equities among modern consumers. It offers marketers a proven path to refresh heritage-driven narratives without losing core brand authenticity.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMiogFBVV95cUxPbGY3LVBWeWJGUjhvT0JKcW93UlBpeDhodVJXeDFqTTByRUgxUEh2a2QyUlp5SklHUE1kQUtrazlydmxsalA5ckpFQ2k1TDQ5bS1HSUdBc3B6Y2ZKdmItbHZPUTZPbnBTeVhrUXN1eVRJUm14UkM1WlpDMXlxY29DNGFLQTVFY1JTbEJaLW1GMzdnLTFKVVd1b1ZBbXRWa1ZKVGc?oc=5" target="_blank" rel="noopener">Ad campaigns ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#E8457C"><span>💄</span><img src="https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div>
+  <div class="body">
+    <h3>Ghadi Promotes Upgraded Detergent Formulation in Campaign Featuring Madhuri Dixit</h3>
+    <p>Household detergent brand Ghadi has rolled out a new advertising campaign starring actor Madhuri Dixit. The campaign is designed to spotlight the brand&#x27;s upgraded detergent product.</p><p>Through this push, Ghadi relies on Dixit&#x27;s broad mainstream appeal to communicate the functional benefits and performance enhancements of its improved formulation to everyday households.</p>
+    <div class="why"><b>Why it matters</b>Enlisting a high-recognition celebrity helps brands create instant visibility when communicating iterative FMCG product improvements. For marketers, familiar cultural icons remain an effective vehicle for validating product upgrades at scale.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMiwgFBVV95cUxOMDBpZ0lidVVYOHhfa1JpQlBvSXk0UEtxeE5VYTBaVkIwelhKOUU4NTlZMjNEcTZSWFowMlM2M0JMLVFJZ3ExSHVFM2UxNHhkVGQxZmt5eUlTTURRMXZXVDZRMDk0NWcxZTU3RWhFLU96RmQ5SjRCdGxQQ3Y0WnBxdVU5UlFoaTJYd3NyRHJySFFpaTZLbjYtM1JHRGhfaXZ5LXJXUTNyaWJxNk9PdzViMnB5aWp1cVNoamFLYXlJdDRTdw?oc=5" target="_blank" rel="noopener">Ad campaigns ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#E8457C"><span>💄</span><img src="https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div>
+  <div class="body">
+    <h3>Heer by GIVA Spotlights Everyday 9KT Gold with Anushka Sharma</h3>
+    <p>Jewellery brand GIVA has unveiled a new campaign for &#x27;Heer&#x27; featuring brand ambassador Anushka Sharma. The campaign is centered on reimagining 9KT gold jewellery tailored specifically for everyday wear.</p><p>Fronted by Sharma, the initiative promotes lower-karat gold as a modern, practical alternative, encouraging consumers to consider fine jewellery for routine styling rather than reserving it solely for special occasions.</p>
+    <div class="why"><b>Why it matters</b>Reframing 9KT gold for daily wear opens accessible price tiers and unlocks frequent use cases for fine jewellery brands. Marketers can use lifestyle-oriented celebrity narratives to shift consumer perception away from purely occasion-driven buying.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMipwFBVV95cUxNSjF1VzZsejZGOWhpZXdqU3FsQjMtRkdqMEQ2Uzl5N3FaV2FqRjZleDY2eENWR0ZJM0U5aDlZTE9hSV9SOXY4bE4yRDVnVTRwTTJWeU96cldQaG10MkZRcm90ZEVsVkp1TlA0S3dLTHVsb2tTNkVuNzhPUEhFQzhnOGFHV3VKWDhOdVktZGVwTzM3V05YN1JpMldfU3k3THhUUHczaU5KOA?oc=5" target="_blank" rel="noopener">Ad campaigns ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="ad_media" style="--c:#D63384">
+  <h2><i>📺</i>Advertising &amp; media spend</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#D63384"><span>📺</span><img src="https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div>
+  <div class="body">
+    <h3>WPP Media Wins Agency of the Year at Campaign AI Awards</h3>
+    <p>WPP Media has emerged victorious at the Campaign AI Awards, securing the prestigious title of Agency of the Year.</p><p>The win highlights the agency&#x27;s performance and capabilities in leveraging artificial intelligence within the media and advertising landscape. Recognition at these awards underscores the growing importance of AI-driven strategies in modern media planning and execution.</p><p>As the industry continues to evolve, accolades like this reflect how leading holding companies are successfully integrating artificial intelligence into their core operations to deliver enhanced value for clients.</p>
+    <div class="why"><b>Why it matters</b>This win signals that AI integration is no longer just an experimental add-on but a core differentiator for top-tier media agencies. Marketers should evaluate how their agency partners are actively applying artificial intelligence to drive campaign efficiency and innovation.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxOSFUzaTZpby1oSUtrR2VidWFNSzh0RGZIM0wtTC1vVEtJaGhBVFFUWWJvVXVuSlVBUEw5LVpsalpPMXFMaTI2UVliQ0w3WmxSZkd6ZHA2QlJVbGJBbTd2VnRUVUlMV1ZtaUxlYUQ2Mm1jZzdTVW5xaTNrREVRSEtVcmktWENfSWM2bXh2TDh1eXRpZ0U1bzlsSVVVcm9QeTA2NmY0T3ZPakRmYmtjQXcyUHhkdG8tQ1dPRS0w?oc=5" target="_blank" rel="noopener">Campaign India ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#D63384"><span>📺</span><img src="https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div>
+  <div class="body">
+    <h3>Sandeep Goyal Elected as AAAI President with Focus on CCI Probe and Goafest Reset</h3>
+    <p>Sandeep Goyal has been elected as the next President of the Advertising Agencies Association of India (AAAI).</p><p>Upon his election, Goyal invoked key industry matters, specifically pointing to a Competition Commission of India (CCI) probe and the need for a reset of the prominent industry event, Goafest.</p><p>His leadership tenure is expected to navigate these critical regulatory and event-driven challenges facing the advertising community in the near future.</p>
+    <div class="why"><b>Why it matters</b>Leadership changes at industry bodies like AAAI signal shifts in how advertising associations will lobby and manage regulatory pressures. Brands and agency leaders should closely watch upcoming developments regarding the CCI probe and Goafest as they will impact industry standards and networking.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMi0gFBVV95cUxOUS05aFR0UG5sWll2blZiY1FFTFVLcjZuU2pmLVpxTGpkYktvSmdqUUk3WGF1VS1VOElDa19jMHNqMzNuMG9vYVVMVVBwQTlKbk8zVzh1aXVvd0djdVdGelR1bGY3UE52U2VULTAxM1k4VEVTOGdwRTJ2SVVzUW5SVHNDN1RJcXFid0tBYnA1bng4UUduS2ViOWhIdm5TUC1DUUxBQ1lLY1ZtTTN4cVVIQVhYc1g1OF9rN1FpWDhpc2t6bmNncnVrSUZFd20yczlwYVHSAdIBQVVfeXFMTlEtOWhUdFBubFpZdm5WYmNRRUxVS3I2blNqZi1acUxqZGJLb0pnalFJN1hhdVUtVThJQ2tfYzBzajMzbjBvb2FVTFVQcEE5Sm5PM1c4dWl1b3dHY3VXRnpUdWxmN1BOdlNlVC0wMTNZOFRFUzhncEUydklVc1FuUlRzQzdUSXFxYndLQWJwNW54OFFHbktlYjloSHZuU1AtQ1FMQUNZS2NWbU0zeHFVSEFYWHNYNThfazdRaVg4aXNrem5jZ3J1a0lGRXdtMnM5cGFR?oc=5" target="_blank" rel="noopener">BestMediaInfo ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="ai_martech" style="--c:#B84DB8">
+  <h2><i>✨</i>AI in marketing &amp; martech</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#B84DB8"><span>✨</span><img src="https://inc42.com/cdn-cgi/image/quality=90/https://asset.inc42.com/2026/10/google-hindware-social-.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div>
+  <div class="body">
+    <h3>Google Launches Gemini 4 Argon With 1 Million-Token Output Limit</h3>
+    <p>Google has unveiled Gemini 4 Argon, its most powerful AI model to date, aimed at tackling long-running workloads across enterprise knowledge work, software engineering, and cybersecurity. The tech giant is initially rolling out Argon to select participants through its Fairwind programme, with priority access slated for Google AI Ultra subscribers and paid API customers ahead of an unannounced broader public release.</p><p>A standout technical shift in Gemini 4 Argon is its 1 million-token output limit, significantly raised from the previous 64K-token ceiling. Google noted this expanded capacity enables the model to sustain longer reasoning trajectories and complete complex, multi-step workflows in a single run. The model will launch at an introductory price of $2 per million input tokens and $10 per million output tokens, with cached input tokens discounted by 95%.</p><p>Beyond coding—where it scored 77.9% on the DeepSWE v1.1 benchmark—Argon is built for knowledge-intensive enterprise tasks such as drafting, legal research, and finance. DeepMind’s testing indicates high performance in long-context scenarios and scientific problem-solving. Additionally, the model offers multimodal features capable of analyzing charts, processing long videos, and cross-referencing multiple documents at once.</p>
+    <div class="why"><b>Why it matters</b>The leap to a 1 million-token output limit enables enterprise marketing teams to analyze massive datasets, long-form assets, and extensive video documentation in single-run workflows. With steep discounts on cached inputs, deploying advanced multimodal reasoning models into ongoing martech operations will become considerably more cost-efficient.</div>
+    <a class="src" href="https://inc42.com/buzz/google-unveils-gemini-4-argon-its-most-advanced-ai-model-yet/" target="_blank" rel="noopener">Inc42 ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#B84DB8"><span>✨</span><img src="https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div>
+  <div class="body">
+    <h3>RapidAPI Co-Founder Secures $15 Million for AI Marketing Venture enso</h3>
+    <p>The co-founder of RapidAPI has raised $15 million in funding to launch enso, a new startup focused on artificial intelligence in marketing.</p><p>The capital injection points to sustained investment activity targeting specialized AI marketing technology, even as broader venture funding environments remain selective.</p>
+    <div class="why"><b>Why it matters</b>Fresh funding for dedicated startups like enso signals continued investor belief that niche martech tools can carve out distinct value alongside foundational AI platforms. Marketers should track emerging specialized players as new AI-native products enter the marketing operations stack.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMiaEFVX3lxTE5ldzRNdDZxenQ2M2xfQXYwa2FWaVRKeF9mSHhBME9xQlFMNlRtNUU4dGh5RldLVlZBS2JZV1FaNFVDd1VDSUdNeG9PQm5sMnZqb05fSFBaRVpxcmVxcE9MU3BDWTZ6bXZO?oc=5" target="_blank" rel="noopener">AI in marketing ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="social_creator" style="--c:#F06292">
+  <h2><i>📱</i>Social, creators &amp; culture</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#F06292"><span>📱</span><img src="https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div>
+  <div class="body">
+    <h3>YouTube India Impact Report 2025 Spotlights Creator Economy Expansion</h3>
+    <p>YouTube has released its India Impact Report 2025, which underscores the continued growth and development of the country&#x27;s creator ecosystem, according to coverage by Digital Studio India. The report assesses the video platform&#x27;s influence and expanding footprint across India&#x27;s digital media landscape.</p><p>As digital video consumption solidifies its place at the center of online media, the publication outlines the expanding economic and creative presence of digital creators. The release of the annual benchmark reflects YouTube&#x27;s ongoing efforts to track community engagement, creative entrepreneurship, and the broader commercial impact of creators nationwide.</p>
+    <div class="why"><b>Why it matters</b>The steady growth of YouTube&#x27;s creator economy reinforces video and influencer collaboration as non-negotiable channels for Indian marketers. Brands must continue integrating creator-led storytelling into their media mix to sustain authentic engagement and audience reach.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMivAFBVV95cUxQTmdUV180SWE1MnMyTEd2SDhGeG1fTUp0N0tNcjZOdlJ0akdhak82Q0QySS1ZQnN0MlBSRHB3QkluSnhEMjRvVG5KY1hMVDZvaXZsRFdELXQ4eWhRVmtoUV9iVHpoT3ZjMk1mZE1pN1V5S0x3bElrRDY3MktPcEN0T0F5RTYtUUJ5d3hvZFJIX096MDIzcENiNkhQeldsdGppOHJyVXBrRGRzX043NVRkTGNRcG1fYkI3bGlCUA?oc=5" target="_blank" rel="noopener">Creators ↗</a>
+  </div>
+</article>
+  
+</section><section class="cat" data-cat="ecom_qcom" style="--c:#E57373">
+  <h2><i>🛍️</i>E-commerce, D2C &amp; quick commerce</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#E57373"><span>🛍️</span><img src="https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div>
+  <div class="body">
+    <h3>UPI transactions surge 23% to 24.07 billion in September according to NPCI</h3>
+    <p>Unified Payments Interface (UPI) transactions in India experienced a significant surge, growing by 23% to reach 24.07 billion in the month of September, according to data released by the National Payments Corporation of India (NPCI).</p><p>This robust growth underscores the continued deepening and widespread adoption of digital payments across the country, cementing UPI&#x27;s dominant role in the Indian fintech and consumer transaction ecosystem.</p>
+    <div class="why"><b>Why it matters</b>The relentless growth of UPI highlights the necessity for brands and marketers to offer seamless digital payment experiences. As transaction volumes scale, consumer expectations for friction-free checkout processes will only increase.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMilgFBVV95cUxNVWd6ZkFCWnU4MTZhVHJmYzByUjV4SWx2bVhVV01EZzEyU2x5OU44dGFzM1ZuZEpncHhLUC14bHdjYWRzaUtteG50SW9oT0YtbVRNWVZHU3dnalVJcElVR29KNGZGRjJKaXB6V0FwUUIxRy1pY3JzbDlRdGZpTlFWejYzVXV5RmNhWUstUjA5TkhDNW9Xb3c?oc=5" target="_blank" rel="noopener">UPI &amp; fintech ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#E57373"><span>🛍️</span><img src="https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div>
+  <div class="body">
+    <h3>FSSAI suspends licenses of four quick commerce dark stores in Hyderabad for food safety violations</h3>
+    <p>The Food Safety and Standards Authority of India (FSSAI) has suspended the licenses of four quick commerce dark stores located in Hyderabad following the discovery of food safety violations during inspections.</p><p>This regulatory action highlights increasing scrutiny on the operational standards and hygiene practices within the rapidly expanding quick commerce sector as authorities move to protect consumer health.</p>
+    <div class="why"><b>Why it matters</b>Quick commerce brands must prioritize rigorous supply chain and inventory hygiene alongside delivery speed. Regulatory crackdowns mean that operational lapses can quickly translate into severe reputational damage.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMi-wFBVV95cUxPVllKWFVQaUdWZXhJV1pkajNBZGJjSXk3WXhUZm9oY3k3SE9xY0FvQmdaeWdHN2prRmRRWEJ5NFl3cGdCTmtQMzdEOUJqNUYyS0F2RVh3QUY4N2FFaFB0ZDg5THdFNlZHWnpMVWltMm92OVU4aEJUWnB2THVpTTR6c0lTWi1NTnNNbDdNQlA4LUpld1drbENzNU1INTZwcW9QX3pQXzJ4NTFKLUNfOEpoZGN3cFM3eWRlX2lkb2dzWmV3MnJwVnM1WEo4eTYxTVl5RmtNTEZ0RzV2cE5zMG5WVXlLeUNXZXV2WUM1QnIzNDdkVjB4YmNTaVpnWdIBggJBVV95cUxNcGkxOHpPUklmZGdzNHk5aFFvam9RRHQ0dUt0S01tbXpDT3FMLWtPTkFOeGNFWUJZZDAwLVpPWkM0b08xVEdyb1I1NlBDOGxQUFFkRXBvMDJZTldEZGVwMWx4Qll1d3RRY0lqSEVvX1FvM19iVGh0UGhsRmlfamVKdGRhajF3VmxPVWxzWkNpLV9nYXNtUWR1MUpLUWpDODZwODdJa2prY0hoRzlNNE5VeDZZN1NpUlUyWmtDRS1NYW5NRlEwSVpVQ0pwZDhIeHNaZVEyaFBqSFJyT0REVk9PcWFmM19hbWc1N0VDVHRSNHR4SkdGNXZmY0U0aUIxWk9nRUE?oc=5" target="_blank" rel="noopener">Quick commerce ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#E57373"><span>🛍️</span></div>
+  <div class="body">
+    <h3>Amazon&#x27;s quick commerce and grocery business posts Rs 1,158 crore loss in FY26 despite 50% revenue growth</h3>
+    <p>Amazon&#x27;s quick-commerce and grocery business arm saw its revenue from operations rise by 50% to reach Rs 3,051 crore in FY26. However, heavy expenses related to delivery charges and procurement heavily impacted profitability, resulting in a net loss of Rs 1,158 crore.</p><p>The figures illustrate the high-burn nature of scaling quick commerce and grocery operations in India, where aggressive expansion and logistics costs continue to outweigh top-line gains.</p>
+    <div class="why"><b>Why it matters</b>The heavy losses at scale demonstrate that the quick commerce model remains capital-intensive and margin-pressured. Marketers partnering with these platforms should anticipate tightening promotional margins as companies shift focus toward controlling logistics and procurement costs.</div>
+    <a class="src" href="https://www.medianama.com/2026/10/223-amazon-quick-commerce-grocery-loss-fy26/" target="_blank" rel="noopener">MediaNama ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="startups_fintech" style="--c:#C2185B">
+  <h2><i>🚀</i>Startups, founders &amp; fintech</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#C2185B"><span>🚀</span><img src="https://inc42.com/cdn-cgi/image/quality=90/https://asset.inc42.com/2025/12/swiggy-students-social-.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div>
+  <div class="body">
+    <h3>SBI Mutual Fund Raises Stake in Swiggy to Over 5% Following Open Market Purchase</h3>
+    <p>SBI Mutual Fund has acquired an additional 1.18 Cr equity shares of foodtech major Swiggy through open market transactions. Based on the closing price of ₹253.90 on the day of the trade, the fund house invested over ₹300.6 Cr, lifting its total shareholding past the mandatory 5% disclosure threshold to approximately 5.1%. This transaction comes shortly after Swiggy secured shareholder approval to cap foreign ownership at 49.5%, earning it the status of an Indian-owned and controlled company. This structural shift allows Swiggy to pivot its quick commerce arm, Instamart, toward an inventory-led model to directly procure and sell products, a move brokerage Jefferies estimates could drive an 80 bps margin upside.</p><p>Financially, Swiggy reported a narrowed net loss of ₹791 Cr in Q1 FY27, marking a 34% year-on-year improvement, while operating revenue surged 36.8% to ₹6,812 Cr. Instamart also achieved a key profitability milestone by reaching contribution margin breakeven during the quarter. Despite these operational advancements, domestic mutual funds collectively held a 22.8% stake in Swiggy as of June 30, 2026, compared to rival Eternal&#x27;s 31.7%. Swiggy shares closed 4.88% lower at ₹238 on the BSE following the market updates.</p>
+    <div class="why"><b>Why it matters</b>Marketers working with quick-commerce platforms should watch the shift toward inventory-led models, which allow for deeper brand partnerships and direct procurement. As platforms like Instamart restructure for better margins, brand visibility and inventory placement strategies will need to adapt accordingly.</div>
+    <a class="src" href="https://inc42.com/buzz/sbi-mutual-fund-doubles-down-on-swiggy-buys-stock-worth-%e2%82%b9300-cr/" target="_blank" rel="noopener">Inc42 ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#C2185B"><span>🚀</span><img src="https://inc42.com/cdn-cgi/image/quality=90/https://asset.inc42.com/2026/10/Jio-Financial-Services-social.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div>
+  <div class="body">
+    <h3>Jio Financial Services and Allianz Infuse ₹640 Cr into General Insurance Joint Venture</h3>
+    <p>Jio Financial Services (JFS) and German insurance major Allianz have cumulatively pumped ₹640.1 Cr into their general insurance joint venture, Jio Allianz General Insurance. Each company invested ₹320.05 Cr through a rights issue by subscribing to 32 Lakh shares apiece, maintaining their equal 50:50 ownership structure. The newly raised capital will be utilized to fund the business operations of the joint venture, which was launched on May 12, 2026, to provide general and health insurance products to individuals and businesses in India.</p><p>This capital infusion is part of JFS&#x27;s aggressive expansion across the fintech sector, which includes lending, payments, insurance, investments, and wealth management. JFS already operates ventures such as Jio Insurance Broking and a reinsurance JV with Allianz, alongside partnerships with BlackRock and proposed collaborations with Bank of America. On the financial front, JFS reported strong momentum with net profits scaling 2.6 times to ₹830.3 Cr in Q1 FY27, while operating revenue crossed ₹2,000 Cr. JFS shares closed 2.17% lower at ₹211.90 on the BSE.</p>
+    <div class="why"><b>Why it matters</b>The rapid scaling of Jio&#x27;s financial ecosystem signals increased competition and deeper digital integration across fintech and insurtech services in India. Brands partnering with expanding financial conglomerates gain access to massive distribution networks and advanced consumer financial data.</div>
+    <a class="src" href="https://inc42.com/buzz/jio-financial-services-allianz-pump-%e2%82%b9640-cr-into-general-insurance-jv/" target="_blank" rel="noopener">Inc42 ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="consumer" style="--c:#EC6FA0">
+  <h2><i>💗</i>Consumer behaviour &amp; trends</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#EC6FA0"><span>💗</span><img src="https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div>
+  <div class="body">
+    <h3>Eighty-six percent of Indian shoppers plan to increase festive budgets this year</h3>
+    <p>A recent industry report from Campaign India reveals that a striking 86 percent of Indian shoppers are planning to increase their spending budgets for the upcoming festive season. This strong intent highlights a significant surge in consumer confidence and willingness to spend as the peak shopping period approaches.</p><p>The findings point toward a highly lucrative season for brands across categories as households prepare to open their wallets wider than in previous years. Marketers are gearing up for high-volume demand and heightened engagement across both digital and physical retail channels.</p><p>As consumer optimism translates into actual purchases, brands that successfully capture this increased budgetary allocation through targeted campaigns and compelling offers stand to gain a major market share during the festivities.</p>
+    <div class="why"><b>Why it matters</b>The overwhelming intent to spend more means brands should ramp up their festive inventory and marketing budgets early. Performance marketers must capture this high-intent traffic with agile, conversion-focused campaigns.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxNQl9telJNd3hYRi0wTWNLMWpUTnBnQmFoSFJJUkhBdF9pRWl1V0d4dzA0U3E0V2oxbDdObTh5MUJ5bmtzSThMak43MDcyQXRhdUo5dEpUYXlpUWg4Q3JJUjFLNWlJMDdjUEhldzJlT0Z2bHRPVmJIaDBLQTFuT2UtMVlCTVJYd3ZPTVI4cXRQSDNrZl9RYU1JUXdkM0VfSDA0R25kbUJaTDdSVndINWxucGlfdGFraUV0bGVWNTZVVHY?oc=5" target="_blank" rel="noopener">Campaign India ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#EC6FA0"><span>💗</span><img src="https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div>
+  <div class="body">
+    <h3>Buoyant Q2 demand for consumer goods lifts festive sales outlook in India</h3>
+    <p>Strong and buoyant demand for consumer goods during the second quarter has significantly brightened the sales outlook for the upcoming festive season. According to reports from the Economic Times, this positive momentum reflects resilient consumer sentiment and steady consumption patterns across the Indian market.</p><p>The consistent pickup in Q2 serves as a strong foundation for manufacturers and retailers as they step into the crucial festive months. This early strength suggests that broader economic conditions and consumer appetite are aligning favorably for retail growth.</p><p>Industry stakeholders are now anticipating robust sales volumes as the positive Q2 trajectory flows directly into festive shopping demand. Brands are positioning themselves to capitalize on this sustained momentum with enhanced supply chains and promotional strategies.</p>
+    <div class="why"><b>Why it matters</b>A strong Q2 consumer demand baseline signals a confident buyer market ready for festive shopping. Brand marketers should leverage this positive momentum to build early brand recall and loyalty before competitors flood the channels.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMi5wFBVV95cUxQY3VScVdwbW5MTGZWTVJEYnhmaUxBM3RPN1lUN011UlByS2Q4Ri1mckdPdWdCS25oZXBBeVVHNXdlWHNheE1jcXBRbjA1Q21vZjBrVDVuTkpWRExjUnVhZUl6dUlzcE5xc0JDY3lvX3ktNFNOVGNtelp1NXoxVldSU1pqd2tXZHBpbV9hTWdXQmVnajBIdlhLVzRUS0pSbFRHR19LWUpJUFRwSWY1QWdITHk2dFpFSlBGZ09DYmdKQUNUaFYzTnVJMi05MjNVSkFJaHB4QVpJTEZuMjJ5SkR0RmFLNS1VUEHSAeABQVVfeXFMUDYxZVpNVHI1Y3dhWHJyLTFUd0JGR3FFR3ZzM0d2cDZ1TEhWdEdJZ21GOXhVYUNzaXZrMWN1SG9pZUp2YUxUN2VaVGYtU042UnBhMWxoLXJQemFEaTBCSFNPdXJRNDJQcVNadU1mNXlzUkI5S2NUY0Jzc2lPWlVGaW14dnBFdGx6V2lBaDBqcUE5OEFvYlA5T2lwQjBpSThaUHIyeHhXV0FJWktsTVhtc2pTbG0tRHZwZDBrOTRBR2F6LWQyeGZvdlZya1FVZHJnN1MyUlZOQUo4dXhfbXFCRi0?oc=5" target="_blank" rel="noopener">Indian consumers ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="regulation" style="--c:#8E5A8A">
+  <h2><i>⚖️</i>Regulation &amp; policy</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#8E5A8A"><span>⚖️</span><img src="https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div>
+  <div class="body">
+    <h3>Nasscom and MeitY Launch DPDP Workshop Series on Readiness and Reality</h3>
+    <p>Nasscom and MeitY have initiated a workshop series titled &#x27;DPDP Workshop Series: From Readiness to Reality&#x27; to help organizations navigate the Digital Personal Data Protection Act. The collaborative sessions are designed to guide businesses through the transition from initial compliance readiness to practical implementation.</p><p>As the regulatory landscape evolves in India, these workshops serve as a crucial platform for stakeholders to align their data handling and privacy practices with the newly mandated legal standards. Companies are increasingly seeking clarity on operationalizing the DPDP framework within their existing digital and marketing infrastructures.</p><p>Moving forward, these sessions are expected to address specific implementation challenges faced by enterprises. Organizations will need to closely monitor outcomes and insights from the series to ensure their data collection and processing methods remain fully compliant.</p>
+    <div class="why"><b>Why it matters</b>Marketers must closely track these MeitY and Nasscom sessions to understand practical compliance realities under the DPDP Act. Aligning data collection, consumer consent, and targeting strategies with these evolving regulatory frameworks will be critical to avoiding legal pitfalls.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxOSTAyY2FPNlBsSF9RQXdDOEg5VzdLMy1OeHV5X2xXdjhvYkx2MjZfMVFQZ0FyTERNVmxHejhtb20zZE1LVUhJX2JBMkt4aWtsZkhwZW5IVzdwR25vYlBmZWJhN1BIUWw1Uk04RzdlRXJnU0hUem9NOW0zSGcxZGNEelIzWXZHQkp5QU1FODMwMlVTRWc0eVZYbVdoTl80RjBsNTJqWHZGcXFaamc?oc=5" target="_blank" rel="noopener">Marketing regulation ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#8E5A8A"><span>⚖️</span></div>
+  <div class="body">
+    <h3>Stakeholders Warn TRAI That 5G Network Slicing Must Not Compromise Net Neutrality</h3>
+    <p>During a recent TRAI open house discussion, industry stakeholders including the Broadband India Forum (BIF), consumer groups, Bharti Airtel, and Reliance Jio presented their perspectives on the proposed regulatory framework for 5G network slicing and quality of service. A core concern raised during the session was ensuring that advanced network slicing capabilities do not dilute core net neutrality principles.</p><p>The consultation highlights the delicate regulatory balance telecom authorities must strike as 5G services expand across India. Network slicing allows operators to partition networks for specialized services, but consumer advocates and industry players are pushing for safeguards to prevent discriminatory access or degraded speeds for standard traffic.</p><p>TRAI will now review the inputs from carriers, industry bodies, and consumer advocates to shape the final policy. The resulting framework will dictate how telecom operators deploy 5G features while maintaining open internet standards.</p>
+    <div class="why"><b>Why it matters</b>Brand and performance marketers relying on seamless, high-speed mobile delivery must monitor how TRAI balances network slicing with net neutrality. Any shifts in telecom quality of service frameworks could directly impact mobile-first ad delivery, video streaming experiences, and consumer engagement.</div>
+    <a class="src" href="https://www.medianama.com/2026/10/223-trai-network-slicing-net-neutrality-stakeholders/" target="_blank" rel="noopener">MediaNama ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="learning" style="--c:#DB5A8C">
+  <h2><i>📚</i>Case studies, jobs &amp; competitor intel</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#DB5A8C"><span>📚</span><img src="https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div>
+  <div class="body">
+    <h3>Virginia Sharma Moves From Google to Salesforce as CMO, Missionforce</h3>
+    <p>Virginia Sharma has made a significant career transition, moving from her previous role at Google to join Salesforce as the Chief Marketing Officer for Missionforce. The announcement highlights a high-profile leadership shift within the tech and marketing sectors as Salesforce strengthens its executive team.</p><p>In her new position at Salesforce, Sharma will helm marketing strategies for Missionforce, leveraging her extensive industry experience gained from her tenure at tech giant Google. Her appointment comes at a time when major enterprise technology companies are heavily investing in targeted marketing leadership to drive growth and cloud adoption.</p><p>As she steps into this role, the industry will be watching to see how Sharma&#x27;s background at Google shapes Salesforce&#x27;s upcoming marketing campaigns and strategic positioning for Missionforce in a competitive landscape.</p>
+    <div class="why"><b>Why it matters</b>Executive leadership movements between tech giants signal shifting strategic priorities in enterprise marketing. Marketers should monitor how Sharma&#x27;s B2B and tech background influences Salesforce&#x27;s brand positioning and go-to-market strategies.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxNbFByN0NGdXdycHRLZHVGOUJ1bURZeXp6aHFGLVVzS0FINVFmN0hqZ2RvZVJESkdMcW9NZnVxZExlYi14UFJzeEV4U3RZRXkxQVhYOURMeFZBdDA3eERXT19JLV9XbVE1a3AyYzBmam5LLTl0clBERU1ZR0l5WXA5MDJjQ05ZQTB4aTZRMUtnTTdKSHZTUDhZU1FpZ1NQdWhxc3RGVUdRd3NaeUdWY20waVFrZTBPV1Z2V1o5QTByY0w?oc=5" target="_blank" rel="noopener">Marketing jobs &amp; CMOs ↗</a>
+  </div>
+</article>
+  
+</section></main>
+
+  <section class="archive">
+    <h2>Past briefings</h2>
+    <div class="days"><a href="2026-10-01.html">Today</a></div>
+  </section>
+  <footer>Updated 01 Oct 2026, 05:31 PM IST · Articles are AI-written summaries; open the source before quoting. 🌸</footer>
+</div>
+<script>
+document.querySelectorAll('.chip').forEach(function(c){
+  c.addEventListener('click',function(){
+    document.querySelectorAll('.chip').forEach(function(x){x.classList.remove('on')});
+    c.classList.add('on');
+    var k=c.dataset.cat;
+    document.querySelectorAll('.cat').forEach(function(s){s.style.display=(k==='all'||s.dataset.cat===k)?'':'none'});
+    window.scrollTo({top:document.querySelector('nav').offsetTop,behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>
