@@ -29,6 +29,13 @@ CATEGORIES = {
         "AI tools for marketing and advertising, generative AI in creative and media, martech and adtech launches, "
         "AI features in Google/Meta ad platforms, marketing automation and measurement.",
         "#B84DB8", "✨"),
+    "ai_world": ("AI in India & global",
+        "The wider AI world beyond marketing, in India and globally. India: IndiaAI Mission, government AI policy, "
+        "Indian AI startups and models (Sarvam, Krutrim and others), AI funding, data centres and AI jobs in India. "
+        "Global: new AI models and products (OpenAI, Google, Anthropic, Meta, Microsoft), big AI deals, AI regulation "
+        "and AI's impact on jobs and business. Aim for a mix of India and global stories. "
+        "Marketing-specific AI tools go in AI in marketing & martech instead.",
+        "#A855F7", "🤖"),
     "social_creator": ("Social, creators & culture",
         "Social platform changes (Instagram, YouTube, LinkedIn, X, ShareChat), influencer and creator economy, "
         "viral trends, moment marketing, entertainment, OTT, cricket and pop-culture marketing.",
@@ -87,6 +94,12 @@ FEEDS = [
     ("Marketing regulation", gnews('ASCI OR DPDP OR "dark patterns" OR "misleading ads"')),
     ("AI in marketing", gnews("AI marketing OR advertising")),
     ("Marketing jobs & CMOs", gnews('CMO OR "marketing head" OR "marketing jobs" India')),
+    # AI world
+    ("MIT Technology Review AI", "https://www.technologyreview.com/topic/artificial-intelligence/feed"),
+    ("TechCrunch AI", "https://techcrunch.com/category/artificial-intelligence/feed/"),
+    ("The Verge AI", "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml"),
+    ("AI in India", gnews('"artificial intelligence" OR "AI" India startup OR policy')),
+    ("IndiaAI & Indian AI startups", gnews('IndiaAI OR "AI mission" OR Sarvam OR Krutrim OR "Indian AI"')),
     # Global
     ("Marketing Dive", "https://www.marketingdive.com/feeds/news/"),
     ("Digiday", "https://digiday.com/feed/"),
@@ -98,5 +111,5 @@ FEEDS = [
 
 HOURS_BACK = 30              # only stories from the last N hours
 PER_FEED = 4                 # max stories per source (keeps every source represented)
-MAX_ARTICLES = 116           # max headlines the AI chooses from
+MAX_ARTICLES = 136           # max headlines the AI chooses from
 ARTICLES_PER_CATEGORY = 3    # full articles written per section
