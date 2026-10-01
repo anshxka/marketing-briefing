@@ -101,6 +101,22 @@ def real_link(url):
     return url
 
 
+def brand_logo(domain):
+    """Brand logo from the brand's website (via Google's public icon service). '' if none found."""
+    domain = re.sub(r"^https?://|^www\.|/.*$", "", (domain or "").strip().lower())
+    if not re.fullmatch(r"[a-z0-9.-]+\.[a-z]{2,}", domain):
+        return ""
+    url = f"https://www.google.com/s2/favicons?domain={domain}&sz=256"
+    try:
+        r = requests.get(url, timeout=15)
+        # tiny responses are Google's generic globe icon -> treat as "no logo"
+        if r.status_code == 200 and len(r.content) > 2500:
+            return url
+    except Exception:
+        pass
+    return ""
+
+
 def read_page(url):
     """Download the article: main text + its preview image (og:image)."""
     try:
@@ -248,6 +264,8 @@ Rules:
 - "article": 3 to 4 paragraphs, about 180-250 words: what happened, key details and numbers, context,
   what comes next. Separate paragraphs with a blank line (\\n\\n).
 - "why": 2 sentences on what this means for marketers and brands - the takeaway or lesson.
+- "brand": the main company or brand the story is about (e.g. "Nike"), or "" if there isn't one.
+- "domain": that brand's main website domain (e.g. "nike.com", "zomato.com"), or "" if unsure.
 - Use only facts from the source text. If a source is only a short snippet, write 1-2 paragraphs and do not
   invent details, quotes or numbers.
 
@@ -267,8 +285,10 @@ Reply with ONLY valid JSON:
     for a in chosen:
         w = written.get(a["id"])
         if w and w.get("article"):
+            logo = "" if a["image"] else brand_logo(w.get("domain"))
             grouped[a["category"]].append({**a, "headline": w.get("headline") or a["title"],
-                                           "article": w["article"], "why": w.get("why", "")})
+                                           "article": w["article"], "why": w.get("why", ""),
+                                           "brand": w.get("brand", ""), "logo": logo})
     headlines = "\n".join(f'- {s["headline"]}' for v in grouped.values() for s in v)
     if not headlines:
         raise SystemExit("No articles could be written today - see errors above")
@@ -288,18 +308,24 @@ def paragraphs(text):
 
 
 # ================= 4. Dashboard =================
-def media(s, emoji, color):
-    img = ""
+def media(s, emoji, color, section=""):
+    """Photo if we have one; otherwise the brand's logo on a pink tile; otherwise an elegant text card."""
+    brand = esc(s.get("brand") or "")
+    layers = f'<div class="type"><small>{esc(s.get("source", ""))}</small><b>{brand or esc(section)}</b></div>'
+    if s.get("logo"):
+        layers += (f'<div class="logo"><div class="tile"><img src="{esc(s["logo"])}" alt="{brand}" loading="lazy" '
+                   f'referrerpolicy="no-referrer" onerror="this.closest(\'.logo\').remove()"></div>'
+                   f'{f"<em>{brand}</em>" if brand else ""}</div>')
     if s.get("image"):
-        img = (f'<img src="{esc(s["image"])}" alt="" loading="lazy" referrerpolicy="no-referrer" '
-               f'onerror="this.remove()">')
-    return f'<div class="media" style="--c:{color}"><span>{emoji}</span>{img}</div>'
+        layers += (f'<img class="photo" src="{esc(s["image"])}" alt="" loading="lazy" referrerpolicy="no-referrer" '
+                   f'onerror="this.remove()">')
+    return f'<div class="media" style="--c:{color}">{layers}</div>'
 
 
-def story_html(s, emoji, color, featured=False):
+def story_html(s, emoji, color, featured=False, section=""):
     body = "".join(f"<p>{esc(p)}</p>" for p in paragraphs(s["article"]))
     return f'''<article class="story{' featured' if featured else ''}">
-  {media(s, emoji, color)}
+  {media(s, emoji, color, section)}
   <div class="body">
     <h3>{esc(s["headline"])}</h3>
     {body}
@@ -332,8 +358,8 @@ def build_dashboard(brief, today, archive_html):
             continue
         chips.append(f'<button class="chip" data-cat="{key}" style="--c:{color}">{emoji} {esc(name)} '
                      f'<span>{len(stories)}</span></button>')
-        first = story_html(stories[0], emoji, color, featured=True)
-        rest = "".join(story_html(s, emoji, color) for s in stories[1:])
+        first = story_html(stories[0], emoji, color, featured=True, section=name)
+        rest = "".join(story_html(s, emoji, color, section=name) for s in stories[1:])
         sections.append(f'''<section class="cat" data-cat="{key}" style="--c:{color}">
   <h2><i>{emoji}</i>{esc(name)}</h2>
   {first}
@@ -375,6 +401,9 @@ def build_email(brief, today):
             if s.get("image"):
                 p.append(f'<img src="{esc(s["image"])}" alt="" style="width:100%;max-height:260px;object-fit:cover;'
                          f'border-radius:12px;margin-top:14px">')
+            elif s.get("logo"):
+                p.append(f'<div style="background:#FFE4EE;border-radius:12px;padding:18px;text-align:center;margin-top:14px">'
+                         f'<img src="{esc(s["logo"])}" alt="" width="64" height="64" style="border-radius:14px;background:#fff;padding:8px"></div>')
             p.append(f'<h3 style="font-family:Georgia,serif;font-size:19px;margin:12px 0 6px">{esc(s["headline"])}</h3>'
                      + "".join(f'<p style="margin:0 0 10px;line-height:1.6">{esc(x)}</p>' for x in paragraphs(s["article"]))
                      + f'<p style="background:#FFF0F5;border-radius:10px;padding:10px 12px;margin:6px 0">'
