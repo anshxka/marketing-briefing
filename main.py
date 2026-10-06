@@ -192,22 +192,48 @@ def call_claude(prompt):
     return "".join(b.get("text", "") for b in r.json()["content"])
 
 
+def parse_json(text):
+    """Read the AI's JSON answer, repairing common small mistakes (trailing commas, code fences, stray text)."""
+    text = re.sub(r"^```(?:json)?|```$", "", (text or "").strip(), flags=re.M).strip()
+    text = text[text.find("{"): text.rfind("}") + 1]
+    for attempt in (text, re.sub(r",\s*([}\]])", r"\1", text)):
+        try:
+            return json.loads(attempt, strict=False)
+        except json.JSONDecodeError:
+            continue
+    raise ValueError("AI reply was not valid JSON")
+
+
 def ask_ai(prompt):
-    """Uses whichever keys you added, in order: Gemini, Groq, Claude."""
+    """Uses whichever keys you added, in order: Gemini, Groq, Claude. Re-asks if a reply is broken."""
     errors = []
     for env, fn in (("GEMINI_API_KEY", call_gemini), ("GROQ_API_KEY", call_groq), ("ANTHROPIC_API_KEY", call_claude)):
         if not os.getenv(env):
             continue
-        try:
-            text = fn(prompt)
-            return json.loads(text[text.find("{"): text.rfind("}") + 1])
-        except Exception as e:
-            print(f"{fn.__name__} failed, trying next: {e}")
-            errors.append(str(e))
+        for attempt in range(3):
+            try:
+                return parse_json(fn(prompt))
+            except ValueError as e:
+                print(f"{fn.__name__}: broken reply (attempt {attempt + 1}/3), asking again...")
+                errors.append(str(e))
+                time.sleep(10)
+            except Exception as e:
+                print(f"{fn.__name__} failed, trying next: {e}")
+                errors.append(str(e))
+                break
     raise SystemExit("All AI providers failed:\n" + "\n".join(errors or ["No API key found - add GEMINI_API_KEY"]))
 
 
 # ================= 3. Build the briefing =================
+# Backup keywords: if the AI leaves one of these sections empty, matching headlines are used instead.
+SECTION_KEYWORDS = {   # (words that must appear, and if given, at least one context word too)
+    "ai_martech": (["AI", "generative", "automation", "chatbot", "martech", "adtech", "Advantage\\+", "Performance Max"],
+                   ["marketing", "marketer", "advertis", "ads?", "brand", "campaign", "creative", "martech", "adtech",
+                    "Meta", "Google"]),
+    "ai_world": (["AI", "OpenAI", "ChatGPT", "Gemini", "Anthropic", "Claude", "LLM", "artificial intelligence",
+                  "IndiaAI", "Sarvam", "Krutrim", "data centre", "data center"], None),
+}
+
 READER = ("a performance and brand marketer in India who wants situational awareness on marketing, "
           "advertising, brands, consumers, startups and the business forces shaping them")
 
@@ -227,6 +253,8 @@ Today's headlines (id in brackets):
 
 Pick the most important, genuinely newsworthy stories. Skip fluff, ads, listicles and repeats of the same event.
 Put each in exactly ONE section, at most {ARTICLES_PER_CATEGORY} per section, most important first.
+Fill EVERY section: give each section at least 2 stories whenever any reasonably relevant headline exists
+(for example, any story about AI tools, AI ads or AI creative counts for "AI in marketing & martech").
 Reply with ONLY valid JSON: {{"stories": [{{"id": 0, "category": "campaigns_brands"}}]}}""")
 
     by_id = {a["id"]: a for a in articles}
@@ -237,6 +265,22 @@ Reply with ONLY valid JSON: {{"stories": [{{"id": 0, "category": "campaigns_bran
         if a and cat in counts and counts[cat] < ARTICLES_PER_CATEGORY:
             counts[cat] += 1
             chosen.append({**a, "category": cat})
+
+    # make sure no section is left empty: fill it with matching headlines if the AI skipped it
+    used = {a["id"] for a in chosen}
+    for key, words in SECTION_KEYWORDS.items():
+        if key in counts and counts[key] == 0:
+            for a in articles:
+                if counts[key] >= 2:
+                    break
+                must, context = words
+                hit = any(re.search(rf"\b{w}", a["title"], re.I) for w in must)
+                ctx = context is None or any(re.search(rf"\b{w}", a["title"], re.I) for w in context)
+                if a["id"] not in used and hit and ctx:
+                    used.add(a["id"])
+                    counts[key] += 1
+                    chosen.append({**a, "category": key})
+            print(f"section '{key}' was empty - filled {counts[key]} by keywords")
 
     for a in chosen:
         a["link"] = real_link(a["link"])
@@ -477,6 +521,7 @@ def main():
     # archive copies sit one folder deeper, so fix their links
     day_file.write_text(page.replace('href="archive/', 'href="'), encoding="utf-8")
     print("Dashboard written to docs/index.html")
+
 
     for step in (send_email, send_telegram):
         try:

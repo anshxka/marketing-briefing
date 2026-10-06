@@ -92,7 +92,10 @@ FEEDS = [
     ("Creators", gnews('influencer OR "creator economy" India')),
     ("Indian consumers", gnews('"consumer trends" OR "consumer demand" India')),
     ("Marketing regulation", gnews('ASCI OR DPDP OR "dark patterns" OR "misleading ads"')),
-    ("AI in marketing", gnews("AI marketing OR advertising")),
+    ("AI in marketing", gnews('"AI" marketing OR advertising OR "ad campaign" India')),
+    ("Generative AI in ads", gnews_us('"generative AI" advertising OR marketing OR creative')),
+    ("AI ad tools", gnews_us('"Meta" OR "Google" AI ads tools advertisers')),
+    ("Martech", gnews('martech OR adtech India')),
     ("Marketing jobs & CMOs", gnews('CMO OR "marketing head" OR "marketing jobs" India')),
     # AI world
     ("MIT Technology Review AI", "https://www.technologyreview.com/topic/artificial-intelligence/feed"),
@@ -111,5 +114,5 @@ FEEDS = [
 
 HOURS_BACK = 30              # only stories from the last N hours
 PER_FEED = 4                 # max stories per source (keeps every source represented)
-MAX_ARTICLES = 136           # max headlines the AI chooses from
+MAX_ARTICLES = 148           # max headlines the AI chooses from
 ARTICLES_PER_CATEGORY = 3    # full articles written per section
