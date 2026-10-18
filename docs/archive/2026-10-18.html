@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#FFE4EE">
+<title>The Marketing Edit · Sunday, 18 October 2026</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFF5F8; --card:#FFFFFF; --ink:#3A1430; --muted:#8A5A78; --line:#F7D3E1;
+  --rose:#E8457C; --blush:#FFE4EE; --soft:#FFF0F5; --shadow:0 10px 30px -18px rgba(194,24,91,.35);
+  --serif:"Playfair Display",Georgia,"Times New Roman",serif;
+  --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#1C0E18; --card:#28141F; --ink:#FBE8F1; --muted:#C99AB4; --line:#44243A;
+  --blush:#3A1B2F; --soft:#2F1727; --shadow:0 10px 30px -18px rgba(0,0,0,.6);
+}}
+*{box-sizing:border-box}
+html{scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--sans);
+  background-image:radial-gradient(circle at 15% 0%,var(--blush) 0,transparent 40%),radial-gradient(circle at 90% 10%,var(--blush) 0,transparent 35%);
+  background-repeat:no-repeat}
+.wrap{max-width:1040px;margin:auto;padding:36px 20px 70px}
+a{color:inherit}
+
+/* masthead */
+header{text-align:center;margin-bottom:30px}
+.kicker{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--rose);font-weight:700;margin:0}
+h1{font:italic 600 clamp(40px,8vw,72px)/1.05 var(--serif);margin:10px 0 8px;letter-spacing:-.01em}
+.date{color:var(--muted);margin:0}
+.date b{color:var(--rose);font-weight:500}
+.byline{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 14px;margin:14px 0 4px;font-size:15px;color:var(--muted)}
+.byline b{color:var(--ink);font-weight:700}
+.byline em{font:italic 600 17px var(--serif);color:var(--rose)}
+.social{display:inline-flex;gap:8px}
+.social a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:14px;font-weight:500;color:var(--ink);
+  background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 13px 6px 9px;transition:.15s}
+.social a:hover{border-color:var(--rose);color:var(--rose);transform:translateY(-1px)}
+.social svg{width:18px;height:18px;flex:none}
+.flourish{color:var(--rose);letter-spacing:.6em;margin-top:12px;font-size:14px}
+
+/* top cards */
+.top{display:grid;grid-template-columns:1.6fr 1fr;gap:18px;margin-bottom:30px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px 26px;box-shadow:var(--shadow)}
+.card h2{font:600 22px var(--serif);margin:0 0 12px}
+.big{list-style:none;margin:0;padding:0;counter-reset:n}
+.big li{counter-increment:n;position:relative;padding:0 0 14px 44px;font:500 17px/1.5 var(--serif)}
+.big li::before{content:counter(n);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;
+  background:var(--blush);color:var(--rose);font:700 14px/30px var(--sans);text-align:center}
+.tip{background:linear-gradient(140deg,#FFD6E5,#FFC1D8 55%,#F9A8C9);color:#4A1033;border:0}
+.tip h2{color:#4A1033}
+.tip p{margin:0;font-size:16px}
+@media (prefers-color-scheme:dark){.tip{background:linear-gradient(140deg,#5A2045,#7A2858);color:#FFE4EE}.tip h2{color:#FFE4EE}}
+
+/* chips */
+nav{position:sticky;top:0;z-index:5;display:flex;gap:8px;overflow-x:auto;padding:12px 0;margin-bottom:6px;
+  background:var(--bg);scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+.chip{--c:var(--rose);flex:none;font:500 14px var(--sans);color:var(--ink);background:var(--card);
+  border:1px solid var(--line);border-radius:999px;padding:8px 15px;cursor:pointer;transition:.15s}
+.chip span{color:var(--muted);margin-left:3px}
+.chip:hover{border-color:var(--c)}
+.chip.on{background:var(--c);border-color:var(--c);color:#fff}.chip.on span{color:#ffffffd0}
+.chip:focus-visible,a:focus-visible{outline:2px solid var(--rose);outline-offset:2px}
+
+/* sections */
+.cat{margin-top:38px}
+.cat>h2{display:flex;align-items:center;gap:12px;font:600 28px var(--serif);margin:0 0 16px}
+.cat>h2 i{font-style:normal;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;
+  background:var(--blush);font-size:22px}
+.story{background:var(--card);border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:var(--shadow);
+  display:flex;flex-direction:column}
+.story.featured{display:grid;grid-template-columns:1fr 1.15fr;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.media{position:relative;aspect-ratio:16/10;overflow:hidden;
+  background:radial-gradient(circle at 25% 20%,#ffffff99 0,transparent 45%),linear-gradient(135deg,var(--blush),color-mix(in srgb,var(--c) 45%,var(--blush)))}
+.featured .media{aspect-ratio:auto;min-height:100%}
+.media .type{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:22px 24px;color:#4A1033}
+.media .type small{font:700 11px var(--sans);letter-spacing:.2em;text-transform:uppercase;opacity:.75}
+.media .type b{font:italic 600 clamp(24px,3vw,34px)/1.1 var(--serif);margin-top:4px}
+.media .logo{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
+  background:inherit}
+.media .tile{width:38%;max-width:150px;aspect-ratio:1;background:#fff;border-radius:28px;display:grid;place-items:center;
+  box-shadow:0 14px 34px -14px rgba(194,24,91,.45)}
+.media .tile img{width:62%;height:62%;object-fit:contain}
+.media .logo em{font:italic 600 20px var(--serif);color:#4A1033;font-style:italic}
+.media .photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media (prefers-color-scheme:dark){.media .type,.media .logo em{color:#FFE4EE}}
+.body{padding:22px 24px 24px}
+.story h3{font:600 22px/1.3 var(--serif);margin:0 0 12px}
+.featured h3{font-size:27px}
+.story p{margin:0 0 12px;color:var(--ink)}
+.why{background:var(--soft);border-left:3px solid var(--c);border-radius:12px;padding:12px 14px;margin:14px 0 12px;font-size:15px}
+.why b{display:block;color:var(--c);font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:3px}
+.src{font-size:14px;color:var(--muted);text-decoration:none}
+.src:hover{color:var(--rose)}
+
+/* archive */
+.archive{margin-top:50px;text-align:center}
+.archive h2{font:italic 600 24px var(--serif);margin:0 0 14px}
+.days{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.days a{text-decoration:none;font-size:14px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 14px}
+.days a:hover{border-color:var(--rose);color:var(--rose)}
+footer{text-align:center;color:var(--muted);font-size:13px;margin-top:34px}
+
+@media (max-width:760px){
+  .top{grid-template-columns:1fr}
+  .story.featured{grid-template-columns:1fr}
+  .featured .media{aspect-ratio:16/10}
+  .featured h3{font-size:23px}
+  .wrap{padding-top:26px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="kicker">Your daily marketing briefing</p>
+    <h1>The Marketing Edit</h1>
+    <p class="date">Sunday, 18 October 2026 · <b>32 stories</b></p>
+    <div class="byline">
+      <span>Curated by <em>GenZMarketer</em> · <b>Anshika Sharma</b></span>
+      <span class="social">
+        <a href="https://www.instagram.com/genzmarketer_/" target="_blank" rel="noopener" aria-label="Instagram: genzmarketer_">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="ig" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FEDA75"/><stop offset=".35" stop-color="#FA7E1E"/><stop offset=".6" stop-color="#D62976"/><stop offset=".85" stop-color="#962FBF"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="6" fill="url(#ig)"/><circle cx="12" cy="12" r="4.3" fill="none" stroke="#fff" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.3" fill="#fff"/></svg>
+          Instagram
+        </a>
+        <a href="https://www.linkedin.com/in/anshxka02/" target="_blank" rel="noopener" aria-label="LinkedIn: Anshika Sharma">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="4" fill="#0A66C2"/><rect x="6" y="10" width="2.6" height="8" fill="#fff"/><circle cx="7.3" cy="7" r="1.5" fill="#fff"/><path d="M11 10h2.5v1.2c.5-.8 1.5-1.4 2.8-1.4 2.2 0 3 1.4 3 3.6V18h-2.6v-4.1c0-1-.3-1.8-1.4-1.8s-1.7.8-1.7 1.9V18H11z" fill="#fff"/></svg>
+          LinkedIn
+        </a>
+      </span>
+    </div>
+    <div class="flourish">✿ ✿ ✿</div>
+  </header>
+
+  <div class="top">
+    <div class="card">
+      <h2>Today's big picture</h2>
+      <ol class="big"><li>Conversational and voice-driven AI is rapidly localizing in India through platforms like Sarvam and OpenAI, fundamentally shifting discovery from traditional search engine rankings to upstream AI brand recommendations.</li><li>Strong festive D2C demand and tightening e-commerce margins are colliding with aggressive regulatory crackdowns on quick commerce and FMCG supply chains, making product integrity and fulfillment compliance essential safeguards for brand equity.</li><li>Marketers are pairing hyper-local celebrity partnerships with unified ad-data and &#x27;brandformance&#x27; strategies to target high-intent, premium consumer segments without relying on generic generational stereotypes.</li></ol>
+    </div>
+    <div class="card tip">
+      <h2>💡 Tip of the day</h2>
+      <p>Conduct an AI Discovery Audit by testing high-intent category recommendation prompts across ChatGPT, Gemini, and Perplexity in both English and Hindi to evaluate whether your brand appears in synthesized shortlists and identify which PR or review sources are informing those models.</p>
+    </div>
+  </div>
+
+  <nav><button class="chip on" data-cat="all">All <span>32</span></button><button class="chip" data-cat="campaigns_brands" style="--c:#E8457C">💄 Campaigns &amp; brand news <span>3</span></button><button class="chip" data-cat="ad_media" style="--c:#D63384">📺 Advertising &amp; media spend <span>3</span></button><button class="chip" data-cat="ai_martech" style="--c:#B84DB8">✨ AI in marketing &amp; martech <span>2</span></button><button class="chip" data-cat="ai_world" style="--c:#A855F7">🤖 AI in India &amp; global <span>3</span></button><button class="chip" data-cat="social_creator" style="--c:#F06292">📱 Social, creators &amp; culture <span>3</span></button><button class="chip" data-cat="ecom_qcom" style="--c:#E57373">🛍️ E-commerce, D2C &amp; quick commerce <span>3</span></button><button class="chip" data-cat="startups_fintech" style="--c:#C2185B">🚀 Startups, founders &amp; fintech <span>3</span></button><button class="chip" data-cat="consumer" style="--c:#EC6FA0">💗 Consumer behaviour &amp; trends <span>3</span></button><button class="chip" data-cat="global_economy" style="--c:#9C4F7E">🌍 Global marketing &amp; economy <span>3</span></button><button class="chip" data-cat="regulation" style="--c:#8E5A8A">⚖️ Regulation &amp; policy <span>3</span></button><button class="chip" data-cat="learning" style="--c:#DB5A8C">📚 Case studies, jobs &amp; competitor intel <span>3</span></button></nav>
+  <main><section class="cat" data-cat="campaigns_brands" style="--c:#E8457C">
+  <h2><i>💄</i>Campaigns &amp; brand news</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#E8457C"><div class="type"><small>TheWire.in</small><b>Freyr Energy</b></div><div class="logo"><div class="tile"><img src="https://www.google.com/s2/favicons?domain=freyrenergy.com&amp;sz=256" alt="Freyr Energy" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.logo').remove()"></div><em>Freyr Energy</em></div></div>
+  <div class="body">
+    <h3>Rohit Sharma signed as Freyr Energy&#x27;s first brand ambassador</h3>
+    <p>Solar rooftop company Freyr Energy has appointed Indian cricketer Rohit Sharma as its very first brand ambassador. Alongside the announcement, the company has launched a new multi-platform marketing campaign titled &quot;Solar Ho, Toh Freyr Ho!&quot; to promote residential solar adoption.</p><p>The partnership aims to leverage Sharma&#x27;s widespread popularity and mass appeal across India to drive consumer trust and awareness around the benefits of switching to solar energy solutions for households. The campaign highlights accessibility and reliability in going solar.</p><p>Moving forward, Freyr Energy plans to roll out this campaign across various digital and traditional media channels. The collaboration is expected to strengthen the brand&#x27;s market presence in the competitive renewable energy sector.</p>
+    <div class="why"><b>Why it matters</b>Partnering with top-tier cricket talent helps high-involvement green tech brands build instant mass credibility. For marketers, leveraging trusted public figures simplifies complex consumer propositions like solar adoption.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMi1wFBVV95cUxQQ2poZnIxckZKREV3OUxWbGhyNjhETFNjdnRVVFFPR1F3dV9HWXQ4UHJWRGhBSTNUQzdwY0xBZkFVLWcwUXNUam9kcVdEZTIwUnZ4ZjhfXzdGTVVMc0R6eTB3Qm1jTVY0VFVxMkJMR0lWTjgxdFE0cVRfQkdva190REJCWjUxM0hkdTV6TFBpRVVKRk13dVRPbVIzdHY1dE8zS2FRQlZOTXpmUjhqZnprTWswUjhrTmhXUmZmTjdHaFpXNkxJMkRXX0lpREhCRjNNVUU2X29iY9IB3AFBVV95cUxQSEwwaHJ5dmhNUFdXNjdsUVAwQkkwQjRaTDJlRWNMYjQ4cGtIR29pWVRUdm05X2VRZVdfNTNGSzB0Zno3ckcyVDlDMlhvbUc3aFJzc2J6NEhBeVRDaEJISFVUX0x0WWh6ZXJRblFZcEttSThYdHIyRTlGWDBWN3J0VkxzT2pMXzl0VTg1cVM5Sk9SclRVR1VtMnBieVpETTlIMHhZOHdDRktTdV9oak5mcDN5dHY0b3pUUnpXUXBkVmJucGk1TDFKVldmbC1Tenc0S1FlQVpTR3NyVGlf?oc=5" target="_blank" rel="noopener">TheWire.in ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#E8457C"><div class="type"><small>Bollywood Hungama</small><b>Country Delight</b></div><div class="logo"><div class="tile"><img src="https://www.google.com/s2/favicons?domain=countrydelight.in&amp;sz=256" alt="Country Delight" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.logo').remove()"></div><em>Country Delight</em></div></div>
+  <div class="body">
+    <h3>Country Delight appoints actor Rishab Shetty as brand ambassador</h3>
+    <p>Direct-to-consumer dairy and food essentials brand Country Delight has signed popular actor Rishab Shetty as its new brand ambassador. The collaboration aims to connect the brand more deeply with consumers by utilizing Shetty&#x27;s regional and national appeal.</p><p>The partnership comes as Country Delight continues to expand its footprint in the competitive D2C grocery and dairy segment. Shetty&#x27;s trusted persona aligns with the brand&#x27;s core messaging around purity, freshness, and direct sourcing from farmers.</p><p>In the coming months, the brand is expected to feature Shetty in upcoming promotional campaigns across television, digital, and print media. This move is part of Country Delight&#x27;s broader strategy to enhance regional engagement and scale customer acquisition.</p>
+    <div class="why"><b>Why it matters</b>Aligning with popular regional cinematic talent allows national D2C brands to build authentic grassroots connections. Marketers can use this playbook to drive localized trust and improve brand recall in diverse markets.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMisgFBVV95cUxNQ09IRG50eTE2bjd1TU90amw4eXc4d2NPcHBPZ3lWdjVOOG1rTkRRQjQwUTF1QmJDUUU0N080S2VUZjFFUjc4RGtDUHhlRFNoWVdsMEFOalV6dDhneFRqQ2w5QmFwYzZ0cmRPVHQ2VUMxSUZzZjNPMGhaTDZyaFEzRHVqZkMzSkoxVGJTTWtzTWZQRXFBbW1tLWdfZVpzSzFSSjlNLTl6VGpnV21kQnkxQ3lR?oc=5" target="_blank" rel="noopener">Bollywood Hungama ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#E8457C"><div class="type"><small>The Retail Jeweller India</small><b>Reva by PNGS</b></div></div>
+  <div class="body">
+    <h3>Reva by PNGS names actor Sharvari Wagh as first-ever brand ambassador</h3>
+    <p>Reva by PNGS has announced actor Sharvari Wagh as its first-ever brand ambassador. The partnership marks a strategic move by the jewellery brand to capture the attention of younger, modern consumers who look for contemporary styling alongside traditional craftsmanship.</p><p>Sharvari Wagh, known for her recent cinematic roles, embodies the modern aesthetic that Reva by PNGS aims to project through its collections. The collaboration is designed to strengthen the brand&#x27;s appeal within the competitive fine jewellery and lifestyle retail space.</p><p>Looking ahead, the brand will feature the actor in upcoming marketing campaigns spanning digital platforms and retail touchpoints. This association is expected to drive consumer engagement and boost visibility during upcoming festive and wedding buying seasons.</p>
+    <div class="why"><b>Why it matters</b>Securing contemporary celebrity talent helps legacy jewellery brands pivot toward younger demographics. For brand marketers, selecting an ambassador whose personal style mirrors the target audience is key to successful modern positioning.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMirwFBVV95cUxQczNpcmVFdGZ0Z2FlRlBCZnc2ZTg4YlNOZFMwY0Y1VzdmMy03N2lfYURmNWdOV21xQlFtdGRxeFJiWWs5eHBLbmxIQmw5M014YzZnbjRxSTYyVEN0Y3R5cV9WUWhlTmJieDJBQ2VXeFFzUDlWalBOSTl0RTNySi1uaGV5cnZrU2RfQ1JaM0Nkd0VMbW80bVZYRVZRUmJvYkNFb2J4YzUwRHljRHlwSDZR?oc=5" target="_blank" rel="noopener">The Retail Jeweller India ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="ad_media" style="--c:#D63384">
+  <h2><i>📺</i>Advertising &amp; media spend</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#D63384"><div class="type"><small>afaqs!</small><b>TVS Motor</b></div></div>
+  <div class="body">
+    <h3>Dentsu and Omnicom Secure TVS Motor’s Digital Media Mandate Following India Restructuring</h3>
+    <p>TVS Motor has awarded its digital media mandate to agency groups Dentsu and Omnicom as part of an India media roster restructure.</p><p>The two networks will take over digital media responsibilities for the two- and three-wheeler manufacturer as the brand reorganizes its marketing and media operations in the country.</p>
+    <div class="why"><b>Why it matters</b>Automakers are increasingly splitting digital duties across holding groups to leverage distinct media capabilities across diverse product portfolios. This move reinforces the trend of major brands restructuring legacy agency setups to sharpen their digital-first media execution.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxQTkw3YWpqV19FdkJ3U3AtUThqc1dXWUc4R0h5U3c1ai1SWXFSVDFjVnVNMzdnX1dQZmV0VDZxYVQ3blV1TmN4ZWR2T25tcEFLYnRyNHUxcVcwMURoNUl6S3JrZVR6X2hTWVdjYUJUNy01SFhnOXdINldBS2ZmYWFtRUYtMjhkLUJ6R1RLR2FwYnpPM0dXYWpwSlo2M0pkTndPYXJWajRVcnl4alc4bDBraGltSlByV0w4dVNJ?oc=5" target="_blank" rel="noopener">afaqs! ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#D63384"><div class="type"><small>afaqs!</small><b>DGTOOHL</b></div></div>
+  <div class="body">
+    <h3>DGTOOHL Launches OmniVertex to Help Marketers Unify Fragmented Ad Data</h3>
+    <p>DGTOOHL&#x27;s Anuj Bhandari has introduced OmniVertex, a new tool created to help marketers consolidate fragmented advertising data.</p><p>The platform is designed to streamline disparate datasets across marketing touchpoints, offering advertisers a unified way to process and manage campaign information.</p>
+    <div class="why"><b>Why it matters</b>Data fragmentation across programmatic, out-of-home, and digital channels continues to hinder effective campaign attribution and reporting. Solutions focusing on unified data aim to give performance marketers clearer visibility across their multi-channel media investments.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMixwFBVV95cUxOclRGR0FIUDJ2RWd2NWRVMWtxR3NPOS1CSVRfcnE3Y2hLZ2pIMGpqcUJVQ18zQUczeVBtRGxSOUtwNXZDMFlHekN6YmdUd3gtQXJoelFyWFF6dGVaZkswWUVUUHl5bWFKcDkyY0piTUZ6MUU4S2dKS1ZGcU9yNlJqU0dHcGloMURBV01lWGxkcjBEZ3dCck5VYmlDX1N4dUgyN0FuVWpnbTRLRXZITEdaSmsxMWxmWTlIYmwtbkdBUjZMZ0NUV0Jj?oc=5" target="_blank" rel="noopener">afaqs! ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#D63384"><div class="type"><small>INDIA New England News</small><b>Nielsen</b></div><div class="logo"><div class="tile"><img src="https://www.google.com/s2/favicons?domain=nielsen.com&amp;sz=256" alt="Nielsen" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.logo').remove()"></div><em>Nielsen</em></div></div>
+  <div class="body">
+    <h3>Nielsen Designates India as Primary Global Innovation Engine, Contributing 75% of Innovation</h3>
+    <p>Measurement and analytics firm Nielsen has positioned India as its primary global innovation engine, according to a recent report.</p><p>The report indicates that 75% of the company&#x27;s overall innovation now stems from India, marking the market as the core driver for its worldwide technological advancements and development.</p>
+    <div class="why"><b>Why it matters</b>Global research and measurement networks are shifting high-value technology and product innovation directly into India rather than treating it solely as an operations hub. For domestic marketers, this concentration of talent will likely speed up the rollout of advanced measurement and audience tracking tools tailored to complex media landscapes.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMi2AFBVV95cUxPUmxMUHRtME16Q0NWd2M4RWFvb3BVa3ZfSG1CU09aaDhiU240ejVJREdjWTBjRkxJY1pQbUE2ZklZWURHaFYtbWpkalJWeFZBQlE5SnV1MmJRRFpZTDNnNm9pMTZBOEdVN1FCVjZyWmhsU19kclF4WTlSbi1kbkFSOGVEVElOd3E1eHlaVGg2QmZidWFDaUJ1QzdaWEp1WXVJMFJLMDQ1UTMzQVpvdGgwd1I2M21tNjR5aWw4LWxiNUxHZHBLeGNvbUdrOWZGcnBoZDh6akVpZ2I?oc=5" target="_blank" rel="noopener">INDIA New England News ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="ai_martech" style="--c:#B84DB8">
+  <h2><i>✨</i>AI in marketing &amp; martech</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#B84DB8"><div class="type"><small>Storyboard18</small><b>OpenAI</b></div><div class="logo"><div class="tile"><img src="https://www.google.com/s2/favicons?domain=openai.com&amp;sz=256" alt="OpenAI" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.logo').remove()"></div><em>OpenAI</em></div></div>
+  <div class="body">
+    <h3>OpenAI Introduces Festive Campaign for ChatGPT Featuring Hindi Voice Capabilities</h3>
+    <p>OpenAI has rolled out a new festive campaign for ChatGPT, spotlighting the addition of Hindi voice capabilities to its conversational platform.</p><p>The launch focuses on tapping into local language adoption and conversational utility during the festive period, enabling users to interact with the AI assistant natively in Hindi.</p>
+    <div class="why"><b>Why it matters</b>Vernacular AI adoption is rapidly accelerating in India, opening new avenues for localized consumer engagement. Marketers should track how native-language voice models can enhance multilingual brand interactions and customer support.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMiugFBVV95cUxPMVRfc04wQXAwLWRXTlRjSW4weDY0Z3JEWFI5Z2pHR3huWDBnank0djRHcHd6RHphcDVXaThPUlZ6YWFod0E3UWFfN25QdEJiSFV5SFlxMG1UUGVxUTZEdFdHMzJtRlFvcnlZbGtVX25OQ3lBTXExLUQ1M3lEd245NHVoWXRUci1JNWZhWS1KS3FxWno3aDZkTnQxUTJLMktDLUhSSElBT3F4aTNTQzhWa0V5MHNyOVBOdEHSAb8BQVVfeXFMTTJNQnY3WGQ0ZTBkYVFoSzhQcUl4QWJSX3R2blFtbDNDclpWd2RHckNTWDdLZlJONjVYOHZLdW95MnhJcTNoR2ZYTmk4SUtpc2k5SnBaenpxcXdhY3QzZFdXVGZ6YXNBNW8yQVdZOS1MQkFLSVlDR2FmZG94Um1CMnVJSFNuWXNCbG9IVV8wUzJzczFHQjNnTFB4MmU2cEk2UGwyMTVCdmtCUi1vYXdIUFZla1E3aWhZOG5DLW12WTQ?oc=5" target="_blank" rel="noopener">Storyboard18 ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#B84DB8"><div class="type"><small>Carroll County Mirror-Democrat</small><b>Ryze AI</b></div><div class="logo"><div class="tile"><img src="https://www.google.com/s2/favicons?domain=ryze.ai&amp;sz=256" alt="Ryze AI" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.logo').remove()"></div><em>Ryze AI</em></div></div>
+  <div class="body">
+    <h3>Ryze AI&#x27;s Autopilot Named Top Google Ads Management Tool in Switzerland by MarketRank</h3>
+    <p>Ryze AI’s AI Autopilot has been ranked by MarketRank as the leading AI tool for managing Google Ads campaigns in Switzerland for 2026.</p><p>The distinction underscores the increasing industry reliance on specialized artificial intelligence solutions to automate, monitor, and scale performance advertising across search channels.</p>
+    <div class="why"><b>Why it matters</b>The shift toward autonomous campaign management demonstrates how AI is moving from an assistant role to handling core ad-buying execution. Performance marketers must prepare for workflows where automated platforms increasingly oversee bidding, testing, and optimization.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMitwFBVV95cUxQM0dVbHRMOTRseW9wdTVDUGVPb0pVSHFOeVAtM2M4cVlWUzk5TXJSU2FTWW1MdzdkWEp6aUxmcXNROWxBbV82SHVWb09ONVBqMlM2M1VUaTBybjd5YnZ4bFBmNXJGbG14WnlGTWZvNXNrenQ3VExaLWhiR21weWlublgxYVd6MDZoOWdSRFdGeTZ6a3lybVlpSXhiNHNCSG5PaDBld0JxUzdWclFpYmtDMHVZUTVFcGM?oc=5" target="_blank" rel="noopener">Carroll County Mirror-Democrat ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="ai_world" style="--c:#A855F7">
+  <h2><i>🤖</i>AI in India &amp; global</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#A855F7"><div class="type"><small>Sarvam AI</small><b>Sarvam AI</b></div><div class="logo"><div class="tile"><img src="https://www.google.com/s2/favicons?domain=sarvam.ai&amp;sz=256" alt="Sarvam AI" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.logo').remove()"></div><em>Sarvam AI</em></div></div>
+  <div class="body">
+    <h3>Sarvam AI Introduces Bulbul V4 Flash Text-to-Speech for India</h3>
+    <p>Domestic AI startup Sarvam AI has unveiled Bulbul V4 Flash, its new text-to-speech model tailored specifically for the Indian market.</p><p>The release focuses on providing voice synthesis capabilities designed to support Indian languages and vernacular requirements, bolstering local infrastructure for voice-first AI applications.</p>
+    <div class="why"><b>Why it matters</b>Localized text-to-speech solutions allow marketers to deploy scalable vernacular voice campaigns and conversational bots across Tier 2 and Tier 3 markets. As voice synthesis becomes faster and culturally contextual, brands can significantly lower the production overhead of regional multimedia assets.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMiVkFVX3lxTFBaMWlnenc3Qm5vOVppYWxDV1AyVng4WWROSmZQSUYtX0VnTVpoYndNM2JPemZDZ2owWmdHU00zNUJ1d05UZkQ1WjBOZTZSYkhJR1duX21R?oc=5" target="_blank" rel="noopener">Sarvam AI ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#A855F7"><div class="type"><small>Business Today</small><b>IndiaAI</b></div></div>
+  <div class="body">
+    <h3>Applications Open for IndiaAI Fellowship Programme AY 2026-27</h3>
+    <p>The IndiaAI Fellowship Programme has officially opened applications for the 2026-27 academic year, outlining details regarding candidate eligibility, funding support, and application deadlines.</p><p>The program is aimed at fostering domestic AI research and academic development, strengthening foundational talent across institutions to support India&#x27;s broader artificial intelligence ambitions.</p>
+    <div class="why"><b>Why it matters</b>Government-backed talent pipelines in artificial intelligence will directly influence the quality of proprietary marketing tech and analytics solutions built domestically. Marketers should expect a more robust talent pool capable of developing custom machine-learning tools tailored to India&#x27;s unique consumer behavior.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMi2gFBVV95cUxQRGtDdmlXeE5JR0lCdHU1MTJqaFNkUTF3d2p6aTV0V1JVWExKZENzU3U0SGQ2RWNOSmgzVzlYTWl3dWRHN00xeldOYjA0WmVYVFc0OTc3VVBKaGlEVjA0cGFVN2EwbU9DenN6eXBTc0cxQjVtc3BPS1Q5OUhvZlE2am5QX3M3aC1WOWVxOU5WXzRuNjJuQXg3MVh2ZE9RMnRubzJkLUhBLTNsTmdtWkR6ODBtUDY1LUp2Q0NTTUpRcHZEamw3OXN2c1NpMFRwTFc3bWVfWXdQM3hIUdIB3wFBVV95cUxQb1RCQXB5U29DSkJ3bjNWaVBZbEdoZ2k5a3R3UFJIYU13U0FmZ2FBSE1ma2pkNDEyT3h4ODdjMkUtUUttRzJqelpoTFhXM1hsR2hhdExuZW0yYkFtZTNCeHhfaDB0QUVDN1dfRFlaU1BVZ0xtY3NOVVpHZmNEQ2NHQ1djeWdUazZOWVBhVWJTOS1iVnktUERITDlTS29xeWF5UW5Vb1VKaVR0SGVQV2tTSm1SVlIxT3lIU3M2SmUwaG0zLUlCZjRld3ZDUUd0d0FaMTdWRlFQNmZKUkFUcFhn?oc=5" target="_blank" rel="noopener">Business Today ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#A855F7"><div class="type"><small>https://safariindia.com/</small><b>IndiGo</b></div></div>
+  <div class="body">
+    <h3>IndiGo Ventures Backs Sarvam to Accelerate AI Applications in Aviation</h3>
+    <p>IndiGo Ventures has made an investment in generative AI startup Sarvam AI to support and advance the deployment of artificial intelligence in the aviation sector.</p><p>The strategic backing is geared toward leveraging Sarvam&#x27;s language and AI capabilities to modernize industry-specific workflows and improve aviation services.</p>
+    <div class="why"><b>Why it matters</b>Strategic investments by large consumer airlines into homegrown AI firms signal a transition toward deploying conversational AI directly into operational and passenger-facing touchpoints. Marketers across travel and service industries should prepare for elevated consumer expectations around automated, context-aware customer service.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMiakFVX3lxTE9JSTh0RWJjWTRQZy1kNnk0LTl1Z0YwTFcwakgtSTZ4cGo2cVVDdDBOT1ROZWZhZnVncEkwRWNnR2tfUFVRMjkya09pbXBLWlFCNmc2bVNXa1c1SjlZMVRBV2VHZzhQeW1DbUE?oc=5" target="_blank" rel="noopener">https://safariindia.com/ ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="social_creator" style="--c:#F06292">
+  <h2><i>📱</i>Social, creators &amp; culture</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#F06292"><div class="type"><small>The Times of India</small><b>Social, creators &amp; culture</b></div></div>
+  <div class="body">
+    <h3>Scrutiny Mounts Over the Financial Realities of India&#x27;s Creator Economy</h3>
+    <p>India&#x27;s burgeoning creator ecosystem is facing closer examination regarding its underlying economics and long-term sustainability. The relentless demand for continuous content generation has drawn comparisons to the Sisyphean struggle, highlighting the mismatch between creator output and financial compensation.</p><p>As digital platforms continue to onboard millions of aspiring voices, the industry is grappling with monetization disparities and the viability of full-time content creation across the country.</p>
+    <div class="why"><b>Why it matters</b>Marketers must recognize that creator burnout and precarious monetization affect the consistency and quality of brand campaigns. Moving toward structured, long-term retainers rather than transactional one-off engagements can foster more reliable creator partnerships.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMi5AFBVV95cUxNX1h0MDlPREY4amhDeWRiVG50VjZBS19nT2R0MmxhN0wzdjZmcTFUQjhaaldSVk1XYnkzZlZySHFGb05XamxUUHpSTFlUWm9KMDhEc3NtTG5ESE5GdS1jWkZiVHZIYmxDOXdpSEc3N3Zzb3RRd0wzMzhkM0FqZk1JOTJQaTZ6NFQ1cDJ1MkQxWmJWZEp6WkswQjAzNVEzbDBTMHlXdUd5dXpSNzUxVExZaGdyeGRUYmZ2bVo3a0NjdHhYaXNmMnNHWFMtTnRYYUs3RGE0bDlyZG5fUWc0WldhR3EwSkvSAeoBQVVfeXFMTUJlYnNVOU5CZVJTUDdSQTBzYnVqN1l5WlFubTk1RWhqTnJTNE4xZ1hXY0VObVZvaHE5R2p2UVhwdUNpaUFXeW5WaDk2OWZSSGFJd0cwWGZlMWd4UE4yeDl1LVQ0OXdVM1JycUxUalVxS08yRjl3eU9jRzZJSXJ1WVFxTUxHNWVESmJfYmdHTlBwWUhydndiX0tOY19GVDhfbzVKSjBHQTl5LWZQMUxHbDBPYUtPd21IQk5FcFk0RTRVVTl3V284d2g1eGQ1dlB4N1BpMGthTU1xdjJTMVpaNFgxQVlHYUx0anFB?oc=5" target="_blank" rel="noopener">The Times of India ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#F06292"><div class="type"><small>Outlook Respawn</small><b>Roblox</b></div><div class="logo"><div class="tile"><img src="https://www.google.com/s2/favicons?domain=roblox.com&amp;sz=256" alt="Roblox" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.logo').remove()"></div><em>Roblox</em></div></div>
+  <div class="body">
+    <h3>Roblox Creators Contribute $14.8 Million to India&#x27;s GDP</h3>
+    <p>Creators building on the global gaming and metaverse platform Roblox have contributed $14.8 million to India&#x27;s gross domestic product, according to an analysis reported by Outlook Respawn.</p><p>The data underscores the growing financial impact of virtual world development and gaming creators within the broader Indian digital economy, extending beyond conventional video-sharing platforms.</p>
+    <div class="why"><b>Why it matters</b>This signals that gaming and immersive platforms in India are maturing into significant economic ecosystems with serious creator communities. Marketers should consider in-game brand activations and virtual creator collaborations to connect with younger, engaged demographics.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxNajNUaVJTU1R4ZGQtcm5YWS12NE44NjA3VUktYXVFcmtYcnFqQ0xTRVZSZHZtbmdoTElmSUJMeUpxd3A2RWV1NnMwUVYwZWk3UWhLbml4NTcyc004aUlSaXBxTHVrb29od3JMTDV5akRDNi1CaTNHeHBMTnNSc1JVMXVDbXdydXhBRm5IeTRKVTRCWWlCMVJNcmdVWGkxYVppbmszY0pXY3BGQzTSAasBQVVfeXFMTWozVGlSU1NUeGRkLXJuWFktdjROODYwN1VJLWF1RXJrWHJxakNMU0VWUmR2bW5naExJZklCTHlKcXdwNkVldTZzMFFWMGVpN1FoS25peDU3MnNNOGlJUmlwcUx1a29vaHdyTEw1eWpEQzYtQmkzR3hwTE5zUnNSVTF1Q213cnV4QUZuSHk0SlU0QllpQjFSTXJnVVhpMWFaaW5rM2NKV2NwRkM0?oc=5" target="_blank" rel="noopener">Outlook Respawn ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#F06292"><div class="type"><small>YourStory.com</small><b>Social, creators &amp; culture</b></div></div>
+  <div class="body">
+    <h3>Navigating Cancellation: The Critical Inflection Point for Digital Creators</h3>
+    <p>Facing audience cancellation has become one of the most significant turning points in a digital creator&#x27;s career, according to coverage by YourStory.</p><p>The discussion highlights how public backlash and shifting audience sentiment force creators to re-evaluate their content strategies and platform presence, forming a critical test of digital longevity in India&#x27;s creator market.</p>
+    <div class="why"><b>Why it matters</b>Brand safety protocols must account for creator volatility, ensuring contracts include robust crisis and exit clauses. Marketers must evaluate a creator&#x27;s audience resilience and track record before tying brand equity to their public persona.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxQNm5kSzFDY3BfN1I0Y1JRa19MZDUtOF9mQ3ZWd1d5NENDcmNJM0ZhOWJrM3Y3NHZTdC1kNjZEVm9xeWloSWtPVmVLQmRZUndOcUF1b05zZjZkYm00QzJaY1RfbTdqeVloQ1E0X09uVFNJRFRfYTlrbzdqQmlfWnlYdzcxTXZvSmtFa0g5cThWeDVEMmhlQ3h2Zk1iOWR5Wk9IWUdMYWptazRtQQ?oc=5" target="_blank" rel="noopener">YourStory.com ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="ecom_qcom" style="--c:#E57373">
+  <h2><i>🛍️</i>E-commerce, D2C &amp; quick commerce</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#E57373"><div class="type"><small>MediaNama</small><b>Flipkart</b></div><div class="logo"><div class="tile"><img src="https://www.google.com/s2/favicons?domain=flipkart.com&amp;sz=256" alt="Flipkart" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.logo').remove()"></div><em>Flipkart</em></div></div>
+  <div class="body">
+    <h3>Flipkart Group Narrows FY26 Loss to ₹8,468 Crore as Revenue Approaches ₹1.5 Lakh Crore</h3>
+    <p>Flipkart Group reported an 18% increase in revenue to ₹1,45,880 crore for FY26, bringing its top line close to the ₹1.5 lakh crore mark. Concurrently, the e-commerce giant trimmed its net loss by 2% to ₹8,468 crore.</p><p>The company&#x27;s revenue expansion was driven predominantly by gains in its logistics and advertising operations. Conversely, collections from marketplace fees registered a significant decline during the fiscal year.</p>
+    <div class="why"><b>Why it matters</b>Flipkart&#x27;s expanding top line driven by advertising confirms that retail media networks are becoming crucial profit-stabilizing engines for major platforms. Marketers must recognize that on-platform retail media spend is increasingly essential to secure discoverability as platforms recalibrate their revenue models away from standard marketplace fees.</div>
+    <a class="src" href="https://www.medianama.com/2026/10/223-flipkart-loss-revenue-rs-1-5-lakh-crore/" target="_blank" rel="noopener">MediaNama ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#E57373"><div class="type"><small>ET Now</small><b>E-commerce, D2C &amp; quick commerce</b></div></div>
+  <div class="body">
+    <h3>D2C Brands Record 31% Order Surge During 2026 Festive Season</h3>
+    <p>Direct-to-consumer (D2C) brands registered a 31% growth in order volumes during the 2026 festive shopping period, coinciding with major marketplace events like Flipkart&#x27;s Big Billion Days.</p><p>The surge points to an ongoing shift in Indian consumer purchasing habits, with shoppers progressively browsing and buying directly from independent brand storefronts alongside traditional marketplace giants such as Amazon and Flipkart.</p>
+    <div class="why"><b>Why it matters</b>This trend shows that festive discount hunting is no longer confined strictly to horizontal e-commerce platforms, giving standalone D2C brands greater leverage. Marketers should optimize their direct-to-consumer funnels and festive promotional strategies to capitalize on independent webstore traffic during major sales periods.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMiiAJBVV95cUxPVF9ybHRGOUE0NnRJTUo3b01mNWo2aklRMW1tVmR6RDJHaDFnTWtLcDIxNHR0dXdROS1xYXJRNzNiQ2RaczdrTVlwR0RNX0lPWXdhRnk0MFhmak81cm1WRWpHaHNUODNJTkVpYVpTcm90c2ZVZHhCRGZwSmZVRTA5TG50WWNUNnBueVpCYld5U1ltb3RjajNXLW9CZnluY1BHWUtTTXVoRnJBejBnRURlVTRsVEJzQkxJYW9SbGNlZmJQdmFNS1ZhdHpaWm45Qms2MFBHSUNjLTFwVG5xbENTX0MzcXgxUkVpb2VIZ3BIVURZakI5Z25TR3N1dmplZ2N6MXU0RTBJc1U?oc=5" target="_blank" rel="noopener">ET Now ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#E57373"><div class="type"><small>Inc42</small><b>Ekart</b></div><div class="logo"><div class="tile"><img src="https://www.google.com/s2/favicons?domain=ekartlogistics.com&amp;sz=256" alt="Ekart" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.logo').remove()"></div><em>Ekart</em></div></div>
+  <div class="body">
+    <h3>Ekart Slashes FY26 Net Loss by 98% to ₹26 Crore Despite Revenue Drop</h3>
+    <p>Logistics firm Ekart drastically curtailed its net loss for FY26 by 98%, bringing it down to ₹26 crore.</p><p>The sharp recovery in the logistics player&#x27;s bottom line occurred even as the company experienced a contraction in its overall top-line revenue over the course of the fiscal year.</p>
+    <div class="why"><b>Why it matters</b>Ekart&#x27;s near-complete loss reduction despite declining revenue underscores an intense, industry-wide push for operational efficiency and profitability in e-commerce logistics. For supply chain and marketing managers, this indicates that logistics providers are prioritizing cost discipline and margin protection over chasing raw delivery volumes.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMinwFBVV95cUxNRDNtUE9TQWhRWllJMVZPbXZ6eDNvdloyN1RBMHA2N0hMTTl1QXlzUVJCeUdUekVZX18tVzFRVGpLV21sdUtONFBZSGQtMTRhbFB1V0lPSktwSVFHQ1Vtc1JaSm5pY01vY3V3WTR3RXBJc0VMXy05NmlqV28tZUlvMElIbUFoRjFJY2I3Yms0TXB4VEYtVHlsaTREell6RUE?oc=5" target="_blank" rel="noopener">Inc42 ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="startups_fintech" style="--c:#C2185B">
+  <h2><i>🚀</i>Startups, founders &amp; fintech</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#C2185B"><div class="type"><small>Inc42</small><b>Urban Company</b></div><img class="photo" src="https://inc42.com/cdn-cgi/image/quality=90/https://asset.inc42.com/2026/07/Urban-company-social-1.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div>
+  <div class="body">
+    <h3>Urban Company Board Approves ₹2,500 Crore Fundraise as Losses Widen</h3>
+    <p>The board of listed home services major Urban Company has approved a proposal to raise up to ₹2,500 crore to bolster its war chest. The planned capital infusion comes at a crucial juncture as the company faces aggressive competition in its instant home services arm, InstaHelp, from rivals Snabbit and Pronto, while simultaneously seeking to expand its product footprint under its Native brand into the residential air conditioner space.</p><p>The company’s financials reflect the rising cost of these initiatives. For Q2 FY27, Urban Company reported an adjusted EBITDA loss of ₹144 crore, heavily influenced by a ₹174 crore investment into InstaHelp; excluding InstaHelp, the core business posted an adjusted EBITDA profit of ₹30 crore. Consolidated revenue from operations increased 41.4% year-on-year to ₹537.3 crore, but total expenses jumped 61.5% to ₹745.7 crore, causing net losses to more than triple to ₹182.5 crore from ₹59.3 crore a year prior.</p><p>Management rejected claims that the fundraise is merely a buffer for InstaHelp&#x27;s burn, stating the company can hit profitability targets without it. Instead, CEO Abhiraj Singh Bhal outlined ambitions to transform Urban Company into the &quot;operating system for the Indian home.&quot; The capital will provide strategic flexibility for domestic and international growth, including potential acquisitions to consolidate current markets or enter new categories, though acquisitions within InstaHelp remain highly unlikely.</p>
+    <div class="why"><b>Why it matters</b>Urban Company&#x27;s strategy highlights how established service platforms are forced to heavily fund defensive quick-service plays while venturing into hardware to secure brand stickiness. For marketers, transitioning from an on-demand utility to an overarching home ecosystem requires balancing high customer-acquisition spends with the sustained trust needed to sell durable goods.</div>
+    <a class="src" href="https://inc42.com/buzz/decoding-urban-companys-%e2%82%b92500-cr-fundraise-proposal/" target="_blank" rel="noopener">Inc42 ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#C2185B"><div class="type"><small>Indian Startup News</small><b>Boldfit</b></div></div>
+  <div class="body">
+    <h3>Fitness Brand Boldfit Raises ₹400 Crore from Bharat Value Fund</h3>
+    <p>Homegrown fitness brand Boldfit has secured ₹400 crore in funding from Bharat Value Fund.</p><p>The company plans to deploy the newly acquired capital to expand its business operations across the fitness and wellness ecosystem.</p>
+    <div class="why"><b>Why it matters</b>Substantial funding rounds for domestic fitness labels point to strong investor belief in the category&#x27;s long-term consumer demand in India. Brands in the health and wellness space must brace for heightened advertising and retail footprint battles as well-funded players ramp up visibility.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMi3gFBVV95cUxONGFuQWdaQl9hZXlvTTBndGVVcFJVMjVlTkJpc3JLblBYT0VENVhLeXZUdHdOVHEyNTNyU1dPcE5pRFViN2FOeW1hWklDVlFvXzROVnYyYkpxZDVMcjY4LUtZVFBHZEhBR2xvU1pOSkxxcE9oVGxiV3lYRV80bndXRjlTaDlzWkM0cGROZnI2YXpWenFnM0h0c0htZUMyc09pX0R1SG82VWRROElSOV9GZkV6bjZPNUNjZzVVUlp2LUhWVGJBZHBVcVc5ZWV3ZWM4MVBMRUZQRUVLdEpkZnfSAd4BQVVfeXFMTjRhbkFnWkJfYWV5b00wZ3RlVXBSVTI1ZU5CaXNyS25QWE9FRDVYS3l2VHR3TlRxMjUzclNXT3BOaURVYjdhTnltYVpJQ1ZRb180TlZ2MmJKcWQ1THI2OC1LWVRQR2RIQUdsb1NaTkpMcXBPaFRsYld5WEVfNG53V0Y5U2g5c1pDNHBkTmZyNmF6VnpxZzNIdHNIbWVDMnNPaV9EdUhvNlVkUThJUjlfRmZFem42TzVDY2c1VVJadi1IVlRiQWRwVXFXOWVld2VjODFQTEVGUEVFS3RKZGZ3?oc=5" target="_blank" rel="noopener">Indian Startup News ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#C2185B"><div class="type"><small>Livemint</small><b>Slice</b></div></div>
+  <div class="body">
+    <h3>India’s Next Digital Banking Giant Will Emerge from a Bank, Says Slice CEO Rajan Bajaj</h3>
+    <p>According to Slice CEO Rajan Bajaj, India’s equivalent of global neobanking giants such as Revolut or Nubank will ultimately emerge from an established bank rather than an independent fintech company.</p><p>The perspective highlights a shifting paradigm within the Indian financial ecosystem regarding the viability and regulatory standing of standalone fintech platforms versus full-stack banking institutions.</p>
+    <div class="why"><b>Why it matters</b>This signals a major positioning shift where regulatory licensing and banking foundations are seen as prerequisites for building enduring consumer trust in financial services. Fintech brand marketers will need to emphasize security, institutional backing, and governance rather than relying solely on slick digital-first user experiences.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMi1gFBVV95cUxOWkNDcWNTbDVnTnZZcWliREVZclFaVXpfcVZDbGpXQnpVOUwxREpjdFpCcFZJRC1VUUtlbUtISlNnMFk2c25Ba1QtbHZ4Q3lHNjM5Y0tNam9PWEE5Si1kYTNKM3lEZV9CLUlTT1lWcjBqcXRaaW9QZFJVVS1lRzB3WDR3VTZ1Wkg5RnRudGlHWHM2anVOX2pNajU2U0FLS1V3TEZmbEpiUzVldm9QQTJCODZPaVh6Y0d0aFR0ZGxnQWJVYkthd1k0ZXd2WjZfbVRkR19lclhB0gHbAUFVX3lxTE1TUjZBVzNRWEhFRTNkSFNTVUZacVJ3cTctbTltcVJLclNrNWpUYXJZcE9tY1VXOTBYV1h2b0kyX0RHWWFuLWE5RnlaUGNIcEFKVjBJalRtaGE0SUFlOVNUZDhRTmt1TURQbXhjbFFTNU0xb3VBeUhQWmlDektBXzFTNXFpYjRfcE1wSTR3bTlXNWJVS3NyU1JGa2VHQTVCSEZEWmhTWENvcWdwR3dabkM0WVo5YVVYdk1WMWRoSERBY2dmRTBBRk5ZT1RLNGFQaDJzYXhEa2E3UUEtaw?oc=5" target="_blank" rel="noopener">Livemint ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="consumer" style="--c:#EC6FA0">
+  <h2><i>💗</i>Consumer behaviour &amp; trends</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#EC6FA0"><div class="type"><small>electronics.economictimes.indiatimes.com</small><b>Sony</b></div></div>
+  <div class="body">
+    <h3>Sony Identifies India as a Key Growth Market for Premium TVs and Audio</h3>
+    <p>Sony views India as a critical growth engine, identifying substantial room for expansion in higher-end consumer electronics. According to Daijiro Nakano, the Japanese electronics major sees strong growth potential specifically within its premium television and home audio portfolios across the country.</p><p>The push highlights Sony&#x27;s continued focus on targeting Indian consumers seeking upgraded home entertainment experiences, reinforcing the strategic importance of the Indian market to the company&#x27;s regional operations.</p>
+    <div class="why"><b>Why it matters</b>Marketers in consumer electronics should take note of the continued strategic pivot toward premium tiers over volume-chasing in India. As consumer appetite for higher-end home experiences grows, brands have a clear opening to emphasize quality, experience, and premium positioning.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMihwJBVV95cUxOYV9WSEpwOXJOblZlcGNaaFRQRG03clpvTGRJOWlGcWJZZXA2eHBFa3lRMWtBeEtXY3ZoWlU3bUVtVlRaMm40NHhnMGNmX0ctZTVnei15Unlxb1R5M1VuZXRNSXNmeThWWkx0b3EyMVNXWnFxdGJ3M0VTQXpWcUljbkZkMk1WRHZxbVFEWm5nUWlBSzdRVU90QUpncHl2bnpYRXMzNGdXS2NDak1PWUFQUkxRR0h0Y0lNbHhOQW0ySmQ0XzNDT2g2ZTdoU3J2MW81SEVYNmZYQlRZTG43YUVSYUZOalIzTGhVUTI2bk9SbWJrVVczQzdwZS01SWcxelVEbU5ad3dKZ9IBjAJBVV95cUxNMVE5M1ZZbER5WlBtenJzUlVqdkFlYWcyY2MwVU9nM1k1MTk5UzRJN0dXWVpPOGYzaFdSZ1RQYWpIU1BEMzZUY09vdXRuYkJwd1d2MGNVV09CRllhSmh2NkVqQ0NRVlNQTnNjYXNGX05Nd2k2dlE3SE9tVnAyOFNmQ3FCRjJfSTh2aG5tNDJvMXhBM3V2aHR1VlJYdWRDWFVZNjNBOWM5djZnUUJtc2pqaHNpeUhSNTFlSnVycHNNeGxkSVM5UXVYNVA5dmpBUUd6eVRvM0ZOWHhwdHA1YVZZOVktNXJWU2trS3hKUS1jTThBOXdCcTZoMlNjaHRSYU9sQmEybHpiclJyTWtj?oc=5" target="_blank" rel="noopener">electronics.economictimes.indiatimes.com ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#EC6FA0"><div class="type"><small>Yahoo News Singapore</small><b>Consumer behaviour &amp; trends</b></div></div>
+  <div class="body">
+    <h3>Surge in Pre-Owned Luxury Market Pressures Western Labels in China</h3>
+    <p>Western luxury brands are facing growing pressure in China as consumers increasingly turn toward the secondary market. A booming trade in pre-owned luxury goods is reshaping consumer shopping habits and disrupting traditional retail demand for Western fashion and luxury houses in the country.</p><p>The surge in pre-owned luxury reflects shifting consumer behavior in China, where shoppers are embracing circular luxury and value-driven alternatives over purchasing new products at retail prices.</p>
+    <div class="why"><b>Why it matters</b>The rise of secondary markets shows that even high-end consumers are recalibrating their spending and seeking alternative value channels. Luxury marketers must evaluate circular models, authenticated resale, and distinct value propositions to keep consumers engaged with primary retail.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMif0FVX3lxTE9sZy1tQWZJT1pyeVNhUG9keDVYczVtbVFmaWdTc0ZPUzkyN2doeU9TbzJtMzgxaFZSLW5HRXFYZzVka1BOSFRMZWEwU2lId19WN042RTlVVjRPYUNtNWFUUUNKUTU2ZjdsUDBmSkZ2WHBTbHdsZVdTLUl3OWdfQ3c?oc=5" target="_blank" rel="noopener">Yahoo News Singapore ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#EC6FA0"><div class="type"><small>MediaNama</small><b>TRAI</b></div><div class="logo"><div class="tile"><img src="https://www.google.com/s2/favicons?domain=trai.gov.in&amp;sz=256" alt="TRAI" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.logo').remove()"></div><em>TRAI</em></div></div>
+  <div class="body">
+    <h3>TRAI Reports 8.3% Rise in India&#x27;s Mobile Data Usage as Cost per GB Drops to Rs 7.13</h3>
+    <p>India&#x27;s wireless data usage expanded by 8.3% during the April–June quarter, according to data released by the Telecom Regulatory Authority of India (TRAI). The growth highlights ongoing expansion in domestic mobile data consumption.</p><p>Alongside the volume increase, the regulator reported that the average cost of data declined for consumers. The average outgo per gigabyte of wireless data fell to Rs 7.13 during the June quarter, maintaining India&#x27;s position among the most affordable mobile data markets globally.</p>
+    <div class="why"><b>Why it matters</b>With data costs falling further to Rs 7.13 per GB and consumption expanding, Indian digital audiences will continue to consume bandwidth-heavy formats with negligible friction. Marketers can confidently deploy rich media, video-first creative, and interactive ad formats without worrying about consumer data constraints.</div>
+    <a class="src" href="https://www.medianama.com/2026/10/223-trai-q1-fy27-mobile-data-usage/" target="_blank" rel="noopener">MediaNama ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="global_economy" style="--c:#9C4F7E">
+  <h2><i>🌍</i>Global marketing &amp; economy</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#9C4F7E"><div class="type"><small>WWD</small><b>Global marketing &amp; economy</b></div></div>
+  <div class="body">
+    <h3>China Transitions from Consumer Growth Market to Global Capability Hub in Beauty</h3>
+    <p>China’s role within the international beauty landscape is undergoing a strategic shift. Rather than serving solely as a consumer growth driver, the country is increasingly establishing itself as a global capability hub for the beauty sector.</p><p>This transition reflects an evolving positioning where the market contributes broader operational, innovation, and capability infrastructure to global beauty brands.</p>
+    <div class="why"><b>Why it matters</b>Marketers must recognize when regional markets mature from sheer volume drivers into centers for innovation and operational capabilities. Brand strategies should adjust to integrate these localized capabilities into broader global value chains.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMitwFBVV95cUxNQm92QVpOYUlnX3JXZmN5NEE3b2dpUkxaZEFWcnJGeVdUQ2JublEyV2t0Z05jdVV4X1pOVDkwZWZzM3RkZEI0S2ZUTHdXX0MwX21Xa0haQTN0dDkwdHRUd1FwY1h5NkpjS19jQ0dfc19tSC1icF9sd0pBbzdncXlxSzkybVI5MmhocWRxTG9KV2JtenBxd295MS04bnBUcnREc1pyZTJZclFXMUlqS0k2SjFDd1pvNE0?oc=5" target="_blank" rel="noopener">WWD ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#9C4F7E"><div class="type"><small>AFR</small><b>LVMH</b></div><div class="logo"><div class="tile"><img src="https://www.google.com/s2/favicons?domain=lvmh.com&amp;sz=256" alt="LVMH" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.logo').remove()"></div><em>LVMH</em></div></div>
+  <div class="body">
+    <h3>Affluent Chinese Consumers Challenge LVMH Over Tiffany Brand</h3>
+    <p>Luxury conglomerate LVMH is facing renewed resistance from wealthy Chinese shoppers, with American jewelry brand Tiffany now at the center of the dispute.</p><p>The pushback marks another wave of scrutiny from affluent consumers in the region toward LVMH, highlighting ongoing friction between the luxury giant and a critical segment of high-end buyers.</p>
+    <div class="why"><b>Why it matters</b>High-net-worth consumer sentiment is increasingly volatile and cannot be taken for granted by legacy luxury houses. Brand marketers must maintain acute situational awareness of local consumer sentiments to prevent brand equity erosion.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMioAFBVV95cUxQNzdvdXBrVGNOQnZXYm5zR0dsSFcyMTJTQzhaUHdKMFV3N3hZNmZVcmVsemxaNGhCdVpCbHVQM01mdnA3TVFSdkxSYWI0MzN5Q0tZWEdUMTNReDhCa28tMTAwTHVzeG1KTGZKSm00dlY1UjNlUXYtZTctNmZDbHZSdXlPR2M2U3hEQ3B4N25YMTJUenRTc0gxQ09yd1V4ZkxZ?oc=5" target="_blank" rel="noopener">AFR ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#9C4F7E"><div class="type"><small>The Economic Times</small><b>Renault</b></div><div class="logo"><div class="tile"><img src="https://www.google.com/s2/favicons?domain=renault.co.in&amp;sz=256" alt="Renault" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.logo').remove()"></div><em>Renault</em></div></div>
+  <div class="body">
+    <h3>Renault India Aims to Shift Sales Mix with Hybrid and CNG Strategy</h3>
+    <p>Renault India is betting on hybrid and CNG powertrains to reshape its commercial performance and portfolio, according to CEO Stephane Deblaise.</p><p>The automaker is positioning these alternative fuel technologies as key levers to transform its existing sales mix in the Indian automotive market.</p>
+    <div class="why"><b>Why it matters</b>In India&#x27;s price- and efficiency-sensitive auto market, hybrid and CNG options offer a strategic bridge for consumers hesitant about full electrification. Marketers should leverage practical alternative powertrains to tap into demand for lower running costs without EV range anxiety.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMi8AFBVV95cUxQeTgtWm9EWW1PLXBkUGVPTFUybGg4X0xacjRBS1Z3NHJ1ZkQ3cnludDJkTzJ5WEFwa2t3TTBCUTdPNk5hdUxpYlZUQUVJLW1IU0tvc1NLakxuU01NbDRWS1VoSjdtaWZ6STBaTlZ4NFk5dkM0MHZVUWFoS3lMaWl4MHo1V241OW5mMHE5MGE3WjJuelJCeEtiZW02Z1l4Vzg4cnNCcDRHd1lGTnAzU1V4ZGZNdzV1ckVOVDhnakJXTEFtbTFVRVVPTlh2NXZyUGZDOWExbWpDWnhlU2p0LU5DdkoxSjRSYmlVTzg3dmJ0SGHSAfYBQVVfeXFMT0RWWDJpbjJRX1RON1phSzAzY3d5YTVtSEkwRmNDU3FyeUlVTVhGcG5wS3d1RXpSa21yVnVGSWg3YWZfcjVCS19panh2bUREaVV2MjNiOWFnY0FKZmVEYU1SVm10UjJCTGlQWEdqWlJlbE5kbzBENUtoUnFkSDVjZk01M2pJVTljTWVoNEI4aC1lZVBjLVdSTC04TW9WOGZSeVdjS3ZmdFk5VDkwenZIS1E1WkhYc0RhYmNsM0h2bS10T3g4WFh1ODN4LURSNVU4NW5fU0ozbUVucUNPNFFnNWtIS1ZEaUFxUkNxR1JyR1dqQXdNRTl3?oc=5" target="_blank" rel="noopener">The Economic Times ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="regulation" style="--c:#8E5A8A">
+  <h2><i>⚖️</i>Regulation &amp; policy</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#8E5A8A"><div class="type"><small>The Times of India</small><b>Blinkit</b></div></div>
+  <div class="body">
+    <h3>FDA Uncovers Expired Food Resale, Files FIR Against Reliance and Blinkit Executives</h3>
+    <p>The Food and Drug Administration (FDA) has uncovered an operation involving the resale of expired food products. Following the investigation, an FIR has been filed against executives representing retail giant Reliance and quick commerce platform Blinkit.</p><p>The regulatory action highlights intensified scrutiny into inventory management, warehousing, and quality checks across major retail and instant delivery supply chains.</p>
+    <div class="why"><b>Why it matters</b>For quick commerce and retail players, operational failures in stock control directly threaten hard-won consumer trust and brand safety. Marketing leaders must recognize that rapid delivery promises mean little if core product integrity and supply chain transparency are compromised.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMi5wFBVV95cUxPY205TU5KNUpDNEdKalN3VnVuWWU4NG5oYmJGTTV2ZEd6d3dmdTVEcl9fSC11TmY1Snk0S2N1SHFkT1Ezd1NoT3FQal9SX3dfT1hWSGZxZkZIejlFLU4tbkdYM1JUUXE5aS03Y0gwWjJsQ2Z0WkNpZS1wLVV5LVUyQ0VwWXhrT09VRnlIbnI5bE5EMVN2b3F1QnE5SU4wS3BYWi1RM0RocjVnVHA0QVlMblBxb0M4SEJzTmJuVmxNMFY3VTdfdkNHc1k2bm9veFppek5ycEwyWmxONUUyTnJXVGZXd0lFZnfSAewBQVVfeXFMT2dwb3ZsNTB6SjQwSmxrRVVWUG5iNXVzaDBpd19GbVU3M0ViQlpoWFZWVmFaY2JHWEtvWm5qeWUwRUIwZ2JsX29iSlRUR1lBcDZsT3l1cW9KNjMxNERlejh1STF1MXVmMGFnNnNobXljVC1NcTlhdFN3blFNNV9yNWlQVWRrdU96RlVBamhvcEtrZ0NTZEhjLXBCdmRjcEU1cGdkN2x6QUVoaFNQWXdnM281c0MwVFlZbWp5djdzUGs4RTBOVXNCSjloTWtmdW1zUkhkTXNybk9zcFhfZF9KMFVnOVdLTGVLQXpuR20?oc=5" target="_blank" rel="noopener">The Times of India ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#8E5A8A"><div class="type"><small>Storyboard18</small><b>Regulation &amp; policy</b></div></div>
+  <div class="body">
+    <h3>FSSAI Proposes Ban on Sucrose and Fructose in Food for Infants Up to Six Months</h3>
+    <p>The Food Safety and Standards Authority of India (FSSAI) has proposed a ban on the inclusion of sucrose and fructose in infant food products targeted at babies up to six months old.</p><p>The regulatory proposal reflects rising oversight on nutritional composition and added sugars in early childhood diets, placing packaged baby food formulations under closer scrutiny.</p>
+    <div class="why"><b>Why it matters</b>Infant nutrition brands must prepare for mandatory recipe overhauls and pivot their marketing toward clean, compliant formulations. Transparent communication around product ingredients will be vital to retaining parent trust as scrutiny around early-stage nutrition increases.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMi1AFBVV95cUxOY05fUW15VlU2NVBaaThfUFFWWDctT2pvd0hSSHRHbzFLTjRiSDZ5ekZRbGtva3NFWFVKaHpZN2Y5aXJaUmZLbVM0TTdsUFNaeXBEa2hkb0poVU5nVHRjN1dOMGJ2ZWdoQklDdTB0OUtSX2h2SklqRTRZbHdXaDM2YzluenhEaXhPdnpYUUdRWTZ5QUktUlVaNW81QlVmWjN1TjBIamxSN2IzYV9LdlVQamRuR2JqMXg4aWNaazFVcXdsVEo4UDRrQ0tTTG5VS3poTlppWdIB2gFBVV95cUxPb29va1FLcHdpdldkYnZlSWhEY3pycDd0LXdQWEY0bWFzelFUQ1lCbTdhVHhsT0ZQQ1czU0JuaVg2ZDJXeExRTzBJemxOVzEzY3E3eVF6UGxvMXVmQl9pZ0NTaWlaZzk0ejRCYVo5R1lOdDRtRWJQcWFBampJckJzei1wc0pQU1ZmZFFGLWpuM1QyaVl2TTZIUmZTTnlReTdzQUw1R2FMV0V2WTM4RTNHNzZhZlJ2dGN3Vy1KOU1XRkNNQjJLWnBtTkhfSUNOdzA4RHJoTzdNMVhtZw?oc=5" target="_blank" rel="noopener">Storyboard18 ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#8E5A8A"><div class="type"><small>afaqs!</small><b>Priyagold</b></div><div class="logo"><div class="tile"><img src="https://www.google.com/s2/favicons?domain=priyagold.com&amp;sz=256" alt="Priyagold" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.logo').remove()"></div><em>Priyagold</em></div></div>
+  <div class="body">
+    <h3>FSSAI Cracks Down on Priyagold Over Alleged Cattle Feed Bran in Biscuits</h3>
+    <p>The Food Safety and Standards Authority of India (FSSAI) has taken action against biscuit maker Priyagold over allegations involving the use of cattle feed bran in its biscuits.</p><p>The enforcement action brings the brand&#x27;s raw material sourcing and manufacturing practices into focus as authorities clamp down on quality violations in packaged food items.</p>
+    <div class="why"><b>Why it matters</b>Allegations of adulteration can instantly erode consumer goodwill and destroy brand equity built over decades in the mass FMCG market. Marketing and communications teams must be prepared with stringent quality messaging and swift crisis management when manufacturing standards are questioned.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMivwFBVV95cUxNMzhOSXZfbmJLQ1BsNlI2OWxqNDRNdWRrTmNrb0o3aHpZNGQ3YkQ4Uzh4UzRtSldRQlk2QmQ5aUQzQjJHWktxbVRVMjZUSFpiMmN0VUhmdm1GdHRUbzFxU3lJUzlxMWtFMHM5WWstakpZT2ZLN21wYmIwQ0lDV1RVY05lVjZfNWY5ek1KNmx1SHlpbjYyYUVYRE5HYTl1Tk45S3d1U2JDTWFuTGF3b2J3cVJBTXQ0VkRfLWVDM1ZYSQ?oc=5" target="_blank" rel="noopener">afaqs! ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="learning" style="--c:#DB5A8C">
+  <h2><i>📚</i>Case studies, jobs &amp; competitor intel</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#DB5A8C"><div class="type"><small>CNBC TV18</small><b>Ogilvy India</b></div></div>
+  <div class="body">
+    <h3>Ogilvy India Creatives Highlight Need to Move Beyond Gen Z Stereotypes</h3>
+    <p>Creative leaders at Ogilvy India are urging brands to reconsider how they target Gen Z, cautioning against broad demographic generalizations in modern advertising campaigns.</p><p>The discussion focuses on moving away from superficial tropes and instead developing marketing that genuinely reflects the lived experiences of younger consumers.</p>
+    <div class="why"><b>Why it matters</b>Relying on reductive demographic assumptions risks alienating Gen Z consumers who value authenticity. Marketers must ground their creative work in nuanced cultural insights rather than conventional youth marketing stereotypes.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMitAFBVV95cUxNUm5XeDk4OWZaZENtSzJ0ZzRwY21OU0ZDNjhiSzlVRlhzT1UtbU4xdkNETlIzaVZjZGZQUVNra05nUDZaNGc4TEJhTm9veWN3djNVbEoyT3VlaEl5TV9XTWdyNllnSmJMYU9UemE1SzF5OC1GMjZyMUZDNDZtT0VWZVI3aXlSZFhNWU5iTk5EQlZDdTg2RGVrWHB3MjNhQmk1QkZncDNvRUxuOElNeTJnUUt2NFXSAboBQVVfeXFMTUVCeFBYMTV1OVdWZ3RZNHRSNXMwdEpXQU5JN2c5b3UzemJObXdobFk2LWtDcnEtdXFuRzZzMWE2aG50dFVwU2lEQnM5dVFLRmpxMm0yb3BFSWEyREhvYmt0UkVwQmFNRUV3Mk5Oa19CNHQ2aGZEanRoS0g3SnBrZGlGVkUxM1lKeldzUkpQS0hrdDdpQTRJbWVZVTNaWWlDMmpfSUN5Uk5jUmNENW9XbjhfMDUyWEpER3dR?oc=5" target="_blank" rel="noopener">CNBC TV18 ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#DB5A8C"><div class="type"><small>Google Business Profile</small><b>Google</b></div><div class="logo"><div class="tile"><img src="https://www.google.com/s2/favicons?domain=thinkwithgoogle.com&amp;sz=256" alt="Google" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.logo').remove()"></div><em>Google</em></div></div>
+  <div class="body">
+    <h3>Think with Google Outlines Strategies to Maximize ROI via Brandformance</h3>
+    <p>Think with Google has examined how marketers can optimize returns by adopting a &#x27;brandformance&#x27; model that bridges traditional branding with performance execution.</p><p>The approach emphasizes uniting upper-funnel brand awareness with direct-response metrics to drive more cohesive, measurable commercial outcomes across digital touchpoints.</p>
+    <div class="why"><b>Why it matters</b>Siloing brand building and performance marketing often dilutes efficiency and compromises attribution. Integrating both disciplines into a singular brandformance strategy enables marketers to maximize their media investments and long-term customer value.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMilwFBVV95cUxNZlVQRE15LXNGRFQ2bUtHTGVsbmJoaHZaejhwcnpHclB4SGczOU1uVS1jWlJobkhSTEI1aGNsN0s4RjRwWXd4d3FFaEZhR0Y0M1ZKbFVNT3lFTTVkUHBDQzR4WTRXM0Z3eGd5bXRNU2lMUjk1aFc4VFlYVlNpLXVaQmZob3hpQ0o2V0xBa2ZCM0VKeTJ0Z3pz?oc=5" target="_blank" rel="noopener">Google Business Profile ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#DB5A8C"><div class="type"><small>ET BrandEquity</small><b>Case studies, jobs &amp; competitor intel</b></div><img class="photo" src="https://etimg.etb2bimg.com/thumb/msid-135006419,imgsize-1876797,width-1200,height=627,overlay-etbrandequity,resizemode-75/marketing/the-first-pitch-for-your-brand-is-no-longer-yours-to-make.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div>
+  <div class="body">
+    <h3>AI Assistants Shift Discovery from Search Rank to Upstream Brand Judgment</h3>
+    <p>The rapid adoption of AI assistants is fundamentally changing brand discovery by transforming open search into automated judgment. In traditional search, search engines returned links and allowed users to evaluate options. In contrast, AI assistants process user prompts—such as budget-conscious vacation planning—and return direct recommendations with reasoning attached, leaving non-recommended competitors entirely omitted from the conversation.</p><p>This shift means simply being indexed or cited is no longer sufficient. An AI assistant may reference a brand for care guidelines on a luxury item, yet completely exclude it when a consumer asks which brand to purchase. Within AI-driven discovery, ranking effectively assigns a role—whether as a trusted authority, a budget alternative, or the premium pick. Marketers can uncover how assistants currently position them by running the actual phrased queries their prospective customers ask.</p><p>Addressing positioning gaps in AI results cannot be achieved simply by churning out more owned content, which often dilutes signal rather than establishing credibility. AI models prioritize cross-channel corroboration, relying on earned media, user reviews, comparison portals, and community discussions. Because outdated reviews or unresolved customer complaints directly inform AI assessments, managing assistant visibility extends far beyond the traditional search team.</p>
+    <div class="why"><b>Why it matters</b>AI engines now evaluate and pre-filter brands before consumers ever see them, meaning rank is determined by external credibility rather than site optimization alone. Marketers must coordinate owned content with earned media, reviews, and community sentiment to ensure AI assistants present them accurately at critical purchase moments.</div>
+    <a class="src" href="https://brandequity.economictimes.indiatimes.com/news/marketing/the-first-pitch-for-your-brand-is-no-longer-yours-to-make/135006419" target="_blank" rel="noopener">ET BrandEquity ↗</a>
+  </div>
+</article></div>
+</section></main>
+
+  <section class="archive">
+    <h2>Past briefings</h2>
+    <div class="days"><a href="2026-10-18.html">Today</a><a href="2026-10-17.html">Sat, 17 Oct</a><a href="2026-10-16.html">Fri, 16 Oct</a><a href="2026-10-15.html">Thu, 15 Oct</a><a href="2026-10-14.html">Wed, 14 Oct</a><a href="2026-10-13.html">Tue, 13 Oct</a><a href="2026-10-12.html">Mon, 12 Oct</a><a href="2026-10-11.html">Sun, 11 Oct</a><a href="2026-10-10.html">Sat, 10 Oct</a><a href="2026-10-09.html">Fri, 09 Oct</a><a href="2026-10-08.html">Thu, 08 Oct</a><a href="2026-10-07.html">Wed, 07 Oct</a><a href="2026-10-06.html">Tue, 06 Oct</a><a href="2026-10-05.html">Mon, 05 Oct</a><a href="2026-10-04.html">Sun, 04 Oct</a><a href="2026-10-03.html">Sat, 03 Oct</a><a href="2026-10-02.html">Fri, 02 Oct</a><a href="2026-10-01.html">Thu, 01 Oct</a></div>
+  </section>
+  <footer>Updated 18 Oct 2026, 10:25 AM IST · Articles are AI-written summaries; open the source before quoting. 🌸</footer>
+</div>
+<script>
+document.querySelectorAll('.chip').forEach(function(c){
+  c.addEventListener('click',function(){
+    document.querySelectorAll('.chip').forEach(function(x){x.classList.remove('on')});
+    c.classList.add('on');
+    var k=c.dataset.cat;
+    document.querySelectorAll('.cat').forEach(function(s){s.style.display=(k==='all'||s.dataset.cat===k)?'':'none'});
+    window.scrollTo({top:document.querySelector('nav').offsetTop,behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>
