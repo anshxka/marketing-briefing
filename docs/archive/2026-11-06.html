@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#FFE4EE">
+<title>The Marketing Edit · Friday, 06 November 2026</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFF5F8; --card:#FFFFFF; --ink:#3A1430; --muted:#8A5A78; --line:#F7D3E1;
+  --rose:#E8457C; --blush:#FFE4EE; --soft:#FFF0F5; --shadow:0 10px 30px -18px rgba(194,24,91,.35);
+  --serif:"Playfair Display",Georgia,"Times New Roman",serif;
+  --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#1C0E18; --card:#28141F; --ink:#FBE8F1; --muted:#C99AB4; --line:#44243A;
+  --blush:#3A1B2F; --soft:#2F1727; --shadow:0 10px 30px -18px rgba(0,0,0,.6);
+}}
+*{box-sizing:border-box}
+html{scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--sans);
+  background-image:radial-gradient(circle at 15% 0%,var(--blush) 0,transparent 40%),radial-gradient(circle at 90% 10%,var(--blush) 0,transparent 35%);
+  background-repeat:no-repeat}
+.wrap{max-width:1040px;margin:auto;padding:36px 20px 70px}
+a{color:inherit}
+
+/* masthead */
+header{text-align:center;margin-bottom:30px}
+.kicker{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--rose);font-weight:700;margin:0}
+h1{font:italic 600 clamp(40px,8vw,72px)/1.05 var(--serif);margin:10px 0 8px;letter-spacing:-.01em}
+.date{color:var(--muted);margin:0}
+.date b{color:var(--rose);font-weight:500}
+.byline{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 14px;margin:14px 0 4px;font-size:15px;color:var(--muted)}
+.byline b{color:var(--ink);font-weight:700}
+.byline em{font:italic 600 17px var(--serif);color:var(--rose)}
+.social{display:inline-flex;gap:8px}
+.social a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:14px;font-weight:500;color:var(--ink);
+  background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 13px 6px 9px;transition:.15s}
+.social a:hover{border-color:var(--rose);color:var(--rose);transform:translateY(-1px)}
+.social svg{width:18px;height:18px;flex:none}
+.flourish{color:var(--rose);letter-spacing:.6em;margin-top:12px;font-size:14px}
+
+/* top cards */
+.top{display:grid;grid-template-columns:1.6fr 1fr;gap:18px;margin-bottom:30px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px 26px;box-shadow:var(--shadow)}
+.card h2{font:600 22px var(--serif);margin:0 0 12px}
+.big{list-style:none;margin:0;padding:0;counter-reset:n}
+.big li{counter-increment:n;position:relative;padding:0 0 14px 44px;font:500 17px/1.5 var(--serif)}
+.big li::before{content:counter(n);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;
+  background:var(--blush);color:var(--rose);font:700 14px/30px var(--sans);text-align:center}
+.tip{background:linear-gradient(140deg,#FFD6E5,#FFC1D8 55%,#F9A8C9);color:#4A1033;border:0}
+.tip h2{color:#4A1033}
+.tip p{margin:0;font-size:16px}
+@media (prefers-color-scheme:dark){.tip{background:linear-gradient(140deg,#5A2045,#7A2858);color:#FFE4EE}.tip h2{color:#FFE4EE}}
+
+/* chips */
+nav{position:sticky;top:0;z-index:5;display:flex;gap:8px;overflow-x:auto;padding:12px 0;margin-bottom:6px;
+  background:var(--bg);scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+.chip{--c:var(--rose);flex:none;font:500 14px var(--sans);color:var(--ink);background:var(--card);
+  border:1px solid var(--line);border-radius:999px;padding:8px 15px;cursor:pointer;transition:.15s}
+.chip span{color:var(--muted);margin-left:3px}
+.chip:hover{border-color:var(--c)}
+.chip.on{background:var(--c);border-color:var(--c);color:#fff}.chip.on span{color:#ffffffd0}
+.chip:focus-visible,a:focus-visible{outline:2px solid var(--rose);outline-offset:2px}
+
+/* sections */
+.cat{margin-top:38px}
+.cat>h2{display:flex;align-items:center;gap:12px;font:600 28px var(--serif);margin:0 0 16px}
+.cat>h2 i{font-style:normal;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;
+  background:var(--blush);font-size:22px}
+.story{background:var(--card);border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:var(--shadow);
+  display:flex;flex-direction:column}
+.story.featured{display:grid;grid-template-columns:1fr 1.15fr;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.media{position:relative;aspect-ratio:16/10;overflow:hidden;
+  background:radial-gradient(circle at 25% 20%,#ffffff99 0,transparent 45%),linear-gradient(135deg,var(--blush),color-mix(in srgb,var(--c) 45%,var(--blush)))}
+.featured .media{aspect-ratio:auto;min-height:100%}
+.media .type{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:22px 24px;color:#4A1033}
+.media .type small{font:700 11px var(--sans);letter-spacing:.2em;text-transform:uppercase;opacity:.75}
+.media .type b{font:italic 600 clamp(24px,3vw,34px)/1.1 var(--serif);margin-top:4px}
+.media .logo{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
+  background:inherit}
+.media .tile{width:38%;max-width:150px;aspect-ratio:1;background:#fff;border-radius:28px;display:grid;place-items:center;
+  box-shadow:0 14px 34px -14px rgba(194,24,91,.45)}
+.media .tile img{width:62%;height:62%;object-fit:contain}
+.media .logo em{font:italic 600 20px var(--serif);color:#4A1033;font-style:italic}
+.media .photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media (prefers-color-scheme:dark){.media .type,.media .logo em{color:#FFE4EE}}
+.body{padding:22px 24px 24px}
+.story h3{font:600 22px/1.3 var(--serif);margin:0 0 12px}
+.featured h3{font-size:27px}
+.story p{margin:0 0 12px;color:var(--ink)}
+.why{background:var(--soft);border-left:3px solid var(--c);border-radius:12px;padding:12px 14px;margin:14px 0 12px;font-size:15px}
+.why b{display:block;color:var(--c);font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:3px}
+.src{font-size:14px;color:var(--muted);text-decoration:none}
+.src:hover{color:var(--rose)}
+
+/* archive */
+.archive{margin-top:50px;text-align:center}
+.archive h2{font:italic 600 24px var(--serif);margin:0 0 14px}
+.days{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.days a{text-decoration:none;font-size:14px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 14px}
+.days a:hover{border-color:var(--rose);color:var(--rose)}
+footer{text-align:center;color:var(--muted);font-size:13px;margin-top:34px}
+
+@media (max-width:760px){
+  .top{grid-template-columns:1fr}
+  .story.featured{grid-template-columns:1fr}
+  .featured .media{aspect-ratio:16/10}
+  .featured h3{font-size:23px}
+  .wrap{padding-top:26px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="kicker">Your daily marketing briefing</p>
+    <h1>The Marketing Edit</h1>
+    <p class="date">Friday, 06 November 2026 · <b>18 stories</b></p>
+    <div class="byline">
+      <span>Curated by <em>GenZMarketer</em> · <b>Anshika Sharma</b></span>
+      <span class="social">
+        <a href="https://www.instagram.com/genzmarketer_/" target="_blank" rel="noopener" aria-label="Instagram: genzmarketer_">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="ig" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FEDA75"/><stop offset=".35" stop-color="#FA7E1E"/><stop offset=".6" stop-color="#D62976"/><stop offset=".85" stop-color="#962FBF"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="6" fill="url(#ig)"/><circle cx="12" cy="12" r="4.3" fill="none" stroke="#fff" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.3" fill="#fff"/></svg>
+          Instagram
+        </a>
+        <a href="https://www.linkedin.com/in/anshxka02/" target="_blank" rel="noopener" aria-label="LinkedIn: Anshika Sharma">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="4" fill="#0A66C2"/><rect x="6" y="10" width="2.6" height="8" fill="#fff"/><circle cx="7.3" cy="7" r="1.5" fill="#fff"/><path d="M11 10h2.5v1.2c.5-.8 1.5-1.4 2.8-1.4 2.2 0 3 1.4 3 3.6V18h-2.6v-4.1c0-1-.3-1.8-1.4-1.8s-1.7.8-1.7 1.9V18H11z" fill="#fff"/></svg>
+          LinkedIn
+        </a>
+      </span>
+    </div>
+    <div class="flourish">✿ ✿ ✿</div>
+  </header>
+
+  <div class="top">
+    <div class="card">
+      <h2>Today's big picture</h2>
+      <ol class="big"><li>Festive campaigns from brands like Apple, CP PLUS, and SNITCH highlight how Indian marketers are aggressively leveraging seasonal sentiment and celebrity partnerships to capture consumer demand.</li><li>At the same time, rapid advancements in enterprise AI—led by Sarvam AI, Perplexity, and Adobe—alongside shifts toward programmatic Connected TV, underscore a dual focus on automated efficiency and precision targeting.</li><li>Global brand moves, such as Prada choosing hand-drawn holiday ads amid AI backlash, signal an emerging consumer fatigue with generative content, urging marketers to balance tech-driven personalization with authentic human creativity.</li></ol>
+    </div>
+    <div class="card tip">
+      <h2>💡 Tip of the day</h2>
+      <p>Audit your upcoming creative campaigns for over-reliance on generative AI visuals and test a hand-drawn or human-crafted asset to stand out against AI fatigue, while simultaneously exploring programmatic buying strategies for your Connected TV media plans.</p>
+    </div>
+  </div>
+
+  <nav><button class="chip on" data-cat="all">All <span>18</span></button><button class="chip" data-cat="campaigns_brands" style="--c:#E8457C">💄 Campaigns &amp; brand news <span>3</span></button><button class="chip" data-cat="ad_media" style="--c:#D63384">📺 Advertising &amp; media spend <span>3</span></button><button class="chip" data-cat="ai_martech" style="--c:#B84DB8">✨ AI in marketing &amp; martech <span>3</span></button><button class="chip" data-cat="ai_world" style="--c:#A855F7">🤖 AI in India &amp; global <span>3</span></button><button class="chip" data-cat="consumer" style="--c:#EC6FA0">💗 Consumer behaviour &amp; trends <span>3</span></button><button class="chip" data-cat="learning" style="--c:#DB5A8C">📚 Case studies, jobs &amp; competitor intel <span>3</span></button></nav>
+  <main><section class="cat" data-cat="campaigns_brands" style="--c:#E8457C">
+  <h2><i>💄</i>Campaigns &amp; brand news</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#E8457C"><div class="type"><small>Campaign Brief Asia</small><b>Apple</b></div></div>
+  <div class="body">
+    <h3>Apple and TBWA\Media Arts Lab India Release New Diwali &#x27;Shot on iPhone&#x27; Film</h3>
+    <p>Apple has launched a new campaign for Diwali, created in partnership with TBWA\Media Arts Lab India. The project continues the brand&#x27;s global &#x27;Shot on iPhone&#x27; creative platform, capturing festive celebrations through the smartphone&#x27;s camera capabilities.</p>
+    <div class="why"><b>Why it matters</b>Tying an established product-demo platform like &#x27;Shot on iPhone&#x27; to major cultural moments reinforces brand relevance while highlighting product performance. Marketers can take note of how consistent global frameworks can be successfully adapted to regional festivals without diluting the core message.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMiugFBVV95cUxPNm9tdnhXdWR2TnFub091VkdEeFJQN1RsLUkxNy10UDhndzFXRUZ2aTExejBqZExWOXd3S3NTUVVRbE5ITTVSZjYxazE2NUFtQ1VQWVNEQVN0bHpBZGpPai1xSzNYTkxPbUMxeEV1ZUFMTnpoRmJFTnRpeERJQ3Q2Q2EwMmNOU3VBWGZ5aXZvb1l6Z3NybVlxd0doUEZTSW91TnM4b2JZZi1abF81UE4wVHRRNFZOYWlhYlE?oc=5" target="_blank" rel="noopener">Campaign Brief Asia ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#E8457C"><div class="type"><small>ET BrandEquity</small><b>CP PLUS</b></div></div>
+  <div class="body">
+    <h3>CP PLUS Rolls Out New Campaign Featuring Ranveer Singh</h3>
+    <p>Surveillance and security brand CP PLUS has unveiled a new brand campaign featuring Bollywood actor Ranveer Singh. The initiative is aimed at driving brand awareness and recall in the consumer security solutions market.</p>
+    <div class="why"><b>Why it matters</b>Using high-profile celebrity endorsers helps tech and utility brands stand out in traditionally low-involvement categories. For brand marketers, associating with mass-appeal figures is an established lever to build consumer trust and top-of-mind recall.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMi2AFBVV95cUxNUHFGVC1ESE9oejFHbmNqc2YtcUZPVHpVS1l2cExmMm1JWjBjYWFtNE9mVXhMUHJGWWQ4QkdQZDlKUUVPR2Z0YkhPM01fSFdBdFNzeDQtUEJjU19QS2RaRGZqOVl1WWx4RDZ5c1RlYXhFNzl3UlNwcEE5V3FyTTI1OG9qMHBwZXJ2WkszTUQ2MGptXzhQQk5fNjBfYlUwWHJqRUJ0anh3OXBqQkg4VWo3Sk1NakRrWldoSzh0cl9nVmJKRWpraXBQU3hOMklFV3gtU0JVSGpNTFDSAdgBQVVfeXFMTVBxRlQtREhPaHoxR25janNmLXFGT1R6VUtZdnBMZjJtSVowY2FhbTRPZlV4TFByRllkOEJHUGQ5SlFFT0dmdGJITzNNX0hXQXRTc3g0LVBCY1NfUEtkWkRmajlZdVlseEQ2eXNUZWF4RTc5d1JTcHBBOVdxck0yNThvajBwcGVydlpLM01ENjBqbV84UEJOXzYwX2JVMFhyakVCdGp4dzlwakJIOFVqN0pNTWpEa1pXaEs4dHJfZ1ZiSkVqa2lwUFN4TjJJRVd4LVNCVUhqTUxQ?oc=5" target="_blank" rel="noopener">ET BrandEquity ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#E8457C"><div class="type"><small>Campaign India</small><b>SNITCH</b></div></div>
+  <div class="body">
+    <h3>SNITCH Enters Innerwear Segment with Comfort-Led Campaign</h3>
+    <p>Men&#x27;s apparel brand SNITCH has announced its entry into the innerwear market with the launch of a new comfort-focused campaign. The move represents a strategic category expansion for the fashion label as it broadens its footprint in daily essentials.</p>
+    <div class="why"><b>Why it matters</b>Category extension into essentials like innerwear allows direct-to-consumer apparel brands to drive repeat purchases and improve customer lifetime value. Positioning around comfort targets a primary consumer driver in an increasingly competitive segment.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMivAFBVV95cUxNZEN5cG9IaWljcldXcElweW01YUtDWjhQZ2xGVDlSSThMc05qV0JBaXhzMjBMeWNOdXdsOGstQnVXd21rRjVXOVhpUVp6YVM2M2pBRVJwZWhjRFpoNU9kdDcteTlfcXhzSFBFTnVZUVRsWHJiZzh6VGVNaHFJeDhNRE9aNWg1OHNRWTBnR2l4cldFRjJkVWYtb3o0Qnc3U0NRcGY1ZDR0eFJYdkZ6NlpsR0RtMVNSeFdNRmI5Tw?oc=5" target="_blank" rel="noopener">Campaign India ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="ad_media" style="--c:#D63384">
+  <h2><i>📺</i>Advertising &amp; media spend</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#D63384"><div class="type"><small>Storyboard18</small><b>Advertising &amp; media spend</b></div></div>
+  <div class="body">
+    <h3>Connected TV Shifts to Programmatic Buying Amid Questions Over Market Readiness</h3>
+    <p>Connected TV (CTV) is transitioning toward programmatic advertising models, marking a shift in how television inventory is bought and traded. The movement raises critical questions regarding whether India&#x27;s television advertising ecosystem is currently equipped to handle the operational and infrastructural demands of automated CTV ad buying.</p><p>As the medium evolves, industry stakeholders are assessing the technological infrastructure, measurement standards, and overall preparedness required to support programmatic workflows alongside traditional TV media planning.</p>
+    <div class="why"><b>Why it matters</b>Marketers must evaluate whether current programmatic CTV infrastructure can deliver the targeting precision and verification needed for brand campaigns. Assessing ecosystem readiness helps teams decide when to transition budgets from traditional broadcast buys to automated CTV channels.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMiwgFBVV95cUxNdGRyUzZjTEJrOXRvSXpjaEZBVGJ6d2otSkg4dk5WRUQwVVZ5d2d4Tl9xOXNPQk14SlVyemhrZy01R1J2ek1ZdlVFVTF4OFVJUnUxS0RJNFlnU2wxLTdieU9EM0E3WUpkZU1YZDJmMkQwbUtoQnF1YzhSdGJ0VVB2UWw4Q3FzLXFhY2llNGFYb25FVUZ6OFk2WEJQWHQ0ajRfUmJraXJOUXJrbUJnM0xWaGVub2pzZU54WWNlYlZNSEtRQdIBxwFBVV95cUxQa1JSV29FMDV1U0FXUVpfc3gwc3ZuaFJlalQ1YU5rV1JpaWVQM28tOGlUc0d1c2NLNE5hRUFwNUhLZURJRzAzeXdFYlJ3Z0pWWDNSY0V5VHBkS2tJMFBVTzBWemNwbEREUmlOZUE4VzNpS0J0SDF5WGQ1UTItbXRjWTBlUWpQcEFIZzJpeWpielI1b0ZlclZScURwZ2xYeV9oU1h2NkNYdnBxUlZJS2Z4YmNOMTVnNEJMYUxldl94czVod3lBVkY0?oc=5" target="_blank" rel="noopener">Storyboard18 ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#D63384"><div class="type"><small>Campaign India</small><b>Publicis</b></div><div class="logo"><div class="tile"><img src="https://www.google.com/s2/favicons?domain=publicisgroupe.com&amp;sz=256" alt="Publicis" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.logo').remove()"></div><em>Publicis</em></div></div>
+  <div class="body">
+    <h3>Publicis Responds to Cindy Rose as Debate Over &#x27;CEO Handshake&#x27; Agreements Escalates</h3>
+    <p>Publicis has responded via a letter to Cindy Rose as scrutiny intensifies around executive-level &#x27;CEO handshake&#x27; deals. The row highlights rising tensions and differing perspectives within the media agency network landscape.</p><p>The ongoing debate centers on high-level commercial arrangements and governance across agency groups, drawing attention to how senior leadership structures major media partnerships and commercial terms.</p>
+    <div class="why"><b>Why it matters</b>This dispute highlights the necessity for brand marketers to maintain complete oversight and transparency over agency commercial agreements. Ensuring that media buying terms are governed by structured procurement frameworks rather than informal leadership pacts protects brand investments.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMi3AFBVV95cUxNSExJQ01rNHRONHhTbjZtOTlkS2hvZGZmVzZ5eG5HQ0N0aS0wQjgwSkU0SjFTZHF2MS1UMHd6cGhOV1NWTFdDSV9ubVVYZ0JFa3Jrd0FuY3BsejA4clN0eFN0OFNCcVk4SWNQNFF1Z2pDbU1fdF9JYW12VjlteGJIakViSHFjNWh2RDFGNTVHQUJ1SXJHR2gzRkpqbkVQamRETVotQUc3RVRxZDJubXBTRkRqRnctazU4S0lWMnJycDBXTkZVVlZKQ01Nbkl3STE2Tl84ZWFfY09HbGlZ?oc=5" target="_blank" rel="noopener">Campaign India ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#D63384"><div class="type"><small>Storyboard18</small><b>PhysicsWallah</b></div><div class="logo"><div class="tile"><img src="https://www.google.com/s2/favicons?domain=pw.live&amp;sz=256" alt="PhysicsWallah" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.logo').remove()"></div><em>PhysicsWallah</em></div></div>
+  <div class="body">
+    <h3>PhysicsWallah Raises Q2 Advertising Outlay to Rs 87.9 Crore</h3>
+    <p>Edtech platform PhysicsWallah reported a 4.3% increase in its advertising expenditure for the second quarter, taking its total ad spend to Rs 87.9 crore for the period.</p><p>The spend reflects PhysicsWallah&#x27;s ongoing investment in customer outreach and marketing campaigns to support its operational footprint across the competitive education services market.</p>
+    <div class="why"><b>Why it matters</b>PhysicsWallah&#x27;s steady advertising investment indicates that sustained visibility remains critical for user acquisition in the Indian edtech space. Marketers should note that even established category leaders are maintaining solid media budgets to protect market share.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxNd3NaQzRwNUdNYThQSWZuNnV2YV8yV2hYYVB6MXpKUWx0Nkg1NHpURzktUnU0bUpNTnFGWnVhZlNsTUdsT3VETmpsQTkyZEZuX2NtdU9jT1NCbndnU3hnc09feEpWQzhGV294T0RZSkJQRnRHS3R5QUY1YTNURGJyU2xJeGxYNnFMZGVQVEwwVHFHQXl0VW8xaUlRTHZRRmJETTVwSFhsRlZlQzNPdjJXR0JVdll2MXhHMFk3YlFLbzjSAcYBQVVfeXFMT25SbklLODdQY1d0VDVaTEl5bjB0Q0dibVNDbWJwUVhtUndDbjFnTk4wREtDbGpyV29yTXZma2lvbzFpN1RPbnhYcU40dExBNFQ1TW1Ud2JWMnRQZmdyUktzaEVtYTBGQkJJNW5ZemVac245b2JDOWhrOGc3dmlkS1hvdjhKT1c0MlhWaURCRmx3R3lTVkJmeldJZF82ZU1YNG1adjRmZ3RCRUxJYVA5MU1HTEd3d0V5ZE5iRko5cy1EazBRODNB?oc=5" target="_blank" rel="noopener">Storyboard18 ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="ai_martech" style="--c:#B84DB8">
+  <h2><i>✨</i>AI in marketing &amp; martech</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#B84DB8"><div class="type"><small>Social Samosa</small><b>Adobe</b></div><div class="logo"><div class="tile"><img src="https://www.google.com/s2/favicons?domain=adobe.com&amp;sz=256" alt="Adobe" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.logo').remove()"></div><em>Adobe</em></div></div>
+  <div class="body">
+    <h3>Adobe Expands CX Enterprise Coworker Across AI Platforms</h3>
+    <p>Adobe has expanded its CX Enterprise Coworker across multiple AI platforms. The update extends the reach of Adobe&#x27;s enterprise customer experience assistant, integrating its workflow capabilities across various artificial intelligence environments.</p><p>This cross-platform expansion is aimed at broadening how enterprise teams interact with and deploy Adobe&#x27;s customer experience tools alongside external AI systems.</p>
+    <div class="why"><b>Why it matters</b>As martech ecosystems become increasingly distributed across different AI environments, cross-platform interoperability is becoming critical for seamless workflows. Marketers should monitor how legacy enterprise providers integrate their assistants into broader AI platforms to avoid operational silos.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMipwFBVV95cUxNb05sVVB5aHVTaEZBcjRrNnpzYXJ0bHBpeXhZQ0NqV1g3OVBTbVA2QnZ2MmJPbmNwakw3ZThkNGd2ZTViTzlsZGJqaE90VlBYOXdqSU5Yd1JCd3ZYLUZKbEZTSnRTdDBYNmV4dVZiamFKOExJeUZwOVFmTUlQTGxBS1BJbFkwSkY0NHRZYjBPMzJYUllrNU5oRjFhZHFIbmtyN2dUZ3c0MNIBpwFBVV95cUxNb05sVVB5aHVTaEZBcjRrNnpzYXJ0bHBpeXhZQ0NqV1g3OVBTbVA2QnZ2MmJPbmNwakw3ZThkNGd2ZTViTzlsZGJqaE90VlBYOXdqSU5Yd1JCd3ZYLUZKbEZTSnRTdDBYNmV4dVZiamFKOExJeUZwOVFmTUlQTGxBS1BJbFkwSkY0NHRZYjBPMzJYUllrNU5oRjFhZHFIbmtyN2dUZ3c0MA?oc=5" target="_blank" rel="noopener">Social Samosa ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#B84DB8"><div class="type"><small>Social Samosa</small><b>OpenAI</b></div><div class="logo"><div class="tile"><img src="https://www.google.com/s2/favicons?domain=openai.com&amp;sz=256" alt="OpenAI" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.logo').remove()"></div><em>OpenAI</em></div></div>
+  <div class="body">
+    <h3>OpenAI Upgrades ChatGPT Visual Capabilities with Images 2.5</h3>
+    <p>OpenAI has expanded the image generation features within ChatGPT through the introduction of Images 2.5. The rollout enhances the visual creation capabilities available natively inside the conversational platform.</p><p>The update continues OpenAI&#x27;s push to strengthen its multimodal toolset, allowing users to generate visual assets directly within ChatGPT workflows.</p>
+    <div class="why"><b>Why it matters</b>Upgrades to native generative image models inside ubiquitous platforms like ChatGPT lower the barrier for rapid creative ideation and asset drafting. Performance and brand marketers should assess how these iterative model improvements can be woven into everyday content and testing pipelines.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMirgFBVV95cUxNZEpLdXpMSkVZZGZvSkJ3OEhJY25pM1VkNTByZ29zNjMyRkUxdWVUYmxtd3hBb0pNS0VsczIwR1ZWUVRBZUtyY3U3emdHVy05WlVJcjNSSHN6a2VNejNOQWlaNGNlZ00wNVQxQk41Qy1ERzRic0NQU1FQQ251ekNHVm80ZlFIOGdUQnFIQ0ppWUI4MFlmc1lLSGY4VFp0dFNtOHppY2xVWnEwT2oxcHfSAa4BQVVfeXFMTWRKS3V6TEpFWWRmb0pCdzhISWNuaTNVZDUwcmdvczYzMkZFMXVlVGJsbXd4QW9KTUtFbHMyMEdWVlFUQWVLcmN1N3pnR1ctOVpVSXIzUkhzemtlTXozTkFpWjRjZWdNMDVUMUJONUMtREc0YnNDUFNRUENudXpDR1ZvNGZRSDhnVEJxSENKaVlCODBZZnNZS0hmOFRadHRTbTh6aWNsVVpxME9qMXB3?oc=5" target="_blank" rel="noopener">Social Samosa ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#B84DB8"><div class="type"><small>The Cool Down</small><b>Prada</b></div></div>
+  <div class="body">
+    <h3>Prada Opts for Hand-Drawn Christmas Ads as Coca-Cola Faces AI Backlash</h3>
+    <p>Prada has commissioned a veteran animator to develop hand-drawn advertisements for its Christmas campaign, opting for a traditional artistic approach. The luxury fashion house&#x27;s focus on handcrafted visual work stands in contrast to recent industry experiments with synthetic media.</p><p>The move comes as Coca-Cola faces consumer backlash over its use of artificial intelligence in its own holiday advertising efforts.</p>
+    <div class="why"><b>Why it matters</b>Prada’s reliance on human artistry demonstrates how traditional craft can serve as a powerful brand differentiator in an era increasingly saturated with synthetic imagery. Brand marketers must carefully weigh audience sentiment and brand equity before swapping human-led creative campaigns for generative AI.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMikgFBVV95cUxQRFAzVnZFQVVlR0c3OUgwWTY5VzA1UlFnaGtyaXNUUEg2dmJsaWJEODF1X3lTVEllcEg5cVJiVkd4X25hZnBxZFQ1NVFXbHRoSGRxaTYwX2JjdUFPTExIbXBubXZiVDBFcGx6a0p0WTM5WEdFQmtCcGxqZjFlZmlydjBqQjh2ZzRMNFdSM1pHc2M3dw?oc=5" target="_blank" rel="noopener">The Cool Down ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="ai_world" style="--c:#A855F7">
+  <h2><i>🤖</i>AI in India &amp; global</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#A855F7"><div class="type"><small>TechGig</small><b>Sarvam AI</b></div><div class="logo"><div class="tile"><img src="https://www.google.com/s2/favicons?domain=sarvam.ai&amp;sz=256" alt="Sarvam AI" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.logo').remove()"></div><em>Sarvam AI</em></div></div>
+  <div class="body">
+    <h3>Sarvam AI Unveils Prism Decision Model for Enterprise Workflows</h3>
+    <p>Domestic AI startup Sarvam AI has launched Prism, a new decision model designed specifically to support enterprise workflows.</p><p>The launch focuses on helping businesses automate and optimize complex organizational operations using specialized AI decision-making tools.</p>
+    <div class="why"><b>Why it matters</b>Specialized decision models offer marketing teams more dependable tools to automate data-driven workflows and operational handoffs. Watching homegrown enterprise models will be essential for Indian brands evaluating cost-effective, localized enterprise AI stacks.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMipAFBVV95cUxOYno5U09BYUVVdFY5Z01aQ056b3VUOElvRmRZVU9kR2NfN2tqUWpaeEU0Tm9sOEtaX0F0Zk05NnNMNzNvLV83bmlBYmF1NkszVDU2czhMcGdfcUhGRjFtM04waWY1MmtfZWl5RHVoU0lKSHc1dzJxMzlDTDFEbDEzWDhrOGZuVzhCZzRhUGpoWGV3YVZRVUFrZndEN3BkYlpSSkdJR9IBqgFBVV95cUxQUkdocllpS1ZndGNCWC1iM253RVRUTFNlLVg1alNyUk5tNkw1Tl9LT3V4U0xxdnprSWlYU0FtSjJxVE9UQk9GaEp6NXRuVkNyeS11QVpzSW5yQjBYTTloWW91SnpPVnIwbkxRV3ozUjNDREk5NG1ZTnl5ZWZnNVhKbmRnWFJSZlNzeEI4ckplaWZ0aU5idV9HZWVuVGZRcm51WXZNUWkzT1VsZw?oc=5" target="_blank" rel="noopener">TechGig ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#A855F7"><div class="type"><small>Communications Today</small><b>IndiaAI</b></div></div>
+  <div class="body">
+    <h3>IndiaAI Lowers Minimum Threshold to 512 Units for 10,000-GPU Compute Tender</h3>
+    <p>IndiaAI has reduced the qualification threshold for participation in its 10,000-GPU compute procurement drive, halving the entry barrier to 512 units.</p><p>The move is structured to allow more infrastructure providers to qualify for and contribute capacity to the government-backed computing initiative.</p>
+    <div class="why"><b>Why it matters</b>Expanding the pool of GPU providers helps accelerate India&#x27;s domestic compute infrastructure, which directly affects the cost and accessibility of training local AI models. Performance marketers and tech teams can anticipate a broader ecosystem of affordable, locally hosted AI infrastructure over time.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMipwFBVV95cUxNQXJmUTJ6eGdnbXFja0plQ2ZFejdkOTFyYU1WYTUwWjZmQ2Fqa3VKYkx4R1NrbVpIVmItN3JZTHhOYjNJUlY1TmhtUUhRWDNpSXhfdGl4SzQzc1lzWDl2MGNGMW53bUVCZi0xVWdkemxQYjJGT0dGS0VTM29Xd3g0TEdWOHJrWng5YUl1cXd5ZW4wbHlRTGVhcFByaWVGbTlTcC13VXlyVQ?oc=5" target="_blank" rel="noopener">Communications Today ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#A855F7"><div class="type"><small>The Verge AI</small><b>Perplexity</b></div><img class="photo" src="https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/25472503/STK271_PERPLEXITY_C.jpg?quality=90&amp;strip=all&amp;crop=0%2C10.732984293194%2C100%2C78.534031413613&amp;w=1200" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div>
+  <div class="body">
+    <h3>Perplexity Debuts &#x27;Teammates&#x27; AI Agents for 24/7 Enterprise Workflows</h3>
+    <p>Perplexity is stepping into direct competition with OpenAI and Anthropic by introducing always-on, workplace-focused AI agents named &quot;Teammates.&quot; The agents are designed to adopt multiple roles across an organization, tapping into existing projects, skills, and memory stored within the user&#x27;s Perplexity tools to operate continuously 24/7.</p><p>The feature builds on Perplexity Computer, an AI system that deploys agents to complete tasks on user devices. Teammates expands this capability to handle collaborative, large-scale, and ongoing work, enabling users to assign distinct jobs to multiple agents simultaneously. Teams can track workflows through individual threads inside the Perplexity app or communicate directly with the agents in Slack.</p><p>The new capability comes with a premium price point, restricted to users on Perplexity’s $200 per month Max tier. Highlighting the company&#x27;s long-term enterprise ambitions, CEO Aravind Srinivas posted on X that the company envisions organizations eventually having hundreds of AI teammates working on behalf of each individual employee.</p>
+    <div class="why"><b>Why it matters</b>Always-on autonomous agents have the potential to take over routine research, reporting, and operational task-switching for marketing departments. However, the steep $200 monthly cost per seat means marketing leaders must prove tangible operational ROI before expanding access across teams.</div>
+    <a class="src" href="https://www.theverge.com/ai-artificial-intelligence/1028302/perplexity-teammates-ai-agents-work" target="_blank" rel="noopener">The Verge AI ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="consumer" style="--c:#EC6FA0">
+  <h2><i>💗</i>Consumer behaviour &amp; trends</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#EC6FA0"><div class="type"><small>bfsi.economictimes.indiatimes.com</small><b>Consumer behaviour &amp; trends</b></div></div>
+  <div class="body">
+    <h3>Diwali acts as a festive demand barometer for the Indian economy</h3>
+    <p>Diwali continues to serve as a crucial festive demand barometer for the broader Indian economy. The period traditionally witnesses a surge in consumer spending across multiple retail and service sectors.</p><p>Market watchers closely track these festive sales patterns to gauge overall consumer sentiment and economic health. Brands and marketers heavily invest during this window to capture peak seasonal demand.</p><p>Future trends will depend on how sustained this spending momentum remains post-festivities.</p>
+    <div class="why"><b>Why it matters</b>Marketers should use the Diwali period as a key indicator of consumer purchasing power and sentiment. Festive campaigns must be planned around evolving value perceptions to maximize ROI.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxPWEtldFhibjdSNmJqeDgzV1FOMkRSZG0tTmdZYTAzXy1NQUx1VjZTVHMxTmRpYXVmUjdacGphT0ExWm5xX3czVHZMNm1oR19KY281dVJweFJQZG1NVzNNYVJQUHZGTUFkdEZ2cnFqc3lfTzJOcXdRdFpEdm1TU2FLVXRrLXlPX3VIN0lZckt2YUNWREFreWl1TS1XdjhYTmRJYThaX3hiS3NFVnFpYTIyZVNNaDR0clVOdjFuUy1pZULSAcABQVVfeXFMT1hLZXRYYm43UjZiang4M1dRTjJEUmRtLU5nWWEwM18tTUFMdVY2U1RzMU5kaWF1ZlI3WnBqYU9BMVpucV93M1R2TDZtaEdfSmNvNXVScHhSUGRtTVczTWFSUFB2Rk1BZHRGdnJxanN5X08yTnF3UXRaRHZtU1NhS1V0ay15T191SDdJWXJLdmFDVkRBa3lpdU0tV3Y4WE5kSWE4Wl94YktzRVZxaWEyMmVTTWg0dHJVTnYxblMtaWVC?oc=5" target="_blank" rel="noopener">bfsi.economictimes.indiatimes.com ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#EC6FA0"><div class="type"><small>Devdiscourse</small><b>Consumer behaviour &amp; trends</b></div></div>
+  <div class="body">
+    <h3>India&#x27;s dry fruits industry growth may plunge to 1-2 percent due to rising prices</h3>
+    <p>India&#x27;s dry fruits industry is facing a severe slowdown, with growth projected to plunge to 1-2 percent compared to the historical 10-15 percent. According to the NDFC(I) President, rising prices have significantly hurt consumer demand across the country.</p><p>Inflationary pressures have forced shoppers to cut back on discretionary purchases like premium dry fruits. This sharp deceleration marks a notable shift in consumer buying behavior within the food and grocery segment.</p><p>Industry stakeholders will need to monitor pricing strategies closely. Future recovery depends on stabilization in supply chains and consumer price adjustments.</p>
+    <div class="why"><b>Why it matters</b>Surging prices in discretionary categories demand agile pricing and packaging strategies from brands. Marketers must highlight value or introduce smaller pack sizes to sustain volume consumption during inflationary periods.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMi-gFBVV95cUxNUlAtRHdsbzZUOGtLNVlNVkF2WDlmNDZUQlJZdGtwcklmY3Z2czdEcmVrWG9jNVJaVnF6ZFNMRVFVOXhNa3JpSnBwdlF4cnN1aTZTV1RXSnh3cENpOHlEZkUxOEE5UzMzMm9tV0txT1dTQlh0MjFWSVFycWt0UUd5NnVUSHJUWWwxMGNRTFRMa01zRlpJTEN5a21JR0FIa2poQUUtY3VTUFQ1MGpJMnVicWtWTUdHRXp4THdIMXhhWUhiRXNQTFlnRkc5ZE10VW9Gd2plaWVjLWJsdHFNVU05UjFuR1AtTy1JckMwQjdIOWJ4b0tNVFN0RWt30gH_AUFVX3lxTE0xbWFXNzdnaUZVbl85THlpUHZoVE5NOVhRM0FRZGJLeDdlSEpRQ2lyWE50ZVBPLVBTelp3eDJweUNmalZHWXJLX3kzRE9lV2tXbHR5N0tLd0ROMEh4aVg3MlBDLVdhRm1TY0FiSGh6MlNLN3ZsbmRPSEdCMENweEFaVGEzRjJrcXE4dEtpWmZwY1lQQTM0TkxlSS1wVDRhOHlvVE5WNHRZUGZjcHo3Tk1TQ0J2NWtRWDliekNSYU4xVGRKbFFjWWlIRzlMRnBETE1uNWQxakVtSEp4Ti1hcmRRM2NxZG96Q1o3ZS1JZ1BaejRvM2QzdDRZLUg4bFF0UQ?oc=5" target="_blank" rel="noopener">Devdiscourse ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#EC6FA0"><div class="type"><small>China Daily Global Edition</small><b>Consumer behaviour &amp; trends</b></div></div>
+  <div class="body">
+    <h3>Mid-priced goods gain market share in China as shoppers seek better value</h3>
+    <p>Mid-priced goods are gaining significant market share in China as local shoppers increasingly seek better value for their money. Consumers are shifting away from extreme ends of the pricing spectrum in favor of reasonably priced alternatives.</p><p>This trend reflects a broader cautiousness among buyers adjusting their spending habits. Retailers and manufacturers are adapting their product portfolios to cater to this rising demand for affordability paired with quality.</p><p>Brands that fail to offer compelling mid-tier propositions risk losing share to competitors. The focus going forward will remain on delivering tangible utility and cost-effectiveness.</p>
+    <div class="why"><b>Why it matters</b>The shift toward mid-priced goods highlights the importance of value-driven positioning in shifting economic climates. Brands must reassess their tier offerings to capture cautious consumers looking for quality without paying a premium.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMiggFBVV95cUxQX3BVNUQtMGhObDJmbUxJc055ZGNRVVhMaUJWckJTakZGWVc4QU13aFBZSzFvcTl6R0ZwbzJMaFFwMEFZNUtVLTBzR1JGQU1FamtYR3BEdTgxejBCN1FzMVk4a2pYaUhUMzYyeXNmcjJvbktQNkdsaUhaVmR3NHdyU2lB?oc=5" target="_blank" rel="noopener">China Daily Global Edition ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="learning" style="--c:#DB5A8C">
+  <h2><i>📚</i>Case studies, jobs &amp; competitor intel</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#DB5A8C"><div class="type"><small>Marketing Dive</small><b>L&#x27;Oréal</b></div><img class="photo" src="https://imgproxy.divecdn.com/o5g-UtrGwHINAEgWeYBMHcSeuRJaGSPYwKzWqqPAXpU/g:ce/rs:fill:1600:900:1/Z3M6Ly9kaXZlc2l0ZS1zdG9yYWdlL2RpdmVpbWFnZS9naG9zdC1odW50ZXItaG90bGluZS1pZy5qcGc=.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div>
+  <div class="body">
+    <h3>L’Oréal partners with ReelShort for Urban Decay Halloween campaign</h3>
+    <p>Beauty giant L’Oréal has leaned further into the microdrama trend by launching a Halloween campaign for its Urban Decay brand. The project was entirely produced, developed, and distributed in collaboration with ReelShort, a leading platform known for bite-sized, episodic video content.</p><p>The strategic move highlights L’Oréal’s ongoing shift toward prioritizing pure entertainment over direct product promotion within fast-growing digital video formats.</p><p>As platforms specializing in short-form serialized dramas continue to capture consumer attention, major beauty brands are experimenting with native entertainment formats to engage audiences organically.</p>
+    <div class="why"><b>Why it matters</b>Marketers should explore native content partnerships on emerging entertainment platforms rather than relying solely on traditional product ads. Integrating brands into popular microdrama formats helps capture attention among audiences fatigued by conventional promotional content.</div>
+    <a class="src" href="https://www.marketingdive.com/news/loreals-evolving-microdrama-strategy-puts-entertainment-over-product/873646/" target="_blank" rel="noopener">Marketing Dive ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#DB5A8C"><div class="type"><small>Marketing Dive</small><b>McDonald&#x27;s</b></div><img class="photo" src="https://imgproxy.divecdn.com/7QDxy3aKcbLbD8ymT9RykGFESpDlaXR4sRWlVxj74o4/g:ce/rs:fill:1600:900:1/Z3M6Ly9kaXZlc2l0ZS1zdG9yYWdlL2RpdmVpbWFnZS9HZXR0eUltYWdlcy0yMjE0OTE0Njg4LmpwZw==.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div>
+  <div class="body">
+    <h3>McDonald’s US CMO steps down amid falling sales</h3>
+    <p>McDonald’s US Chief Marketing Officer has stepped down from the role following a period of declining sales for the fast-food giant. The departure comes as the company faces pressures on its top-line performance in the crucial domestic market.</p><p>To fill the leadership gap while conducting a search for a permanent successor, McDonald’s has announced plans to split the CMO responsibilities between two longtime executives on an interim basis.</p><p>The leadership transition marks a critical juncture for the brand as it attempts to reverse downward sales trends and stabilize its domestic marketing strategy.</p>
+    <div class="why"><b>Why it matters</b>Leadership changes during periods of declining sales highlight the intense pressure on marketing chiefs to drive immediate performance. Brands facing sales slumps often restructure marketing leadership to test fresh strategies and regain consumer traction.</div>
+    <a class="src" href="https://www.marketingdive.com/news/mcdonalds-us-cmo-steps-down-as-sales-decline/873927/" target="_blank" rel="noopener">Marketing Dive ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#DB5A8C"><div class="type"><small>IMPACT Magazine</small><b>Gulf Oil</b></div></div>
+  <div class="body">
+    <h3>Gulf Oil marks 125-year milestone with CMO Aarthy Sridhar</h3>
+    <p>Gulf Oil is celebrating its 125th anniversary, a milestone highlighted by insights from Chief Marketing Officer Aarthy Sridhar. The long-standing brand continues to navigate the evolving lubricant and energy landscape.</p><p>Additional details regarding specific anniversary campaigns or strategic initiatives were featured in IMPACT Magazine&#x27;s coverage of the milestone.</p>
+    <div class="why"><b>Why it matters</b>Milestone anniversaries offer heritage brands a strong hook for storytelling and brand equity campaigns. CMOs can leverage long-standing corporate history to build trust and authority with modern consumers.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMioAFBVV95cUxQTGZMM2JrWVpqMVBOTmtvcjhNWHpnRlIxN2VkSU1kNzZnVHl2ZENSOS1lNXBfSXBrc0hEUmp3bjJ6dmxzSFZZOGw1TXVTc25RaktrWUFnLUpQVnM0ZWxHeGQ3ZklJc3h3U1Eya2RwU3B0ME1zc2NMREFKNEM1cUFSekhMV3Z6aTFobzlNT1JlcjJUU3NKU212ZHV2c0haZk9Y?oc=5" target="_blank" rel="noopener">IMPACT Magazine ↗</a>
+  </div>
+</article></div>
+</section></main>
+
+  <section class="archive">
+    <h2>Past briefings</h2>
+    <div class="days"><a href="2026-11-06.html">Today</a><a href="2026-11-04.html">Wed, 04 Nov</a><a href="2026-11-03.html">Tue, 03 Nov</a><a href="2026-11-02.html">Mon, 02 Nov</a><a href="2026-11-01.html">Sun, 01 Nov</a><a href="2026-10-31.html">Sat, 31 Oct</a><a href="2026-10-30.html">Fri, 30 Oct</a><a href="2026-10-28.html">Wed, 28 Oct</a><a href="2026-10-27.html">Tue, 27 Oct</a><a href="2026-10-25.html">Sun, 25 Oct</a><a href="2026-10-24.html">Sat, 24 Oct</a><a href="2026-10-23.html">Fri, 23 Oct</a><a href="2026-10-22.html">Thu, 22 Oct</a><a href="2026-10-21.html">Wed, 21 Oct</a><a href="2026-10-20.html">Tue, 20 Oct</a><a href="2026-10-19.html">Mon, 19 Oct</a><a href="2026-10-18.html">Sun, 18 Oct</a><a href="2026-10-17.html">Sat, 17 Oct</a><a href="2026-10-16.html">Fri, 16 Oct</a><a href="2026-10-15.html">Thu, 15 Oct</a><a href="2026-10-14.html">Wed, 14 Oct</a></div>
+  </section>
+  <footer>Updated 06 Nov 2026, 12:40 PM IST · Articles are AI-written summaries; open the source before quoting. 🌸</footer>
+</div>
+<script>
+document.querySelectorAll('.chip').forEach(function(c){
+  c.addEventListener('click',function(){
+    document.querySelectorAll('.chip').forEach(function(x){x.classList.remove('on')});
+    c.classList.add('on');
+    var k=c.dataset.cat;
+    document.querySelectorAll('.cat').forEach(function(s){s.style.display=(k==='all'||s.dataset.cat===k)?'':'none'});
+    window.scrollTo({top:document.querySelector('nav').offsetTop,behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>
