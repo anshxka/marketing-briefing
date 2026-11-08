@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#FFE4EE">
+<title>The Marketing Edit · Sunday, 08 November 2026</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFF5F8; --card:#FFFFFF; --ink:#3A1430; --muted:#8A5A78; --line:#F7D3E1;
+  --rose:#E8457C; --blush:#FFE4EE; --soft:#FFF0F5; --shadow:0 10px 30px -18px rgba(194,24,91,.35);
+  --serif:"Playfair Display",Georgia,"Times New Roman",serif;
+  --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#1C0E18; --card:#28141F; --ink:#FBE8F1; --muted:#C99AB4; --line:#44243A;
+  --blush:#3A1B2F; --soft:#2F1727; --shadow:0 10px 30px -18px rgba(0,0,0,.6);
+}}
+*{box-sizing:border-box}
+html{scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--sans);
+  background-image:radial-gradient(circle at 15% 0%,var(--blush) 0,transparent 40%),radial-gradient(circle at 90% 10%,var(--blush) 0,transparent 35%);
+  background-repeat:no-repeat}
+.wrap{max-width:1040px;margin:auto;padding:36px 20px 70px}
+a{color:inherit}
+
+/* masthead */
+header{text-align:center;margin-bottom:30px}
+.kicker{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--rose);font-weight:700;margin:0}
+h1{font:italic 600 clamp(40px,8vw,72px)/1.05 var(--serif);margin:10px 0 8px;letter-spacing:-.01em}
+.date{color:var(--muted);margin:0}
+.date b{color:var(--rose);font-weight:500}
+.byline{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 14px;margin:14px 0 4px;font-size:15px;color:var(--muted)}
+.byline b{color:var(--ink);font-weight:700}
+.byline em{font:italic 600 17px var(--serif);color:var(--rose)}
+.social{display:inline-flex;gap:8px}
+.social a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:14px;font-weight:500;color:var(--ink);
+  background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 13px 6px 9px;transition:.15s}
+.social a:hover{border-color:var(--rose);color:var(--rose);transform:translateY(-1px)}
+.social svg{width:18px;height:18px;flex:none}
+.flourish{color:var(--rose);letter-spacing:.6em;margin-top:12px;font-size:14px}
+
+/* top cards */
+.top{display:grid;grid-template-columns:1.6fr 1fr;gap:18px;margin-bottom:30px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px 26px;box-shadow:var(--shadow)}
+.card h2{font:600 22px var(--serif);margin:0 0 12px}
+.big{list-style:none;margin:0;padding:0;counter-reset:n}
+.big li{counter-increment:n;position:relative;padding:0 0 14px 44px;font:500 17px/1.5 var(--serif)}
+.big li::before{content:counter(n);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;
+  background:var(--blush);color:var(--rose);font:700 14px/30px var(--sans);text-align:center}
+.tip{background:linear-gradient(140deg,#FFD6E5,#FFC1D8 55%,#F9A8C9);color:#4A1033;border:0}
+.tip h2{color:#4A1033}
+.tip p{margin:0;font-size:16px}
+@media (prefers-color-scheme:dark){.tip{background:linear-gradient(140deg,#5A2045,#7A2858);color:#FFE4EE}.tip h2{color:#FFE4EE}}
+
+/* chips */
+nav{position:sticky;top:0;z-index:5;display:flex;gap:8px;overflow-x:auto;padding:12px 0;margin-bottom:6px;
+  background:var(--bg);scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+.chip{--c:var(--rose);flex:none;font:500 14px var(--sans);color:var(--ink);background:var(--card);
+  border:1px solid var(--line);border-radius:999px;padding:8px 15px;cursor:pointer;transition:.15s}
+.chip span{color:var(--muted);margin-left:3px}
+.chip:hover{border-color:var(--c)}
+.chip.on{background:var(--c);border-color:var(--c);color:#fff}.chip.on span{color:#ffffffd0}
+.chip:focus-visible,a:focus-visible{outline:2px solid var(--rose);outline-offset:2px}
+
+/* sections */
+.cat{margin-top:38px}
+.cat>h2{display:flex;align-items:center;gap:12px;font:600 28px var(--serif);margin:0 0 16px}
+.cat>h2 i{font-style:normal;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;
+  background:var(--blush);font-size:22px}
+.story{background:var(--card);border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:var(--shadow);
+  display:flex;flex-direction:column}
+.story.featured{display:grid;grid-template-columns:1fr 1.15fr;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.media{position:relative;aspect-ratio:16/10;overflow:hidden;
+  background:radial-gradient(circle at 25% 20%,#ffffff99 0,transparent 45%),linear-gradient(135deg,var(--blush),color-mix(in srgb,var(--c) 45%,var(--blush)))}
+.featured .media{aspect-ratio:auto;min-height:100%}
+.media .type{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:22px 24px;color:#4A1033}
+.media .type small{font:700 11px var(--sans);letter-spacing:.2em;text-transform:uppercase;opacity:.75}
+.media .type b{font:italic 600 clamp(24px,3vw,34px)/1.1 var(--serif);margin-top:4px}
+.media .logo{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
+  background:inherit}
+.media .tile{width:38%;max-width:150px;aspect-ratio:1;background:#fff;border-radius:28px;display:grid;place-items:center;
+  box-shadow:0 14px 34px -14px rgba(194,24,91,.45)}
+.media .tile img{width:62%;height:62%;object-fit:contain}
+.media .logo em{font:italic 600 20px var(--serif);color:#4A1033;font-style:italic}
+.media .photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media (prefers-color-scheme:dark){.media .type,.media .logo em{color:#FFE4EE}}
+.body{padding:22px 24px 24px}
+.story h3{font:600 22px/1.3 var(--serif);margin:0 0 12px}
+.featured h3{font-size:27px}
+.story p{margin:0 0 12px;color:var(--ink)}
+.why{background:var(--soft);border-left:3px solid var(--c);border-radius:12px;padding:12px 14px;margin:14px 0 12px;font-size:15px}
+.why b{display:block;color:var(--c);font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:3px}
+.src{font-size:14px;color:var(--muted);text-decoration:none}
+.src:hover{color:var(--rose)}
+
+/* archive */
+.archive{margin-top:50px;text-align:center}
+.archive h2{font:italic 600 24px var(--serif);margin:0 0 14px}
+.days{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.days a{text-decoration:none;font-size:14px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 14px}
+.days a:hover{border-color:var(--rose);color:var(--rose)}
+footer{text-align:center;color:var(--muted);font-size:13px;margin-top:34px}
+
+@media (max-width:760px){
+  .top{grid-template-columns:1fr}
+  .story.featured{grid-template-columns:1fr}
+  .featured .media{aspect-ratio:16/10}
+  .featured h3{font-size:23px}
+  .wrap{padding-top:26px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="kicker">Your daily marketing briefing</p>
+    <h1>The Marketing Edit</h1>
+    <p class="date">Sunday, 08 November 2026 · <b>32 stories</b></p>
+    <div class="byline">
+      <span>Curated by <em>GenZMarketer</em> · <b>Anshika Sharma</b></span>
+      <span class="social">
+        <a href="https://www.instagram.com/genzmarketer_/" target="_blank" rel="noopener" aria-label="Instagram: genzmarketer_">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="ig" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FEDA75"/><stop offset=".35" stop-color="#FA7E1E"/><stop offset=".6" stop-color="#D62976"/><stop offset=".85" stop-color="#962FBF"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="6" fill="url(#ig)"/><circle cx="12" cy="12" r="4.3" fill="none" stroke="#fff" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.3" fill="#fff"/></svg>
+          Instagram
+        </a>
+        <a href="https://www.linkedin.com/in/anshxka02/" target="_blank" rel="noopener" aria-label="LinkedIn: Anshika Sharma">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="4" fill="#0A66C2"/><rect x="6" y="10" width="2.6" height="8" fill="#fff"/><circle cx="7.3" cy="7" r="1.5" fill="#fff"/><path d="M11 10h2.5v1.2c.5-.8 1.5-1.4 2.8-1.4 2.2 0 3 1.4 3 3.6V18h-2.6v-4.1c0-1-.3-1.8-1.4-1.8s-1.7.8-1.7 1.9V18H11z" fill="#fff"/></svg>
+          LinkedIn
+        </a>
+      </span>
+    </div>
+    <div class="flourish">✿ ✿ ✿</div>
+  </header>
+
+  <div class="top">
+    <div class="card">
+      <h2>Today's big picture</h2>
+      <ol class="big"><li>Record festive trade exceeding ₹7 lakh crore—powered by a 45% surge in D2C sales and quick commerce platforms successfully delivering high-value categories like gold—underscores resilient consumer appetite despite rising seasonal advertising costs and localized regulatory scrutiny.</li><li>As FMCG leaders like HUL deploy AI to unlock measurable business growth, Meta&#x27;s API policy shifts alongside landmark Delhi High Court rulings on AI takedowns and personality rights signal that rapid generative experimentation must now be anchored to strict compliance and platform privacy guardrails.</li><li>With domestic startup funding rebounding sharply and global conglomerates relying on Indian consumption to hedge slumps in the US and China, brands are aggressively investing in premiumization, authentic cultural storytelling, and physical store expansion.</li></ol>
+    </div>
+    <div class="card tip">
+      <h2>💡 Tip of the day</h2>
+      <p>Audit your Meta Marketing API integrations and Conversions API (CAPI) event-tracking parameters this week to verify that recent platform default changes haven&#x27;t degraded your attribution signals or performance reporting ahead of post-festive retargeting.</p>
+    </div>
+  </div>
+
+  <nav><button class="chip on" data-cat="all">All <span>32</span></button><button class="chip" data-cat="campaigns_brands" style="--c:#E8457C">💄 Campaigns &amp; brand news <span>3</span></button><button class="chip" data-cat="ad_media" style="--c:#D63384">📺 Advertising &amp; media spend <span>3</span></button><button class="chip" data-cat="ai_martech" style="--c:#B84DB8">✨ AI in marketing &amp; martech <span>3</span></button><button class="chip" data-cat="ai_world" style="--c:#A855F7">🤖 AI in India &amp; global <span>3</span></button><button class="chip" data-cat="social_creator" style="--c:#F06292">📱 Social, creators &amp; culture <span>3</span></button><button class="chip" data-cat="ecom_qcom" style="--c:#E57373">🛍️ E-commerce, D2C &amp; quick commerce <span>3</span></button><button class="chip" data-cat="startups_fintech" style="--c:#C2185B">🚀 Startups, founders &amp; fintech <span>3</span></button><button class="chip" data-cat="consumer" style="--c:#EC6FA0">💗 Consumer behaviour &amp; trends <span>3</span></button><button class="chip" data-cat="global_economy" style="--c:#9C4F7E">🌍 Global marketing &amp; economy <span>2</span></button><button class="chip" data-cat="regulation" style="--c:#8E5A8A">⚖️ Regulation &amp; policy <span>3</span></button><button class="chip" data-cat="learning" style="--c:#DB5A8C">📚 Case studies, jobs &amp; competitor intel <span>3</span></button></nav>
+  <main><section class="cat" data-cat="campaigns_brands" style="--c:#E8457C">
+  <h2><i>💄</i>Campaigns &amp; brand news</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#E8457C"><div class="type"><small>ThePrint</small><b>Apple</b></div></div>
+  <div class="body">
+    <h3>Apple Launches Festive Diwali Campaign Highlighting Indian Textiles, Dance, and a ’90s Soundtrack</h3>
+    <p>Apple has rolled out its latest Diwali campaign in India, weaving together traditional cultural elements with modern festive celebrations. The creative execution prominently features Indian textiles, dance performances, and a hit track from the 1990s to strike a chord with local audiences.</p><p>The campaign forms part of Apple&#x27;s ongoing seasonal storytelling in the Indian market, leaning into festive cultural touchpoints to connect emotionally with consumers during one of the country&#x27;s biggest shopping periods.</p>
+    <div class="why"><b>Why it matters</b>Combining hyper-local cultural motifs with nostalgic audio cues allows global technology brands to build authentic emotional connections during regional festivals. For brand marketers, tapping into collective cultural memory remains an effective way to drive festive cut-through.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMiqwFBVV95cUxNeXhpN0owUHVyTXFIcUM1aEhtOHJTRkMxdHJrT1pqNzAzYTFJY1k0U3U3UzB1Z2RHSWppS3NBaUNGN2NORU94OGFUQzFYTFRlUUItX205VXRhUW8tX2dTTnN4RlpPQThIMGE2QVh3Tjl4YVpzYlh2eFhKMldfcXpBM0U2bnFjSE9mdnl6UTVqMmJJYTUzcHVFVTcxalhCaUtLenZkazBSN2k1MTjSAasBQVVfeXFMTXl4aTdKMFB1ck1xSHFDNWhIbThyU0ZDMXRya09aajcwM2ExSWNZNFN1N1MwdWdkR0lqaUtzQWlDRjdjTkVPeDhhVEMxWExUZVFCLV9tOVV0YVFvLV9nU05zeEZaT0E4SDBhNkFYd045eGFac2JYdnhYSjJXX3F6QTNFNm5xY0hPZnZ5elE1ajJiSWE1M3B1RVU3MWpYQmlLS3p2ZGswUjdpNTE4?oc=5" target="_blank" rel="noopener">ThePrint ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#E8457C"><div class="type"><small>MediaNews4U</small><b>CP PLUS</b></div></div>
+  <div class="body">
+    <h3>CP PLUS Debuts Campaign Film Featuring Ranveer Singh to Mainstream Intelligent Security</h3>
+    <p>Security and surveillance brand CP PLUS has unveiled a new campaign film featuring Bollywood actor Ranveer Singh. The campaign is designed to bring intelligent security solutions into everyday household conversations across India.</p><p>By leveraging Singh&#x27;s mass appeal and high-energy persona, the brand aims to make security technology feel approachable and top-of-mind for mainstream consumers, positioning surveillance as an everyday safety standard rather than a niche utility.</p>
+    <div class="why"><b>Why it matters</b>Enlisting a high-visibility celebrity helps demystify technical consumer electronics and accelerates category adoption for home use. Marketers in high-involvement utility sectors can use relatable, pop-culture-driven storytelling to shift products from distress purchases to essential lifestyle upgrades.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMi3AFBVV95cUxQcXQ3ZUVyUEppdzJGdThpdjU2RlM0MzYweENGMkNUYXh5WXRVWVB3WDd5UmxGaFk5YmRyb1dGM3ltQUZiR3ZSZjR1NHI0c1M5azNybm9HWHJ6ZzhxX0xSMHJqN3JXT2RYNV90TkJDUnJkV3hUT05zTWU4Q19kdS1TUDdNZDdCcWpEeHlKYWFKYnhoeHdTdnFZNzlvbE5IX2N4bzFpeGRpdkFNVHY5Y3Jjb3QxQTNIcWFUTHVmMVpkYUlYaUtXSUdvVHdjb3ZxbFZyTFNZMEp5S1g0X0Q3?oc=5" target="_blank" rel="noopener">MediaNews4U ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#E8457C"><div class="type"><small>Storyboard18</small><b>Casio</b></div><div class="logo"><div class="tile"><img src="https://www.google.com/s2/favicons?domain=casio.com&amp;sz=256" alt="Casio" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.logo').remove()"></div><em>Casio</em></div></div>
+  <div class="body">
+    <h3>Casio India Unveils G-Shock 2500 Series and Outlines Plans to Double Exclusive Brand Stores</h3>
+    <p>Casio India has launched its new G-Shock 2500 Series as part of its continuous portfolio expansion in the country&#x27;s watch segment. Alongside the new model rollout, the company announced targeted plans to double the footprint of its standalone G-Shock brand stores across India.</p><p>The physical retail expansion underscores Casio&#x27;s strategy to provide dedicated experiential spaces for the sub-brand, aiming to engage directly with India&#x27;s expanding base of youth and lifestyle watch enthusiasts.</p>
+    <div class="why"><b>Why it matters</b>Dedicated exclusive brand outlets remain vital for premium lifestyle accessories, offering tactile discovery that digital channels cannot fully replicate. For performance and retail marketers, synchronizing key product launches with offline retail expansion helps maximize brand visibility and premium positioning.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMi0AFBVV95cUxPdDlrYVFzMTdSenFiWk55bURkY2tvaG5rTF82V0JIU1RHZms1VzFyNnE5SGpiMlpuTE9hNXpjM1FGVVRIcXk4am9LUFN1N0RpeGRLS2lwV2o0QnZNWEtGaWJYakxzMnJaMVRoZmdOZXc3RklfTTNyZDJZTU5LWVU0Y2Z6dEtaQUQ2S01kMnQ0SnBoNGxvUlpmQWllQmxOZkJMRDhjV3ZiRzgwOWhiUElBMnRYZ3pKbGJ2b3pocjFCSWxfYzFxdTduWk5GLUkzcHRr0gHWAUFVX3lxTE00OEhDNHgxXzlLTGloNDFRaHluN0d5NXVjTENESEpFSEVqRXg1U3FQMmFyaU5WUVZmN2N4THV2d3pvZlI3a3dCV1A1Q2xmbU5hMW8zekdJdUxzNklKVUx1cHllVlVtbHZfZHhLY0tOckJCNWZIYU04M0gxZXZ5Ym1oN3FwYTJwTUVmdm9vLVR1QWtGZEs2c1hYUWZWeXVIdDVPWjliQl8zbVhQUG9KYTVmU0Y0Rmt6bFRIZmVBSko4S3YyWlB1TVZJRmsyUXFicGNLNXd1d3c?oc=5" target="_blank" rel="noopener">Storyboard18 ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="ad_media" style="--c:#D63384">
+  <h2><i>📺</i>Advertising &amp; media spend</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#D63384"><div class="type"><small>Campaign India</small><b>Advertising &amp; media spend</b></div></div>
+  <div class="body">
+    <h3>Campaign India Examines Rising Costs of Festive Advertising During Diwali</h3>
+    <p>Campaign India has raised questions regarding the surging media investments during Diwali, exploring whether brands are spending excessively to capture festive consumer attention.</p><p>The discussion focuses on the intense advertising &quot;gold rush&quot; that marks the festival season, prompting brand marketers to evaluate the balance between premium festive spend and actual marketing returns.</p>
+    <div class="why"><b>Why it matters</b>Festive media inflation can severely dilute marketing efficiency if brands enter bidding wars without clear ROI metrics. Marketers must assess whether heavy seasonal ad spend creates distinct competitive advantage or merely contributes to expensive clutter.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMi3wFBVV95cUxNN1l6cEFjemhxRXZvOThyc25Hc2ZUSGpqaGtKeUpXS3p6WkdYMW1yMGZqZjgwQVpVWVZYTUgwbVpJejRqOVBZRm5YV1JoSU5GXzZfZW1IQ0lXbXpTSkZ1N3VQWmdqamJWZXM2OE5iQ24yRzZyRlRVblI2OGxFNGpOSEduVWN5VThtNzk2eE1XaFhPZ0FpVWxvTE1nSXE3ZGNobEdmWUlUOFlycEFXbTY5R09kQndrY2N0MFZNMGJkS0M1Rmt0RkQtSzJPbjV5QVlabE9PRXRvLWNkaXlDNzhr?oc=5" target="_blank" rel="noopener">Campaign India ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#D63384"><div class="type"><small>ET BrandEquity</small><b>Publicis Groupe</b></div><img class="photo" src="https://etimg.etb2bimg.com/thumb/msid-135619600,imgsize-106424,width-1200,height=627,overlay-etbrandequity,resizemode-75/research/advertising/fireworks-lit-up-adland-on-dhanteras-eve.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div>
+  <div class="body">
+    <h3>Publicis and WPP Clash Publicly Over Pitchless Agency Appointments and Media Reviews</h3>
+    <p>A dispute between advertising holding companies WPP and Publicis Groupe has escalated into a public confrontation over pitch methodologies and how global advertisers select agency partners. The tension follows remarks made by WPP chief executive Cindy Rose during an October 29 third-quarter earnings call, in which she questioned the growing trend of brands awarding major accounts without traditional pitches, warning against &quot;CEO handshake&quot; deals and urging thorough due diligence.</p><p>Publicis hit back on November 6 via an open letter posted to Instagram, calling Rose&#x27;s comments an insult to client intelligence. Publicis argued that opting out of pitches does not equate to bypassing rigorous evaluations. The agency network also turned the spotlight onto WPP&#x27;s choice to sit out Coca-Cola&#x27;s North American media review, openly questioning whether WPP&#x27;s decision was driven by capacity or capability constraints.</p><p>The exchange reflects high-stakes account rivalry across the beverage sector. WPP has managed Coca-Cola work since 2021 via its dedicated Open X unit, but Publicis captured the beverage giant&#x27;s North American media in 2025. With both networks set to vie for Coca-Cola&#x27;s global media account in 2026, the contest was further complicated in September when rival PepsiCo appointed Publicis as its global media partner, ending a nearly 30-year relationship with Omnicom&#x27;s OMD.</p>
+    <div class="why"><b>Why it matters</b>The friction highlights how traditional, protracted agency pitch processes are being challenged by direct client appointments and custom network models. For enterprise marketers, agency selection is increasingly shifting toward proven capability and operational alignment over traditional pitch cycles.</div>
+    <a class="src" href="https://brandequity.economictimes.indiatimes.com/news/research/advertising/fireworks-lit-up-adland-on-dhanteras-eve/135619600" target="_blank" rel="noopener">ET BrandEquity ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#D63384"><div class="type"><small>Campaign India</small><b>Advertising &amp; media spend</b></div></div>
+  <div class="body">
+    <h3>Creative Leaders Reflect on Nostalgia and Changing Storytelling in Diwali Advertising</h3>
+    <p>Campaign India has spotlighted creative industry perspectives on classic Diwali campaigns, analyzing the evolution of nostalgic themes and storytelling techniques in festive advertising.</p><p>The feature explores how festive brand narratives have shifted over time, comparing the emotional and cultural resonance of past campaigns with contemporary advertising practices.</p>
+    <div class="why"><b>Why it matters</b>Nostalgia remains one of the strongest emotional levers for brand recall, especially during high-sentiment periods like Diwali. However, brands must blend classic cultural cues with modern consumer realities to prevent seasonal storytelling from feeling repetitive.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMi2gFBVV95cUxQdnJmMUxaUmdLd0dMeHc5VkNISGhnc0R3VE02c1ZMc2NvUzZGeWx2UU1HRUJLTXI3NmdZS2p3c1ljT2xydTNsSzREalBHNzJjQVc5bFVSV256VzJYQnJYUG9KVDFsT2pSaVdaWEV1U3JUWkZzaFkwSEN0dXRuNmNUMXkxb0RLS2dOQVFkVnBrR0FCZEpwV0pwWldYR284SlNKR3VPZW56QTdNR3lSOEVoYmduNVZZaWhtQUhxT3FVNDY4WWFYRUFaSDIyelNsRGhydUYtWEwzQ2taQQ?oc=5" target="_blank" rel="noopener">Campaign India ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="ai_martech" style="--c:#B84DB8">
+  <h2><i>✨</i>AI in marketing &amp; martech</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#B84DB8"><div class="type"><small>Campaign India</small><b>HUL</b></div><div class="logo"><div class="tile"><img src="https://www.google.com/s2/favicons?domain=hul.co.in&amp;sz=256" alt="HUL" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.logo').remove()"></div><em>HUL</em></div></div>
+  <div class="body">
+    <h3>HUL Focuses on AI to Drive Measurable Business Growth</h3>
+    <p>Hindustan Unilever Limited (HUL) is sharpening its artificial intelligence ambition, aiming to turn marketing efficiency gains directly into measurable business growth.</p><p>The initiative reflects a strategic push to align technological capabilities and martech adoption with bottom-line performance across its brand portfolio.</p>
+    <div class="why"><b>Why it matters</b>Marketers must increasingly justify AI implementation by proving concrete commercial returns rather than settling for operational efficiencies alone. The move reflects the broader industry demand for clear accountability in martech investments.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMizgFBVV95cUxNWlZaOEFtc3NielVxc2QzdVBQejVQMGh3R1ZNSjJSUDZFcTRIcU02TTBHWTRQaWtKWGR2RTAyUEZUeXcwdVB6OFg0SWx3LUdVb1YzbDZsbmNaS1U3ZXVQMkxYRko0aHVVdGkwOEhNamNpMnFBdV9lbEEzLTUwN1kxTXFocnJlNmFmcm5yREtwSTN3MmZTQ1pZUG9mQXpPMTVkRGZaQjRNdGxpOUVFbVhLellRamFVVGlYbWRtY3ZxVFJucU85WVp1UlBjbkNhUQ?oc=5" target="_blank" rel="noopener">Campaign India ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#B84DB8"><div class="type"><small>WeRSM</small><b>Meta</b></div><div class="logo"><div class="tile"><img src="https://www.google.com/s2/favicons?domain=meta.com&amp;sz=256" alt="Meta" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.logo').remove()"></div><em>Meta</em></div></div>
+  <div class="body">
+    <h3>Meta Modifies Graph and Marketing API Defaults for Advertisers</h3>
+    <p>Meta has implemented changes to its Graph and Marketing API defaults for advertisers, altering standard configurations across its advertising tools.</p><p>The adjustments impact developers, performance marketing teams, and partners that rely on Meta&#x27;s API infrastructure to programmatically create, manage, and optimize ad campaigns.</p>
+    <div class="why"><b>Why it matters</b>Performance marketers and technical teams must verify their API integrations to ensure campaign automation and reporting continue without unexpected interruptions. Keeping track of default platform adjustments is essential for preventing downtime in automated buying setups.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMidEFVX3lxTE9GTFNZN3RIRmtTVi1hMGpyTjI2cXNoY2xielkzczlEYVMxSWlhR0tKVTBRUUZISEh4cXVzaTZheWZHRHRJT1B3Ql90MDNHNDVDemJ4Z3hCUUlTeTdPbE1VZk9DZlFTV21iVF92Q0JMWXBsdmNR?oc=5" target="_blank" rel="noopener">WeRSM ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#B84DB8"><div class="type"><small>PPC Land</small><b>Meta</b></div><div class="logo"><div class="tile"><img src="https://www.google.com/s2/favicons?domain=meta.com&amp;sz=256" alt="Meta" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.logo').remove()"></div><em>Meta</em></div></div>
+  <div class="body">
+    <h3>Meta Halts Updated Terms to Crawl Business Websites</h3>
+    <p>Meta has paused its planned November 20 terms of service update that would have allowed the platform to crawl business websites.</p><p>The halt suspends the implementation of the new crawling provisions, putting a freeze on the expanded website access permissions Meta had initially slated to take effect.</p>
+    <div class="why"><b>Why it matters</b>This pause offers brands a reprieve regarding automated data harvesting and scraping by major platforms on their web properties. Marketers should continue to audit their site permissions and monitor incoming platform policy revisions to safeguard proprietary web content.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMikAFBVV95cUxPMDRzYnRWUEZHTjNELTJycVBxMHBsZWRlQnJhTGc4WEFGUkNuNmNzSkNOOXMtMmplM2NYSU93X0JvMHYybEZlOHMzVjZYQ2JhdENRd3BKY1A3NENZTVp4WE03RUxWTm1qa2pYV1BiUHN1c2wzMmh5YkpINDY3aHhoSXRYYzJHTTZpRlIxZm9GV20?oc=5" target="_blank" rel="noopener">PPC Land ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="ai_world" style="--c:#A855F7">
+  <h2><i>🤖</i>AI in India &amp; global</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#A855F7"><div class="type"><small>theweek.in</small><b>IndiaAI</b></div></div>
+  <div class="body">
+    <h3>IndiaAI Fellowship 2026-27 Offers Up to ₹2 Lakh in Student Funding</h3>
+    <p>The IndiaAI Fellowship 2026-27 initiative has rolled out an opportunity for students to secure up to ₹2 lakh in financial funding. The program is designed to support academic and technical talent engaging with artificial intelligence coursework and research.</p>
+    <div class="why"><b>Why it matters</b>Growing public funding for AI research is set to expand India&#x27;s domestic pipeline of specialized technical talent. For marketers, this means an expanding ecosystem of home-grown developers capable of building localized, high-performance tech solutions.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMi3AFBVV95cUxQZGxJemdHc1hWaEdIeHhCMVdRY0lwc2JQNEpDMi1IN3NVS1ZHVm5mV2V4T3ByMnBzZy15QjJZVkpUMVlDY2o2OVh2ekk2TVplXzN5aEVCczI5NnlJelltZXE2M2tIbWFqX2hWTmpVX3ZjNmc2VDlLR1QzYlBiWDEzeS1heVJLLWhYTGFWWVFzeUVUTi1XSFY3eFpJaEVfRWxQNTUxVTA2T0I5NWhyRnkyNnM2eFlPNFBjYkhhVXQ2SmpaWHBKRDMtUmR2anVhcFpaaDc3UnVtTjYzSmVE?oc=5" target="_blank" rel="noopener">theweek.in ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#A855F7"><div class="type"><small>Elets Technomedia</small><b>AI in India &amp; global</b></div></div>
+  <div class="body">
+    <h3>Mizoram Gen-AI Mission Delivers Free AI Lessons to 5,500 Students</h3>
+    <p>Under the Mizoram Gen-AI Mission, free artificial intelligence training is being extended to 5,500 students in the state. The outreach focuses on equipping students with fundamental generative AI literacy and practical understanding.</p>
+    <div class="why"><b>Why it matters</b>Public digital literacy initiatives are actively democratizing generative AI understanding across non-metro regions. Brands and marketers will increasingly engage a tech-fluent consumer base in smaller regional markets as foundational AI skills become standard.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMie0FVX3lxTE50WjRQa3JDRHBGeDlpdFRPeVVuRGo1WC14YmZERVY3VXk3amNJdW9zanZXQjhrYmFWODQzTXZ1bUZpMDBmcUUwSEF1UlU0TkdsUXFmV0JaWkZibm1SdlVuOFFveFFzeW1Hdng4T09nTkwyckZmbjVDWmdMcw?oc=5" target="_blank" rel="noopener">Elets Technomedia ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#A855F7"><div class="type"><small>The Verge AI</small><b>Anthropic</b></div><img class="photo" src="https://platform.theverge.com/wp-content/uploads/sites/2/2026/11/gettyimages-2280291125.jpg?quality=90&amp;strip=all&amp;crop=0%2C10.752607989199%2C100%2C78.494784021602&amp;w=1200" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div>
+  <div class="body">
+    <h3>Anthropic Uses AI to Accelerate Its Own R&amp;D, Doubling Progress Speed</h3>
+    <p>Anthropic is deploying artificial intelligence to develop increasingly powerful models, causing its technology to advance at twice the pace seen a year ago. According to a report by AI safety research organization METR, which conducted an 11-week internal investigation, the company achieved roughly two years of historical technical progress within the span of just one year.</p><p>Crucially, METR researchers confirmed that this speedup is not merely a consequence of scaling up computing power. Instead, the findings indicate that the primary driver behind the acceleration is AI itself assisting in research and development, a conclusion supported by internal staff interviews and Slack polls reflecting major employee productivity gains.</p><p>The findings offer clear evidence of recursive AI improvement, where systems advance with diminishing human input. However, the report also raises corporate and transparency concerns: Anthropic is preparing to go public even as CEO Dario Amodei publicly urges labs to slow down, and the company liberally exercised its right to redact key sections of the published report.</p>
+    <div class="why"><b>Why it matters</b>The reality of AI accelerating its own development means marketing tech capabilities will evolve faster than standard enterprise software cycles. Brand leaders must design adaptive, model-agnostic marketing stacks rather than locking into tools that could be obsolete within months.</div>
+    <a class="src" href="https://www.theverge.com/ai-artificial-intelligence/1029126/anthropic-metr-report-accelerating-ai-development" target="_blank" rel="noopener">The Verge AI ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="social_creator" style="--c:#F06292">
+  <h2><i>📱</i>Social, creators &amp; culture</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#F06292"><div class="type"><small>ET BrandEquity</small><b>AJIO</b></div></div>
+  <div class="body">
+    <h3>AJIO Unveils Astronaut-Led &#x27;Ghar Wapsi&#x27; Campaign</h3>
+    <p>Fashion e-commerce platform AJIO has rolled out a new marketing campaign titled &#x27;Ghar Wapsi&#x27;, anchored by an astronaut-led creative concept.</p><p>The campaign represents the brand&#x27;s latest effort to capture consumer attention by using an unconventional storytelling approach centered around the theme of homecoming.</p>
+    <div class="why"><b>Why it matters</b>Deploying novel, high-concept themes can help e-commerce brands break through standard promotional noise during major shopping cycles. For marketers, blending imaginative hooks with familiar emotional territories like returning home creates distinct brand recall.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMizAFBVV95cUxPTkdiUWl6ZHFoSG93TlJLajRYN3QzeGcxSV9PWnQ0QUJOR2hZZGxHOXA1V040Umw2Z25DSmpRRWVhR21admZYckJUeTlzQ2s3b3FHLVV0WWxiaUtCdTRLcTY2YndFMGowOEVjMHhnQUJpZERVUzNJY290S2dJTm5Lb1hjOV9XYmlvRk5ObFVjZU01Z04ySGVqRk9zU1dTMm41bXRKWTFNQmJLaVA5YWVyaU04VlZTc1hpM1BXWGRZcXJMcFJ0SDBxN0Z3a27SAdIBQVVfeXFMTWh4a0ExQTRrU3NCVzZNMFpFSUpTRUQyQmNKN28ydDV5YlhvU0pSckFic2gyRlRJekUxS3Jzb0tzQ0htc2hNdl9JUnEtMlhlVEpZRmstMzEwa1dIMWpaSmJKWndpMEpxc3h3MmVIQmM2YUt6MExwdzRvQ0ZyMEtBWVVoWHRNUDdXeUIyVjBId1BCQ2RkOEE4c1VDSllOVHgtNlMzZnBMQ2NZRHhHeldhRWk4UFgycVBRVmgzT0F2UFRZRkp3MUZneE92aWpaYmpmV3pR?oc=5" target="_blank" rel="noopener">ET BrandEquity ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#F06292"><div class="type"><small>Storyboard18</small><b>Meta</b></div><div class="logo"><div class="tile"><img src="https://www.google.com/s2/favicons?domain=meta.com&amp;sz=256" alt="Meta" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.logo').remove()"></div><em>Meta</em></div></div>
+  <div class="body">
+    <h3>Meta Introduces Spaces in Muse for Tailored AI Experiences</h3>
+    <p>Meta has launched a new feature called Spaces within Muse, giving users the ability to build and deploy personalized artificial intelligence experiences.</p><p>The feature is aimed at expanding creative and interactive capabilities, allowing people to design tailored environments powered by Meta&#x27;s AI ecosystem.</p>
+    <div class="why"><b>Why it matters</b>As major tech platforms simplify AI creation, brands will gain more direct avenues to build interactive, proprietary customer experiences without extensive backend development. Marketers should follow these developments to identify new touchpoints for community engagement and personalization.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMixwFBVV95cUxNaEU0Q2VzMDUwSThjdXZMc0hELUNHUjJUeFNHQ1IzMnh3VmYxVVB5eFFzUzZKNDlkQ0lhN1Q4cF85Zl92QzlYV3FyTnM5V0d2YXgzMnRvNkVGZFVlU2VPUWdPTkI3OUdEckFYQUhfZEpiOFpjbTg3V0xNNGpLRUx5dndfNnlPYXhMWVNmLUh6c0NabzZSUU44U3J2RXFKdGdFSkFTcWFacnZfM1h2cUFfWXZNaVpyMTZvbTB0cjRFZnRGTjNheGpj0gHMAUFVX3lxTE5INFFjS05PZEplRHhyWTBKRHZCRllQQ0JuRWdWUE5zRWZDQ0c3a2dEeTM2bVJEX0ZGa2I1b2wxLTZGZC1SNWdZTi03SW9xcTlfQlk4U1oxV1J3cXZ0clhhYkgzaXhXU3VaTm5yZ3V0N3J1a1hMek1LS3VXOEZRUVU5WUxGcVh0eldoc3FCY2lJaUJrX2htMG53ZGFzWXVKM2RrMDdteUpwQ05BMGk0U2F0ZkIyaW0wV0dIVTR5Tlp2dDhCaHptcVd4elR5Wg?oc=5" target="_blank" rel="noopener">Storyboard18 ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#F06292"><div class="type"><small>AsiaOne.com</small><b>Social, creators &amp; culture</b></div></div>
+  <div class="body">
+    <h3>Tamil-Speaking Malaysian Chinese Creator Reviews Mall Deepavali Decor</h3>
+    <p>Chinepaiyen, a Tamil-speaking Malaysian Chinese content creator, is making waves on social media by visiting shopping malls and grading their Deepavali decorations.</p><p>His reviews spotlight the effort, authenticity, and visual appeal of festive displays, turning seasonal retail aesthetics into public, creator-led social commentary.</p>
+    <div class="why"><b>Why it matters</b>Physical retail setups and festive installations are increasingly treated as shareable content subject to public reviews by niche, cross-cultural creators. Brands investing in on-ground experiential marketing must ensure cultural execution is authentic enough to withstand direct creator scrutiny.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMidEFVX3lxTE4xT1h5MllfM0VyWHZ6U19xQW1YTW50YXBCWTkxWWw0and0d2xRSmJhUzl1SV9XcmxRMG9WQW16eUF6MUk0OVotLVo0NjEzaXp4WkNNbThLNlZTZnR4R2hWZDNybEdwSi1MRDNxQURlZmprTHB3?oc=5" target="_blank" rel="noopener">AsiaOne.com ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="ecom_qcom" style="--c:#E57373">
+  <h2><i>🛍️</i>E-commerce, D2C &amp; quick commerce</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#E57373"><div class="type"><small>WION</small><b>E-commerce, D2C &amp; quick commerce</b></div></div>
+  <div class="body">
+    <h3>Quick Commerce Platforms Report Record Sales of Gold and Silver Coins During Diwali</h3>
+    <p>Quick commerce platforms have significantly disrupted traditional festive buying patterns in India this Diwali, emerging as major destinations for high-value purchases. During peak festive hours, platforms delivered as many as 14,000 gold and silver coins per hour, showcasing a massive consumer shift toward on-demand delivery for auspicious and precious metal purchases.</p><p>The volume underscores how rapid delivery networks have expanded beyond routine groceries and emergency household supplies into premium and discretionary retail. High-frequency, immediate deliveries of precious metals highlight growing consumer trust in the fulfillment security and product authenticity offered by these services.</p><p>As quick commerce networks continue to widen their product catalogs to capture festival-led demand, they are directly challenging both traditional brick-and-mortar jewelers and standard e-commerce timelines. Brands will likely double down on high-ticket, impulse-friendly festive offerings in upcoming retail cycles.</p>
+    <div class="why"><b>Why it matters</b>Consumers now trust quick commerce for high-value, high-anxiety categories like gold, proving that speed and convenience can trump traditional showroom shopping during festive peaks. Marketers across premium categories must re-evaluate their channel mix and prioritize on-demand fulfillment for time-sensitive, seasonal gifting.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMi3gFBVV95cUxNY0kzR1ZMLXFPdWhfeVFXbk1qSGpINWJRQ1pBSDBDWERnVEttVkpKYXJGUGhtMi1lNk1Ia0REYWxvV3d4bEVGcktQMDlmYzdTdFduSktEU2NrNExLeEJkZnFhYlBJb1NSY1dNdkRxWERFNl9uTUZEcG84QXRKLWktd1gyalJoREJyNXQwYy1lUVR2S3BJTlBZVzExZ1JSanhXUm1STXN2ZkRJOWhoclc5MUJMZ2tjODUxd0NYZl83T3QyQ3gxZmpRaGRaYzB2WmdHOXJHcHZMZWpuSEhpaUHSAeMBQVVfeXFMUHRvUFBSNWtIbks0dk9OdWdqdlJIQlFaVTlsUm53RjJLQlNtSDh0VUl3a2FMT1BCV0duU2NPRWtnTU9IbENpeEdrcjd6RDI5TFlvTUswRkhoVUtIanl2ZzRUaGJyTXM3amY2b0hjWWE2QWsxY0xiczQwSmQxVU56TXk1ckpWSjU0VlM1TDFQTWF2OS1DVm9oLUVUTjI3cmM3WTNLOGQyVzlQZ3FKeU1IWV9Cd2FWVHMtY3VmQXNiTTVyRzdzUWpqaUdoRjluQ3MxWHB1T19YNHlvLTcxMDNWODFFb3c?oc=5" target="_blank" rel="noopener">WION ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#E57373"><div class="type"><small>ET Retail</small><b>Blinkit</b></div></div>
+  <div class="body">
+    <h3>Food Safety Regulators Suspend 105 Licences, Impacting Quick Commerce Outlets Like Blinkit and Zepto</h3>
+    <p>The Food and Drug Administration (FDA) has intensified regulatory scrutiny on dark stores and food operations, suspending 105 food business licences across various operators. The clampdown has directly hit major quick commerce companies, with platforms such as Blinkit and Zepto among those affected by the regulatory enforcement.</p><p>In addition to the extensive licence suspensions, the authority has ordered the outright closure of seven outlets. The actions follow inspections and compliance assessments aimed at ensuring storage, handling, and operational hygiene standards are properly maintained by rapid delivery and food distribution hubs.</p><p>The crackdown signals tightening administrative oversight on the backend infrastructure supporting the quick commerce boom. Operating dark stores will need to institutionalize stricter compliance frameworks and audit protocols to avert supply chain disruptions and reputational damage.</p>
+    <div class="why"><b>Why it matters</b>Aggressive expansion in quick commerce cannot outpace basic regulatory and operational compliance without risking severe brand equity and service outages. Brand and growth marketers must realize that operational friction and regulatory clampdowns in dark stores directly impair customer promise delivery and retention.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMirAJBVV95cUxQSVRVcFB2ZGNIVmhxVEJEb2lMc0RYdTg0bVdEZWRhV1E5MFRfYVZtZEdfMzZuRHJfS2R5WnpRZ3FmMEhnRHlQRVV1OTZSaVR1dXpoSWpEUmNHUGVZM0QwM3g2clVCVV92X2g1enBJQkkwWnp3SW83OWZzTUtXeHZzTzM3NTRpdlBqN0syNUs1OTE1azVlZU5RWlpSNjRNTjFqYlZaVmE5Zml3bFJvY0R2WF9ySzkzQlhHNnljQ2h1UlJ4TFJnZVU2WnBORWR0NTZDZVRtOGZYRU1FdVhyUlQxd3IxZXlVcGo1bjN5WVFfajVraW5GS1hJN2V3TmMyVG9qclFYOTBNU085c05HSThEVjBCcTlzZHhLMWNhOGlMSU1jX1d2ZGI3UTlnWXrSAbACQVVfeXFMTzZ6WENBMHY3bEs1MFJGRllHTjFoNG1DcVZBSTg4Z2w2ZDRMMXJmR0tYSHJVU0FYRENpTF9SRTZ6MWMxOGdkZC1aMHZ6a2xXc3pudEJ6alo5WndSLVBIdXkxNkJmMklRTmYtRnBjLVNuRDFmSVRwalQ1NVZTZy00V2p1TkhYQXN4ZjQ3ZGhuRkNvUTFkb3c0aEh3eDlqWFppazB5dXlPb0FrQzNOdzBXU292d2Q0bm9SZTNFa0hSUW9aYlctaHduTnVnQTFvU0paeUYzVml1OUF3M3ZxTmpsSHRhMjhRXzk1Z0pNaVR6Z2NUd0ljeFROSG1BQXd6N3hxSDV4ZTZHZ2xEc2M5QWpvU0FtbG9Mdzd4T21VZXZIY2FuOFJlYjhDZW82UTJzV1A1cQ?oc=5" target="_blank" rel="noopener">ET Retail ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#E57373"><div class="type"><small>Rediff MoneyWiz</small><b>E-commerce, D2C &amp; quick commerce</b></div></div>
+  <div class="body">
+    <h3>Direct-to-Consumer Brands Register Strong Festive Growth with Sales Rising 45% This Diwali</h3>
+    <p>Direct-to-consumer (D2C) brands in India experienced strong festive demand this Diwali, logging a 45% increase in total sales value compared to previous baselines. The robust revenue growth was supported by a notable 27% rise in overall order volumes across platforms.</p><p>The numbers demonstrate sustained consumer willingness to buy directly from digital-first brands, driven by seasonal gifting, festive promotions, and expanding digital adoption across key consumption categories. The divergence between order growth (27%) and sales growth (45%) points to higher average order values during the holiday shopping season.</p><p>With festive momentum providing substantial top-line gains, D2C companies are validating their customer acquisition and digital storefront investments. The immediate focus for these brands will shift toward post-Diwali customer retention and maximizing customer lifetime value from the newly acquired seasonal shoppers.</p>
+    <div class="why"><b>Why it matters</b>The substantial jump in festive D2C sales and higher average basket sizes show consumers are eager to buy premium items directly from brand websites. Performance marketers should shift focus from broad customer acquisition to post-festive retention campaigns that turn holiday purchasers into recurring buyers.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMisgFBVV95cUxPWm1vdzdfZERvWm9CekdfTEZLeEVycktmazNUX1R1TnR0ZnR1Mzc3ZFpiQWx0bjZra0FqSi0xbzRLeEJaTkhCbEVqai1JNnNxNGxTVUVLZWxSUVduV0NiclFCdUU5UFdKYzhHb2lXc2tUTXBQcEdjcjlrRi11eTZwMV9IcDFBTGl1VzVkNGppY2huZGFLUW5XalQ2aU9LaHZ2S3FVV0g4dlFMRTlvRG1nR09R0gGyAUFVX3lxTE9abW93N19kRG9ab0J6R19MRkt4RXJyS2ZrM1RfVHVOdHRmdHUzNzdkWmJBbHRuNmtrQWpKLTFvNEt4QlpOSEJsRWpqLUk2c3E0bFNVRUtlbFJRV25XQ2JyUUJ1RTlQV0pjOEdvaVdza1RNcFBwR2NyOWtGLXV5NnAxX0hwMUFMaXVXNWQ0amljaG5kYUtRbldqVDZpT0todnZLcVVXSDh2UUxFOW9EbWdHT1E?oc=5" target="_blank" rel="noopener">Rediff MoneyWiz ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="startups_fintech" style="--c:#C2185B">
+  <h2><i>🚀</i>Startups, founders &amp; fintech</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#C2185B"><div class="type"><small>Inc42</small><b>GIVA</b></div><img class="photo" src="https://inc42.com/cdn-cgi/image/quality=90/https://asset.inc42.com/2026/11/Funding-Galore_Oct-Soc-100.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div>
+  <div class="body">
+    <h3>Indian Startups Raise $255 Million as Weekly Inflows Surge 96%</h3>
+    <p>Startup funding in India gathered momentum during the first week of November, with 20 startups raising a cumulative $255 million between November 2 and November 6. According to data from Inc42, this represents a 96% surge in capital compared to the $130.3 million secured the previous week, even as total deal count contracted by 38% from 32 transactions.</p><p>The weekly rebound was heavily anchored by mega-rounds in consumer-facing sectors. Direct-to-consumer jewellery brand GIVA led the week&#x27;s fundraising table with a $103 million round led by Multiples Alternate Asset Management, supported by Epiq Capital and Edelweiss Discovery Fund. Close behind was media and OTT platform EloElo Group, which closed an $80 million Series C round co-led by NBCUniversal and Hornbill Capital.</p><p>Capital also flowed into diverse business-to-business and deep-tech sectors, including a $12.5 million Series A for Clinics On Cloud, $10.5 million for Peppermint Robotics, and $10.3 million for climate tech venture altM. Fintechs Two Point O Capital and PowerUp Money each pulled in $10 million rounds, while early-stage checks supported space tech, robotics, and food services.</p>
+    <div class="why"><b>Why it matters</b>The concentration of capital in large consumer rounds like GIVA and EloElo indicates reviving investor confidence in scalable D2C and entertainment businesses. Performance marketers should anticipate heightened ad spend and competitive customer acquisition efforts as these newly funded brands scale.</div>
+    <a class="src" href="https://inc42.com/buzz/from-giva-to-eloelo-group-indian-startups-raised-255-mn-this-week/" target="_blank" rel="noopener">Inc42 ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#C2185B"><div class="type"><small>Inc42</small><b>OYO</b></div><img class="photo" src="https://inc42.com/cdn-cgi/image/quality=90/https://asset.inc42.com/2026/11/soc-16.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div>
+  <div class="body">
+    <h3>OYO Parent PRISM Reports 17% Profit Growth to ₹353 Crore in Q1</h3>
+    <p>PRISM, the parent company of hospitality major OYO, reported a consolidated profit after tax of ₹353 crore for the first quarter of FY27, marking a 17.3% year-on-year rise from ₹301 crore. According to the company&#x27;s audited financials, the quarterly net profit was largely supported by a deferred tax credit of approximately ₹244 crore.</p><p>The hospitality group posted a 35% surge in operating revenue to ₹2,814 crore in Q1 FY27, up from ₹2,078 crore in the corresponding period of the previous fiscal. EBITDA rose 24.3% year-on-year to ₹760 crore, while gross booking value expanded by nearly 30% to touch ₹9,600 crore, reflecting solid gross margins across hotels and vacation home rentals.</p><p>Founder and CEO Ritesh Agarwal attributed the sustained operational performance to multi-year investments in technology, distribution infrastructure, and brand equity. The robust earnings come as PRISM advances plans for an initial public offering to raise ₹6,650 crore through a fresh issue of shares, with the company reportedly targeting a valuation between $7 billion and $8 billion.</p>
+    <div class="why"><b>Why it matters</b>PRISM&#x27;s consistent top-line expansion demonstrates that sustained investments in brand visibility and booking technology are paying off as travel demand stays resilient. For travel and consumer marketers, OYO’s turnaround offers a case study in using distribution infrastructure to scale operating margins ahead of a public listing.</div>
+    <a class="src" href="https://inc42.com/buzz/oyo-parent-prisms-profit-jumps-17-yoy-to-%e2%82%b9353-cr-in-q1/" target="_blank" rel="noopener">Inc42 ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#C2185B"><div class="type"><small>Counterview</small><b>UPI</b></div></div>
+  <div class="body">
+    <h3>Proposed UPI Merchant Fees Risk Driving Small Vendors to Cash, ISB Study Warns</h3>
+    <p>A new study by the Indian School of Business has warned that proposed merchant transaction charges on Unified Payments Interface payments could drive small vendors back to using cash.</p>
+    <div class="why"><b>Why it matters</b>Reintroducing friction into digital checkout counters could reverse hard-won gains in point-of-sale digital adoption among micro-merchants. Brands and marketers relying on seamless digital payments to track and convert offline retail shoppers must watch these policy debates closely.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMigAFBVV95cUxQcXdZOG5vQVJ1NkdRTnRFWnRmZk01R2FCZVM3ek9lTGFlSDJWcGtzQUtaUEVENVowMnozaW5sY1dycUFDRUVJZF9mYnF1akE4bWdkd0U3U1V5NlB6WWJ0dHhNY1kzUWRNM1ByQWljN2x3ZUE0M0ltMHM1TFhFbWZ5Yw?oc=5" target="_blank" rel="noopener">Counterview ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="consumer" style="--c:#EC6FA0">
+  <h2><i>💗</i>Consumer behaviour &amp; trends</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#EC6FA0"><div class="type"><small>NDTV</small><b>Consumer behaviour &amp; trends</b></div></div>
+  <div class="body">
+    <h3>India&#x27;s Diwali Trade Projected to Exceed Rs 7 Lakh Crore Led by Gold and Electronics</h3>
+    <p>India&#x27;s festive retail market is poised for an unprecedented milestone, with total Diwali trade projected to cross Rs 7 lakh crore. The massive wave of consumer spending highlights strong economic momentum and heightened shopper intent across the country during the festive period.</p><p>The bumper trade volume is being primarily steered by heavy consumer demand in high-value segments, notably gold and electronics. These categories continue to serve as the key growth engines for retailers and consumer brands capitalizing on seasonal festive budgets.</p>
+    <div class="why"><b>Why it matters</b>Marketers must align their inventory, media spend, and promotional incentives around high-conversion categories that capture peak festive liquidity. High-ticket durable and lifestyle brands should double down on aggressive festive positioning to capture consumer enthusiasm when wallet share is at its peak.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMikwJBVV95cUxPMFdMSy13QVNMODhPMXZzeE5vVU5MNjRnbnEzdTkxUkpLcVZJQlV6M29ERmkzbjVUS3d5YVpCLUk4VHRNczdoYVdQZ3ExWVdrZEM1T0VDVmVPR2FQMGlBVUJoVm5oWDRtUkZPbkt6Vk5sUjJGcFAxb040V3RaUHZaUkp4bHM5Y1BlS0VGeXlzQ2hKblU5dHpVNnloT3M3QUVDek9xd2RpY3gwZll0alV6X3VMbHFKbnU3RjJCMXFrUm9nNW13TExzQTFJOFlvNXRyS3pUMXFnd3JnS2plNjVhN0lYWXRKQzFSVGZOcjgxaUZMaDJpenlJN3F1RF9NWFhCbUE2VzhMTUV5WEZSdGpzeHdMYw?oc=5" target="_blank" rel="noopener">NDTV ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#EC6FA0"><div class="type"><small>Storyboard18</small><b>Britannia</b></div></div>
+  <div class="body">
+    <h3>Britannia Signals Further Price Hikes Due to Persistent Input Cost Pressures</h3>
+    <p>Food major Britannia has signaled that additional price hikes may be implemented as input costs continue to stay elevated. The packaged consumer goods company is assessing pricing interventions to offset sustained inflation across raw materials.</p><p>The development underscores the ongoing margin headwinds in the fast-moving consumer goods sector. Companies are navigating the fine balance between protecting operating profitability and preserving volume growth amid sensitive consumer demand.</p>
+    <div class="why"><b>Why it matters</b>Marketers in the FMCG sector must refine their pack-price architecture and value messaging to mitigate consumer pushback against inflationary price revisions. Communicating product value effectively becomes essential to prevent consumers from downtrading to lower-priced alternatives.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMixwFBVV95cUxPeEQ5V19DRkNkaU94NzNnamRlU2VNT3k0Q3NZNU96TFJJa2dteEQ0UkEzMkNNci1BN0tJSm9wWlM1VjRFYlJKMUtzRDMzTGRnREJFZVJEWklBZXRQRXVNbEdiOWJIZk9qZlVQVHdmRU91UTkzUWVLTWtEcWFlNVVTQURmRHc3a3R3dExlQzl2cFltZmNQOXpYNXpxc2tCT19kcllhZTB6d2VKUkx1aGFDS09CNTRsZ0xwckpYaVFlWEc1RGZkVWM40gHHAUFVX3lxTE94RDlXX0NGQ2RpT3g3M2dqZGVTZU1PeTRDc1k1T3pMUklrZ214RDRSQTMyQ01yLUE3S0lKb3BaUzVWNEViUkoxS3NEMzNMZGdEQkVlUkRaSUFldFBFdU1sR2I5YkhmT2pmVVBUd2ZFT3VROTNRZUtNa0RxYWU1VVNBRGZEdzdrdHd0TGVDOXZwWW1mY1A5elg1enFza0JPX2RyWWFlMHp3ZUpSTHVoYUNLT0I1NGxnTHBySlhpUWVYRzVEZmRVYzg?oc=5" target="_blank" rel="noopener">Storyboard18 ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#EC6FA0"><div class="type"><small>巴士的報</small><b>Consumer behaviour &amp; trends</b></div></div>
+  <div class="body">
+    <h3>Global Brands Adapt Strategies Amid China&#x27;s Evolving Consumer Landscape and Rapid Innovation</h3>
+    <p>International companies are overhauling their strategic playbooks in response to rapid innovation and changing consumer behavior in China. The dynamic retail environment is compelling multinational corporations to evolve their traditional commercial approaches.</p><p>To maintain relevance, brands are increasingly aligning with swift local innovation cycles and sophisticated buyer demands. The shift highlights how competitive pressure in major international markets requires continuous operational and strategic adaptation.</p>
+    <div class="why"><b>Why it matters</b>Brand marketers cannot rely on rigid, centralized templates when operating in fast-moving, highly competitive retail ecosystems. Maintaining a competitive edge requires rapid localized innovation and constant monitoring of shifting consumer expectations.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMiywFBVV95cUxPcVlKMGdCQ01jUFlCU3hCM0dWT1FDWnM4OU5qWDlDYUR3ckIzMzZQdXZlakphSVhSUGZza01QVkdmLVdqbE4ySHFxUEFPZ0U1RnJjeHg4THZFeWVZSWlmYlFxa1Nwcml0V2JLSXBGX2FEeGpuQ002b29QTDRldEtEMUVkZllHenRzVkV1dll5V2dGR1hPWnFyTmthZmlUTDNZeWVvT2d3ZnY1bmRaWGUwTDJ6ZUphMEU3M2k1dDJLVWxtTTVZcFFqbUdYTQ?oc=5" target="_blank" rel="noopener">巴士的報 ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="global_economy" style="--c:#9C4F7E">
+  <h2><i>🌍</i>Global marketing &amp; economy</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#9C4F7E"><div class="type"><small>ad-hoc-news.de</small><b>Pernod Ricard</b></div><div class="logo"><div class="tile"><img src="https://www.google.com/s2/favicons?domain=pernod-ricard.com&amp;sz=256" alt="Pernod Ricard" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.logo').remove()"></div><em>Pernod Ricard</em></div></div>
+  <div class="body">
+    <h3>Pernod Ricard Shares Rise as Strong Indian Demand Offsets US and China Slump</h3>
+    <p>Pernod Ricard saw its stock climb after robust performance in India helped balance out softening sales in key global markets, notably the United States and China.</p><p>While macroeconomic pressures and changing consumer trends have weighed on liquor sales in the US and Chinese markets, India&#x27;s resilient consumption patterns provided vital top-line support, highlighting the market&#x27;s rising weight in multinational revenue mixes.</p>
+    <div class="why"><b>Why it matters</b>India is increasingly operating as a vital growth hedge for global consumer brands facing downturns in traditional heavyweight markets like the US and China. Marketers in India should leverage this momentum to command higher regional investments and drive premium portfolio expansion.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMixgFBVV95cUxQS1pyUlBaS2QtUE1FTjRpR2g4VlNxMDJWbEtueGlhN2JCTHFnLV9pQjRIb25UbFAtc0VPZHFXOVQwUEppczBTMlNYdlRPcGgwdDhzVlFtTzAyS3BNTWhwaVpkTlBQRWJ4eEdUZGptbUNyeTlmdXFOeHBtNURUb0lHRlJuV1d4T2pCRDdjc3k0ZnhlSzd5S1Rja3FsbHFIUEg1d3ZOeUhpSHR6MkdFMEZQLUktWF82R0pNelB4WU5MR3F5WkF1eGc?oc=5" target="_blank" rel="noopener">ad-hoc-news.de ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#9C4F7E"><div class="type"><small>South China Morning Post</small><b>Global marketing &amp; economy</b></div></div>
+  <div class="body">
+    <h3>China&#x27;s Push for EV Quality May Open Doors for Foreign Automakers to Reclaim Share</h3>
+    <p>A strategic push toward higher electric vehicle build standards in China could create an opening for foreign automakers seeking to win back market share from domestic players.</p><p>As Chinese market regulators and consumers elevate expectations around vehicle quality and consistency, international carmakers may find fresh opportunities to leverage their legacy engineering and manufacturing reputations against competitive local rivals.</p>
+    <div class="why"><b>Why it matters</b>When high-growth emerging categories mature, consumer focus often shifts from novelty and speed to baseline build quality and reliability. For heritage brands, emphasizing durability and rigorous quality control remains a potent weapon against fast-moving disruptors.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMiyAFBVV95cUxQNFZBWGZIbVlPR2xDMk5aZFFJOHN1UzdneldyS3ZxcTZIRGJGdjduZlRPZzF0c1hZbm9SX3VnNGtsakVzTVRqNTA2ME9HSkd5SzQyX1Y3eGlSSXgxdjAyTVJQcXZGOWRSbVNDaC1mSTR3d3B0c3Njc0ozRlRoMG1ZdTVkOWhNa2xtYk8zdXVzLVc2Y0ExdnB3NVpwWFo0eGpMdENYTkJjVGtJeUZ0ckdFZ2ZmemdfOGo5NHlJQW9vLXNCR01wUFZlaA?oc=5" target="_blank" rel="noopener">South China Morning Post ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="regulation" style="--c:#8E5A8A">
+  <h2><i>⚖️</i>Regulation &amp; policy</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#8E5A8A"><div class="type"><small>Telegraph India</small><b>Regulation &amp; policy</b></div></div>
+  <div class="body">
+    <h3>Government Clarifies News Media Is Not Covered Under DPDP Act</h3>
+    <p>The central government has indicated that news media organizations will not be covered under the Digital Personal Data Protection (DPDP) Act. The development marks a significant move in the implementation of the country&#x27;s privacy framework.</p><p>The clarification comes amid broader scrutiny and discussions surrounding the scope of the privacy law and how its data compliance mandates apply to different sectors.</p>
+    <div class="why"><b>Why it matters</b>Marketers navigating data compliance can expect clearer distinctions between media operations and commercial data handlers under the DPDP Act. It also provides media partners with operational certainty when gathering and distributing content.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMivgFBVV95cUxOS05xdWtaQzlRUTdnWkxuWWZRc3pCRm9QVWVFa2lfWE9QbDM3ZHVxejJYSlJJUHRGVXdVRFlzTWhCckFNQy00QXdfem5DZk5QZzJhNVlJZDltU3I1TmR1U3I2dGxycTNmd3ZONzR6LXQxSVBHT3N1Tl9KVXhYWTVUYTVsU3BBZE9vOHBkalk5Y0dPOXdBbEJ2SG9qeTVDaUdueFhvNmhFNENDYU5vVksycHdEU3I1Mi13ZHROcnFB0gHDAUFVX3lxTFAtT1d2RXIyTlhsUmEtcktqdk9pWmp6ZFNBNGRodHhpdG41RmVpNnpsY2djSFVhN25HSXRTbEhpdUE3VEVvM1lmNzN0Y3ByYVlDY3E3YWI0dG5vNzJXaVhVT1o5TFhVSm5nVUdudXdTUGxRX2tvNENEMmpodDlTVWV2UnhLajZlR01seWREQ3hDZGtSQkF1Rzc4ZXdMcl9vTEJBczNlU1RKUVNZOVlEZHp6eC1hU1BmTDVaSGNRdE9jbHU1aw?oc=5" target="_blank" rel="noopener">Telegraph India ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#8E5A8A"><div class="type"><small>Storyboard18</small><b>Amitabh Bachchan</b></div></div>
+  <div class="body">
+    <h3>Amitabh Bachchan Wins Personality Rights Case in Delhi High Court</h3>
+    <p>Actor Amitabh Bachchan has won a personality rights case in the Delhi High Court, securing legal protection over his identity and persona.</p><p>The ruling establishes clear legal restrictions against the unauthorized commercial exploitation of Bachchan&#x27;s likeness, voice, and name across various channels.</p>
+    <div class="why"><b>Why it matters</b>Brands and agencies must ensure airtight licensing and approvals before referencing or replicating celebrity voices and imagery in marketing materials. With Indian courts actively defending personality rights, unauthorized endorsements or lookalikes carry severe legal risk.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMiugFBVV95cUxOQm9xQkM0SW03bGFfakNqcFFNZ0hrVmVQYVFkX0NoVlBLemkwWW95VDhZTlp2ODNvX2JwZktFak9oNFl5SVFfVTFJWWh0QVk5UTZ3N3VQNHQ0dTVrLUdWS1p1dloycV9qemd1TzhVRC02YTFZMzJILWlEYU9SMWRXVlh1cXJWUTM1eTM1S3pVbmpfUk1BSWVRbzRBaHlMdG8yY2VVZW1BVjJTSWUzMEVZZVB3MEhWYnVDY3fSAb8BQVVfeXFMTngxVF82Zzk3WU1tV3ZBM2EydG8xZTRjV0RtYlZrSkpoX2ZYdERjV3NxSkQ5ZEZ1OVRXZWFWT3JDVTVIQjg3RHdTd2RjNTFGSEpBcW1iM2NGTm9yZ0J3Ylp1eEZzV05sRTBMa3d1ZEdMc20tc2dfTGtraTJaRUlOUWZlZHRvUk5OWjNKbmwxUHZSMktlM2xCM0twSVo0MDdGODZXQkJmWTg5SlVjNkx0MFE2RVh2S1JDWVNLYm44RGc?oc=5" target="_blank" rel="noopener">Storyboard18 ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#8E5A8A"><div class="type"><small>The New Indian Express</small><b>Regulation &amp; policy</b></div></div>
+  <div class="body">
+    <h3>Delhi High Court Draws Line on AI Content and Orders Takedown</h3>
+    <p>The Delhi High Court has ordered the takedown of AI-driven content targeting a Chief Minister, establishing a clear legal boundary between legitimate political satire and synthetic attacks on personal dignity.</p><p>The court&#x27;s decision addresses the emerging risks posed by artificial intelligence and deepfake technologies when deployed against individuals in the public domain.</p>
+    <div class="why"><b>Why it matters</b>Brands experimenting with generative AI and satirical content must ensure their campaigns do not cross into defamation or violate individual dignity. As Indian courts set boundaries for synthetic media, creators face increasing legal accountability for AI-generated assets.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMi-wFBVV95cUxPemYxdmQ3VXlMbEVkLUxUT1BQSnJaUEdSdzNxd2NycWliOHNCUGNSRU9lNmVQSllPRFA3bDBiQlJiM1lRS0RQc0tPcEdpQjRJOUY3cXhTdE4wUW1uS1RhLWFZTF9rNEpwSzBwcHpuVXAxcXdYZXRUemNVTDdCUWRRUXN5dkNLMWVTNHJLM2Y2VWhodmVXZEhyNnBsNzdLRHVmRmI3TzJXQ2RwTUJaTmxqZDVFNEtsakJPWHVFYWU1TVdkdHBlQWh2Rlp0X0lVdExEOUt6LXp3ejhDYk12RnA4LWxjX3FTODhMQi1leEZmS2o5SlVMVVZaaTFEQdIB-wFBVV95cUxPemYxdmQ3VXlMbEVkLUxUT1BQSnJaUEdSdzNxd2NycWliOHNCUGNSRU9lNmVQSllPRFA3bDBiQlJiM1lRS0RQc0tPcEdpQjRJOUY3cXhTdE4wUW1uS1RhLWFZTF9rNEpwSzBwcHpuVXAxcXdYZXRUemNVTDdCUWRRUXN5dkNLMWVTNHJLM2Y2VWhodmVXZEhyNnBsNzdLRHVmRmI3TzJXQ2RwTUJaTmxqZDVFNEtsakJPWHVFYWU1TVdkdHBlQWh2Rlp0X0lVdExEOUt6LXp3ejhDYk12RnA4LWxjX3FTODhMQi1leEZmS2o5SlVMVVZaaTFEQQ?oc=5" target="_blank" rel="noopener">The New Indian Express ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="learning" style="--c:#DB5A8C">
+  <h2><i>📚</i>Case studies, jobs &amp; competitor intel</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#DB5A8C"><div class="type"><small>https://hrtoday.in/</small><b>Apollo Tyres</b></div></div>
+  <div class="body">
+    <h3>Apollo Tyres Appoints Kanika Juneja as Head of Marketing for India and South-East Asia</h3>
+    <p>Apollo Tyres has appointed Kanika Juneja as its Head of Marketing for India and South-East Asia. In this leadership role, Juneja will oversee marketing initiatives across these critical regional markets for the tyre brand.</p><p>The appointment places senior marketing leadership at the helm of Apollo Tyres&#x27; strategic brand and performance efforts across its home market and expanding presence in South-East Asia.</p>
+    <div class="why"><b>Why it matters</b>Tracking senior marketing transitions gives brand and performance marketers advance notice of potential strategy pivots and agency reviews in key consumer sectors. As regional portfolios consolidate, cross-border remits like this highlight how brands are synchronizing their playbooks across Asian markets.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMioAFBVV95cUxPVmhFX1pRUU9nczhnTEVvdHFPMXBwLUU2TXpXNlY5Y05OVjliZlVuUEMyQ3dKRDRGLXlmM0tfTWM3RFlxeHRPMlFRbjBwNUszYWZVZ25qVEpzWmdiYWNER2lEWm9BQjljYjBxWGpDV0dROWszRHF0cUtMUWwzTVppTF91d09PaE8yc3U1MjEwblJRNER1S19JeXdGQk5vcDF4?oc=5" target="_blank" rel="noopener">https://hrtoday.in/ ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#DB5A8C"><div class="type"><small>Express Computer</small><b>Splunk</b></div><div class="logo"><div class="tile"><img src="https://www.google.com/s2/favicons?domain=splunk.com&amp;sz=256" alt="Splunk" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.logo').remove()"></div><em>Splunk</em></div></div>
+  <div class="body">
+    <h3>Splunk&#x27;s Amol Gaikwad Emphasizes Human Connection, Leaner Tool Stacks, and Strategic Patience</h3>
+    <p>In an interview with Express Computer&#x27;s CMO Chronicles, Splunk&#x27;s Amol Gaikwad reflected on modern marketing leadership, placing spotlight on human connection, the discipline of using fewer tools, and why patience must be exercised twice over.</p><p>Gaikwad&#x27;s observations point to a pushback against overcomplicated marketing technology stacks, urging teams to prioritize genuine customer resonance and foundational strategic persistence over tool-heavy shortcuts.</p>
+    <div class="why"><b>Why it matters</b>Marketers frequently overburden operations with expansive martech stacks at the expense of clear, human-centric messaging. Gaikwad’s insights serve as a reminder that long-term brand equity requires disciplined simplification and the patience to let strategies mature.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMi5wFBVV95cUxQekNMZ3B3LWZnV0lQNk5ZLVlJODdQc2ZmczJqanFZa3dxalN0Zk9pYW0yOXE1anBUNk9zSGpmbzB0blpEYjhUd1FFSFZ5dGxlMjRLWTZlU1JzTnUzbk9EWWxqSzlrQWM0RnBRbVIwSWVPMnh6NmVkS0NlTEFTRzd4cWdEVV90UVg1TWJqeVZnRXhsNUFNeTVWR1FtUzFWM0lkTzQzMkN0dTRELV8zVm5YTkFPaTNHTDdoM0hXamNfOTBWWmdzSHJxN3RZT0t2bjRmNk42cDlyOWdvc2NyV3VIOEM3LWw2cm8?oc=5" target="_blank" rel="noopener">Express Computer ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#DB5A8C"><div class="type"><small>Storyboard18</small><b>Case studies, jobs &amp; competitor intel</b></div></div>
+  <div class="body">
+    <h3>Brand Veteran Ambi Parameswaran Explores the Persistent Fear Experienced by Marketers</h3>
+    <p>In a recent discussion with Storyboard18, advertising industry veteran Ambi Parameswaran opened up about the defining fear that stays with experienced brand builders throughout their careers.</p><p>Drawing on decades of industry experience, Parameswaran addressed the psychological and strategic tensions marketers face as they attempt to keep legacy brand principles aligned with rapidly evolving consumer behaviors.</p>
+    <div class="why"><b>Why it matters</b>Even the most seasoned brand custodians face ongoing anxiety around obsolescence and sudden category shifts. The takeaway for marketers is that continuous relevance requires balancing respect for foundational brand identity with the vigilance to evolve before the market forces a change.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMirwFBVV95cUxOdHl6eXRhbEJWdkdTbU1hZEh0YUp1NnlkdTlvVm5DeEpNeklXZmV5M1ZLMERtWF9venNjUTgwZndic0pMcmRSTmtHTzI1N3drU2dkQkw2R3prRTB3MUtraG5LZlk5ZXdibjU2WTFvVWxxa1A2cTk4cmdIVlVSenB4R2hfX2Rqa3I4YnA2OWJwa3R5azZPb1hxaE9CcUtOZm1oOWtfNnF5NThURGxIcnNR0gG0AUFVX3lxTE9acHVHaE81YzMyMjZHZzVROUtESDFGM3NrS1R2TW16QmgyZ04xX3JoS05INWdYT0pjSWI5ZG5meUtxVmZLSXFndFUteEJaWWkxZURFaXByWkc5dS1PR0o4VjBfRU1SZmNpRWlreHp5anh1X1lCanA4OWpBTXhPUktiYmVSSWJTTllmWGQyVGVPdHY2cENIemNqdlR1aUtWMDg2TU1sT0JqQi04T2I1YmM3dFNBXw?oc=5" target="_blank" rel="noopener">Storyboard18 ↗</a>
+  </div>
+</article></div>
+</section></main>
+
+  <section class="archive">
+    <h2>Past briefings</h2>
+    <div class="days"><a href="2026-11-08.html">Today</a><a href="2026-11-07.html">Sat, 07 Nov</a><a href="2026-11-06.html">Fri, 06 Nov</a><a href="2026-11-04.html">Wed, 04 Nov</a><a href="2026-11-03.html">Tue, 03 Nov</a><a href="2026-11-02.html">Mon, 02 Nov</a><a href="2026-11-01.html">Sun, 01 Nov</a><a href="2026-10-31.html">Sat, 31 Oct</a><a href="2026-10-30.html">Fri, 30 Oct</a><a href="2026-10-28.html">Wed, 28 Oct</a><a href="2026-10-27.html">Tue, 27 Oct</a><a href="2026-10-25.html">Sun, 25 Oct</a><a href="2026-10-24.html">Sat, 24 Oct</a><a href="2026-10-23.html">Fri, 23 Oct</a><a href="2026-10-22.html">Thu, 22 Oct</a><a href="2026-10-21.html">Wed, 21 Oct</a><a href="2026-10-20.html">Tue, 20 Oct</a><a href="2026-10-19.html">Mon, 19 Oct</a><a href="2026-10-18.html">Sun, 18 Oct</a><a href="2026-10-17.html">Sat, 17 Oct</a><a href="2026-10-16.html">Fri, 16 Oct</a></div>
+  </section>
+  <footer>Updated 08 Nov 2026, 12:00 PM IST · Articles are AI-written summaries; open the source before quoting. 🌸</footer>
+</div>
+<script>
+document.querySelectorAll('.chip').forEach(function(c){
+  c.addEventListener('click',function(){
+    document.querySelectorAll('.chip').forEach(function(x){x.classList.remove('on')});
+    c.classList.add('on');
+    var k=c.dataset.cat;
+    document.querySelectorAll('.cat').forEach(function(s){s.style.display=(k==='all'||s.dataset.cat===k)?'':'none'});
+    window.scrollTo({top:document.querySelector('nav').offsetTop,behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>
