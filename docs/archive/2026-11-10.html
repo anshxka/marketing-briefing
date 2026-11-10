@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#FFE4EE">
+<title>The Marketing Edit · Tuesday, 10 November 2026</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFF5F8; --card:#FFFFFF; --ink:#3A1430; --muted:#8A5A78; --line:#F7D3E1;
+  --rose:#E8457C; --blush:#FFE4EE; --soft:#FFF0F5; --shadow:0 10px 30px -18px rgba(194,24,91,.35);
+  --serif:"Playfair Display",Georgia,"Times New Roman",serif;
+  --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#1C0E18; --card:#28141F; --ink:#FBE8F1; --muted:#C99AB4; --line:#44243A;
+  --blush:#3A1B2F; --soft:#2F1727; --shadow:0 10px 30px -18px rgba(0,0,0,.6);
+}}
+*{box-sizing:border-box}
+html{scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--sans);
+  background-image:radial-gradient(circle at 15% 0%,var(--blush) 0,transparent 40%),radial-gradient(circle at 90% 10%,var(--blush) 0,transparent 35%);
+  background-repeat:no-repeat}
+.wrap{max-width:1040px;margin:auto;padding:36px 20px 70px}
+a{color:inherit}
+
+/* masthead */
+header{text-align:center;margin-bottom:30px}
+.kicker{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--rose);font-weight:700;margin:0}
+h1{font:italic 600 clamp(40px,8vw,72px)/1.05 var(--serif);margin:10px 0 8px;letter-spacing:-.01em}
+.date{color:var(--muted);margin:0}
+.date b{color:var(--rose);font-weight:500}
+.byline{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 14px;margin:14px 0 4px;font-size:15px;color:var(--muted)}
+.byline b{color:var(--ink);font-weight:700}
+.byline em{font:italic 600 17px var(--serif);color:var(--rose)}
+.social{display:inline-flex;gap:8px}
+.social a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:14px;font-weight:500;color:var(--ink);
+  background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 13px 6px 9px;transition:.15s}
+.social a:hover{border-color:var(--rose);color:var(--rose);transform:translateY(-1px)}
+.social svg{width:18px;height:18px;flex:none}
+.flourish{color:var(--rose);letter-spacing:.6em;margin-top:12px;font-size:14px}
+
+/* top cards */
+.top{display:grid;grid-template-columns:1.6fr 1fr;gap:18px;margin-bottom:30px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px 26px;box-shadow:var(--shadow)}
+.card h2{font:600 22px var(--serif);margin:0 0 12px}
+.big{list-style:none;margin:0;padding:0;counter-reset:n}
+.big li{counter-increment:n;position:relative;padding:0 0 14px 44px;font:500 17px/1.5 var(--serif)}
+.big li::before{content:counter(n);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;
+  background:var(--blush);color:var(--rose);font:700 14px/30px var(--sans);text-align:center}
+.tip{background:linear-gradient(140deg,#FFD6E5,#FFC1D8 55%,#F9A8C9);color:#4A1033;border:0}
+.tip h2{color:#4A1033}
+.tip p{margin:0;font-size:16px}
+@media (prefers-color-scheme:dark){.tip{background:linear-gradient(140deg,#5A2045,#7A2858);color:#FFE4EE}.tip h2{color:#FFE4EE}}
+
+/* chips */
+nav{position:sticky;top:0;z-index:5;display:flex;gap:8px;overflow-x:auto;padding:12px 0;margin-bottom:6px;
+  background:var(--bg);scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+.chip{--c:var(--rose);flex:none;font:500 14px var(--sans);color:var(--ink);background:var(--card);
+  border:1px solid var(--line);border-radius:999px;padding:8px 15px;cursor:pointer;transition:.15s}
+.chip span{color:var(--muted);margin-left:3px}
+.chip:hover{border-color:var(--c)}
+.chip.on{background:var(--c);border-color:var(--c);color:#fff}.chip.on span{color:#ffffffd0}
+.chip:focus-visible,a:focus-visible{outline:2px solid var(--rose);outline-offset:2px}
+
+/* sections */
+.cat{margin-top:38px}
+.cat>h2{display:flex;align-items:center;gap:12px;font:600 28px var(--serif);margin:0 0 16px}
+.cat>h2 i{font-style:normal;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;
+  background:var(--blush);font-size:22px}
+.story{background:var(--card);border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:var(--shadow);
+  display:flex;flex-direction:column}
+.story.featured{display:grid;grid-template-columns:1fr 1.15fr;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.media{position:relative;aspect-ratio:16/10;overflow:hidden;
+  background:radial-gradient(circle at 25% 20%,#ffffff99 0,transparent 45%),linear-gradient(135deg,var(--blush),color-mix(in srgb,var(--c) 45%,var(--blush)))}
+.featured .media{aspect-ratio:auto;min-height:100%}
+.media .type{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:22px 24px;color:#4A1033}
+.media .type small{font:700 11px var(--sans);letter-spacing:.2em;text-transform:uppercase;opacity:.75}
+.media .type b{font:italic 600 clamp(24px,3vw,34px)/1.1 var(--serif);margin-top:4px}
+.media .logo{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
+  background:inherit}
+.media .tile{width:38%;max-width:150px;aspect-ratio:1;background:#fff;border-radius:28px;display:grid;place-items:center;
+  box-shadow:0 14px 34px -14px rgba(194,24,91,.45)}
+.media .tile img{width:62%;height:62%;object-fit:contain}
+.media .logo em{font:italic 600 20px var(--serif);color:#4A1033;font-style:italic}
+.media .photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media (prefers-color-scheme:dark){.media .type,.media .logo em{color:#FFE4EE}}
+.body{padding:22px 24px 24px}
+.story h3{font:600 22px/1.3 var(--serif);margin:0 0 12px}
+.featured h3{font-size:27px}
+.story p{margin:0 0 12px;color:var(--ink)}
+.why{background:var(--soft);border-left:3px solid var(--c);border-radius:12px;padding:12px 14px;margin:14px 0 12px;font-size:15px}
+.why b{display:block;color:var(--c);font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:3px}
+.src{font-size:14px;color:var(--muted);text-decoration:none}
+.src:hover{color:var(--rose)}
+
+/* archive */
+.archive{margin-top:50px;text-align:center}
+.archive h2{font:italic 600 24px var(--serif);margin:0 0 14px}
+.days{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.days a{text-decoration:none;font-size:14px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 14px}
+.days a:hover{border-color:var(--rose);color:var(--rose)}
+footer{text-align:center;color:var(--muted);font-size:13px;margin-top:34px}
+
+@media (max-width:760px){
+  .top{grid-template-columns:1fr}
+  .story.featured{grid-template-columns:1fr}
+  .featured .media{aspect-ratio:16/10}
+  .featured h3{font-size:23px}
+  .wrap{padding-top:26px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="kicker">Your daily marketing briefing</p>
+    <h1>The Marketing Edit</h1>
+    <p class="date">Tuesday, 10 November 2026 · <b>3 stories</b></p>
+    <div class="byline">
+      <span>Curated by <em>GenZMarketer</em> · <b>Anshika Sharma</b></span>
+      <span class="social">
+        <a href="https://www.instagram.com/genzmarketer_/" target="_blank" rel="noopener" aria-label="Instagram: genzmarketer_">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="ig" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FEDA75"/><stop offset=".35" stop-color="#FA7E1E"/><stop offset=".6" stop-color="#D62976"/><stop offset=".85" stop-color="#962FBF"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="6" fill="url(#ig)"/><circle cx="12" cy="12" r="4.3" fill="none" stroke="#fff" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.3" fill="#fff"/></svg>
+          Instagram
+        </a>
+        <a href="https://www.linkedin.com/in/anshxka02/" target="_blank" rel="noopener" aria-label="LinkedIn: Anshika Sharma">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="4" fill="#0A66C2"/><rect x="6" y="10" width="2.6" height="8" fill="#fff"/><circle cx="7.3" cy="7" r="1.5" fill="#fff"/><path d="M11 10h2.5v1.2c.5-.8 1.5-1.4 2.8-1.4 2.2 0 3 1.4 3 3.6V18h-2.6v-4.1c0-1-.3-1.8-1.4-1.8s-1.7.8-1.7 1.9V18H11z" fill="#fff"/></svg>
+          LinkedIn
+        </a>
+      </span>
+    </div>
+    <div class="flourish">✿ ✿ ✿</div>
+  </header>
+
+  <div class="top">
+    <div class="card">
+      <h2>Today's big picture</h2>
+      <ol class="big"><li>Regulatory authorities are ramping up enforcement across sectors, from food safety crackdowns in India to global crackdowns on deceptive online shopping dark patterns.</li><li>At the same time, Indian business leaders and CFOs are grappling with looming compliance deadlines like the DPDP Act, which brings heavy operational costs and consent management challenges.</li><li>For marketers, these converging forces mean that consumer trust, transparent data practices, and regulatory compliance are no longer back-office issues—they are front-line brand imperatives.</li></ol>
+    </div>
+    <div class="card tip">
+      <h2>💡 Tip of the day</h2>
+      <p>Audit all active e-commerce user journeys and promotional checkout flows this week to ensure zero reliance on &#x27;dark patterns&#x27; and verify that explicit, DPDP-compliant consent mechanisms are in place for data collection.</p>
+    </div>
+  </div>
+
+  <nav><button class="chip on" data-cat="all">All <span>3</span></button><button class="chip" data-cat="regulation" style="--c:#8E5A8A">⚖️ Regulation &amp; policy <span>3</span></button></nav>
+  <main><section class="cat" data-cat="regulation" style="--c:#8E5A8A">
+  <h2><i>⚖️</i>Regulation &amp; policy</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#8E5A8A"><div class="type"><small>Storyboard18</small><b>FSSAI</b></div></div>
+  <div class="body">
+    <h3>FSSAI seizes food products worth ₹82 crore and cancels 52 licences in festive crackdown</h3>
+    <p>The Food Safety and Standards Authority of India (FSSAI) has seized unsafe food products valued at ₹82 crore during a major enforcement crackdown ahead of the festive season. Alongside the substantial product seizures, regulatory authorities have cancelled 52 business licences for non-compliance.</p><p>The nationwide operation targeted adulterated and substandard food items commonly in high demand during festival periods. FSSAI&#x27;s intensified monitoring aims to protect consumer health and weed out fraudulent operators capitalizing on festive demand surges.</p><p>Food businesses and FMCG brands must tighten their internal quality controls and supply chain auditing to prevent severe regulatory penalties, licence cancellations, and public reputational damage during peak sales windows.</p>
+    <div class="why"><b>Why it matters</b>Brands must enforce rigorous quality control across their supply chains during high-volume periods to avoid devastating regulatory penalties. Protecting consumer trust through transparent compliance is critical, especially when festive scrutiny peaks.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMi9gFBVV95cUxOdWdfbVU4SFdfX3FZR3duWnFyT3BOQ20wcTltUy1IVkxxc2RfNTI0cW9UME1aQ2xKal9PMWpOempSUHQwTzNQVjdXV29qRlBScGtqUUcyaFhkWGNJRm56RUU0Zzk5QTVHRE9TODlxcFBJdl9VNmJ6THZNTzVXWlV1c1RBalR5S2lVaG5vankxTHdFd0tvLUZfYzdSRTE1aGZRbUpMellzYUtqWlJnU0puZGZBazhodTFQN2Q5Ylo0Wm1tWkdrUnZfWThJWWhkRkJja2ZQN0tWa01vTnRsVExQWTZTT3llSFhrVFpvQXdsR043TEY3blHSAfYBQVVfeXFMTnVnX21VOEhXX19xWUd3blpxck9wTkNtMHE5bVMtSFZMcXNkXzUyNHFvVDBNWkNsSmpfTzFqTnpqUlB0ME8zUFY3V1dvakZQUnBralFHMmhYZFhjSUZuekVFNGc5OUE1R0RPUzg5cXBQSXZfVTZiekx2TU81V1pVdXNUQWpUeUtpVWhub2p5MUx3RXdLby1GX2M3UkUxNWhmUW1KTHpZc2FLalpSZ1NKbmRmQWs4aHUxUDdkOWJaNFptbVpHa1J2X1k4SVloZEZCY2tmUDdLVmtNb050bFRMUFk2U095ZUhYa1Rab0F3bEdON0xGN25R?oc=5" target="_blank" rel="noopener">Storyboard18 ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#8E5A8A"><div class="type"><small>cfo.economictimes.indiatimes.com</small><b>Regulation &amp; policy</b></div></div>
+  <div class="body">
+    <h3>CFOs face mounting costs, consent management challenges, and supply chain risks as DPDP deadline approaches</h3>
+    <p>Chief Financial Officers (CFOs) are currently grappling with significant financial and operational hurdles as the compliance deadline for the Digital Personal Data Protection (DPDP) Act draws nearer. Organizations are struggling with the direct costs of implementation, complex consent management requirements, and underlying supply chain vulnerabilities.</p><p>The regulatory pressure forces companies to overhaul how they collect, store, and process consumer data. Businesses must allocate substantial budgets towards technical infrastructure and legal frameworks to meet the stringent data privacy mandates.</p><p>As the deadline approaches, finance and marketing leaders must collaborate closely to audit third-party vendors and restructure data collection mechanisms. Failing to comply risks hefty financial penalties and long-term erosion of consumer trust.</p>
+    <div class="why"><b>Why it matters</b>Marketers must align data collection and consent strategies with strict privacy regulations to mitigate financial and legal risks. Building robust data governance directly impacts consumer trust and ensures continuity across third-party supply chains.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMi5AFBVV95cUxPcVRlU2k1ejJRVnhrUnBiaHRBNkRFQmNiS1FmT2JNUE10S2s1N3l4UDJuUmJXWm8wUnR0N2F2SGN0Uk1BVU85Tm8yLWR5UnhMTy1fVjlnTnk1dHQwUVpvclpWWGpONF9mU05sUF9xTkJSTDdrMERfNXg2V1FZemJhS25OSjg5b2ZpMGdQUHRDRE1SUWoxSHBkaHlEcjJNRVJ4TE16MUEwUzFGZ0FqcHdjR0RQZ28xM1A2RlpCZjFxRUVNSGdld2lKWkdjZDhaMEVwYVpQVnhEV2FkTlVNZmdJQVZkMEXSAeQBQVVfeXFMT3FUZVNpNXoyUVZ4a1JwYmh0QTZERUJjYktRZk9iTVBNdEtrNTd5eFAyblJiV1pvMFJ0dDdhdkhjdFJNQVVPOU5vMi1keVJ4TE8tX1Y5Z055NXR0MFFab3JaVlhqTjRfZlNObFBfcU5CUkw3azBEXzV4NldRWXpiYUtuTko4OW9maTBnUFB0Q0RNUlFqMUhwZGh5RHIyTUVSeExNejFBMFMxRmdBanB3Y0dEUGdvMTNQNkZaQmYxcUVFTUhnZXdpSlpHY2Q4WjBFcGFaUFZ4RFdhZE5VTWZnSUFWZDBF?oc=5" target="_blank" rel="noopener">cfo.economictimes.indiatimes.com ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#8E5A8A"><div class="type"><small>Koreabizwire</small><b>Regulation &amp; policy</b></div></div>
+  <div class="body">
+    <h3>South Korea moves to crack down on online shopping &#x27;dark patterns&#x27;</h3>
+    <p>South Korea is taking regulatory action to crack down on deceptive online shopping practices known as &quot;dark patterns.&quot; These user interface designs trick consumers into making unintended choices, such as recurring subscriptions or accidental purchases.</p><p>The regulatory crackdown targets digital manipulation tactics that distort consumer intent on e-commerce platforms. Authorities are tightening oversight to protect online shoppers from manipulative design techniques commonly deployed by digital retailers.</p><p>E-commerce brands and digital marketers operating in regulated markets must review their UX/UI design choices to eliminate deceptive practices. Transparent user journeys are now vital to avoid regulatory crackdowns and build sustainable brand loyalty.</p>
+    <div class="why"><b>Why it matters</b>Digital marketers must phase out deceptive UX tactics like dark patterns to stay ahead of tightening global regulations. Embracing transparent design protects brand equity and fosters long-term customer relationships built on trust.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMimwFBVV95cUxOQ3ZJSDJ3cEpabGU0XzBIc2Y5clhxSTJ2WmF5dmFWcFN2V2hUQXJEb3pYUEZPWEdOWUl0Tkg1RTFFVFplcm5GT3NaQkFEMFE0Vy1SZ0stdkJtU0tZSllNTTdydGkzT0FHRG1TclpiSC0taDlQNUcxd09fSm9MVXZvdVhkYnN6bGRjUlBlZlhFME1ISnUzOVh2akZJUQ?oc=5" target="_blank" rel="noopener">Koreabizwire ↗</a>
+  </div>
+</article></div>
+</section></main>
+
+  <section class="archive">
+    <h2>Past briefings</h2>
+    <div class="days"><a href="2026-11-10.html">Today</a><a href="2026-11-08.html">Sun, 08 Nov</a><a href="2026-11-07.html">Sat, 07 Nov</a><a href="2026-11-06.html">Fri, 06 Nov</a><a href="2026-11-04.html">Wed, 04 Nov</a><a href="2026-11-03.html">Tue, 03 Nov</a><a href="2026-11-02.html">Mon, 02 Nov</a><a href="2026-11-01.html">Sun, 01 Nov</a><a href="2026-10-31.html">Sat, 31 Oct</a><a href="2026-10-30.html">Fri, 30 Oct</a><a href="2026-10-28.html">Wed, 28 Oct</a><a href="2026-10-27.html">Tue, 27 Oct</a><a href="2026-10-25.html">Sun, 25 Oct</a><a href="2026-10-24.html">Sat, 24 Oct</a><a href="2026-10-23.html">Fri, 23 Oct</a><a href="2026-10-22.html">Thu, 22 Oct</a><a href="2026-10-21.html">Wed, 21 Oct</a><a href="2026-10-20.html">Tue, 20 Oct</a><a href="2026-10-19.html">Mon, 19 Oct</a><a href="2026-10-18.html">Sun, 18 Oct</a><a href="2026-10-17.html">Sat, 17 Oct</a></div>
+  </section>
+  <footer>Updated 10 Nov 2026, 01:06 PM IST · Articles are AI-written summaries; open the source before quoting. 🌸</footer>
+</div>
+<script>
+document.querySelectorAll('.chip').forEach(function(c){
+  c.addEventListener('click',function(){
+    document.querySelectorAll('.chip').forEach(function(x){x.classList.remove('on')});
+    c.classList.add('on');
+    var k=c.dataset.cat;
+    document.querySelectorAll('.cat').forEach(function(s){s.style.display=(k==='all'||s.dataset.cat===k)?'':'none'});
+    window.scrollTo({top:document.querySelector('nav').offsetTop,behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>
