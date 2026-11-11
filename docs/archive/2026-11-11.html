@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#FFE4EE">
+<title>The Marketing Edit · Wednesday, 11 November 2026</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFF5F8; --card:#FFFFFF; --ink:#3A1430; --muted:#8A5A78; --line:#F7D3E1;
+  --rose:#E8457C; --blush:#FFE4EE; --soft:#FFF0F5; --shadow:0 10px 30px -18px rgba(194,24,91,.35);
+  --serif:"Playfair Display",Georgia,"Times New Roman",serif;
+  --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#1C0E18; --card:#28141F; --ink:#FBE8F1; --muted:#C99AB4; --line:#44243A;
+  --blush:#3A1B2F; --soft:#2F1727; --shadow:0 10px 30px -18px rgba(0,0,0,.6);
+}}
+*{box-sizing:border-box}
+html{scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--sans);
+  background-image:radial-gradient(circle at 15% 0%,var(--blush) 0,transparent 40%),radial-gradient(circle at 90% 10%,var(--blush) 0,transparent 35%);
+  background-repeat:no-repeat}
+.wrap{max-width:1040px;margin:auto;padding:36px 20px 70px}
+a{color:inherit}
+
+/* masthead */
+header{text-align:center;margin-bottom:30px}
+.kicker{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--rose);font-weight:700;margin:0}
+h1{font:italic 600 clamp(40px,8vw,72px)/1.05 var(--serif);margin:10px 0 8px;letter-spacing:-.01em}
+.date{color:var(--muted);margin:0}
+.date b{color:var(--rose);font-weight:500}
+.byline{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 14px;margin:14px 0 4px;font-size:15px;color:var(--muted)}
+.byline b{color:var(--ink);font-weight:700}
+.byline em{font:italic 600 17px var(--serif);color:var(--rose)}
+.social{display:inline-flex;gap:8px}
+.social a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:14px;font-weight:500;color:var(--ink);
+  background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 13px 6px 9px;transition:.15s}
+.social a:hover{border-color:var(--rose);color:var(--rose);transform:translateY(-1px)}
+.social svg{width:18px;height:18px;flex:none}
+.flourish{color:var(--rose);letter-spacing:.6em;margin-top:12px;font-size:14px}
+
+/* top cards */
+.top{display:grid;grid-template-columns:1.6fr 1fr;gap:18px;margin-bottom:30px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px 26px;box-shadow:var(--shadow)}
+.card h2{font:600 22px var(--serif);margin:0 0 12px}
+.big{list-style:none;margin:0;padding:0;counter-reset:n}
+.big li{counter-increment:n;position:relative;padding:0 0 14px 44px;font:500 17px/1.5 var(--serif)}
+.big li::before{content:counter(n);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;
+  background:var(--blush);color:var(--rose);font:700 14px/30px var(--sans);text-align:center}
+.tip{background:linear-gradient(140deg,#FFD6E5,#FFC1D8 55%,#F9A8C9);color:#4A1033;border:0}
+.tip h2{color:#4A1033}
+.tip p{margin:0;font-size:16px}
+@media (prefers-color-scheme:dark){.tip{background:linear-gradient(140deg,#5A2045,#7A2858);color:#FFE4EE}.tip h2{color:#FFE4EE}}
+
+/* chips */
+nav{position:sticky;top:0;z-index:5;display:flex;gap:8px;overflow-x:auto;padding:12px 0;margin-bottom:6px;
+  background:var(--bg);scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+.chip{--c:var(--rose);flex:none;font:500 14px var(--sans);color:var(--ink);background:var(--card);
+  border:1px solid var(--line);border-radius:999px;padding:8px 15px;cursor:pointer;transition:.15s}
+.chip span{color:var(--muted);margin-left:3px}
+.chip:hover{border-color:var(--c)}
+.chip.on{background:var(--c);border-color:var(--c);color:#fff}.chip.on span{color:#ffffffd0}
+.chip:focus-visible,a:focus-visible{outline:2px solid var(--rose);outline-offset:2px}
+
+/* sections */
+.cat{margin-top:38px}
+.cat>h2{display:flex;align-items:center;gap:12px;font:600 28px var(--serif);margin:0 0 16px}
+.cat>h2 i{font-style:normal;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;
+  background:var(--blush);font-size:22px}
+.story{background:var(--card);border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:var(--shadow);
+  display:flex;flex-direction:column}
+.story.featured{display:grid;grid-template-columns:1fr 1.15fr;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.media{position:relative;aspect-ratio:16/10;overflow:hidden;
+  background:radial-gradient(circle at 25% 20%,#ffffff99 0,transparent 45%),linear-gradient(135deg,var(--blush),color-mix(in srgb,var(--c) 45%,var(--blush)))}
+.featured .media{aspect-ratio:auto;min-height:100%}
+.media .type{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:22px 24px;color:#4A1033}
+.media .type small{font:700 11px var(--sans);letter-spacing:.2em;text-transform:uppercase;opacity:.75}
+.media .type b{font:italic 600 clamp(24px,3vw,34px)/1.1 var(--serif);margin-top:4px}
+.media .logo{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
+  background:inherit}
+.media .tile{width:38%;max-width:150px;aspect-ratio:1;background:#fff;border-radius:28px;display:grid;place-items:center;
+  box-shadow:0 14px 34px -14px rgba(194,24,91,.45)}
+.media .tile img{width:62%;height:62%;object-fit:contain}
+.media .logo em{font:italic 600 20px var(--serif);color:#4A1033;font-style:italic}
+.media .photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media (prefers-color-scheme:dark){.media .type,.media .logo em{color:#FFE4EE}}
+.body{padding:22px 24px 24px}
+.story h3{font:600 22px/1.3 var(--serif);margin:0 0 12px}
+.featured h3{font-size:27px}
+.story p{margin:0 0 12px;color:var(--ink)}
+.why{background:var(--soft);border-left:3px solid var(--c);border-radius:12px;padding:12px 14px;margin:14px 0 12px;font-size:15px}
+.why b{display:block;color:var(--c);font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:3px}
+.src{font-size:14px;color:var(--muted);text-decoration:none}
+.src:hover{color:var(--rose)}
+
+/* archive */
+.archive{margin-top:50px;text-align:center}
+.archive h2{font:italic 600 24px var(--serif);margin:0 0 14px}
+.days{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.days a{text-decoration:none;font-size:14px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 14px}
+.days a:hover{border-color:var(--rose);color:var(--rose)}
+footer{text-align:center;color:var(--muted);font-size:13px;margin-top:34px}
+
+@media (max-width:760px){
+  .top{grid-template-columns:1fr}
+  .story.featured{grid-template-columns:1fr}
+  .featured .media{aspect-ratio:16/10}
+  .featured h3{font-size:23px}
+  .wrap{padding-top:26px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="kicker">Your daily marketing briefing</p>
+    <h1>The Marketing Edit</h1>
+    <p class="date">Wednesday, 11 November 2026 · <b>21 stories</b></p>
+    <div class="byline">
+      <span>Curated by <em>GenZMarketer</em> · <b>Anshika Sharma</b></span>
+      <span class="social">
+        <a href="https://www.instagram.com/genzmarketer_/" target="_blank" rel="noopener" aria-label="Instagram: genzmarketer_">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="ig" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FEDA75"/><stop offset=".35" stop-color="#FA7E1E"/><stop offset=".6" stop-color="#D62976"/><stop offset=".85" stop-color="#962FBF"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="6" fill="url(#ig)"/><circle cx="12" cy="12" r="4.3" fill="none" stroke="#fff" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.3" fill="#fff"/></svg>
+          Instagram
+        </a>
+        <a href="https://www.linkedin.com/in/anshxka02/" target="_blank" rel="noopener" aria-label="LinkedIn: Anshika Sharma">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="4" fill="#0A66C2"/><rect x="6" y="10" width="2.6" height="8" fill="#fff"/><circle cx="7.3" cy="7" r="1.5" fill="#fff"/><path d="M11 10h2.5v1.2c.5-.8 1.5-1.4 2.8-1.4 2.2 0 3 1.4 3 3.6V18h-2.6v-4.1c0-1-.3-1.8-1.4-1.8s-1.7.8-1.7 1.9V18H11z" fill="#fff"/></svg>
+          LinkedIn
+        </a>
+      </span>
+    </div>
+    <div class="flourish">✿ ✿ ✿</div>
+  </header>
+
+  <div class="top">
+    <div class="card">
+      <h2>Today's big picture</h2>
+      <ol class="big"><li>Indian brands are aggressively recalibrating their marketing playbooks ahead of the festive season, balancing heavy digital and influencer investments with traditional festive campaigns, as seen with Dabur, ETUDE, and Campa Cola.</li><li>Economic pressures and inflation are reshaping consumer behavior, forcing brands to lean into quick commerce strategies, budget-friendly festive offerings, and gamified engagement to capture cautious shoppers.</li><li>Global and regional advertising landscapes are shifting rapidly as agencies like Omnicom secure major APAC mandates, while platforms introduce advanced generative AI and search-based ad capabilities.</li></ol>
+    </div>
+    <div class="card tip">
+      <h2>💡 Tip of the day</h2>
+      <p>Audit your brand&#x27;s festive media mix to ensure your digital influencer investments are balanced with high-reach performance channels, taking a cue from Dabur&#x27;s digital scaling and Pulse&#x27;s Gen Z-focused gamification.</p>
+    </div>
+  </div>
+
+  <nav><button class="chip on" data-cat="all">All <span>21</span></button><button class="chip" data-cat="campaigns_brands" style="--c:#E8457C">💄 Campaigns &amp; brand news <span>3</span></button><button class="chip" data-cat="ad_media" style="--c:#D63384">📺 Advertising &amp; media spend <span>3</span></button><button class="chip" data-cat="ai_martech" style="--c:#B84DB8">✨ AI in marketing &amp; martech <span>3</span></button><button class="chip" data-cat="social_creator" style="--c:#F06292">📱 Social, creators &amp; culture <span>3</span></button><button class="chip" data-cat="startups_fintech" style="--c:#C2185B">🚀 Startups, founders &amp; fintech <span>3</span></button><button class="chip" data-cat="consumer" style="--c:#EC6FA0">💗 Consumer behaviour &amp; trends <span>3</span></button><button class="chip" data-cat="learning" style="--c:#DB5A8C">📚 Case studies, jobs &amp; competitor intel <span>3</span></button></nav>
+  <main><section class="cat" data-cat="campaigns_brands" style="--c:#E8457C">
+  <h2><i>💄</i>Campaigns &amp; brand news</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#E8457C"><div class="type"><small>MediaNama</small><b>Eternal</b></div><img class="photo" src="https://www.medianama.com/wp-content/uploads/2025/06/artificial-intelligence-4389372_1280.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div>
+  <div class="body">
+    <h3>Deepinder Goyal faces medical community backlash over Rs 85,000 wearable &#x27;Temple&#x27;</h3>
+    <p>Pre-orders for &#x27;Temple&#x27;, a head-worn fitness tracking wearable priced at Rs. 85,000, opened on November 1, spearheaded by founder Deepinder Goyal. The launch quickly drew public criticism from doctors, notably hepatologist Dr Cyriac Abby Philips (known as TheLiverDoc), who pointed out that the company has not published scientific evidence to support its health claims despite earlier promises to do so before sales began.</p><p>The adhesive sensor, worn on the side of the forehead, tracks metrics such as &#x27;Entropy&#x27;—measuring how hard the body works to shed heat—and &#x27;BrainFlow&#x27;, tracking blood flow to the brain. On November 1, Goyal claimed Temple is the most accurate heart rate tracker compared to flagship wearables even in high exertion zones. Responding to critics on November 5, Goyal defended the device in a post titled &#x27;Dear Concerned Indian Doctors&#x27;, stating that Temple is strictly a fitness and AI device rather than a medical tool, and that it holds necessary regulatory clearances. He noted that he has invested $30 million into the product and defended the pre-orders by pointing out a 14-day return policy.</p><p>The controversy highlights the blurring lines between consumer fitness gadgets and clinical diagnostic equipment. As Temple prepares for a release by the end of the year, the debate over required scientific validation for high-end wellness tech continues to unfold.</p>
+    <div class="why"><b>Why it matters</b>Marketers launching high-ticket wellness tech must balance bold performance claims with transparent, peer-reviewed scientific backing to maintain consumer and institutional trust. Ignoring calls for clinical validation from industry experts can spark severe public backlashes that threaten brand credibility.</div>
+    <a class="src" href="https://www.medianama.com/2026/11/223-deepinder-goyal-temple-controversy/" target="_blank" rel="noopener">MediaNama ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#E8457C"><div class="type"><small>afaqs!</small><b>Campa Cola</b></div></div>
+  <div class="body">
+    <h3>Campa Cola centers festive preparations in new advertising campaign</h3>
+    <p>Campa Cola has rolled out a new marketing campaign that puts festive preparations right at the heart of its messaging. The brand aims to connect with consumers during the festive season by integrating its beverages into traditional celebration preparations.</p><p>Further details about the specific media channels, agency partners, or exact rollout metrics for the campaign were not provided in the announcement.</p>
+    <div class="why"><b>Why it matters</b>Aligning brand messaging with cultural festive preparations allows legacy beverage brands to capture consumer mindshare during high-consumption periods. Marketers should leverage seasonal rituals to drive localized relevance and emotional connection.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMitAFBVV95cUxOWkVoZHc0cDB6OUFNRFFNZnhKMmVKOWFiOUtfYW5aSl9vMkREYUV5aVVBR2h6X3A0b0ZVVm16YzNqR3FJbHUwdjZqeUNLR3Y2VVZ4T0FORmFDSXZjZ19HYlg4MHF3c0xDV01mcVBkNjBVaEtsS1FGUVI5X0JSanpILUtNbkE1S0tLa2dZRDZ2SEo1YUpaT1lQWm5zb2dEUjhVM3FQVER0dDFvVEl2bWUxNml6Wm4?oc=5" target="_blank" rel="noopener">afaqs! ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#E8457C"><div class="type"><small>Campaign India</small><b>ETUDE</b></div></div>
+  <div class="body">
+    <h3>ETUDE launches its debut wedding campaign featuring Palak Tiwari</h3>
+    <p>Beauty brand ETUDE has launched its very first wedding campaign, starring actor Palak Tiwari. The campaign aims to tap into the lucrative wedding season market in India by positioning the brand&#x27;s product offerings around festive and bridal looks.</p><p>Specific details regarding the product lines featured in the campaign or the media mix deployed for the rollout were not disclosed.</p>
+    <div class="why"><b>Why it matters</b>Entering the wedding segment with a targeted celebrity-led campaign allows beauty brands to capture high-intent seasonal spending from consumers seeking specialized looks. Marketers can leverage culturally relevant milestones like the wedding season to drive high-engagement product launches.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxOQmxqd1ViMlpoci1yZVdlZmZzempsRFBOdlpvckpWV2pCek1IbHZkVXU2dGZLM2Zzd3FOaTUwQmlVWUZ4eEdJc2hGVlNEUUJ3UFlqZm54VW5HWGRqVWd4MkxIekgxT0RtbmJlZTBCNFBycFg2cWlWMzB4OEZVdlMwYU1FcGFKNFYwbWxSNWdJOWRqMzc4TW9JYXYyenNaZnRmem9PWmdabVNZQ0NmXzYtanREVEZJanJ3b2tn?oc=5" target="_blank" rel="noopener">Campaign India ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="ad_media" style="--c:#D63384">
+  <h2><i>📺</i>Advertising &amp; media spend</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#D63384"><div class="type"><small>Storyboard18</small><b>Pernod Ricard</b></div><div class="logo"><div class="tile"><img src="https://www.google.com/s2/favicons?domain=pernod-ricard.com&amp;sz=256" alt="Pernod Ricard" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.logo').remove()"></div><em>Pernod Ricard</em></div></div>
+  <div class="body">
+    <h3>Omnicom&#x27;s Initiative wins Pernod Ricard media mandate in India and APAC</h3>
+    <p>Omnicom Media Group agency Initiative has secured the lucrative media mandate for beverage giant Pernod Ricard covering both India and the broader APAC region. The win consolidates a massive piece of regional business under the Omnicom umbrella.</p><p>This development marks a significant transition in how Pernod Ricard will manage its media planning and buying moving forward across key Asian markets. Initiative will now handle the beverage maker&#x27;s media strategy and execution to drive growth and brand visibility.</p><p>As the agency takes over the account, the focus will shift to rolling out new media campaigns and optimizing ad spend across the assigned territories. Industry watchers will be tracking how Initiative leverages its network to scale Pernod Ricard&#x27;s market presence.</p>
+    <div class="why"><b>Why it matters</b>Winning major regional accounts like Pernod Ricard highlights the growing importance of consolidated media management in APAC. Marketers should watch how integrated agency approaches reshape brand visibility and media efficiency in competitive categories.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxOZ3YybnBUMU9HUlJkZHc0Mmh2eFdBU2VsYS1sMjNnVVFJUlhiUEFXeGx5bDZRVmY1YzJaOE83Sll3T0M5LTc4Zml5QUVtOVh1VGpSeHh4VnM4MW9sRW1aWnBDM0NrY19JYTktU3hNRU1rRHlxbmJmeDQzbXdPSUxyRUU0WDM5ODNRRlRwb3RsM1JmMTMweTZ1WGxYUl9STGtubkpZZm04VEFCQdIBrwFBVV95cUxOMjlsbFdtMjlSendJaWd4S2Y2a2pEWmF4R1ZqeG9XVWw2ZFZ4bU5uVE84Q096NzlXbzAyZDlJMzJaMU1CeGNlaDZDWlZPdEYwV1FaWFJ6MGo1eXVnSkE4NzVIcDZJMzZOX3VmRDNTTUhnekU3bFZHcWdXRTFiYUhhekJCc3hiOG5CU2Q4dlNBNTg5UXl0ZUJrUTFuVjBfTlllc3FVc3BEbUVzbEZwY1hB?oc=5" target="_blank" rel="noopener">Storyboard18 ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#D63384"><div class="type"><small>BMI</small><b>Dabur</b></div><div class="logo"><div class="tile"><img src="https://www.google.com/s2/favicons?domain=dabur.com&amp;sz=256" alt="Dabur" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.logo').remove()"></div><em>Dabur</em></div></div>
+  <div class="body">
+    <h3>Dabur admits underinvestment in core brands, plans to step up advertising spend</h3>
+    <p>FMCG major Dabur has acknowledged that it underinvested in its core brands recently. To counter this, the company has announced concrete plans to step up its advertising and marketing expenditure moving forward.</p><p>The admission highlights a strategic shift for the consumer goods giant as it looks to reignite growth and protect market share in its core categories. Increased ad spend is expected to support brand recall and consumer engagement.</p><p>Dabur&#x27;s renewed focus on advertising comes at a time when competitive pressures in the FMCG sector are intensifying. The upcoming increase in ad investments will likely translate into higher promotional activity and wider media reach for its flagship products.</p>
+    <div class="why"><b>Why it matters</b>This move underscores the critical danger of underinvesting in core equity during competitive market conditions. For brand marketers, it is a reminder that consistent top-of-mind awareness requires sustained advertising support rather than short-term cost-cutting.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMi2wFBVV95cUxQVVV2Y24tQmR0QkJlODBqSWk0VWJRdXRHWTdzREstSWRzVGNnWHBhOV85dUpma0RXWHdadEY1a2llR2cwTVVHc3dIQjBSdDB1UGlOeEtoTnJqOEpFbkFWVUFTc0lxZXF0UlVWMDU2NXNNdlZiMDBvYkpnVWpsY2RlbGVUSTctMUtpMnB2YTFXN0V1c2FTREFXUnJGWnk2bWpxZmFXeW01UVFGdjBQSi13SFZpWS16cmdpNVFqVk8tS3RtTk5zRHVHc2hqUUkwaXJNS2czQ2o2Y0o5RlXSAdsBQVVfeXFMUFVVdmNuLUJkdEJCZTgwaklpNFViUXV0R1k3c0RLLUlkc1RjZ1hwYTlfOXVKZmtEV1h3WnRGNWtpZUdnME1VR3N3SEIwUnQwdVBpTnhLaE5yajhKRW5BVlVBU3NJcWVxdFJVVjA1NjVzTXZWYjAwb2JKZ1VqbGNkZWxlVEk3LTFLaTJwdmExVzdFdXNhU0RBV1JyRlp5Nm1qcWZhV3ltNVFRRnYwUEotd0hWaVktenJnaTVRalZPLUt0bU5Oc0R1R3NoalFJMGlyTUtnM0NqNmNKOUZV?oc=5" target="_blank" rel="noopener">BMI ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#D63384"><div class="type"><small>Storyboard18</small><b>Tata Play</b></div></div>
+  <div class="body">
+    <h3>Tata Play rules out publishing own TV ratings, questions standalone RPD data</h3>
+    <p>Tata Play has officially ruled out publishing its own television ratings. At the same time, the company has raised questions regarding the reliability of standalone Return Path Data (RPD) for measurement.</p><p>The stance by Tata Play addresses ongoing industry debates surrounding television audience measurement and the use of set-top box data. By questioning standalone RPD, the company highlights the complexities and limitations inherent in utilizing raw data sources for ratings.</p><p>The decision leaves the existing ratings ecosystem intact without a new proprietary metric entering the market from their end. Stakeholders in the broadcasting and advertising sectors will need to continue relying on established measurement frameworks while addressing these data concerns.</p>
+    <div class="why"><b>Why it matters</b>Data reliability remains a central challenge for media planners relying on alternate metrics like RPD. Marketers must exercise caution when evaluating standalone viewership data and demand robust validation standards from measurement partners.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMiyAFBVV95cUxQQU5nN2lNZHFtcXE1OXJianhuNGt1UWlZai1YX0lFeS1KTTNWenZmc3ZpZU5hcTBpRlZCZjFZbHpnUzhxamkzQ3U1NDVrUkxGeEJhVFpPb1dEX1ktYmkwOUlGYVVRTmxMa0dxYWlJaWFFMmJzaW5kbGhHelEwa0xfUFVxY2dDbTFXTVJheDkwNExEU3BYX2NseGhhRkFacDFnUVR2V0pVQVlSa2pOcG8xVmZJR3E3Rm9DSHNkYWxkZHIxXzdGVVcyV9IBzgFBVV95cUxNZ29nTlNsbHBqS0pFRXR0TmpGQm9mQlVEVnl5SVBxdEFhb3FzRnBHUktTa1p2MXc5ZGVTbTREOHlBRmEzeGI1MFVTVFVDV2ZYTV8wWlEwNzZ6RG5ucmlFTmFocXB2VkNXREFxUzZCYnZreXgyN2xFUWhmWk5ITUctTm9ERjlMQTBQV3BtQ3FaTG8xUjlmajR2ZUxxelM1T2lXWmFLaXlCV1U4WnBSWmhPZ1Z3dDhjYTFObm54alRwV18tS0dYOHlKaENlVUR3dw?oc=5" target="_blank" rel="noopener">Storyboard18 ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="ai_martech" style="--c:#B84DB8">
+  <h2><i>✨</i>AI in marketing &amp; martech</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#B84DB8"><div class="type"><small>CNET</small><b>Google</b></div><div class="logo"><div class="tile"><img src="https://www.google.com/s2/favicons?domain=google.com&amp;sz=256" alt="Google" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.logo').remove()"></div><em>Google</em></div></div>
+  <div class="body">
+    <h3>Google to Introduce Ads Within AI Mode Follow-Up Queries</h3>
+    <p>Google is expanding its advertising footprint across its generative search features. According to reporting from CNET, Google&#x27;s AI mode will soon begin displaying advertisements directly within users&#x27; follow-up queries.</p><p>This update extends monetization beyond initial AI-generated overviews, integrating commercial messaging into continuous conversational sessions as users refine their search journeys.</p>
+    <div class="why"><b>Why it matters</b>As search transitions into multi-turn conversational interfaces, marketers will gain opportunities to target consumers during deeper stages of research rather than relying only on primary query terms. Brands must prepare for how context and follow-up prompts influence commercial visibility.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMimAFBVV95cUxOYy1DQmc3Nkw1OThNZ0VPQjFBQjJFUEFVREVsUkFqalh4SU1QVVdoVllySmN3bXY3MTYtODMxQmtQVFJOSDc1Ukk5cmVscnVRZ0xlLTI0MlUtaGtsMkxhbUwtYXRPQVJBTlpkYXhLc1NvTzh3b0w0ckFRX1U0bGoxQzVXeDVaSV9TRFgyR1A3ckhKSG9lS3d2UQ?oc=5" target="_blank" rel="noopener">CNET ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#B84DB8"><div class="type"><small>MediaPost</small><b>TikTok</b></div></div>
+  <div class="body">
+    <h3>TikTok Updates Generative AI Video Ad Creation Capabilities</h3>
+    <p>TikTok has introduced updates to its generative AI video advertising capabilities, according to a report from MediaPost. The enhancements focus on expanding creative production tools for advertisers running campaigns across the platform.</p><p>The move aligns with broader industry efforts by social platforms to automate and accelerate creative workflows for video-first feeds.</p>
+    <div class="why"><b>Why it matters</b>Performance marketers should watch these platform-native AI updates to streamline asset production and reduce the time required to test new video variations. Leveraging automated creative tools can help mitigate rapid ad fatigue on short-form video channels.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMirgFBVV95cUxOdHItQkVLajNWQy1pRlE2eURjQUpQUkE2MmFuZ3RYVXhaQ0ZvWWNpUlg2M3V5VkhVaHFwR1NSWW5wd1RfZWFpNzFHYlJRRXY4Y0RySnFUTXhNTGtYcFptTHhKOTBFdFpFZl8tV3prTlp4NUgyR2xsNTVfQUFIc25vM0lRSTdDM2oweHNUR3BfWEpqRWZZb0hNMFFmN2VMNU9NOHFFblRUQVNvVDN2MXc?oc=5" target="_blank" rel="noopener">MediaPost ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#B84DB8"><div class="type"><small>The Tribune</small><b>BiteSpeed</b></div><div class="logo"><div class="tile"><img src="https://www.google.com/s2/favicons?domain=bitespeed.co&amp;sz=256" alt="BiteSpeed" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.logo').remove()"></div><em>BiteSpeed</em></div></div>
+  <div class="body">
+    <h3>BiteSpeed Launches AI Creative Studio for E-Commerce Brands</h3>
+    <p>E-commerce marketing platform BiteSpeed has launched AI Creative Studio, according to The Tribune. The new offering aims to position the company as the Higgsfield equivalent for the online retail sector.</p><p>The product is focused on addressing the creative asset needs of e-commerce businesses by automating visual and promotional generation.</p>
+    <div class="why"><b>Why it matters</b>Direct-to-consumer and performance marketers can leverage specialized e-commerce AI tools to lower asset design costs and iterate product creatives more quickly. Comparing niche vertical tools against general-purpose AI platforms will be essential to evaluate creative quality and return on ad spend.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMiwwFBVV95cUxNQkxKRXgyYlNDYm1NZlo4Z1RoSFJpV05yTWJmRGZodGFLanZuUndyejRlZGhkS2RqU2UybXZSR2ZFVlhBVHE3WDdJbjlPbW00RmhHTGlRTkgyVXdHa2hJSVUtdkxPam4tWjJoMXJXQ05QYzNvSEtlWXV1T18tdGI5dFEyLTRPRHpJMHprLWlUUndOWDlPUFZVZndlb3FxM1ptLVlzSElSY0hOVnNBOUlyUFY4NXd2U204SjdSM3NEcmdQNVHSAccBQVVfeXFMUG1IY1BjRDRJRTNXNTkyczBPMzRwUEhaNGV6RVBWNFQ4YXZqR2pDeUhLem5qLTF1UTNxUDl1NGotdVlHdXZwbGJpZENiODA0NEtYUzlRWUU0TzlDZHFtQ3c0S01CRGJIaHd6aXFkN3ozcTRnbE01YVQ5SzhOcTJockV4TGxub1lmVDRHSHpLOVpidlJURHFjSHQ4VmhCRUd4SUFRVk4xanpfWU8tSDRNUGVUeW45dzBkYlJSWk9GSERwX0RiZV9uQQ?oc=5" target="_blank" rel="noopener">The Tribune ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="social_creator" style="--c:#F06292">
+  <h2><i>📱</i>Social, creators &amp; culture</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#F06292"><div class="type"><small>Storyboard18</small><b>Dabur</b></div><div class="logo"><div class="tile"><img src="https://www.google.com/s2/favicons?domain=dabur.com&amp;sz=256" alt="Dabur" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.logo').remove()"></div><em>Dabur</em></div></div>
+  <div class="body">
+    <h3>Dabur&#x27;s digital media share reaches 43% with over 3x surge in influencer investments</h3>
+    <p>FMCG major Dabur has significantly sharpened its brand spending focus, pushing its digital media share to 43%. Alongside this shift towards digital platforms, the company has ramped up its influencer investments by more than three times.</p><p>This strategic reallocation highlights the changing media consumption patterns of Indian consumers and the growing importance of digital-first engagement for traditional heritage brands. Dabur&#x27;s increased capital deployment into influencer marketing reflects a broader industry trend where brands are prioritizing targeted digital creators to drive consumer connection and conversion.</p><p>As Dabur continues to refine its marketing mix, the brand is expected to further optimize its digital funnel and deepen engagement across online channels. The scaled-up investments signal a permanent shift in how legacy consumer goods companies allocate their advertising budgets between traditional and digital media.</p>
+    <div class="why"><b>Why it matters</b>Traditional FMCG giants are rapidly pivoting budgets toward digital and creator-led ecosystems to capture digitally native consumers. Marketers must scale influencer partnerships and digital-first strategies to remain competitive in evolving urban and rural markets.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMiwAFBVV95cUxQenBCR0pBbUNILTRXUzRKRWtJVmFKWTVwLThmUmdZVVRuczBSai1HN2plV0kyR2ljWUNoanZabTNRUmEtLVV5N0dDdGU4dXhqa2VkdUZYaFdqMF9MNm5vdlBVOW9hLVFCRFVlRUE5djRibXZnR2Z1aFVDS0dYZ1FfVHplU3hhcjFYSVFWeVRpMjZtZjJzSHBPMWtvd0w4VWZrbXlNa0ppZzRQUjB0Sk1rZW9LM2FSVmNicW5mb0hnUTbSAcYBQVVfeXFMT3RySlFsTkt5ZzZKdW5TcGVBR3JCM1FwdEtFWVhIOTBEYzdqcm81WlhmdDFaMmJNdFBDUDFrczdnR013OGpFSUJPVnE4bUxudnJaRGFHMHViWERZWlBBSVhFWEJSeWdQdUw2eEF5d3ptYldWNGlCR3M0WHF5S0R5eVU5N1pfS2MzUWlqYlVieEtzVE1pOFp6SmNRaFFXNE0tVThPbVZkbGJMUDFtb01wVE16SWNtWGRQZnhuTnVWZUQ4RVdRNjJR?oc=5" target="_blank" rel="noopener">Storyboard18 ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#F06292"><div class="type"><small>The Business of Fashion</small><b>Social, creators &amp; culture</b></div></div>
+  <div class="body">
+    <h3>Exploring the potential and challenges of luxury influencer marketing in India</h3>
+    <p>The Business of Fashion has explored the evolving landscape of luxury marketing in India, specifically examining how high-end brands can effectively navigate the booming influencer marketing opportunity in the region. As India&#x27;s luxury consumer base expands, brands are evaluating the role of creators in shaping aspirations.</p><p>The intersection of traditional luxury prestige and the accessible, personal nature of influencer content presents unique strategic considerations for high-end labels entering the market. Luxury brands must carefully balance exclusivity with digital reach to maintain their brand equity while engaging digitally savvy audiences.</p>
+    <div class="why"><b>Why it matters</b>Luxury brands entering India must balance traditional exclusivity with the high engagement of local influencers. Marketers need to carefully vet creator partnerships to ensure brand alignment and protect their premium positioning.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMipwFBVV95cUxOWlNvTFMtanR5R0doR2RXWEtSVV9ydFlxRk15c2ZJSWpuTkV5dHE4LUtQczd4MFpWVUlIQ0NuUy1QT3JVMXNpeElvcmNqR013NjFFZDZQV2RVbVNqdUFwaUtTUFBRSmZwakhqZjRnY3ljNzN2YmJZc2IwMWtLUU1nUy1LNHNaR1BkSmozZVJQMVBmb1h0dE1kTHFMOHEzdE9sWEhEYjJPSQ?oc=5" target="_blank" rel="noopener">The Business of Fashion ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#F06292"><div class="type"><small>afaqs!</small><b>Kingfisher</b></div></div>
+  <div class="body">
+    <h3>Kingfisher partners with Bigg Boss Tamil Season 10 on JioHotstar</h3>
+    <p>Kingfisher has secured a partnership with the latest season of the popular reality television show Bigg Boss Tamil Season 10, streaming on JioHotstar. This collaboration places the brand in front of a massive, engaged regional audience during prime-time entertainment.</p><p>By aligning with high-visibility digital streaming content like Bigg Boss Tamil, Kingfisher aims to leverage the show&#x27;s massive viewership to drive brand recall and connect with consumers across Tamil Nadu. Partnerships on leading streaming platforms continue to be a preferred route for beverage and lifestyle brands seeking large-scale visibility.</p><p>Going forward, such integrations will likely focus on maximizing second-screen engagement and leveraging the digital interactivity offered by platforms like JioHotstar. This partnership underscores the enduring value of reality TV sponsorships in regional markets.</p>
+    <div class="why"><b>Why it matters</b>Streaming platforms and major reality shows offer powerful avenues for lifestyle brands to capture high-attention regional audiences. Marketers should leverage high-impact entertainment partnerships to drive massive scale and culturally relevant brand recall.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMiqAFBVV95cUxQMHgtQmgybGhRaGNjT3Y0SWlhbWdKbERzNjE3aU9mVDMySHRudmRXdEVCM2lzc2ZjTl9LaTRTdE10ZnZzcHBtdXRQMmllVTNsWV9yNGp0MW1fcHZoNUctMGg4TkoxV3hTbG1FZEpaM2g4aXNicjBXUk5GOHFHYXMtRjI4b25mYUlMVy05YUVqZUdQNnY2aXVPTWp3Y1BFT1FVYm5MNmJwNE4?oc=5" target="_blank" rel="noopener">afaqs! ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="startups_fintech" style="--c:#C2185B">
+  <h2><i>🚀</i>Startups, founders &amp; fintech</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#C2185B"><div class="type"><small>Inc42</small><b>Kissht</b></div><img class="photo" src="https://inc42.com/cdn-cgi/image/quality=90/https://asset.inc42.com/2026/09/soc-3-2.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div>
+  <div class="body">
+    <h3>Kissht Secures Board Approval to Raise ₹832 Crore via Preferential Issue</h3>
+    <p>Listed non-banking financial company Kissht has secured board approval to raise up to ₹832.2 crore via a preferential issue of equity shares. According to an exchange filing, the lending tech platform will issue 2.6 crore fully paid-up equity shares at ₹314.11 per share to 34 identified non-promoter investors on a private placement basis. The allotment remains subject to regulatory and shareholder approval, for which an extraordinary general meeting has been convened. Kissht has not yet disclosed how it plans to deploy the new funds.</p><p>The preferential issue welcomes an array of institutional and individual investors to Kissht’s cap table. Axis Mutual Fund schemes—Flexi Cap, Multi Cap, and Small Cap—are together set to acquire shares worth nearly ₹200 crore, while the Massachusetts Institute of Technology will invest ₹85 crore across two entities. Other notable participants include Ashoka WhiteOak Capital entities (nearly ₹75 crore), Envision Capital (₹40 crore), First Bridge (₹20 crore), Groww, 360 One, Alchemy Capital, Bandhan Small Cap Fund, and Unity Small Finance Bank.</p><p>This fresh capital raise arrives just four months after Kissht&#x27;s stock exchange debut, where it listed at an 11.7% premium on the BSE over an issue price of ₹171. Founded in 2015 by Ranvir Singh and Krishnan Vishwanathan, Kissht provides digital personal and business loans up to ₹5 lakh, loans against property, and health-related insurance. In July, the platform also received regulatory clearance to begin distributing mutual funds.</p>
+    <div class="why"><b>Why it matters</b>Kissht&#x27;s rapid follow-on funding underscores strong market appetite for digital NBFCs aggressively expanding beyond unsecured credit into broader wealth and insurance products. Performance and brand marketers in fintech must note how well-capitalised lenders are leveraging unified platforms to improve customer lifetime value through multi-product financial distribution.</div>
+    <a class="src" href="https://inc42.com/buzz/kissht-gets-board-nod-to-raise-%e2%82%b9832-cr-via-preferential-issue/" target="_blank" rel="noopener">Inc42 ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#C2185B"><div class="type"><small>YourStory.com</small><b>IIFL Finance</b></div><div class="logo"><div class="tile"><img src="https://www.google.com/s2/favicons?domain=iifl.com&amp;sz=256" alt="IIFL Finance" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.logo').remove()"></div><em>IIFL Finance</em></div></div>
+  <div class="body">
+    <h3>IIFL Finance Set to Raise ₹6,414 Crore with Blackstone Leading the Round</h3>
+    <p>Non-banking financial company IIFL Finance is set to raise a total of ₹6,414 crore in fresh capital. Global investment firm Blackstone is leading the funding round with a primary capital infusion of ₹5,000 crore.</p>
+    <div class="why"><b>Why it matters</b>Substantial private equity backing of this scale signals enduring institutional confidence in Indian retail lending and financial distribution networks. For credit and fintech marketers, an injection of this size typically translates into intensified customer acquisition efforts and stronger brand visibility across key loan categories.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMivAFBVV95cUxQTmM4Z0ZrMnBwY2FnY2pWUUpnTmJmNzd3SVNWY1VXZ0hmOXBmdEZyR0xobU5WQmNQaTdPQU1aQmJSLTc0LVh0OXlxX2Z3eUdGWTZoWm9aa3pxc011WndlWVo2UXVIODR3ZVpwRUhhNmhqYy1MRmpjNENSYXRRVUhCeExTUklSUHhLdXF3ZTRweFNnZGs4dkY3eGtqLVdnVUhuTDBMejZubHlOOFNUWkxWOE5hUFRLcnZjQ3I3Mw?oc=5" target="_blank" rel="noopener">YourStory.com ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#C2185B"><div class="type"><small>The Fintech Times</small><b>Pine Labs</b></div></div>
+  <div class="body">
+    <h3>Pine Labs Partners with WEBXPAY to Roll Out UPI Acceptance in Sri Lanka</h3>
+    <p>Merchant commerce platform Pine Labs has joined forces with payment gateway provider WEBXPAY to roll out Unified Payments Interface (UPI) acceptance across Sri Lanka. The cross-border collaboration enables Sri Lankan merchants to accept payments from Indian visitors using UPI-powered mobile applications.</p>
+    <div class="why"><b>Why it matters</b>The ongoing regional expansion of India&#x27;s UPI ecosystem creates frictionless spending environments for Indian consumers travelling abroad. Travel, hospitality, and cross-border retail marketers can leverage this interoperability to design smoother checkout journeys and boost international transaction volumes.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMikwFBVV95cUxPd3RsbHIxNzFXR3lmWEQ4TkdMUVBrbExUQ3RER2xzN2gzZmN1WHFqd3JOcW5GMlNLZnFjM19ZVDN3UHR5Z29iX0c2ckdBLUg0ck5OaEpuYVl2UzQ5UzNwTEx1QzZuRmZqdU53Y1RrQzRCYzNpdWY4VkVWT2I0QXFfdG16YzgzaEZHMTlPRkxQZXR6UXc?oc=5" target="_blank" rel="noopener">The Fintech Times ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="consumer" style="--c:#EC6FA0">
+  <h2><i>💗</i>Consumer behaviour &amp; trends</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#EC6FA0"><div class="type"><small>BW Disrupt</small><b>Unicommerce</b></div></div>
+  <div class="body">
+    <h3>Unicommerce Report Projects 85% of Diwali Orders in 2026 to Be Valued Under Rs 1,000</h3>
+    <p>A recent report by Unicommerce indicates that approximately 85% of Diwali orders in the year 2026 are expected to be valued below Rs 1,000. This highlights a strong consumer preference for lower-priced items during the festive season, driven by budget considerations and purchasing patterns.</p><p>The findings point towards a growing volume of lower-ticket size transactions dominating the festive e-commerce landscape in India. Brands and sellers operating in the digital commerce space will need to factor in this ticket-size distribution while planning their inventory and promotional strategies.</p><p>As e-commerce penetration deepens across smaller towns and price-conscious segments, affordable gifting and impulse-buy categories are likely to see sustained growth. Companies will need to optimize supply chains to maintain profitability on sub-Rs 1,000 orders.</p>
+    <div class="why"><b>Why it matters</b>Marketers must focus on high-volume, low-ticket product strategies to capture the bulk of festive demand. Profitability models will need adjustment to thrive on transactions predominantly valued under Rs 1,000.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMitwFBVV95cUxOWDloNXV2VUdwb09oVlVOMl9wZi1BX0lWNGRnNXRQUzhZa2c1Qy1DdjZybUFoaFl2QjhrNFRRWEU5V3daTm83RnR1Q0hFRUJhNG84LXhJTFYzSFdSRkROaF8xeE5MMEhIYkl0TmduSmZpWjlHVmlTQ0ktRzg1Y3FCMmNJQV81TEkzWVZtY3hvZGdNV1d4a2VxcjdUdjNQRVFENFlLbl9JYXpTMDVCaTBnQTFFYXB2cDA?oc=5" target="_blank" rel="noopener">BW Disrupt ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#EC6FA0"><div class="type"><small>NewsNation</small><b>Consumer behaviour &amp; trends</b></div></div>
+  <div class="body">
+    <h3>Holiday Shoppers Turn to Cheaper Brands Amid Inflationary Pressures</h3>
+    <p>Holiday shoppers are increasingly turning to cheaper brands as persistent inflation continues to squeeze household budgets. Consumers are adjusting their purchasing habits to cope with rising costs during the key shopping period.</p><p>The shift toward budget-friendly alternatives highlights how macroeconomic pressures are directly altering consumer behavior at retail. Shoppers are prioritizing value and affordability over brand loyalty as their purchasing power is tested.</p><p>Retailers and consumer brands must adapt their pricing and promotional strategies to retain cost-sensitive shoppers. Offering targeted discounts and value packs will likely remain crucial for capturing holiday demand.</p>
+    <div class="why"><b>Why it matters</b>Brands must emphasize value propositions and accessible price points to retain inflation-hit consumers. Ignoring budget constraints risks driving loyal customers toward cheaper alternatives.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMigwFBVV95cUxQTDcyMEZEeEhMZzhxRVgyUkI5N19xeEptN2Rac1RQR1c4bmNQX0U0MGJZSUNmamxZNDFMUXZMTkE1cW9LbHNxMEs5cFR2bFR5VE83UFJMUDRsZVotTWlFcFRTNmwxMTc4VTYzOFNTbmNMVEpkcGY3LUdCS3BydDRCMEg2UdIBiAFBVV95cUxQdW1RNFRfaThhbElUQUg0SlpqUWZYcko0NTFYekpTNHc1M3NuOThKMG16ZS0tMnFhd3MzZ3NCWkJOc2d6czRRcGlKQUo2Yk1KMmFPbVVNc3pUUlduXzlZNGxJUk56TGMwMlFKRV83NlJ2Q180QWFmSVRIbjh5cE8yRTVIVEJ2MUYt?oc=5" target="_blank" rel="noopener">NewsNation ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#EC6FA0"><div class="type"><small>Reuters</small><b>On</b></div></div>
+  <div class="body">
+    <h3>Sportswear Brand On Adopts &#x27;Listening and Learning&#x27; Approach in China Following Mbappe Misstep</h3>
+    <p>Sportswear brand On is adopting a &#x27;listening and learning&#x27; strategy in the Chinese market following a misstep involving Kylian Mbappe. The company is working to navigate market nuances and consumer expectations carefully.</p><p>The situation underscores the complexities global brands face when navigating high-profile partnerships and regional market dynamics. On is focusing on better understanding local consumer sentiments to strengthen its positioning in China.</p><p>Moving forward, the brand will likely exercise greater caution and cultural alignment in its marketing and endorsement strategies. Engaging authentically with the local audience remains critical for its long-term growth in the region.</p>
+    <div class="why"><b>Why it matters</b>Global brands must prioritize local cultural nuance and consumer sentiment to avoid missteps with high-profile endorsements. Active listening and localized strategies are essential for entering and scaling in complex markets like China.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMi0AFBVV95cUxPMC00TVdnME9fZU1HbG4tT1hMcWh5enkzcFlmU1BZTEd6ZVRoVUhoWkVCMUZNR0thZFJHVXgxQl9BVm1sWmI5UjZBcXRmeVc4UE1ORFlYRUp5N3I3WDZyRUg5bmNJVExuQVY4WFBGZENSeG9ORlZMTzlVSkNqdDl4OVRYLUc2a2JvR3dUZlduMkptaU4tMHVuU3g4NlU4a0JNbzFYbk5BbG9jbUhIQ1ZVM3JXaWx5WS01MVJHazBmdXk1ODF2QkxnVUg5eGlXZWNM?oc=5" target="_blank" rel="noopener">Reuters ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="learning" style="--c:#DB5A8C">
+  <h2><i>📚</i>Case studies, jobs &amp; competitor intel</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#DB5A8C"><div class="type"><small>Social Samosa</small><b>Pulse</b></div></div>
+  <div class="body">
+    <h3>Pulse gamifies Navratri, Durga Pujo, and Dussehra to engage Gen Z</h3>
+    <p>Candy brand Pulse launched a gamified campaign targeting Gen Z consumers during the festive season of Navratri, Durga Pujo, and Dussehra. The initiative utilized interactive digital formats to connect with younger audiences who heavily consume festive content online.</p><p>By turning traditional cultural celebrations into interactive digital experiences, the brand aimed to boost engagement and stay relevant among digital-first consumers. Specific engagement metrics and mechanic details were part of the broader rollout across social channels.</p><p>The campaign highlights how legacy and mainstream consumer brands are continuously adapting their seasonal marketing playbooks to capture the attention of younger demographic cohorts through gamification.</p>
+    <div class="why"><b>Why it matters</b>Marketers targeting Gen Z during festive seasons must look beyond traditional banner ads and adopt gamified, interactive experiences. Connecting cultural moments with playful digital engagement drives higher brand recall and active participation.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMixgFBVV95cUxOUExNbW5HRWJ2aU1sYTgzUTB1dkNtVHIzQzJybXBNZDFKdFpMQk5RMlBmTGs1ak5RWVlPR1U2VUtiNWdHdlJLS0d3ZV90cHRiTHJMUG5Wb0t5OXc0SmRNaGZUa2pmd0dEZ2pRRXpfdUVlZkdiM1RyaWQ3UFhUQTlleWdhYm43a21kWVJVYmo1aEtySU0wSURta1lobmszVlpnRkM5NndWS0swZ0hZLTVaM3pteUZzOFV3a1NkTl9PWk9pek04a2fSAcYBQVVfeXFMTlBMTW1uR0VidmlNbGE4M1EwdXZDbVRyM0Mycm1wTWQxSnRaTEJOUTJQZkxrNWpOUVlZT0dVNlVLYjVnR3ZSS0tHd2VfdHB0YkxyTFBuVm9LeTl3NEpkTWhmVGtqZndHRGdqUUV6X3VFZWZHYjNUcmlkN1BYVEE5ZXlnYWJuN2ttZFlSVWJqNWhLcklNMElEbWtZaG5rM1ZaZ0ZDOTZ3VktLMGdIWS01WjN6bXlGczhVd2tTZE5fT1pPaXpNOGtn?oc=5" target="_blank" rel="noopener">Social Samosa ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#DB5A8C"><div class="type"><small>Marketing Dive</small><b>Rao&#x27;s</b></div><img class="photo" src="https://imgproxy.divecdn.com/O1-9oMq9OXnDCxisoM_dBunWiauu07EnBEZxem3SCdw/g:ce/rs:fill:1600:900:1/Z3M6Ly9kaXZlc2l0ZS1zdG9yYWdlL2RpdmVpbWFnZS8xX1Jhb3NfTWFrZV9UaW1lX1BSX2ltYWdlLmpwZw==.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div>
+  <div class="body">
+    <h3>Rao’s reimagines limited-time offers by encouraging consumers to slow down meals</h3>
+    <p>Sauce brand Rao&#x27;s, owned by Campbell Soup Company, has launched a unique brand-building campaign that flips the script on traditional limited-time offers. Instead of rushing consumers to buy through scarcity tactics, the brand is asking people to slow down their meals.</p><p>The creative strategy focuses heavily on the emotional aspect of dining, specifically highlighting the limited number of meals people actually get to share with their loved ones over time. This shifts the marketing narrative away from standard product-centric promotions toward meaningful human connections.</p><p>Moving forward, the brand aims to deepen emotional resonance with its consumer base, differentiating itself in the crowded pasta sauce market by championing quality time at the dinner table rather than just transaction speed.</p>
+    <div class="why"><b>Why it matters</b>Brands can build deeper emotional equity by moving away from purely functional or urgency-driven promotions. Connecting a product to meaningful life moments creates lasting brand loyalty and differentiation.</div>
+    <a class="src" href="https://www.marketingdive.com/news/raos-heats-up-brand-building-with-a-request-to-slow-down-meals/874122/" target="_blank" rel="noopener">Marketing Dive ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#DB5A8C"><div class="type"><small>D2c Insider Pulse</small><b>Gramiyaa</b></div><div class="logo"><div class="tile"><img src="https://www.google.com/s2/favicons?domain=gramiyaa.com&amp;sz=256" alt="Gramiyaa" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.logo').remove()"></div><em>Gramiyaa</em></div></div>
+  <div class="body">
+    <h3>Gramiyaa leverages a supermarket mindset for its quick commerce scaling strategy</h3>
+    <p>Direct-to-consumer (D2C) brand Gramiyaa has successfully scaled its operations by adopting a unique quick commerce strategy rooted in a traditional supermarket mindset. The approach focuses on making products readily accessible where digital-first shoppers look for convenience.</p><p>By aligning its distribution and inventory approach with the fast-paced demands of quick commerce platforms, the brand has managed to expand its reach and improve market penetration. This operational focus allows the D2C player to compete effectively in crowded retail channels.</p><p>As quick commerce continues to reshape consumer purchasing habits in the food and grocery sectors, brands will increasingly need to tailor their supply chains and product positioning to fit instant delivery ecosystems.</p>
+    <div class="why"><b>Why it matters</b>D2C brands must align their distribution strategies with the realities of quick commerce platforms by treating digital storefronts like efficient supermarkets. Meeting consumers at the exact point of instant demand is crucial for modern retail scaling.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMitwFBVV95cUxORVd3VldnLWFPbE9TZlVrQzN1UjFoZ1hxU1B4VThVN1VyRndzblkxTnVUWkJqQmNhNnl5c3Y1eDNOdDhVVXJjeGRod0hkX1FkWUoyaVZhUE85WHZnTFh4TW8zQlRkMTkxRGM5empOTGd3X3lNekp3TnNHTXU4RXpXMUtrdklYOW1TTnlHNmdkekZLQmo4RG9WMWZBUkltTGc0R2g5NkJBT2loT3hnT1AzbHE3SUtNY1E?oc=5" target="_blank" rel="noopener">D2c Insider Pulse ↗</a>
+  </div>
+</article></div>
+</section></main>
+
+  <section class="archive">
+    <h2>Past briefings</h2>
+    <div class="days"><a href="2026-11-11.html">Today</a><a href="2026-11-10.html">Tue, 10 Nov</a><a href="2026-11-08.html">Sun, 08 Nov</a><a href="2026-11-07.html">Sat, 07 Nov</a><a href="2026-11-06.html">Fri, 06 Nov</a><a href="2026-11-04.html">Wed, 04 Nov</a><a href="2026-11-03.html">Tue, 03 Nov</a><a href="2026-11-02.html">Mon, 02 Nov</a><a href="2026-11-01.html">Sun, 01 Nov</a><a href="2026-10-31.html">Sat, 31 Oct</a><a href="2026-10-30.html">Fri, 30 Oct</a><a href="2026-10-28.html">Wed, 28 Oct</a><a href="2026-10-27.html">Tue, 27 Oct</a><a href="2026-10-25.html">Sun, 25 Oct</a><a href="2026-10-24.html">Sat, 24 Oct</a><a href="2026-10-23.html">Fri, 23 Oct</a><a href="2026-10-22.html">Thu, 22 Oct</a><a href="2026-10-21.html">Wed, 21 Oct</a><a href="2026-10-20.html">Tue, 20 Oct</a><a href="2026-10-19.html">Mon, 19 Oct</a><a href="2026-10-18.html">Sun, 18 Oct</a></div>
+  </section>
+  <footer>Updated 11 Nov 2026, 12:25 PM IST · Articles are AI-written summaries; open the source before quoting. 🌸</footer>
+</div>
+<script>
+document.querySelectorAll('.chip').forEach(function(c){
+  c.addEventListener('click',function(){
+    document.querySelectorAll('.chip').forEach(function(x){x.classList.remove('on')});
+    c.classList.add('on');
+    var k=c.dataset.cat;
+    document.querySelectorAll('.cat').forEach(function(s){s.style.display=(k==='all'||s.dataset.cat===k)?'':'none'});
+    window.scrollTo({top:document.querySelector('nav').offsetTop,behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>
