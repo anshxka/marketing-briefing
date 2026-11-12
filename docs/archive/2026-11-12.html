@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#FFE4EE">
+<title>The Marketing Edit · Thursday, 12 November 2026</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFF5F8; --card:#FFFFFF; --ink:#3A1430; --muted:#8A5A78; --line:#F7D3E1;
+  --rose:#E8457C; --blush:#FFE4EE; --soft:#FFF0F5; --shadow:0 10px 30px -18px rgba(194,24,91,.35);
+  --serif:"Playfair Display",Georgia,"Times New Roman",serif;
+  --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#1C0E18; --card:#28141F; --ink:#FBE8F1; --muted:#C99AB4; --line:#44243A;
+  --blush:#3A1B2F; --soft:#2F1727; --shadow:0 10px 30px -18px rgba(0,0,0,.6);
+}}
+*{box-sizing:border-box}
+html{scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--sans);
+  background-image:radial-gradient(circle at 15% 0%,var(--blush) 0,transparent 40%),radial-gradient(circle at 90% 10%,var(--blush) 0,transparent 35%);
+  background-repeat:no-repeat}
+.wrap{max-width:1040px;margin:auto;padding:36px 20px 70px}
+a{color:inherit}
+
+/* masthead */
+header{text-align:center;margin-bottom:30px}
+.kicker{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--rose);font-weight:700;margin:0}
+h1{font:italic 600 clamp(40px,8vw,72px)/1.05 var(--serif);margin:10px 0 8px;letter-spacing:-.01em}
+.date{color:var(--muted);margin:0}
+.date b{color:var(--rose);font-weight:500}
+.byline{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 14px;margin:14px 0 4px;font-size:15px;color:var(--muted)}
+.byline b{color:var(--ink);font-weight:700}
+.byline em{font:italic 600 17px var(--serif);color:var(--rose)}
+.social{display:inline-flex;gap:8px}
+.social a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:14px;font-weight:500;color:var(--ink);
+  background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 13px 6px 9px;transition:.15s}
+.social a:hover{border-color:var(--rose);color:var(--rose);transform:translateY(-1px)}
+.social svg{width:18px;height:18px;flex:none}
+.flourish{color:var(--rose);letter-spacing:.6em;margin-top:12px;font-size:14px}
+
+/* top cards */
+.top{display:grid;grid-template-columns:1.6fr 1fr;gap:18px;margin-bottom:30px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px 26px;box-shadow:var(--shadow)}
+.card h2{font:600 22px var(--serif);margin:0 0 12px}
+.big{list-style:none;margin:0;padding:0;counter-reset:n}
+.big li{counter-increment:n;position:relative;padding:0 0 14px 44px;font:500 17px/1.5 var(--serif)}
+.big li::before{content:counter(n);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;
+  background:var(--blush);color:var(--rose);font:700 14px/30px var(--sans);text-align:center}
+.tip{background:linear-gradient(140deg,#FFD6E5,#FFC1D8 55%,#F9A8C9);color:#4A1033;border:0}
+.tip h2{color:#4A1033}
+.tip p{margin:0;font-size:16px}
+@media (prefers-color-scheme:dark){.tip{background:linear-gradient(140deg,#5A2045,#7A2858);color:#FFE4EE}.tip h2{color:#FFE4EE}}
+
+/* chips */
+nav{position:sticky;top:0;z-index:5;display:flex;gap:8px;overflow-x:auto;padding:12px 0;margin-bottom:6px;
+  background:var(--bg);scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+.chip{--c:var(--rose);flex:none;font:500 14px var(--sans);color:var(--ink);background:var(--card);
+  border:1px solid var(--line);border-radius:999px;padding:8px 15px;cursor:pointer;transition:.15s}
+.chip span{color:var(--muted);margin-left:3px}
+.chip:hover{border-color:var(--c)}
+.chip.on{background:var(--c);border-color:var(--c);color:#fff}.chip.on span{color:#ffffffd0}
+.chip:focus-visible,a:focus-visible{outline:2px solid var(--rose);outline-offset:2px}
+
+/* sections */
+.cat{margin-top:38px}
+.cat>h2{display:flex;align-items:center;gap:12px;font:600 28px var(--serif);margin:0 0 16px}
+.cat>h2 i{font-style:normal;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;
+  background:var(--blush);font-size:22px}
+.story{background:var(--card);border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:var(--shadow);
+  display:flex;flex-direction:column}
+.story.featured{display:grid;grid-template-columns:1fr 1.15fr;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.media{position:relative;aspect-ratio:16/10;overflow:hidden;
+  background:radial-gradient(circle at 25% 20%,#ffffff99 0,transparent 45%),linear-gradient(135deg,var(--blush),color-mix(in srgb,var(--c) 45%,var(--blush)))}
+.featured .media{aspect-ratio:auto;min-height:100%}
+.media .type{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:22px 24px;color:#4A1033}
+.media .type small{font:700 11px var(--sans);letter-spacing:.2em;text-transform:uppercase;opacity:.75}
+.media .type b{font:italic 600 clamp(24px,3vw,34px)/1.1 var(--serif);margin-top:4px}
+.media .logo{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
+  background:inherit}
+.media .tile{width:38%;max-width:150px;aspect-ratio:1;background:#fff;border-radius:28px;display:grid;place-items:center;
+  box-shadow:0 14px 34px -14px rgba(194,24,91,.45)}
+.media .tile img{width:62%;height:62%;object-fit:contain}
+.media .logo em{font:italic 600 20px var(--serif);color:#4A1033;font-style:italic}
+.media .photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media (prefers-color-scheme:dark){.media .type,.media .logo em{color:#FFE4EE}}
+.body{padding:22px 24px 24px}
+.story h3{font:600 22px/1.3 var(--serif);margin:0 0 12px}
+.featured h3{font-size:27px}
+.story p{margin:0 0 12px;color:var(--ink)}
+.why{background:var(--soft);border-left:3px solid var(--c);border-radius:12px;padding:12px 14px;margin:14px 0 12px;font-size:15px}
+.why b{display:block;color:var(--c);font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:3px}
+.src{font-size:14px;color:var(--muted);text-decoration:none}
+.src:hover{color:var(--rose)}
+
+/* archive */
+.archive{margin-top:50px;text-align:center}
+.archive h2{font:italic 600 24px var(--serif);margin:0 0 14px}
+.days{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.days a{text-decoration:none;font-size:14px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 14px}
+.days a:hover{border-color:var(--rose);color:var(--rose)}
+footer{text-align:center;color:var(--muted);font-size:13px;margin-top:34px}
+
+@media (max-width:760px){
+  .top{grid-template-columns:1fr}
+  .story.featured{grid-template-columns:1fr}
+  .featured .media{aspect-ratio:16/10}
+  .featured h3{font-size:23px}
+  .wrap{padding-top:26px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="kicker">Your daily marketing briefing</p>
+    <h1>The Marketing Edit</h1>
+    <p class="date">Thursday, 12 November 2026 · <b>21 stories</b></p>
+    <div class="byline">
+      <span>Curated by <em>GenZMarketer</em> · <b>Anshika Sharma</b></span>
+      <span class="social">
+        <a href="https://www.instagram.com/genzmarketer_/" target="_blank" rel="noopener" aria-label="Instagram: genzmarketer_">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="ig" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FEDA75"/><stop offset=".35" stop-color="#FA7E1E"/><stop offset=".6" stop-color="#D62976"/><stop offset=".85" stop-color="#962FBF"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="6" fill="url(#ig)"/><circle cx="12" cy="12" r="4.3" fill="none" stroke="#fff" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.3" fill="#fff"/></svg>
+          Instagram
+        </a>
+        <a href="https://www.linkedin.com/in/anshxka02/" target="_blank" rel="noopener" aria-label="LinkedIn: Anshika Sharma">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="4" fill="#0A66C2"/><rect x="6" y="10" width="2.6" height="8" fill="#fff"/><circle cx="7.3" cy="7" r="1.5" fill="#fff"/><path d="M11 10h2.5v1.2c.5-.8 1.5-1.4 2.8-1.4 2.2 0 3 1.4 3 3.6V18h-2.6v-4.1c0-1-.3-1.8-1.4-1.8s-1.7.8-1.7 1.9V18H11z" fill="#fff"/></svg>
+          LinkedIn
+        </a>
+      </span>
+    </div>
+    <div class="flourish">✿ ✿ ✿</div>
+  </header>
+
+  <div class="top">
+    <div class="card">
+      <h2>Today's big picture</h2>
+      <ol class="big"><li>Indian brands are aggressively activating festive campaigns across categories from jewellery and traditional snacks to beverages, aiming to capture peak consumer spending despite underlying inflationary pressures and a trend of shoppers trading down to cheaper alternatives.</li><li>Major corporate and startup leadership realignments, including key marketing and executive appointments at companies like Mahindra, Jeevansathi, and Unacademy, signal a strategic push toward agile customer acquisition and structured brand building.</li><li>Globally and locally, marketers face rapid shifts driven by emerging tech adoption, from IndiaAI&#x27;s international partnerships and Mars preparing for agentic AI commerce to rising creator economy valuations in wedding and studio production spaces.</li></ol>
+    </div>
+    <div class="card tip">
+      <h2>💡 Tip of the day</h2>
+      <p>Audit your brand&#x27;s promotional and pricing strategy against current consumer frugality by introducing entry-level pack sizes or value bundles to capture budget-conscious shoppers trading down due to inflation.</p>
+    </div>
+  </div>
+
+  <nav><button class="chip on" data-cat="all">All <span>21</span></button><button class="chip" data-cat="campaigns_brands" style="--c:#E8457C">💄 Campaigns &amp; brand news <span>3</span></button><button class="chip" data-cat="ai_world" style="--c:#A855F7">🤖 AI in India &amp; global <span>3</span></button><button class="chip" data-cat="social_creator" style="--c:#F06292">📱 Social, creators &amp; culture <span>3</span></button><button class="chip" data-cat="startups_fintech" style="--c:#C2185B">🚀 Startups, founders &amp; fintech <span>3</span></button><button class="chip" data-cat="consumer" style="--c:#EC6FA0">💗 Consumer behaviour &amp; trends <span>3</span></button><button class="chip" data-cat="global_economy" style="--c:#9C4F7E">🌍 Global marketing &amp; economy <span>3</span></button><button class="chip" data-cat="learning" style="--c:#DB5A8C">📚 Case studies, jobs &amp; competitor intel <span>3</span></button></nav>
+  <main><section class="cat" data-cat="campaigns_brands" style="--c:#E8457C">
+  <h2><i>💄</i>Campaigns &amp; brand news</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#E8457C"><div class="type"><small>afaqs!</small><b>Mia by Tanishq</b></div></div>
+  <div class="body">
+    <h3>Mia launches festive campaign to encourage everyday jewellery wear</h3>
+    <p>Jewellery brand Mia has rolled out a new festive season campaign aimed at encouraging consumers to take their jewellery out of lockers and incorporate it into their everyday lives. The initiative highlights modern, versatile designs that suit daily wear rather than being saved exclusively for special occasions.</p><p>The campaign taps into changing consumer habits where modern Indian women prefer lightweight, functional, and contemporary accessories that complement their everyday wardrobes. By positioning its collections as daily essentials, the brand seeks to drive higher frequency purchases and engagement during the peak festive shopping period.</p>
+    <div class="why"><b>Why it matters</b>This campaign demonstrates how heritage categories can drive growth by redefining usage occasions for modern consumers. Marketers should focus on everyday utility and lifestyle integration to increase product relevance during festive seasons.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMivAFBVV95cUxQeHQtem8ydngzOVpPTXlsajJ4ajg4NkQxajJGY1ZEcWdqaWsyZnJ3dkExMWhua3dBTG52VHFUN3lITENBRHB6NnJpTnIxOTAwblk2TmhOZ1R2dzc1dU81Z0phaTk4TTdNbFh1NVZpYnQ5QXRKZjZfMWd5OG1rNG5LdEliVFNlVFhGQWlsYlMtcGNSMncycmhDV0NMS2RaSVZsOElNSXZSdGFWb3ZrdWM0QWJnek9jUHVPUDdHWA?oc=5" target="_blank" rel="noopener">afaqs! ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#E8457C"><div class="type"><small>Campaign India</small><b>Haldiram&#x27;s</b></div><div class="logo"><div class="tile"><img src="https://www.google.com/s2/favicons?domain=haldirams.com&amp;sz=256" alt="Haldiram&#x27;s" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.logo').remove()"></div><em>Haldiram&#x27;s</em></div></div>
+  <div class="body">
+    <h3>Haldiram&#x27;s highlights the joy of festive gifting with new Diwali campaign</h3>
+    <p>Snacks and sweets major Haldiram&#x27;s has launched a new Diwali campaign centred around the joy of festive gifting. The campaign emphasizes the cultural tradition of sharing sweets and gift hampers with family, friends, and colleagues during the festival of lights.</p><p>The initiative showcases Haldiram&#x27;s diverse range of festive gifting options designed to cater to various consumer preferences and price points. Through this campaign, the brand aims to capture a significant share of the lucrative festive gifting market in India.</p>
+    <div class="why"><b>Why it matters</b>Festive campaigns anchored in traditional emotional triggers help legacy brands reinforce consumer loyalty and capture seasonal demand surges. Brands must leverage gifting portfolios early to maximize visibility during high-intent shopping periods.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMizgFBVV95cUxOMjN0LVJ1TVhOa1J5cGZyRUtZWWpQS2tING1Qd2FiWmdLLTRPcmY1SjVZS3NBXzgzTXZHV2NtTE5jOVh0bjlHUmZORDZnZFp3aW91dUhid1RhQ0xGd01wVy1OdG5XTWJ6cWlIUTJPTlBEbjVHOHZRX2s0dWVDM016VVVSS2JhSDB1VkZKRElkeFhlbzZlOEdaZXlZOWc3dU9qcXVGLUtXS1ZuY3hmTG5DNnJCZUVyTXpLTThTNU11RlZJOFBfa0tKcDlwQ0E0UQ?oc=5" target="_blank" rel="noopener">Campaign India ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#E8457C"><div class="type"><small>Adgully</small><b>Campa Cola</b></div></div>
+  <div class="body">
+    <h3>Campa Cola launches &#x27;Tayyari Big, Tyohaar Bada Big&#x27; campaign for the festive season</h3>
+    <p>Campa Cola has rolled out a new festive marketing campaign titled &#x27;Tayyari Big, Tyohaar Bada Big&#x27;. The campaign highlights the cultural insight that the excitement and preparations for a festival often begin long before the actual day of celebration.</p><p>The messaging focuses on building anticipation and scale around festive preparations, aligning the beverage brand with large-scale celebrations across households. This strategy aims to position Campa Cola as a key companion for consumers as they gear up for the festive season.</p>
+    <div class="why"><b>Why it matters</b>Tapping into the anticipation phase of a festival allows brands to extend their marketing window beyond the actual event dates. Marketers should build narrative campaigns around the entire journey of consumer preparation to maximize engagement.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMi2AFBVV95cUxQZlJZNUtaS2d3OTRBUWFPZV8tVGJfRlc3MWJ2bkJqR0ttTWk5UThKWmV1ZTlCWDU2aUZ0QTZLYW1FZU9JWWNrUDFiNExCYmltWDR5UTlKcFBHVzI1YUpHVTgxU3RPUW93a0Z4NzRUOHRXbTlFWHhxenl6Y1ZvbFN3Ym9nR2hSZU45Q3JMb3RCQ2h6Y2FNUzFmQWttSjdXQ3Bhd1Z5aFRTLXQ5UnpFdVBrWmFNanZmY0JPdGlGWjJfenRldFhBbUxuSUxrbTM4aDlvSzhvSGlZQlY?oc=5" target="_blank" rel="noopener">Adgully ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="ai_world" style="--c:#A855F7">
+  <h2><i>🤖</i>AI in India &amp; global</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#A855F7"><div class="type"><small>TechCrunch AI</small><b>Nvidia</b></div><img class="photo" src="https://techcrunch.com/wp-content/uploads/2026/09/Jensen-Huang.jpg?resize=1200,800" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div>
+  <div class="body">
+    <h3>Nvidia Board Reportedly Considers Ousting CEO Jensen Huang Amid Controversies</h3>
+    <p>Nvidia&#x27;s board of directors is preparing to meet to evaluate the future of co-founder and CEO Jensen Huang, who has helmed the company for 33 years, following recent personal controversies. According to reports from the Wall Street Journal, the board could convene as early as Wednesday to discuss his leadership.</p><p>The development follows Huang’s admission on Sunday to having an extramarital affair with an individual alleged by U.S. intelligence to be a Chinese intelligence operative. In addition, the New York Times reported on Wednesday that Huang engaged in an affair with an executive who directly reports to him.</p><p>The revelations sent Nvidia&#x27;s stock down by roughly 8% in after-hours trading on Wednesday, extending a five-day decline of about 11%. Nvidia, which has surged to become one of the world&#x27;s most valuable companies powering the generative AI boom, now faces significant governance scrutiny. Huang has maintained roughly 60 direct reports without an established succession plan, and the company is reportedly collaborating with an external firm to explore prospective CEO candidates.</p>
+    <div class="why"><b>Why it matters</b>Heavy brand equity and valuation tied entirely to a single executive creates massive operational and reputational risk when governance crises hit. Marketers must observe how leadership turbulence at the foundation of the AI hardware supply chain might impact broader tech industry sentiment.</div>
+    <a class="src" href="https://techcrunch.com/2026/11/11/nvidias-stock-drops-as-board-reportedly-preps-to-oust-ceo-jensen-huang/" target="_blank" rel="noopener">TechCrunch AI ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#A855F7"><div class="type"><small>www.pib.gov.in</small><b>IndiaAI</b></div></div>
+  <div class="body">
+    <h3>IndiaAI Mission and Sweden Explore Strategic Cooperation in AI and Digitalisation</h3>
+    <p>The IndiaAI Mission and Sweden have held formal discussions focused on establishing strategic cooperation in the fields of artificial intelligence and digitalisation.</p><p>The bilateral discussions were conducted under the framework of the Sweden-India Transport, Innovation and Policy Commission (SITAC) to explore collaborative technological and digital development.</p>
+    <div class="why"><b>Why it matters</b>Bilateral government initiatives often lay the groundwork for regulatory standards, talent exchange, and technological ecosystems that influence digital markets. Marketers should monitor cross-border public pacts that could eventually spur localized enterprise AI adoption.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMifEFVX3lxTFBGM2JoT1lId1oxSjFjbnlHVTh2UjN1V24zWEh0bzc5ZS0tR2VTdFhsLUlVT085ZG5VRHB0LVFka2hFUFY4SEREbm9tMHdLQzBWYlBKb3dROHBfdHZ5QURxcG02NmhpUzcwMEhNTFlhdEN3b0NlM2p6UzlqZzE?oc=5" target="_blank" rel="noopener">www.pib.gov.in ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#A855F7"><div class="type"><small>Digiday</small><b>Mars</b></div><img class="photo" src="https://digiday.com/wp-content/uploads/sites/3/2026/11/Daily-headshot.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div>
+  <div class="body">
+    <h3>Mars Prepares for Agentic AI Commerce as Digital Assistants Eye the Grocery Run</h3>
+    <p>Mars is actively rethinking its commerce and retail strategies as autonomous AI shopping assistants prepare to manage routine grocery shopping. Drawing from a recent retail study conducted alongside Kantar and Synthesis, Neil Reynolds, global chief customer officer at Mars, expects agentic tech to oversee weekly pantry replenishment, shifting the role of physical stores toward discovery and entertainment.</p><p>To safeguard impulse purchases for brands such as M&amp;Ms, Dove, and Pop-Tarts, the snack giant is pursuing a two-tier roadmap. The company is focusing on ensuring its products are discoverable and readily convert within large language models (LLMs), while simultaneously partnering with physical retailers to transform in-store environments into experiential and immersive destinations.</p><p>Mars is currently working with emerging technology partners to gather baseline data on how its categories surface inside LLMs and where that training data originates. Internally, the company is assembling cross-functional &#x27;One Demand performance squads&#x27; designed to unify brand marketing and commerce teams in navigating agentic consumer journeys.</p>
+    <div class="why"><b>Why it matters</b>As autonomous AI agents begin making shopping decisions, brands must master algorithmic discoverability just as they once mastered physical endcap placement. Marketers need to integrate brand equity with technical LLM optimization to stay on automated shopping lists.</div>
+    <a class="src" href="https://digiday.com/marketing/mars-wants-to-future-proof-impulse-buys-as-ai-poised-to-take-over-more-grocery-runs/?utm_campaign=digidaydis&amp;utm_medium=rss&amp;utm_source=general-rss" target="_blank" rel="noopener">Digiday ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="social_creator" style="--c:#F06292">
+  <h2><i>📱</i>Social, creators &amp; culture</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#F06292"><div class="type"><small>Social Samosa</small><b>Social, creators &amp; culture</b></div></div>
+  <div class="body">
+    <h3>Wedding Influencer Rates Jump 20–25% as Brand Budgets Cross ₹50 Lakh</h3>
+    <p>Wedding influencer rate cards have recorded a sharp 20% to 25% increase as brands ramp up investments in nuptial-themed campaigns across India.</p><p>Marketers are committing upwards of ₹50 lakh on individual campaigns to leverage creators during the wedding season, reflecting heightened demand for specialized lifestyle and wedding content creators.</p>
+    <div class="why"><b>Why it matters</b>Rising rate cards and sizable budget allocations signal that wedding-focused creator marketing has transitioned from a seasonal add-on to a high-priority media channel. Marketers need to evaluate performance metrics and ROI carefully as entry costs for wedding influencers climb.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMivgFBVV95cUxNQmZnalktZnJfSVp0eWVIOVBUUFBzQnREZTV4anNYZ0Y2T1d2SWhBSTdSRWxBdEVybHZ1aUVwMTFSZXZLWTdReXhqZTdGZ0lqaXE5bG96YTBIandkNUphbVpkZVlwYTNUZ05rajZjWjhxN01EX3JzVlJDV3J6d3ZFX3hvNTNSendhN1FvNHNHR2ljcHQzT3g1bmZxMnlTNWNiM1R0ME1vUXRPb3ZlV2dPbTJkQmlySDljdW1KRGxn0gG-AUFVX3lxTE1CZmdqWS1mcl9JWnR5ZUg5UFRQUHNCdERlNXhqc1hnRjZPV3ZJaEFJN1JFbEF0RXJsdnVpRXAxMVJldktZN1F5eGplN0ZnSWppcTlsb3phMEhqd2Q1SmFtWmRlWXBhM1RnTmtqNmNaOHE3TURfcnNWUkNXcnp3dkVfeG81M1J6d2E3UW80c0dHaWNwdDNPeDVuZnEyeVM1Y2IzVHQwTW9RdE9vdmVXZ09tMmRCaXJIOWN1bUpEbGc?oc=5" target="_blank" rel="noopener">Social Samosa ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#F06292"><div class="type"><small>Adgully</small><b>Sony</b></div></div>
+  <div class="body">
+    <h3>Sony Targets Indian Creators Transitioning from Reels to Studio Productions</h3>
+    <p>Sony is structuring its business strategy in India around the evolving creator economy, focusing on the shift from short-form mobile videos like Reels to high-end, professional productions.</p><p>The consumer electronics and media brand is aligning its product and ecosystem offerings to support digital creators upgrading their production standards as video quality expectations rise in the market.</p>
+    <div class="why"><b>Why it matters</b>As Indian creators mature beyond vertical smartphone clips into high-production content, production quality is becoming a key differentiator. Brands collaborating with creators must raise their visual standards and equipment benchmarks to capture discerning audiences.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMitgFBVV95cUxQLUx6aTZRQUdsTmVyYkpLVDI3VWMxd1ZfMTMzTDRnZUxNTk9wYkQ0bDFWb2tKUXlvZXF5QW1HelprTmszVXh0NU50TUs4OXRSZW9BeFZGRW1hSlE0a09UUTFGRUZ1bndBRTBGYjcxMjNOdlg1eHFETUI1dHZmSnlwWUwtQUpvbzJFZmRvS0o5TlY1aUVPTHdQcmw3WjNjV0pkSmt0SEY2RmNEVG55NUYtTnk2aGtaZw?oc=5" target="_blank" rel="noopener">Adgully ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#F06292"><div class="type"><small>Digiday</small><b>Twitch</b></div><img class="photo" src="https://digiday.com/wp-content/uploads/sites/3/2025/03/twtich-revenue-digiday.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div>
+  <div class="body">
+    <h3>Creators Question TwitchCon&#x27;s ROI Amid Safety Concerns and Shifting Attendance</h3>
+    <p>TwitchCon is facing growing scrutiny from creators ahead of its gathering in San Diego, as high costs, safety worries, and an uncertain return on investment challenge its historical appeal. The convention has long served as a flagship destination for Amazon-owned Twitch—which accumulated 900 million hours of watch time last year—bringing together streamers, fans, and major sponsors including State Farm, e.l.f. Cosmetics, Honda, and Southwest Airlines.</p><p>However, top-performing Twitch Partners have reportedly seen lower ticket participation numbers, accompanied by online claims that the platform resorted to ticket giveaways via its Ambassador program. While Twitch noted that live event dynamics have shifted following post-COVID peak demand, creators and agencies question the event&#x27;s current purpose. Justin Miclat, chief growth officer at Click Media, noted that it is difficult to determine how to add value to TwitchCon&#x27;s current programming after spending $50,000 on an on-site showcase event last year.</p><p>The event has also encountered severe scrutiny around physical safety and conduct. Following an assault on top streamer Emily-Beth &#x27;Emiru&#x27; Schunk during a meet-and-greet at TwitchCon 2025, attendees have raised concerns regarding security protocols and disruptive behavior from IRL streamers around host venues, making creators reconsider whether the commercial upside justifies the expense and risks.</p>
+    <div class="why"><b>Why it matters</b>Brand marketers relying on creator-led events must reassess whether legacy conventions still offer the engaged talent pool and safe environment required for high-budget activations. When top creators pull back from flagship gatherings due to weak ROI and security issues, sponsors risk spending premium dollars on diminished audience reach.</div>
+    <a class="src" href="https://digiday.com/media/twitchcon-is-at-a-crossroads-as-creators-question-its-value/?utm_campaign=digidaydis&amp;utm_medium=rss&amp;utm_source=general-rss" target="_blank" rel="noopener">Digiday ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="startups_fintech" style="--c:#C2185B">
+  <h2><i>🚀</i>Startups, founders &amp; fintech</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#C2185B"><div class="type"><small>BMI</small><b>Unacademy</b></div><div class="logo"><div class="tile"><img src="https://www.google.com/s2/favicons?domain=unacademy.com&amp;sz=256" alt="Unacademy" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.logo').remove()"></div><em>Unacademy</em></div></div>
+  <div class="body">
+    <h3>Unacademy Appoints Akhilendra Kumar as CEO, Gaurav Munjal Steps Into Executive Chairman Role</h3>
+    <p>Edtech platform Unacademy has named Akhilendra Kumar as its new Chief Executive Officer. Concurrently, co-founder Gaurav Munjal has transitioned into the position of Executive Chairman.</p><p>The leadership restructuring marks a significant shift in the top executive governance at the firm as it continues to manage its business and strategic roadmap.</p>
+    <div class="why"><b>Why it matters</b>Leadership transitions at prominent consumer-facing tech brands often signal changes in strategic priorities, capital allocation, and marketing focus. Marketers should watch how this executive shift impacts Unacademy&#x27;s overall brand messaging and performance spending in the education sector.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMi3gFBVV95cUxQWnZnMElxZUtDVjQydHZjZTNKbmJ4RXV1TkIySm1vMGJ2cDZwTjEwaG1YQzlRa19TTXJKc3RrVElzbXZyLXljRldndU5uSzg1aFNoZFNIWU81WnJvYU1TeUJXcVV4aVhQT1NhNExjVTVzemhFR1R0M0g0NDN4LTVnTUdaSXU4UDRYWjBxeDdNaXZBYjJObHljZnU5dG5lTm1vaDF4RlA3YmdJNlFha3dscENBMlI2OWNfOU1LdDhLLXZwM1ROdjlxX0VGMlNpQU9ZczlIRTVHTVRieHplbHfSAd4BQVVfeXFMUFp2ZzBJcWVLQ1Y0MnR2Y2UzSm5ieEV1dU5CMkptbzBidnA2cE4xMGhtWEM5UWtfU01ySnN0a1RJc212ci15Y0ZXZ3VObks4NWhTaGRTSFlPNVpyb2FNU3lCV3FVeGlYUE9TYTRMY1U1c3poRUdUdDNINDQzeC01Z01HWkl1OFA0WFowcXg3TWl2QWIyTmx5Y2Z1OXRuZU5tb2gxeEZQN2JnSTZRYWt3bHBDQTJSNjljXzlNS3Q4Sy12cDNUTnY5cV9FRjJTaUFPWXM5SEU1R01UYnh6ZWx3?oc=5" target="_blank" rel="noopener">BMI ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#C2185B"><div class="type"><small>Entrackr</small><b>QB MEN</b></div></div>
+  <div class="body">
+    <h3>D2C Menswear Label QB MEN Secures Pre-Seed Funding Led by BeyondSeed</h3>
+    <p>Direct-to-consumer (D2C) menswear brand QB MEN has raised capital in a pre-seed funding round led by venture investment firm BeyondSeed.</p><p>The fresh funding provides the apparel brand with early-stage backing as competition across niche online fashion and digital-first menswear categories continues to attract investor attention.</p>
+    <div class="why"><b>Why it matters</b>Early-stage support for emerging apparel brands underscores ongoing investor appetite for targeted, digital-first consumer retail propositions. For brand and growth marketers, it shows that focused differentiation in men&#x27;s fashion continues to present viable opportunities for launching and scaling new brands.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMiqgFBVV95cUxPOVlibmxnQUZSbk8xVEZZM2xiODhXS18xUlEtM1RFVHlTMVh3aHp1dEg3ZHJHTDVzaEhZZWpuZ0dRTEFGN1JIWVZ0djhPd0d4VXdacmY4UVZuMFJrbldDc01wakZRMzg2ajRYeFBEWWxPdlBiT25ZTXNOcGJpSEFuYkdmNDEyTUtrZGU2bzQ4aS1GRlVQSEFxZVotdFdZdmticFRVak5NS3Mzd9IBqgFBVV95cUxPOVlibmxnQUZSbk8xVEZZM2xiODhXS18xUlEtM1RFVHlTMVh3aHp1dEg3ZHJHTDVzaEhZZWpuZ0dRTEFGN1JIWVZ0djhPd0d4VXdacmY4UVZuMFJrbldDc01wakZRMzg2ajRYeFBEWWxPdlBiT25ZTXNOcGJpSEFuYkdmNDEyTUtrZGU2bzQ4aS1GRlVQSEFxZVotdFdZdmticFRVak5NS3Mzdw?oc=5" target="_blank" rel="noopener">Entrackr ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#C2185B"><div class="type"><small>The Hindu</small><b>NPCI</b></div></div>
+  <div class="body">
+    <h3>NPCI Yet to Announce Rollout Date for UPI MDR Following Deepavali</h3>
+    <p>Two days after Deepavali, the National Payments Corporation of India (NPCI) has yet to officially declare a rollout date for the implementation of Merchant Discount Rate (MDR) on UPI.</p><p>The timeline for the payment framework update remains unconfirmed as merchants, payment aggregators, and fintech ecosystems await formal clarity regarding charges and execution.</p>
+    <div class="why"><b>Why it matters</b>Changes to UPI fee structures or MDR rollout timelines directly influence transaction margins and conversion funnel dynamics for online brands. Performance and e-commerce marketers need to stay prepared for regulatory updates that could alter customer checkout incentives and payment processing economics.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMizgFBVV95cUxOSUhPbGVQcFFWZkpvQmtnVldXc2lQNl9SRmdHaFAtNE5DX0JYaXBuUVMwdjZuQ0FrUjZ6MVNRQ2ZiYVhSSzMwcWRuSUpxWkxFbGd5cVNZVVJTNnRqVVEtVGNwSWdrRkl0YnowWHIwNUFpRlJlSmFtVE1DQkM3aWpZN01hTmxVSEJESFl0V1MzT2hxOUVLb1lRZTBuVTdWcWJoR0Jid2UwMTBKZkhsalYzSzFNSnB5MHBEMHgzWTY0WnozbFhZckoxNU9UVTQwZ9IB1AFBVV95cUxOOEdDLW52Vlo0dmRYSlIwUGFpNGhZazhKWjBQTFI2VDF3dU04U05YTzZpRGlPeHlCckRBdmJHLWhLSm56MmpYcmZlZTNMN3IwRzJqUEsxbk9BQ3NvMEs0U3FVOC1WSzJndGpxb2k1d191SGM3MzdPWmpDTl9PVi12OERTSGxSQ1Zid1FPVHNpY1o1SVloSV93cTNab3JhQkdNWEk2OWxocWo1UXpXSjd2Q0txaDEwZWMtNDRycTRVOEtOUUZUMndXTVphZlZGdzdPUldHWg?oc=5" target="_blank" rel="noopener">The Hindu ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="consumer" style="--c:#EC6FA0">
+  <h2><i>💗</i>Consumer behaviour &amp; trends</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#EC6FA0"><div class="type"><small>Forbes</small><b>Consumer behaviour &amp; trends</b></div></div>
+  <div class="body">
+    <h3>Six Consumer Trends Expected to Reshape Shopping Dynamics by 2027</h3>
+    <p>Forbes has highlighted six key consumer trends set to reshape how people approach shopping by 2027. The analysis outlines forward-looking adjustments in customer expectations and retail habits that are projected to redefine commerce over the next three years.</p><p>As commercial ecosystems adapt, tracking these mid-term behavioral shifts will be central to how businesses reorient customer journeys, product offerings, and omnichannel retail footprints ahead of 2027.</p>
+    <div class="why"><b>Why it matters</b>Forward-looking trend forecasting helps marketers prepare their positioning and infrastructure well before emerging habits become standard practice. Brands that proactively align with evolving shopper habits will hold an advantage as customer expectations mature.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMisAFBVV95cUxOMmFXR0lMalRONTR1VV9fNmxkcGNFaHRCeVZnQ0FfdWJnWmFuZkl6WWVLWUVoZlFnY0RJOVR6UGM2aXEwTlAtNU80Z2FpMkVUSmxFdGZyYmpWa0U4cTBpQzFYeVBPZGwwTV9MeGhueEFqUXRJc3lHcUs4VWZPX3pvVThGTjZ0SUN5UzRYM1o5TUZEOXlkU2lJS25TVXBNNnNPRnhHT2R6NHdHVEVQaEdEaA?oc=5" target="_blank" rel="noopener">Forbes ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#EC6FA0"><div class="type"><small>Naharnet</small><b>Consumer behaviour &amp; trends</b></div></div>
+  <div class="body">
+    <h3>Singles&#x27; Day Stumbles as Weak Consumer Spending Weighs on Shopping Festival</h3>
+    <p>China&#x27;s Singles&#x27; Day shopping festival is finding it difficult to overcome sluggish consumer spending, according to Naharnet. The world&#x27;s largest e-commerce shopping event is feeling the strain of prolonged economic caution among shoppers.</p><p>Despite heavy promotional efforts, subdued spending sentiment indicates that deep discounts alone are currently insufficient to reignite robust retail momentum in the market.</p>
+    <div class="why"><b>Why it matters</b>Mega-sale events are not completely immune to broader macroeconomic headwinds and declining consumer sentiment. Marketers cannot rely solely on discounting festivals to generate demand and must evaluate value-driven, year-round retention strategies.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMixAFBVV95cUxOUTY4T1F1SUtMcGpXY3ZrWm5DRVlnS3gtR1cyNUxzbEpqdV9JOTc4SGlyXzFPalFBMXZtX21MSjZOZTFmOUFKcWg0WEVJdzE1RGt1dnFTRFR5dEI2WU5xdTJYck5xVzYyeW1DYnB1SWVFcC00Um1fdWlCOW03MmJJUXlLQ2Y5bzNvYjljMERXNWM5cGlrblh2Y0JaQng2ei1sczJhZXY0WEV2ZVJ0dzNqN3l0ZWFfR1B0eG9WS2NZUGZFRFFO?oc=5" target="_blank" rel="noopener">Naharnet ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#EC6FA0"><div class="type"><small>Yahoo Finance</small><b>Consumer behaviour &amp; trends</b></div></div>
+  <div class="body">
+    <h3>Shoppers Trade Down to Cheaper Brands as Inflationary Pressures Bite</h3>
+    <p>Consumers are increasingly abandoning premium labels for cheaper alternatives as persistent inflation squeezes household budgets, reports Yahoo Finance. The widespread trading-down mirrors market conditions observed in 2021, when rising prices similarly triggered sharp price sensitivity.</p><p>With household budgets under pressure, shoppers are re-evaluating everyday brand choices, elevating budget-friendly and private-label options at the expense of higher-priced market incumbents.</p>
+    <div class="why"><b>Why it matters</b>Brand loyalty becomes vulnerable during prolonged inflationary periods as consumers actively seek out affordable alternatives. Marketers must clearly defend their price-to-value proposition or introduce accessible entry-level packaging to retain budget-conscious customers.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMiywFBVV95cUxPMWhlQktuZU9LMG42NVVRMVU1LTd4eHpzNS1kZno2VTlnSWJ0QXBoMnY0MFAydDg5OEpGSWlIVUpzcTRNMGRoWnVkRkZPRVBnZjZJUFFsbnd1QzZfRnRRdUVtTkZDaUNvU19adUdoSmhQOHQ2QVR0Y25PaXcyQWJqeVU3a21ZYkRqSzB4c09VRFVYODl0N1Vta2E2aThLVnJYTWRvNTVKVjhyTG9BRW5nUGJtb3FhNHJnZ01GYVc0M0hIRFdnYUZwazY0OA?oc=5" target="_blank" rel="noopener">Yahoo Finance ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="global_economy" style="--c:#9C4F7E">
+  <h2><i>🌍</i>Global marketing &amp; economy</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#9C4F7E"><div class="type"><small>Storyboard18</small><b>Pernod Ricard</b></div><div class="logo"><div class="tile"><img src="https://www.google.com/s2/favicons?domain=pernod-ricard.com&amp;sz=256" alt="Pernod Ricard" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.logo').remove()"></div><em>Pernod Ricard</em></div></div>
+  <div class="body">
+    <h3>Indian Customs Detains Pernod Ricard and Diageo Scotch Shipments Over Tariff Dispute</h3>
+    <p>Indian customs authorities have detained Scotch whisky shipments belonging to global spirits majors Pernod Ricard and Diageo. The move comes amid an ongoing dispute concerning a 150% tariff levied on the imported goods.</p><p>The standoff highlights regulatory and import friction for international beverage companies operating in India. Resolution of the tariff dispute will determine the release of the held shipments and future customs clearances for the brands.</p>
+    <div class="why"><b>Why it matters</b>Supply chain bottlenecks caused by tariff disputes can disrupt product availability and upend promotional calendars for premium brands. Marketers must maintain agile campaign schedules that can adapt to sudden regulatory or import delays.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMi0wFBVV95cUxPVUJPSXVPYklvNlB2bFhuZG9lOHpleU9MaU1md0IyUURjR2xBMjNhRW9HUUgzZm0wTDAxaTRvQ082SVh3WDRPREQtQ19jV2NhTGhiODZEeGRJQWcyem1WMEg2Sm9kcXg2TGRJNjMtT3g0eHpjZmd0VnJQbFM5d2RkTmhpN2QyU3NTdkpnU3ZIWTRySnV3TDUxa2dCVlU5dFRYYng1ZC1iTl9hRW1kdC1YSS1ySS1OZE8zVGhBYUI2VERITGh2Uk1QVVpaemtOVUhyRDVv0gHYAUFVX3lxTE1lZXRmTXJWUE5XYlRwUDRhWjdvTmFJWGtDYWY3dC1jZlhjd0FQZllNV0tKekItV3ljZ2tqR1o1VnF5YlZSM0IxMFNTcXB0eUhOSE9YQzduNk9LUVBBY04zLVc1dTdNNmRmNDRCb0hzN05xV094RXVMYVBIcVAycUFZQ3dmTTlKLThUbEJUQWJJWktlMk9md3l6a2tlSmtXd2tFbmMzeGUyMDRBX3J5bVVab19uS0ZlemZfZXR1R201eEY2QXJYcWlnSkROSExZb2hrUDM2c0Ezcw?oc=5" target="_blank" rel="noopener">Storyboard18 ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#9C4F7E"><div class="type"><small>bfsi.economictimes.indiatimes.com</small><b>Moody&#x27;s</b></div></div>
+  <div class="body">
+    <h3>Moody&#x27;s Upgrades India&#x27;s Growth Outlook, Projecting Sustainable Rates Near 7%</h3>
+    <p>Credit rating agency Moody&#x27;s has increased its economic growth forecast for India. The agency views the Indian economy as well positioned to sustain an expansion rate close to 7%.</p><p>The upward revision points to resilience in domestic economic drivers. Businesses will be tracking whether this macroeconomic momentum continues to foster favorable consumer and market conditions.</p>
+    <div class="why"><b>Why it matters</b>Sustained economic growth near 7% supports positive consumer confidence and healthy demand across consumer categories. For performance and brand marketers, strong macro conditions provide a rationale to invest in long-term customer acquisition and market expansion.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMi4wFBVV95cUxQSWJsSWZVc3BwSjlRLTZOdHhkcG5LaVZ6VG1IbjBqOFFjZzVjR01XMHZZNGNxeFBkOWZ6UXJTc1RuSEpJT3NQbnhQdXhGNy1UcDlRX1NKXy1udENCX1g2bWtJZFppNUtjUzJJMktJenFSTVZMQkdRSzJIS2dKY3AyTUpYOWdqSE5XYWpHVkRXeW5QUFE0NHVvdTRkamFvMEpuOWE3T3NkbmowVnBSeWhUaHVzai1adG5wNFBHMmY3Z0lWTExOamgwbU1lUnQyQ1lfZGwzOFdWOGQyMmMxb2t1Q1J3SdIB6AFBVV95cUxPN0g4VEFEck91Qmc4Q3BBQkJVSUpjdmFweW5YdzF4VWg0Sm9ZU3ZMMmFkWWJ4OHpXWVFLemtSVE90eFFuaVMtOTZPanU2S2NLOUdVbGk1VnFlYlVwbnIyUmE2TGs1eDdOelZlOTJnTkxVd1RZNlV0QmdVRnNla3ZrLXJzdHJnM2lLZGJ5cHFURGdJNW8zYnlTMTdaOFMwSzJkNVM3clFpVVFQelV0ZkdyTFBzSUNoTDREUGlJRGNqeU04MHlyQVE0eTlHUllwbC1xdXM0N1hwR3Y0RXlzLXhfM2otXzR5Vy1R?oc=5" target="_blank" rel="noopener">bfsi.economictimes.indiatimes.com ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#9C4F7E"><div class="type"><small>Storyboard18</small><b>Dabur</b></div><div class="logo"><div class="tile"><img src="https://www.google.com/s2/favicons?domain=dabur.com&amp;sz=256" alt="Dabur" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.logo').remove()"></div><em>Dabur</em></div></div>
+  <div class="body">
+    <h3>Dabur Targets Higher Advertising Spend and Calibrated Price Hikes Against Input Inflation</h3>
+    <p>FMCG company Dabur is planning to boost its advertising expenditure while implementing calibrated price increases across its portfolio. The dual approach is aimed at tackling the headwinds of input cost inflation.</p><p>By taking measured price hikes, the company seeks to manage margin pressures without dampening volume growth. Concurrently, stepping up ad spend is intended to support demand and protect market share during inflationary conditions.</p>
+    <div class="why"><b>Why it matters</b>Increasing ad spend while executing targeted price increases prevents demand erosion and reinforces perceived product value during inflationary cycles. Marketers should focus on brand differentiation so that consumers remain loyal even as retail prices rise.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMi4AFBVV95cUxNV0FHX0RKS1FWSWhMVnRyWTRwMmcwU3lHbHFWaUNFbEdUN1QxTWxvQlBBaVFEUjhjaWFraFo3anoyNDRQWjZJcUE4WDZaTXhPb2FJbkVPQ1VvaGlEUWg3R3BuUHVVSHBvLVJHTG96c1lrbW9BUDdzYjZlZUE5Z1VLQTBsT2dNQmZkbEEyZXFYbzlGMHdmSVNtVmNuQnJJWS1pV1oyVTFvQkdoLVdqSjZaRGFKVXZIZHVzUmdIUzVMaTlEal9UOXhtdktEWk1IdWgxNlVmOTBiR05iUlFVT0I1RdIB5gFBVV95cUxPQXFHYThDcC1JeEM0MzFsTEdlNFB5NU1BWkxMdnVSR1ljdGN5NmgtUFJGdDhzdXB4SGJlalpscVY5Q2w5VGt6N1FlSlhLSHFRZFhQM1cwQVByRUduSWRvY19iSnNKR3VvMElHWUR5eFdoWklBeXpIdHlzdVZtVkVZbjBWdjdJdTR2azlvbTJQNkN2eVlXSEFvQ1J5R0twNUlCSWRfVVFTRS03X25sNlZnbVBGTjhmRmN2ZnAycXJ4SndZSzlkN2VncjhvM2FyT1NDeDhfcldEQ29HMlA3UGc4bHc0OHFsdw?oc=5" target="_blank" rel="noopener">Storyboard18 ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="learning" style="--c:#DB5A8C">
+  <h2><i>📚</i>Case studies, jobs &amp; competitor intel</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#DB5A8C"><div class="type"><small>BMI</small><b>Mahindra</b></div></div>
+  <div class="body">
+    <h3>Mahindra Appoints Shuchi Suri as Chief Sales and Marketing Officer for Automotive Business</h3>
+    <p>Mahindra has appointed Shuchi Suri as the new Chief Sales and Marketing Officer for its automotive business. In this leadership role, Suri will oversee the sales and marketing strategies for the company&#x27;s vehicle division.</p><p>Suri brings significant industry experience to the position as Mahindra continues to position its automotive portfolio in a competitive market. The appointment comes as the brand focuses on strengthening its market presence and customer engagement.</p><p>Going forward, Suri&#x27;s leadership is expected to drive Mahindra&#x27;s upcoming marketing campaigns and sales initiatives across its key vehicle segments.</p>
+    <div class="why"><b>Why it matters</b>Leadership changes at legacy automotive giants signal shifts in go-to-market strategies and consumer engagement. Marketers should watch for refreshed brand positioning and campaign rollouts under new executive direction.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMi4wFBVV95cUxNNzJQNXI1LS1oREtIbFhBV3ZsdzRqZFZCRVlIcS1VbC1vWEthSTJILWlHQUhTRXNkN3d0blpOU19UX2NiSkl0Vm16dzMzaUplcTh6U255Z2QzblA5NnRwS2tSRktvZW16X1FwR1l0Mmd6NGhWd2ktMk5Sc3BaazFNZEh6ZUl5QmZ0a09QdnE4U21YaG0wd0JTVmd1NEU0TTEtWDI3TnhzY01xOVp2dlExVjdWeWZTV2JBTVVyQnJvOXQ0aGM0dkdEWjcwS0kzRkJORXpod3VrU3Y1akpDZ1cxcjNBa9IB4wFBVV95cUxNNzJQNXI1LS1oREtIbFhBV3ZsdzRqZFZCRVlIcS1VbC1vWEthSTJILWlHQUhTRXNkN3d0blpOU19UX2NiSkl0Vm16dzMzaUplcTh6U255Z2QzblA5NnRwS2tSRktvZW16X1FwR1l0Mmd6NGhWd2ktMk5Sc3BaazFNZEh6ZUl5QmZ0a09QdnE4U21YaG0wd0JTVmd1NEU0TTEtWDI3TnhzY01xOVp2dlExVjdWeWZTV2JBTVVyQnJvOXQ0aGM0dkdEWjcwS0kzRkJORXpod3VrU3Y1akpDZ1cxcjNBaw?oc=5" target="_blank" rel="noopener">BMI ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#DB5A8C"><div class="type"><small>BMI</small><b>Jeevansathi</b></div></div>
+  <div class="body">
+    <h3>Jeevansathi Appoints Former Haleon Executive Shivam Arora as SVP and Head of Marketing</h3>
+    <p>Matrimonial platform Jeevansathi has appointed former Haleon executive Shivam Arora as its new Senior Vice President and Head of Marketing. Arora will lead the platform&#x27;s overall marketing strategies and brand direction.</p><p>Prior to this role, Arora built extensive marketing experience working with Haleon. His transition to the matchmaking sector brings consumer packaged goods expertise into the digital classifieds and matchmaking industry.</p><p>In his new position, Arora will spearhead marketing efforts aimed at user acquisition and brand differentiation in a crowded digital matchmaking market.</p>
+    <div class="why"><b>Why it matters</b>Cross-industry executive moves bring fresh perspective from CPG giants into digital-first subscription platforms. Brands can anticipate more robust data-driven brand building and lifecycle marketing strategies.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMi4gFBVV95cUxNUnJhdzhPX0MwejBQWFFPeVpURHNSUzlta2ZmTGJFRVJ6TmltVEFjUWttdW0wdW0ya3NVWElXdWtDc28xUGU0dkNTLTlyR0ZUbDREMVhSWUx6WHFYclZuX2FjTlFkQ2RlaS1wUzVZNVZ5TnR4MHNaRUxqWFRyYWpSMS1leDZKR1A5NWpGMGwwSG10SWlPSmdscl9ZVkdvUDhyNHVDYkhva05YWm1aUVJRWnVwNW43UUpab052cEhjNzhtdjJ4RUREUVNHekI4LUpKQ21RUTI4S2dlY0JoV3FrRlln0gHiAUFVX3lxTE1ScmF3OE9fQzB6MFBYUU95WlREc1JTOW1rZmZMYkVFUnpOaW1UQWNRa211bTB1bTJrc1VYSVd1a0NzbzFQZTR2Q1MtOXJHRlRsNEQxWFJZTHpYcVhyVm5fYWNOUWRDZGVpLXBTNVk1VnlOdHgwc1pFTGpYVHJhalIxLWV4NkpHUDk1akYwbDBIbXRJaU9KZ2xyX1lWR29QOHI0dUNiSG9rTlhabVpRUlFadXA1bjdRSlpvTnZwSGM3OG12MnhFRERRU0d6QjgtSkpDbVFRMjhLZ2VjQmhXcWtGWWc?oc=5" target="_blank" rel="noopener">BMI ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#DB5A8C"><div class="type"><small>Autocar Professional</small><b>Ultraviolette</b></div><div class="logo"><div class="tile"><img src="https://www.google.com/s2/favicons?domain=ultraviolette.com&amp;sz=256" alt="Ultraviolette" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.logo').remove()"></div><em>Ultraviolette</em></div></div>
+  <div class="body">
+    <h3>Ultraviolette Appoints Abhijit Singh Brar as Marketing Head</h3>
+    <p>Electric vehicle manufacturer Ultraviolette has appointed Abhijit Singh Brar as its new Marketing Head. Brar will lead the brand&#x27;s marketing operations and strategic communications.</p><p>The appointment supports Ultraviolette&#x27;s broader growth plans as the electric motorcycle maker scales its presence in the domestic and international markets. Brar will oversee brand building and consumer outreach initiatives.</p><p>Next steps for the company will involve expanding its marketing footprint and driving consumer awareness around its high-performance electric vehicles under Brar&#x27;s leadership.</p>
+    <div class="why"><b>Why it matters</b>Niche EV brands scaling up require specialized marketing leadership to build distinct category codes. Marketers should monitor how challenger brands use leadership hires to challenge legacy players.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMingFBVV95cUxQYk9DbjN2WW5OeXlGaTJUUzQ3NVlVOXdYSFk4VHU5c28xQVo1WldSXy1TYk5WUFVCb1hrMXlwZkFENHlTaGF5b252YWVJRFI5U3RWS2l0UkQzc0FQMTFURUFFTTdkaThBLTBsWHJORXdRdnlxM0pmYy1RTUg1c0p3ZnJzc0hyMEg3SlBZSWVDQVRtSHNUaU0yN0pRR040Z9IBpgFBVV95cUxPWlRNNVlieXM5QTBmRDBZNkxHVWIwaDZwdElWV3ZidWRPUkdqOGtySVlNb3pJN0Q0d1d3ME9ob0VCSVFRMnM2clhKVTQ4a0tBS1VUUkVtVzZoRUJteFpUMktuWWczbjVoTTFGSDFUVk1QeEtyNTBEa0lNNGs4dHdXSncyYU9TOWlEMDlVYWxXVWxRc2NUczJnQk53ZVBPUnNrVS1veEt3?oc=5" target="_blank" rel="noopener">Autocar Professional ↗</a>
+  </div>
+</article></div>
+</section></main>
+
+  <section class="archive">
+    <h2>Past briefings</h2>
+    <div class="days"><a href="2026-11-12.html">Today</a><a href="2026-11-11.html">Wed, 11 Nov</a><a href="2026-11-10.html">Tue, 10 Nov</a><a href="2026-11-08.html">Sun, 08 Nov</a><a href="2026-11-07.html">Sat, 07 Nov</a><a href="2026-11-06.html">Fri, 06 Nov</a><a href="2026-11-04.html">Wed, 04 Nov</a><a href="2026-11-03.html">Tue, 03 Nov</a><a href="2026-11-02.html">Mon, 02 Nov</a><a href="2026-11-01.html">Sun, 01 Nov</a><a href="2026-10-31.html">Sat, 31 Oct</a><a href="2026-10-30.html">Fri, 30 Oct</a><a href="2026-10-28.html">Wed, 28 Oct</a><a href="2026-10-27.html">Tue, 27 Oct</a><a href="2026-10-25.html">Sun, 25 Oct</a><a href="2026-10-24.html">Sat, 24 Oct</a><a href="2026-10-23.html">Fri, 23 Oct</a><a href="2026-10-22.html">Thu, 22 Oct</a><a href="2026-10-21.html">Wed, 21 Oct</a><a href="2026-10-20.html">Tue, 20 Oct</a><a href="2026-10-19.html">Mon, 19 Oct</a></div>
+  </section>
+  <footer>Updated 12 Nov 2026, 01:01 PM IST · Articles are AI-written summaries; open the source before quoting. 🌸</footer>
+</div>
+<script>
+document.querySelectorAll('.chip').forEach(function(c){
+  c.addEventListener('click',function(){
+    document.querySelectorAll('.chip').forEach(function(x){x.classList.remove('on')});
+    c.classList.add('on');
+    var k=c.dataset.cat;
+    document.querySelectorAll('.cat').forEach(function(s){s.style.display=(k==='all'||s.dataset.cat===k)?'':'none'});
+    window.scrollTo({top:document.querySelector('nav').offsetTop,behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>
