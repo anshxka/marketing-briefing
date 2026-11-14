@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#FFE4EE">
+<title>The Marketing Edit · Saturday, 14 November 2026</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFF5F8; --card:#FFFFFF; --ink:#3A1430; --muted:#8A5A78; --line:#F7D3E1;
+  --rose:#E8457C; --blush:#FFE4EE; --soft:#FFF0F5; --shadow:0 10px 30px -18px rgba(194,24,91,.35);
+  --serif:"Playfair Display",Georgia,"Times New Roman",serif;
+  --sans:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root{
+  --bg:#1C0E18; --card:#28141F; --ink:#FBE8F1; --muted:#C99AB4; --line:#44243A;
+  --blush:#3A1B2F; --soft:#2F1727; --shadow:0 10px 30px -18px rgba(0,0,0,.6);
+}}
+*{box-sizing:border-box}
+html{scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 var(--sans);
+  background-image:radial-gradient(circle at 15% 0%,var(--blush) 0,transparent 40%),radial-gradient(circle at 90% 10%,var(--blush) 0,transparent 35%);
+  background-repeat:no-repeat}
+.wrap{max-width:1040px;margin:auto;padding:36px 20px 70px}
+a{color:inherit}
+
+/* masthead */
+header{text-align:center;margin-bottom:30px}
+.kicker{font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--rose);font-weight:700;margin:0}
+h1{font:italic 600 clamp(40px,8vw,72px)/1.05 var(--serif);margin:10px 0 8px;letter-spacing:-.01em}
+.date{color:var(--muted);margin:0}
+.date b{color:var(--rose);font-weight:500}
+.byline{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 14px;margin:14px 0 4px;font-size:15px;color:var(--muted)}
+.byline b{color:var(--ink);font-weight:700}
+.byline em{font:italic 600 17px var(--serif);color:var(--rose)}
+.social{display:inline-flex;gap:8px}
+.social a{display:inline-flex;align-items:center;gap:7px;text-decoration:none;font-size:14px;font-weight:500;color:var(--ink);
+  background:var(--card);border:1px solid var(--line);border-radius:999px;padding:6px 13px 6px 9px;transition:.15s}
+.social a:hover{border-color:var(--rose);color:var(--rose);transform:translateY(-1px)}
+.social svg{width:18px;height:18px;flex:none}
+.flourish{color:var(--rose);letter-spacing:.6em;margin-top:12px;font-size:14px}
+
+/* top cards */
+.top{display:grid;grid-template-columns:1.6fr 1fr;gap:18px;margin-bottom:30px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:24px 26px;box-shadow:var(--shadow)}
+.card h2{font:600 22px var(--serif);margin:0 0 12px}
+.big{list-style:none;margin:0;padding:0;counter-reset:n}
+.big li{counter-increment:n;position:relative;padding:0 0 14px 44px;font:500 17px/1.5 var(--serif)}
+.big li::before{content:counter(n);position:absolute;left:0;top:0;width:30px;height:30px;border-radius:50%;
+  background:var(--blush);color:var(--rose);font:700 14px/30px var(--sans);text-align:center}
+.tip{background:linear-gradient(140deg,#FFD6E5,#FFC1D8 55%,#F9A8C9);color:#4A1033;border:0}
+.tip h2{color:#4A1033}
+.tip p{margin:0;font-size:16px}
+@media (prefers-color-scheme:dark){.tip{background:linear-gradient(140deg,#5A2045,#7A2858);color:#FFE4EE}.tip h2{color:#FFE4EE}}
+
+/* chips */
+nav{position:sticky;top:0;z-index:5;display:flex;gap:8px;overflow-x:auto;padding:12px 0;margin-bottom:6px;
+  background:var(--bg);scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+.chip{--c:var(--rose);flex:none;font:500 14px var(--sans);color:var(--ink);background:var(--card);
+  border:1px solid var(--line);border-radius:999px;padding:8px 15px;cursor:pointer;transition:.15s}
+.chip span{color:var(--muted);margin-left:3px}
+.chip:hover{border-color:var(--c)}
+.chip.on{background:var(--c);border-color:var(--c);color:#fff}.chip.on span{color:#ffffffd0}
+.chip:focus-visible,a:focus-visible{outline:2px solid var(--rose);outline-offset:2px}
+
+/* sections */
+.cat{margin-top:38px}
+.cat>h2{display:flex;align-items:center;gap:12px;font:600 28px var(--serif);margin:0 0 16px}
+.cat>h2 i{font-style:normal;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;
+  background:var(--blush);font-size:22px}
+.story{background:var(--card);border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:var(--shadow);
+  display:flex;flex-direction:column}
+.story.featured{display:grid;grid-template-columns:1fr 1.15fr;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px}
+.media{position:relative;aspect-ratio:16/10;overflow:hidden;
+  background:radial-gradient(circle at 25% 20%,#ffffff99 0,transparent 45%),linear-gradient(135deg,var(--blush),color-mix(in srgb,var(--c) 45%,var(--blush)))}
+.featured .media{aspect-ratio:auto;min-height:100%}
+.media .type{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:22px 24px;color:#4A1033}
+.media .type small{font:700 11px var(--sans);letter-spacing:.2em;text-transform:uppercase;opacity:.75}
+.media .type b{font:italic 600 clamp(24px,3vw,34px)/1.1 var(--serif);margin-top:4px}
+.media .logo{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;
+  background:inherit}
+.media .tile{width:38%;max-width:150px;aspect-ratio:1;background:#fff;border-radius:28px;display:grid;place-items:center;
+  box-shadow:0 14px 34px -14px rgba(194,24,91,.45)}
+.media .tile img{width:62%;height:62%;object-fit:contain}
+.media .logo em{font:italic 600 20px var(--serif);color:#4A1033;font-style:italic}
+.media .photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media (prefers-color-scheme:dark){.media .type,.media .logo em{color:#FFE4EE}}
+.body{padding:22px 24px 24px}
+.story h3{font:600 22px/1.3 var(--serif);margin:0 0 12px}
+.featured h3{font-size:27px}
+.story p{margin:0 0 12px;color:var(--ink)}
+.why{background:var(--soft);border-left:3px solid var(--c);border-radius:12px;padding:12px 14px;margin:14px 0 12px;font-size:15px}
+.why b{display:block;color:var(--c);font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:3px}
+.src{font-size:14px;color:var(--muted);text-decoration:none}
+.src:hover{color:var(--rose)}
+
+/* archive */
+.archive{margin-top:50px;text-align:center}
+.archive h2{font:italic 600 24px var(--serif);margin:0 0 14px}
+.days{display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.days a{text-decoration:none;font-size:14px;background:var(--card);border:1px solid var(--line);border-radius:999px;padding:7px 14px}
+.days a:hover{border-color:var(--rose);color:var(--rose)}
+footer{text-align:center;color:var(--muted);font-size:13px;margin-top:34px}
+
+@media (max-width:760px){
+  .top{grid-template-columns:1fr}
+  .story.featured{grid-template-columns:1fr}
+  .featured .media{aspect-ratio:16/10}
+  .featured h3{font-size:23px}
+  .wrap{padding-top:26px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="kicker">Your daily marketing briefing</p>
+    <h1>The Marketing Edit</h1>
+    <p class="date">Saturday, 14 November 2026 · <b>24 stories</b></p>
+    <div class="byline">
+      <span>Curated by <em>GenZMarketer</em> · <b>Anshika Sharma</b></span>
+      <span class="social">
+        <a href="https://www.instagram.com/genzmarketer_/" target="_blank" rel="noopener" aria-label="Instagram: genzmarketer_">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="ig" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#FEDA75"/><stop offset=".35" stop-color="#FA7E1E"/><stop offset=".6" stop-color="#D62976"/><stop offset=".85" stop-color="#962FBF"/><stop offset="1" stop-color="#4F5BD5"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="6" fill="url(#ig)"/><circle cx="12" cy="12" r="4.3" fill="none" stroke="#fff" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.3" fill="#fff"/></svg>
+          Instagram
+        </a>
+        <a href="https://www.linkedin.com/in/anshxka02/" target="_blank" rel="noopener" aria-label="LinkedIn: Anshika Sharma">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="4" fill="#0A66C2"/><rect x="6" y="10" width="2.6" height="8" fill="#fff"/><circle cx="7.3" cy="7" r="1.5" fill="#fff"/><path d="M11 10h2.5v1.2c.5-.8 1.5-1.4 2.8-1.4 2.2 0 3 1.4 3 3.6V18h-2.6v-4.1c0-1-.3-1.8-1.4-1.8s-1.7.8-1.7 1.9V18H11z" fill="#fff"/></svg>
+          LinkedIn
+        </a>
+      </span>
+    </div>
+    <div class="flourish">✿ ✿ ✿</div>
+  </header>
+
+  <div class="top">
+    <div class="card">
+      <h2>Today's big picture</h2>
+      <ol class="big"><li>Conversational and agentic commerce is rapidly maturing from discovery into transaction, evidenced by OpenAI rolling out verified brand pages, ad networks, and autonomous purchasing wallets alongside localized Indic voice AI.</li><li>In India, the imperative for hyper-speed fulfillment—proven by explosive quick-commerce adoption and hybrid D2C logistics—is converging with tighter regulatory boundaries as the Data Protection Board goes live under the DPDP Act.</li><li>Consumer spending is bifurcating globally and locally, where heritage-led value and accessible luxury outperform stagnant high-end tiers, pushing brands to rely on experiential hooks and localized cultural relevance to protect margins.</li></ol>
+    </div>
+    <div class="card tip">
+      <h2>💡 Tip of the day</h2>
+      <p>Conduct an &#x27;agentic commerce readiness&#x27; audit on your primary product feeds and website schema markup (JSON-LD) this week to ensure your pricing, availability, and product attributes can be accurately ingested and acted upon by emerging AI shopping agents and conversational engines.</p>
+    </div>
+  </div>
+
+  <nav><button class="chip on" data-cat="all">All <span>24</span></button><button class="chip" data-cat="ai_martech" style="--c:#B84DB8">✨ AI in marketing &amp; martech <span>3</span></button><button class="chip" data-cat="ai_world" style="--c:#A855F7">🤖 AI in India &amp; global <span>3</span></button><button class="chip" data-cat="ecom_qcom" style="--c:#E57373">🛍️ E-commerce, D2C &amp; quick commerce <span>3</span></button><button class="chip" data-cat="startups_fintech" style="--c:#C2185B">🚀 Startups, founders &amp; fintech <span>3</span></button><button class="chip" data-cat="consumer" style="--c:#EC6FA0">💗 Consumer behaviour &amp; trends <span>3</span></button><button class="chip" data-cat="global_economy" style="--c:#9C4F7E">🌍 Global marketing &amp; economy <span>3</span></button><button class="chip" data-cat="regulation" style="--c:#8E5A8A">⚖️ Regulation &amp; policy <span>3</span></button><button class="chip" data-cat="learning" style="--c:#DB5A8C">📚 Case studies, jobs &amp; competitor intel <span>3</span></button></nav>
+  <main><section class="cat" data-cat="ai_martech" style="--c:#B84DB8">
+  <h2><i>✨</i>AI in marketing &amp; martech</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#B84DB8"><div class="type"><small>Ad Age</small><b>ChatGPT</b></div><div class="logo"><div class="tile"><img src="https://www.google.com/s2/favicons?domain=chatgpt.com&amp;sz=256" alt="ChatGPT" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.logo').remove()"></div><em>ChatGPT</em></div></div>
+  <div class="body">
+    <h3>ChatGPT Introduces Verified Brand Pages and Business Agents</h3>
+    <p>ChatGPT has rolled out verified brand pages alongside specialized business agents, marking its latest feature set aimed at commercial marketing tools. The new additions are designed to give companies dedicated, verified presences on the conversational platform.</p><p>These tools reflect ChatGPT&#x27;s ongoing push to build out utility for marketers and enterprises. With verified profiles and automated agents, businesses can manage how their identity is represented while deploying AI agents tailored to specific commercial use cases.</p>
+    <div class="why"><b>Why it matters</b>Marketers must prepare their brand management playbooks for conversational AI interfaces as platforms introduce official brand presences. Securing verified status and controlling AI agents will be vital for protecting brand identity and trust on these channels.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMioAFBVV95cUxQS0RMREFQdXdPcldQaFY3enE2N3EybGo1Yi11OUdvVjdpMkc5YjhCdGtzTGJPandZRWJYWS1MTGpYNEtLc0ppWkhTa1BBb0M2QXRrYU9DZ3NGbFlwV3ZWejJaY0t3NldOMGM0VmFOWWxMaVFHSGlhcDF4Ty04S1NOWW1oeFlUYVQxTFN6UUVzQkNOSVdaVWJ3RXBSMHNzOEx1?oc=5" target="_blank" rel="noopener">Ad Age ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#B84DB8"><div class="type"><small>marketech apac</small><b>BlueMedia</b></div></div>
+  <div class="body">
+    <h3>BlueMedia Partners with ChatGPT Ads to Drive Global Marketing for Chinese Brands</h3>
+    <p>Marketing agency BlueMedia has entered into a partnership with ChatGPT Ads to scale AI-native global marketing solutions. The tie-up focuses on enabling Chinese brands to expand and reach international audiences through the conversational platform.</p><p>By leveraging ChatGPT&#x27;s advertising tools, the collaboration aims to provide brands with automated, AI-driven marketing strategies for global campaigns. The move highlights the rising interest in conversational advertising channels for cross-border brand expansion.</p>
+    <div class="why"><b>Why it matters</b>Global expansion strategies are increasingly integrating conversational AI platforms alongside traditional ad networks. Brands exploring overseas growth should watch how advertising on AI interfaces delivers reach and conversion compared to legacy display channels.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMiugFBVV95cUxNX0xYamQ4RjBvOERVZmNkY0NrZkJXY3ZWclR4eFgxZzU3TGI1RWFEelJMLVFRZTViUzNWako0ZE10RzVkY0JORVlKeTAweEZPeUdWSFBVU2pMVGs5Vm9EajhBUkJMdXlFS2d0b1ZhX3g4RjBVSXJoYlc1bXNKcVllSUtPVmNxQkYyVy1nSks4SW5WUjVtelBucFRXZmhSSlVwWnAxeERJREpXNThwZE81S0twZjJHYVVmRHc?oc=5" target="_blank" rel="noopener">marketech apac ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#B84DB8"><div class="type"><small>Marketing Dive</small><b>AI in marketing &amp; martech</b></div><img class="photo" src="https://imgproxy.divecdn.com/r4rRq3XlJ0l-Na3RPLs1jsxsONrBNrP7qVIsiLCZ9ko/g:ce/rs:fill:1600:900:1/Z3M6Ly9kaXZlc2l0ZS1zdG9yYWdlL2RpdmVpbWFnZS9HZXR0eUltYWdlcy0yMTkzNzY0OTQzLmpwZw==.webp" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div>
+  <div class="body">
+    <h3>Inaccurate AI Outputs Cause Business Setbacks for Over 80% of Industry Leaders</h3>
+    <p>Relying on artificial intelligence for audience insights has created tangible setbacks for companies, with more than 80% of industry leaders reporting at least one negative business outcome due to inaccurate AI outputs, according to a recent report.</p><p>The findings point to significant performance risks when algorithmic and AI-derived insights fail to reflect real consumer realities. As companies rush to adopt automated market intelligence, the prevalence of faulty data is directly impacting strategic decision-making and commercial performance.</p>
+    <div class="why"><b>Why it matters</b>Performance and brand marketers must avoid relying blindly on automated AI insights without independent human verification. Establishing rigorous audit mechanisms for AI data is essential to safeguard campaign performance and prevent budget waste.</div>
+    <a class="src" href="https://www.marketingdive.com/news/ai-derived-audience-insights-hurt-results-what-the-numbers-say/874565/" target="_blank" rel="noopener">Marketing Dive ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="ai_world" style="--c:#A855F7">
+  <h2><i>🤖</i>AI in India &amp; global</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#A855F7"><div class="type"><small>Storyboard18</small><b>Nvidia</b></div></div>
+  <div class="body">
+    <h3>Jensen Huang Faces Scrutiny Amid Espionage Allegations and Nvidia Exit Discussion</h3>
+    <p>Storyboard18 has released an explainer covering an emerging controversy involving Nvidia chief executive Jensen Huang, outlining a timeline of espionage allegations and discussions surrounding an exit from the company.</p><p>Further specific operational details, verified evidence, and forward-looking guidance were not elaborated in the initial report.</p>
+    <div class="why"><b>Why it matters</b>Leadership disruptions and geopolitical scrutiny around critical semiconductor companies can send shockwaves through the global AI infrastructure roadmap. Brand and marketing leaders relying on heavy AI computation should keep a close eye on executive stability at core tech providers.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMi0wFBVV95cUxQWmRMQ3pJbFU2czZNZ1J4NjZhSVlTSU1YdDRWOWVvZGd5MFM5ZkNYZDg0b1htbV9tc1pPUWJHY20wWEU5VUZHTUN2V1RZWWRXMGdRVURLVEZySnFQVncwY3hTTVkwZnVCa2xqQl9udjhmamZsdGE1b1JjMmxXR0h5cGNYajVvLUZkOHlUZkxISmdzWHNYeG1pRjExdjZhOVBfQ2FmeEp0TXJMTUY4MFhnSFZWd2hWRmJ1clItcFF4UU1PeVdaSUNDTG9YWXYtOTVZdEhF0gHYAUFVX3lxTE5aR190U1RnR0hjQ2pHR1Vfc05wVTNCSUZqWVJVY1NNS2s2YW5QYnpKZnRoOWZzcHI2S0JxT0lLLUJnNG10M0NoOW9WaVJtM3lzaHBXYjZKOHVfUmxYLWlXSlJQdTY4aWtvSHRkNTlrSlhqVjRsUThsbXllYkdTYXJfYkNZNEk2cUhkYWhkWWZtaEdtekozZmtwSmI4aTZLZlY0LTdtMkhNS0FqUHA1RTBvRXcydk9uMEVaZC1rOHBQNTA0MGJHd3lnWUNkUVJ1Y2h5WVV1a1hXLQ?oc=5" target="_blank" rel="noopener">Storyboard18 ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#A855F7"><div class="type"><small>Moneycontrol.com</small><b>Chariot</b></div></div>
+  <div class="body">
+    <h3>IndiaAI-Backed Chariot Introduces Contextual Speech AI Model Across 12 Languages</h3>
+    <p>Chariot, an initiative backed by IndiaAI, has introduced a new speech artificial intelligence model capable of understanding context across 12 languages, according to Moneycontrol.</p><p>The deployment is aimed at processing multilingual speech, providing contextual comprehension for regional voice interactions across varied linguistic demographics.</p>
+    <div class="why"><b>Why it matters</b>Advances in local contextual speech models give marketers stronger foundations to develop high-utility voice interfaces in regional Indian languages. Tracking these domestic models helps brands craft hyper-localized conversational marketing campaigns that resonate beyond Tier-1 English-speaking audiences.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMi-wFBVV95cUxNSVhFNXd0MmRXUjRqX1laRnpCZnF1Qzg1ZFlfeGQ4LURRMUJzbEIwSUVoY0s4ZE5KOWM5cm56NTBrdmFZTWdCZGpJaWtud2hkM3JjS3dVLTBXc1poVEZ3TGc4ZmRjdmxOX0kwMnRrV2c0b1dkdV9TRmdFU2pyUGFXU24ydU1VTDFaeC1FX1BTZ1ZNQXFrdnA3WFVzaV81WmNBNDU5NzBkWVVjUU1TdTI0QmhKVUh3aGNNRHk2TDJfb25SNUNuMk5GOTJfNnlZa2FybURoY3VFX3RjNGlZb2JqbEJLdjQ0NDBXM1pfMkdOMGtYTmFLWlJoS3dORdIBgAJBVV95cUxOYnBkVmlGRWZYbWcyc2d5cnZQdk80X0d0bktzYnpadlFmVUVKWEpKM0hURjluWmYtSzRtUFAzS0pMVzk3ZjFlR0c0UW1hWHZhNDI5VkNiNS0tU2pHOUt5dGNvbWQ4bktKczhvOE8wTlhERFJHUU9JU1JLY0pQLU92ZDM1V3kwbEdGNU5qTHNHV3h3VDhPbEE4MmY5b0FKTzFjMkRNYkhsSjJfYW05QTIxZE8ta1V2VVZIc2JsMllmcm1JcTYzeHBQWUpla1d3OGotSXl6aXR0RkFtSDF4MGE2SmlSUWlYN0lRY1ZSQUphOUIwc2ItU2pJOGtESkpHbjFH?oc=5" target="_blank" rel="noopener">Moneycontrol.com ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#A855F7"><div class="type"><small>TechCrunch AI</small><b>OpenAI</b></div><img class="photo" src="https://techcrunch.com/wp-content/uploads/2026/11/chatgpt-wallet.jpg?resize=1200,729" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div>
+  <div class="body">
+    <h3>OpenAI Launches ChatGPT Wallet to Let AI Agents Make Direct Purchases</h3>
+    <p>OpenAI has introduced a new wallet feature for ChatGPT that allows its AI agents, known as dots, to help users choose products and complete purchases on their behalf. The functionality is rolling out initially to a select group of U.S. ChatGPT Pro subscribers aged 18 and older who hold a U.S.-issued Visa, Mastercard, or American Express card.</p><p>Shoppers maintain control over purchases by reviewing order selections, total prices, and chosen payment methods before checkout, finalizing each transaction via biometric authentication like Face ID or fingerprint scans. To preserve security, the system utilizes tokenized card details so sensitive payment information is never exposed to the agent or merchant. Merchants automatically receive necessary fulfillment data such as shipping addresses, while consumers retain standard credit card reward earnings and dispute protections.</p><p>The move comes as tech platforms test the viability of agentic commerce. While services like Uber and DoorDash have documented limited volumes from AI purchasing agents, Meta&#x27;s Muse platform—which currently counts over 10 million users—has seen AI-guided shopping emerge as a core user activity. Competing personal agents such as Instinct have also enabled automated checkouts.</p><p>OpenAI plans to use this limited testing phase to evaluate the system before rolling it out more widely. Future iterations are expected to introduce expanded buyer controls, including the ability to set specific spending limits, timeframe parameters, and restricted purchase categories.</p>
+    <div class="why"><b>Why it matters</b>The transition of AI from advisory chatbots to autonomous purchasing agents will dramatically compress the traditional digital marketing funnel. Brands must ensure product feeds, pricing, and merchant data are optimized for agent discovery and checkout, as algorithms increasingly become the end buyer.</div>
+    <a class="src" href="https://techcrunch.com/2026/11/13/chatgpts-new-wallet-lets-ai-agents-shop-and-check-out-for-you/" target="_blank" rel="noopener">TechCrunch AI ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="ecom_qcom" style="--c:#E57373">
+  <h2><i>🛍️</i>E-commerce, D2C &amp; quick commerce</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#E57373"><div class="type"><small>Inc42</small><b>Meesho</b></div><img class="photo" src="https://inc42.com/cdn-cgi/image/quality=90/https://asset.inc42.com/2026/11/meesho-bulk-deal-social-.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div>
+  <div class="body">
+    <h3>SoftBank sells Meesho shares worth ₹1,885 crore in bulk block deal</h3>
+    <p>Japanese investment giant SoftBank has offloaded 7.6 crore shares of listed e-commerce major Meesho through a block deal valued at ₹1,885.2 crore. Conducted via its affiliate SVF II Meerkat (DE) LLC on the NSE, the shares were sold at ₹246.75 apiece, reflecting a 4% discount to the stock’s previous closing price. The sell-off represents nearly a quarter of SoftBank&#x27;s Meesho holdings, following an earlier sale of 8 crore shares for ₹1,650.4 crore in September. Prior to this sale, SoftBank held a 6.84% equity stake comprising 31.6 crore shares.</p><p>Institutional investors swiftly absorbed the supply. Fidelity emerged as the largest buyer, acquiring shares worth ₹573.1 crore across multiple funds, alongside Societe Generale (₹364.6 crore) and Morgan Stanley (₹244.9 crore). Domestic asset managers also participated actively, with Motilal Oswal Mutual Fund purchasing stakes worth ₹129.5 crore and Aditya Birla Sun Life Mutual Fund buying ₹103.4 crore, with Goldman Sachs among other buyers.</p><p>The profit-taking comes amid an upswing in Meesho’s stock, which has climbed 32.8% over the past three months and 42.6% year-to-date. The rally has been supported by strengthening financial fundamentals: in Q2 FY27, Meesho reported a 34% year-on-year increase in revenue to ₹4,131.6 crore and narrowed its net loss by 68% to ₹132.5 crore, up from ₹411.4 crore in Q2 FY26.</p>
+    <div class="why"><b>Why it matters</b>Meesho&#x27;s steady march toward profitability and strong revenue growth show that value-conscious, Tier 2+ e-commerce can yield viable operating margins. The robust institutional absorption of SoftBank&#x27;s stake underscores growing market confidence in Meesho&#x27;s long-term commercial model.</div>
+    <a class="src" href="https://inc42.com/buzz/softbank-offloads-meesho-shares-worth-%e2%82%b91855-cr/" target="_blank" rel="noopener">Inc42 ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#E57373"><div class="type"><small>ET Retail</small><b>Dollar Industries</b></div><div class="logo"><div class="tile"><img src="https://www.google.com/s2/favicons?domain=dollarglobal.in&amp;sz=256" alt="Dollar Industries" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.logo').remove()"></div><em>Dollar Industries</em></div></div>
+  <div class="body">
+    <h3>Dollar Industries reports 14.3% jump in Q2 revenue as quick commerce sales surge 58.5%</h3>
+    <p>Knitwear and innerwear manufacturer Dollar Industries reported a 14.3% year-on-year increase in its revenue for the second quarter, reaching ₹539 crore.</p><p>A key highlight of the quarter&#x27;s financial performance was the rapid expansion of its quick commerce channel, which registered a substantial growth of 58.5%.</p>
+    <div class="why"><b>Why it matters</b>Traditional apparel and innerwear brands are finding meaningful incremental growth by tapping into instant delivery platforms. Performance marketers should consider quick commerce not just for groceries, but as an increasingly critical channel for high-frequency essential wear.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMi9AFBVV95cUxOMWJrb0t4ME9GUkJaMkdqYlkzNDFjNm5qeXYyRFQ0QlB2Mk1zcnR0TWZYRXhMNDV6UEc2UVFodVhwdjhvRm1vUUZneTRIMkdpQkxrQ1NwV2ZkZTRTRlp0eXNaRVM0emNUcnhSLWtfVk8wby1SRmp0TVhtUGFFV2YyWTl4MFJzN1dFVDVUUUtTbzQ1dVVfamJzcG90cVZwUHJYeTNqdWlrSEpKSDljMnQzWjFqMUhocWxWSHlCM3R0QmZXTGdoQ1M2WmUzUnp2X1JZUXBtaDRycVljbm03WUZXRjNOLTc0d0pzUkFUWmpVakJTMFpU0gH4AUFVX3lxTE0yZ2VwMDdrS3Nfc1Roc2hsWHFEMmpvYW9XVHBPaXlDMXVuVWFwZkNobllYU2VMU1l5MHl6bG44Z284UnVpS1lyQXpqWkgwQ2xUSE15dXl4VEFRMW5xSTBuMXRhaW14UXpXTGNtS2RJS1RBUTREdFlTV2RpcVdxTGVIcjEtVF9hellWeE8tRjR6QjQ4eFBRcTJuUFl2ZUpZamF1Vk1DUHlzbHJoY3F2MFN4QnIxX1oyMUhFRHlXb19hMWlxQzJ1YzVGdEZfNlBDR0pBVzBEUHE0M0NvRXN5SkFoMm9aa0RJVGVodl93bXBZRlFUaDR6Z2RY?oc=5" target="_blank" rel="noopener">ET Retail ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#E57373"><div class="type"><small>BusinessLine</small><b>E-commerce, D2C &amp; quick commerce</b></div></div>
+  <div class="body">
+    <h3>Direct-to-consumer brands adopt hybrid fulfilment models to accelerate delivery timelines</h3>
+    <p>Direct-to-consumer (D2C) brands across India are increasingly turning to hybrid fulfilment models in an effort to speed up their delivery timelines for consumers.</p><p>The shift comes as consumer expectations around delivery turn-around times continue to tighten across online retail channels.</p>
+    <div class="why"><b>Why it matters</b>To remain competitive against the rapid speeds of quick commerce and marketplace giants, D2C brands must re-engineer their supply chains. Marketers need to align their delivery promises with flexible, local logistics to prevent drop-offs at checkout.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMi1AFBVV95cUxNcXNqRnlseWtmSl9vYWk4bUxZcjZCeG9ZanBDUkU3LVA2WGNRQS1lWWs4a0dUa21sZlA2Uk9qYVB6WVlmZ1R1QUFaODJPZ3d0bWQ5azE5T2JuNFRCa3hHdmpaWm5Iek1IcDNrUEQ0YjgwMjhkRURmTHQ0bVBhQ0RobEdVZkphNDZrQ0hRMHpEMnZLcjVBS2d6NlJMUVlHUU5vU000UjRRVmZnN3lqS2ZHcU1Wb1hKeW1ZVV9CX1l4bG96c3dON1FlazJXRVhReGg1VlB2dtIB1AFBVV95cUxNcXNqRnlseWtmSl9vYWk4bUxZcjZCeG9ZanBDUkU3LVA2WGNRQS1lWWs4a0dUa21sZlA2Uk9qYVB6WVlmZ1R1QUFaODJPZ3d0bWQ5azE5T2JuNFRCa3hHdmpaWm5Iek1IcDNrUEQ0YjgwMjhkRURmTHQ0bVBhQ0RobEdVZkphNDZrQ0hRMHpEMnZLcjVBS2d6NlJMUVlHUU5vU000UjRRVmZnN3lqS2ZHcU1Wb1hKeW1ZVV9CX1l4bG96c3dON1FlazJXRVhReGg1VlB2dg?oc=5" target="_blank" rel="noopener">BusinessLine ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="startups_fintech" style="--c:#C2185B">
+  <h2><i>🚀</i>Startups, founders &amp; fintech</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#C2185B"><div class="type"><small>Inc42</small><b>Razorpay</b></div><img class="photo" src="https://inc42.com/cdn-cgi/image/quality=90/https://asset.inc42.com/2026/11/Razorpay-IPO-social-1.jpg" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div>
+  <div class="body">
+    <h3>Razorpay Secures SEBI Approval for ₹6,000 Crore Domestic IPO</h3>
+    <p>Fintech major Razorpay has received approval from the Securities and Exchange Board of India (SEBI) to proceed with its proposed initial public offering of ₹5,000 Cr to ₹6,000 Cr ($530 Mn to $630 Mn). The market regulator issued its observations on November 3 following a confidential draft filing submitted in June. The public listing is anticipated to value the company at around $5 Bn (₹47,000 Cr), with the market debut expected to take place between January and March 2027.</p><p>Founded in 2014 by Shashank Kumar and Harshil Mathur, Razorpay provides digital payment processing, business banking, payroll, and lending services. Ahead of the planned domestic listing, which will consist of both a fresh issue and an offer-for-sale, the company shifted its domicile from the United States to India. In FY25, its operating revenue grew 65% to ₹3,783 Cr, though one-time tax and restructuring expenses from redomiciling, along with ₹1,209 Cr in ESOP costs, pushed it into a net loss.</p><p>Alongside its listing preparations, Razorpay has been building out its artificial intelligence and growth marketing capabilities. The fintech recently expanded its partnership with OpenAI to enable domestic brands to manage and launch ad campaigns on ChatGPT Ads via its Razorpay Engage platform. It has also introduced Vulcan, an in-house transformer-based AI foundation model designed to optimize payment routing and identify digital transaction fraud in real time.</p>
+    <div class="why"><b>Why it matters</b>Razorpay&#x27;s expansion into AI-powered advertising solutions like ChatGPT Ads allows marketers to bridge performance marketing and checkout infrastructure on a unified platform. A successful public listing will further validate the enterprise software ecosystem supporting India&#x27;s direct-to-consumer and digital commerce brands.</div>
+    <a class="src" href="https://inc42.com/buzz/razorpay-gets-sebi-nod-for-%e2%82%b96000-cr-ipo/" target="_blank" rel="noopener">Inc42 ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#C2185B"><div class="type"><small>DD News</small><b>UPI</b></div></div>
+  <div class="body">
+    <h3>UPI User Base Exceeds 55 Crore as Annual Transaction Value Hits Record ₹314 Lakh Crore</h3>
+    <p>India&#x27;s Unified Payments Interface (UPI) network has expanded its user base beyond 55.49 crore individuals, according to data reported by DD News.</p><p>Alongside this expanding user reach, total transaction values processed over the digital payments network reached a record milestone of ₹314 lakh crore in FY26.</p>
+    <div class="why"><b>Why it matters</b>The scale of over 55 crore active users cements UPI as the indispensable transaction foundation for any consumer-facing brand in India. For growth marketers, optimizing frictionless UPI checkouts remains one of the most effective levers to cut drop-offs and improve digital purchase conversion rates.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMisAFBVV95cUxPOWttZGJXUjMxWnJHU21GT0k2MFJFWUE3SFRuU2VDLU1HcWhhRnpQV0MtTnc0MUlxZjFleHFIWksxSE5WOTROS2RNdzFBNTJXSG9xNC1lSnRfRDFmckN5ckhwOThBblQ2bVZKZmIwWm9fX3V4YjRLZ1JscmItWnZVQk41S1M3LXgzYzFHS3ZTdXFMUEo3THRUZko0QVJYRVNPSGRWZ3YyVkdGblBSWEZLOQ?oc=5" target="_blank" rel="noopener">DD News ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#C2185B"><div class="type"><small>Inc42</small><b>Recykal</b></div><img class="photo" src="https://inc42.com/cdn-cgi/image/quality=90/https://asset.inc42.com/2026/11/tendulkar-recykal-social-.png" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></div>
+  <div class="body">
+    <h3>Sachin Tendulkar Backs Waste Management Startup Recykal in Extended Bridge Round</h3>
+    <p>Former Indian cricketer Sachin Tendulkar has acquired an equity stake in Hyderabad-based cleantech startup Recykal for an undisclosed amount. The investment was made during an extension of the startup&#x27;s recently concluded $23 Mn bridge round, which previously closed a $17.6 Mn equity infusion in June alongside a $5.4 Mn secondary transaction. The startup has raised over $60 Mn to date from investors including Morgan Stanley, 360 ONE, Circulate Capital, and the Murugappa Group.</p><p>Founded in 2016 by Abhay Deshpande, Abhishek Deshpande, Ekta Narain, Vikram Prabakar, and Anirudha Jalan, Recykal operates a B2B marketplace for recyclable materials and provides compliance software to help companies track plastic and e-waste. The company&#x27;s network includes more than 5,000 waste aggregators and recyclers, catering to 650 enterprise clients such as Hindustan Unilever, Samsung, and BMW.</p><p>Recykal has also rolled out a consumer-facing deposit return system (DRS) using reverse vending machines, where consumers pay a refundable deposit at purchase and recover it upon returning used packaging. The startup reported gross revenue of ₹1,498 Cr in FY26, up 53.2% from ₹978 Cr in the prior year, while net losses expanded 7% to ₹60 Cr.</p>
+    <div class="why"><b>Why it matters</b>With enterprise brands under mounting regulatory pressure to document plastic and packaging compliance, tech-led waste tracking is becoming core to corporate reputation and operations. Consumer-facing initiatives like deposit return systems also provide brand marketers with measurable, physical touchpoints to reward shoppers for sustainable behaviors.</div>
+    <a class="src" href="https://inc42.com/buzz/sachin-tendulkar-backs-waste-management-startup-recykal/" target="_blank" rel="noopener">Inc42 ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="consumer" style="--c:#EC6FA0">
+  <h2><i>💗</i>Consumer behaviour &amp; trends</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#EC6FA0"><div class="type"><small>Campaign India</small><b>Consumer behaviour &amp; trends</b></div></div>
+  <div class="body">
+    <h3>India&#x27;s Festive Season Tests Localisation Strategies of Global Retailers</h3>
+    <p>India&#x27;s festive shopping season is putting the localisation strategies of international retail brands to the test. As consumer demand surges across the country, global retailers are being evaluated on how well they adapt their marketing, product assortments, and messaging to connect with local festive sentiments.</p><p>The competitive window highlights the growing need for multinational companies to move beyond standardized global playbooks. To succeed in the Indian market during high-spend periods, brands must demonstrate cultural resonance and responsiveness to local consumer behaviors.</p>
+    <div class="why"><b>Why it matters</b>Festive shopping windows require marketers to balance core brand identity with deep regional and cultural customization. Relying on generic global assets is insufficient when competing against brands that tailor their value proposition directly to local traditions.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMisAFBVV95cUxQOUYwby1Pc0VTdUNRR2xkTE44SERhQXJXVk5odTlaSHdKcVhOdGU2RU1wd0tVTkt1LXlKaWc0RmZUNmlkWEFDLXJiT2dPN05zenZtTFE1UW9qYmlWYVRDLWFuMTRyaVBCU1BEMEpRRzJNN3NRQUpwR28wVjg5RnB1cHJYRjFaSFRGdUxrUWE0N09OaU5kb19BNWZXMEtkMnhmMm85a3R5OTdNWGNiNFZwWg?oc=5" target="_blank" rel="noopener">Campaign India ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#EC6FA0"><div class="type"><small>Bloomberg.com</small><b>Consumer behaviour &amp; trends</b></div></div>
+  <div class="body">
+    <h3>Young Chinese Consumers Shift Value Perceptions for Luxury Goods</h3>
+    <p>Young shoppers in China are altering their criteria for what constitutes value in luxury purchases. This demographic is reassessing traditional luxury benchmarks, moving away from conventional status cues toward new definitions of worth.</p><p>The shift creates a critical consideration for luxury labels that have long relied on younger Chinese buyers to drive high-margin growth. As consumer expectations evolve, brands face pressure to align their offerings with how modern buyers currently determine quality and personal relevance.</p>
+    <div class="why"><b>Why it matters</b>Marketers must understand that legacy prestige alone is no longer enough to command pricing power among younger demographics. Sustained luxury positioning requires continuously demonstrating tangible and emotional value that fits modern consumer standards.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMiogFBVV95cUxNNGJtb202akZ1RVRldXIxYTVzTnV1UHdWVkFSdXowNWlsS0hZYXFxY0oyOFd4Y0x0bW1XU0JUanFNTGNOWXVMaGI2MGxzTzNwSEZYT0FWT203NFR3enQ4S19TNVlhQmhiX1pmaUhsQVlpVE5ncWx2Qmp5N1U2V2pXQjhZaGJNOU1lYWlMNzJYMjBodkNwNUxjZTJZWVV5cE5idVE?oc=5" target="_blank" rel="noopener">Bloomberg.com ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#EC6FA0"><div class="type"><small>Campaign India</small><b>Fossil</b></div><div class="logo"><div class="tile"><img src="https://www.google.com/s2/favicons?domain=fossil.com&amp;sz=256" alt="Fossil" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.logo').remove()"></div><em>Fossil</em></div></div>
+  <div class="body">
+    <h3>Fossil Leans on Heritage Themes to Support Higher Watch Pricing</h3>
+    <p>Fossil is testing whether heritage-driven positioning can convince consumers to purchase higher-priced watches. The brand is leveraging royal and legacy themes in a bid to elevate its perceived value and justify more premium price points.</p><p>The strategy represents an effort to move Fossil beyond its standard fashion-watch reputation into a more aspirational bracket. The initiative will demonstrate whether traditional narrative cues are effective in driving trade-up behavior among contemporary watch buyers.</p>
+    <div class="why"><b>Why it matters</b>Premiumisation strategies require brand marketers to build credible, differentiated narratives before asking consumers to pay higher price tags. Heritage-focused campaigns must feel authentic and aspirational to successfully shift consumer willingness to pay.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMitwFBVV95cUxQakRhNTl4STlsWkx2dHRGMGtrWXk0aFM3UHZKZFlVa19pejVmZHpzYjhHcXJxdUp3eUZwQzhMd1R3Qy0yMnRoUF9iMVdlem9tTGlhTTY1bmJLUEhvWGxiTmZic1c2bWdPZEFfTWVoejNSdFVmWDFhN1lwR1F3VTAzaWExalhweVYzRHJ2Tm5hNnRZanRld19vcS1ucTc5N05JNnhtS2RrZDdtTXRxOUxiVjMzNHE4X3c?oc=5" target="_blank" rel="noopener">Campaign India ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="global_economy" style="--c:#9C4F7E">
+  <h2><i>🌍</i>Global marketing &amp; economy</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#9C4F7E"><div class="type"><small>Automotive News</small><b>Jaguar Land Rover</b></div></div>
+  <div class="body">
+    <h3>JLR Lowers Profit Forecast as Chinese Demand Slows</h3>
+    <p>Jaguar Land Rover has cut its profit outlook as weakening consumer demand in China creates operational hurdles for the luxury car manufacturer.</p><p>The revision highlights mounting headwinds in one of the world&#x27;s most critical automotive markets, where broader economic pressures continue to weigh on high-end vehicle sales.</p>
+    <div class="why"><b>Why it matters</b>Heavy reliance on a single geographic market leaves premium brands vulnerable when regional macroeconomic conditions shift. Marketers must diversify their regional growth strategies rather than banking on sustained demand from legacy high-growth hubs.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMinAFBVV95cUxNRndGNWlYVURKdEkzZFFNMld6MDh2bWgtQTltYmV0WTVhckZaQzVJWjZ6OFNGaUlVZGVhZ1czc1d4NlRfaUZWVENsNlhJemtNN0dBR0w5b0xMNEhxdl8zXzVSQTFIMGdablJ2NUwxeGxRU2s4WGJhQ1ZDXzk3blFfSVhCZUU5Rl8tTk0tNUxYSXRKb3FJRFRSeVotb0s?oc=5" target="_blank" rel="noopener">Automotive News ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#9C4F7E"><div class="type"><small>파이낸셜뉴스</small><b>Coach</b></div><div class="logo"><div class="tile"><img src="https://www.google.com/s2/favicons?domain=coach.com&amp;sz=256" alt="Coach" loading="lazy" referrerpolicy="no-referrer" onerror="this.closest('.logo').remove()"></div><em>Coach</em></div></div>
+  <div class="body">
+    <h3>Coach Posts 16% Growth as Louis Vuitton Sales Decline</h3>
+    <p>Louis Vuitton is contending with sliding sales, while Coach has pulled ahead with a reported 16% growth amid evolving price dynamics across the luxury market.</p><p>The divergence points to shifting consumer behavior in luxury retail, where accessible luxury positioning appears to be gaining traction even as traditional ultra-luxury houses face slower momentum.</p>
+    <div class="why"><b>Why it matters</b>Aggressive price escalations in luxury risk alienating aspirational buyers during periods of consumer belt-tightening. Brands that maintain a compelling value-to-prestige equation can capture significant market share when top-tier luxury becomes too expensive.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMiWEFVX3lxTE9wek1jU0dyWWFpeHNob3p2Q0xyYm91R2tTNmkwM3J1UWJoMk5aaVRlOFhveFh5NThuZ2JmaWxneVprZl9FN2JsS282WmlUcnVMVzVPTVkxVUI?oc=5" target="_blank" rel="noopener">파이낸셜뉴스 ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#9C4F7E"><div class="type"><small>InsideEVs</small><b>Global marketing &amp; economy</b></div></div>
+  <div class="body">
+    <h3>Chinese Electric Vehicle Makers Achieve Commercial Profitability</h3>
+    <p>China&#x27;s electric vehicle manufacturers have moved beyond product quality benchmarks to reach bottom-line profitability, according to InsideEVs.</p><p>The milestone signals that the country&#x27;s EV sector is achieving sustained financial viability alongside volume manufacturing, intensifying pressure on global automotive incumbents.</p>
+    <div class="why"><b>Why it matters</b>The narrative around Chinese EV brands is shifting from low-cost alternatives to financially resilient, premium market contenders. Global automotive marketers will need to counter not just technological parity, but the scale and pricing power of profitable Chinese rivals.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMifEFVX3lxTE9KWF8yTTBfNEdBdjk5VmFsSXQyenpzV2xKZjVNakNHbWxNUjF6MXY1VFZJb3hLQnNueXNrbGVWZncyXzBON3h4TTByUGJYMWs5M1ZVZURnN2dOUVJzMVEwTmpUV1NrOVl6NTY3ZEoxSEoxUU11ejJiSGYzaXA?oc=5" target="_blank" rel="noopener">InsideEVs ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="regulation" style="--c:#8E5A8A">
+  <h2><i>⚖️</i>Regulation &amp; policy</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#8E5A8A"><div class="type"><small>The 420.in</small><b>Regulation &amp; policy</b></div></div>
+  <div class="body">
+    <h3>Data Protection Board of India Goes Live Under DPDP Act 2023</h3>
+    <p>The Data Protection Board of India, established under the Digital Personal Data Protection (DPDP) Act 2023, is now officially live. This marks an operational milestone in the implementation of India&#x27;s overarching data protection regime.</p><p>With the board becoming active, the regulatory infrastructure to oversee compliance, adjudicate grievances, and handle matters under the DPDP Act is now in place.</p>
+    <div class="why"><b>Why it matters</b>Marketers must prepare for active regulatory oversight over user data collection and consent management practices in India. Ensuring privacy frameworks align with DPDP requirements is now critical as the enforcement body is functional.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMickFVX3lxTE1TNmxESlBUaXZYclFtM1pyMkpGM1g5dXBsVTkyTFBQWE41bGpMcU5WaDl4UjNJSzlNMG1FVDdUUGZPcDdENVNqa0xrZ2N0UjhVbkt3bmgwZ01ITnhfMHJ3WW03MFlUajQ2MzRrX3pNTlpQUQ?oc=5" target="_blank" rel="noopener">The 420.in ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#8E5A8A"><div class="type"><small>LinkedIn</small><b>Regulation &amp; policy</b></div></div>
+  <div class="body">
+    <h3>DPDP Rules Outline Compliance Roadmap for Banks, Insurers, and NBFCs</h3>
+    <p>The rollout of the Digital Personal Data Protection (DPDP) rules is bringing operational changes for the financial sector, specifically affecting banks, insurers, and Non-Banking Financial Companies (NBFCs).</p><p>The framework details immediate obligations that take effect for these regulated entities, while outlining the roadmap and subsequent requirements institutions must follow to maintain compliance.</p>
+    <div class="why"><b>Why it matters</b>Financial services marketers must coordinate closely with compliance teams to adapt consumer acquisition funnels and personal data handling to the new DPDP mandates. Trust and transparent consent architectures will be vital for financial brands managing customer onboarding.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMiuwFBVV95cUxOZWZQM1JDQ3pEcm9FaGdsTWpKczFTdzJ2TnRHZXNpTUgxdVFoa2ExdnltbUZLdlpSMjRWYVBBZXc4cnkxTmpGMUhReHMxWXVJNllfb3FCSGlvVmJCRGwxUEp1LURjMmVFdjlqRUUtUUpJcnktVHkwVklHQU53MWYxbzJ0T2NXdHpQOHU1LWhQRDAyYTJabU5GME5IQzFFVW1FbzJ2dTlhUjNwWUxHYjRTcG96R051VHlrM1ZJ?oc=5" target="_blank" rel="noopener">LinkedIn ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#8E5A8A"><div class="type"><small>Osborne Clarke</small><b>Regulation &amp; policy</b></div></div>
+  <div class="body">
+    <h3>Proposed EU Digital Fairness Act Targets Addictive Design and Dark Patterns</h3>
+    <p>The European Union is advancing the proposed Digital Fairness Act, a regulatory initiative aimed at addressing manipulative digital environments. The proposal specifically targets addictive design practices, deceptive user interface techniques known as dark patterns, and unfair personalization.</p><p>The framework seeks to curb exploitative online architectures and regulate how platforms use consumer data and interface choices to influence user behavior.</p>
+    <div class="why"><b>Why it matters</b>Performance and product marketers must reassess user experience design and personalization mechanics to eliminate manipulative conversion tactics. Brand reputation and compliance will increasingly hinge on transparent UX patterns that avoid coercive engagement loops.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMivgFBVV95cUxQa0dmdFI5RkhyYUc2TmxxcTFuZFcxbGpibFNYQklVX2pNQzI3YTdhcWdJeVoxUU4yLTdMWVlTUUc0QXpRRVFsNTA4ajF4ZE1OaWs1X2pNSFpXM3g3c3YwWFhBcGlxMFJiN0hlTDRKWE40V2Vub1NVd09Fa3R4SzYzTS1YQVdkYnF3Q3A3LXdoREpLQlFrUTFadkxWWG1zN0h5LS04RGhDUzZjblhTQ3dyYnFETmlaYUNHeXBsTDdB?oc=5" target="_blank" rel="noopener">Osborne Clarke ↗</a>
+  </div>
+</article></div>
+</section><section class="cat" data-cat="learning" style="--c:#DB5A8C">
+  <h2><i>📚</i>Case studies, jobs &amp; competitor intel</h2>
+  <article class="story featured">
+  <div class="media" style="--c:#DB5A8C"><div class="type"><small>LinkedIn</small><b>HSBC</b></div></div>
+  <div class="body">
+    <h3>HSBC India Leverages Global Concerts to Drive Card Adoption and Wealth Management</h3>
+    <p>HSBC India is using major international concerts as a strategic acquisition engine to attract cardholders and build long-term wealth relationships. Jaswinder Singh Sodhi, Chief Marketing Officer at HSBC India, explained that these marquee live entertainment events draw passionate audiences from far beyond metro cities, with fans from tier-two and tier-three towns regularly traveling to Mumbai to attend.</p><p>Sodhi highlighted that the consumer appetite for live experiences is strong enough that attendees are increasingly willing to take out loans to secure tickets. By aligning with these cultural moments, the bank aims to turn a single concert ticket purchase into an entry point for credit cards and broader wealth management services.</p>
+    <div class="why"><b>Why it matters</b>High-passion cultural experiences can serve as potent customer acquisition funnels for premium financial services, even across non-metro markets. Marketers should explore how aligning with high-demand experiential events can lower customer acquisition costs and initiate high-value customer journeys.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMiswFBVV95cUxOWk5sMXdNa1RuY3lEb2NmVjY5OXUwMVdlMExWUXdzdzQ0MkY4UTJSdVlhMklzNGNKTzBob3dyWmwwUnExSFc2SzVGdDEwS1Ftek5VWTU5RmRwTW81U3pUNWVKbmRrN3RaQnRCTkRiVGV0X3BqamVZb0J2ZXFWZWVFd2tJc2FQTnd3TVRkOTVtVlZidFd4R3p0WFRNb0o3bngwY0VEdWU5Ylh1NmtkTXJmNmdaSQ?oc=5" target="_blank" rel="noopener">LinkedIn ↗</a>
+  </div>
+</article>
+  <div class="grid"><article class="story">
+  <div class="media" style="--c:#DB5A8C"><div class="type"><small>Storyboard18</small><b>Jubilant FoodWorks</b></div></div>
+  <div class="body">
+    <h3>Jubilant FoodWorks Sharpens Digital Marketing to Capitalize on Online Delivery Headroom</h3>
+    <p>Foodservice operator Jubilant FoodWorks has identified significant headroom for online food delivery expansion in India. To capture this ongoing consumer shift toward home delivery, the company is actively refining its digital marketing operations across its portfolio.</p><p>The strategic focus is centered on strengthening digital engagement to drive incremental delivery orders across Indian markets as demand for online convenience continues to grow.</p>
+    <div class="why"><b>Why it matters</b>QSR giants recognize that capturing long-term market share requires a dedicated focus on digital performance to drive direct delivery demand. For marketers, continuously optimizing digital touchpoints remains essential to retaining ordering frequency and defending against food aggregator competition.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMi5gFBVV95cUxPUXdfeU5xaUJldXNVMXhfWWxSUXlCWFo5cTRaeUJFS3NCWThSQkZyNW5uX2JTMjBJSXpoeWVqVGxSZVNIbmtfekJvNm9rclp0blZqWDg0MHJpejJDVWgzczQ1RHFiRDVFSWlQckM4VXdwNGlRanVzUXRtTnRjeTlFT3gtQzJtakx5THE4WHlrdzlPcU1Ic0gtZFcxLWNqLXVmaVkzLVgzcHU2cy1KYUxDM0RXdDRrYTVLWU9xbmstek1xZHZfZV9oQVJwTS03NC0wNW5McExqeUJxNTBHR2gzc2UwcWQzd9IB6wFBVV95cUxPRk4wRlVzZHBMX0YyVlBtUjEzaUFObUVtUVdsXzdWcVdHOXdvbEx1Um11U2VvdjRqWHpJZGRWOG5wcTN4YnQ0VjBrdWlFVGprVnVnbEE1dnpabkxEY2Y0N1lPenZFLWlkR2ktdmtPaG1vbzVBV1NYd3pGZVRFU2ZMWWkwdGRBQ3BxVXdrbEZXMDlaZERwNDdLN1RxVjgtQkk3SEREcWdnTXpzQ1hCWUlyYlRvaW5hLS1FcXBjX20xQmhSWVlvRkw2V0VaUjc4enZjV3NiQnRCNWZtTGNzTVc0NUtPYjRfN1VlTkFr?oc=5" target="_blank" rel="noopener">Storyboard18 ↗</a>
+  </div>
+</article><article class="story">
+  <div class="media" style="--c:#DB5A8C"><div class="type"><small>afaqs!</small><b>Origami</b></div></div>
+  <div class="body">
+    <h3>Origami Promotes Kushagra Sharma to CMO and Business Head</h3>
+    <p>Origami has elevated Kushagra Sharma to the dual role of Chief Marketing Officer and Business Head.</p><p>The appointment places Sharma in charge of driving the company&#x27;s brand growth alongside business leadership responsibilities.</p>
+    <div class="why"><b>Why it matters</b>Unifying marketing leadership with commercial business responsibilities highlights an ongoing trend toward holding marketing chiefs directly accountable for P&amp;L results. Marketers should expect leadership roles to increasingly merge brand-building mandates with overall revenue growth.</div>
+    <a class="src" href="https://news.google.com/rss/articles/CBMiogFBVV95cUxPZGJtUk1TcVFCOThhLUhMWlNfNGlvR0R5cU5EZUlmb2VSczA1WFg1djlGcWhhWFlLaWhvU213VjVVVldRX2cwVzBjUE4xbWJ2bzJjZXpqd0RVeXlNNktILU1Xb2JHTlBncFotbTlvZEN3SzdLLWZOWm5sT09oQThTaTFUSDFXUFlXMkhFd2ltUFV2ektxWGVyMFhwVVA1VXhHTXc?oc=5" target="_blank" rel="noopener">afaqs! ↗</a>
+  </div>
+</article></div>
+</section></main>
+
+  <section class="archive">
+    <h2>Past briefings</h2>
+    <div class="days"><a href="2026-11-14.html">Today</a><a href="2026-11-13.html">Fri, 13 Nov</a><a href="2026-11-12.html">Thu, 12 Nov</a><a href="2026-11-11.html">Wed, 11 Nov</a><a href="2026-11-10.html">Tue, 10 Nov</a><a href="2026-11-08.html">Sun, 08 Nov</a><a href="2026-11-07.html">Sat, 07 Nov</a><a href="2026-11-06.html">Fri, 06 Nov</a><a href="2026-11-04.html">Wed, 04 Nov</a><a href="2026-11-03.html">Tue, 03 Nov</a><a href="2026-11-02.html">Mon, 02 Nov</a><a href="2026-11-01.html">Sun, 01 Nov</a><a href="2026-10-31.html">Sat, 31 Oct</a><a href="2026-10-30.html">Fri, 30 Oct</a><a href="2026-10-28.html">Wed, 28 Oct</a><a href="2026-10-27.html">Tue, 27 Oct</a><a href="2026-10-25.html">Sun, 25 Oct</a><a href="2026-10-24.html">Sat, 24 Oct</a><a href="2026-10-23.html">Fri, 23 Oct</a><a href="2026-10-22.html">Thu, 22 Oct</a><a href="2026-10-21.html">Wed, 21 Oct</a></div>
+  </section>
+  <footer>Updated 14 Nov 2026, 12:22 PM IST · Articles are AI-written summaries; open the source before quoting. 🌸</footer>
+</div>
+<script>
+document.querySelectorAll('.chip').forEach(function(c){
+  c.addEventListener('click',function(){
+    document.querySelectorAll('.chip').forEach(function(x){x.classList.remove('on')});
+    c.classList.add('on');
+    var k=c.dataset.cat;
+    document.querySelectorAll('.cat').forEach(function(s){s.style.display=(k==='all'||s.dataset.cat===k)?'':'none'});
+    window.scrollTo({top:document.querySelector('nav').offsetTop,behavior:'smooth'});
+  });
+});
+</script>
+</body>
+</html>
